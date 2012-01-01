@@ -11,21 +11,37 @@
 #include <unistd.h>
 #include "I2C.h"
 #include "COMETestBoard.h"
+#include "diagnostics.h"
+
 using namespace std;
 
+#define ATCA_EEPROM 0xAE
+#define ATCA_ARBITER 0xE0
+
 int main(int argc, char* argv[]) {
-   std::string a;
-   a = argc > 1 ? argv[1] : "200K";
-   Board* board = new COMETestBoard();
-   board->setDevice("0", "DS3232");
-   board->setI2CType(new I2CSema(EAPI_ID_I2C_EXTERNAL));
-   //std::cout << "Available registers:" << '\n';
-   //for (auto i : board->getProperties()) { std::cout << i << '\n'; }
-   for (int i = 0; i < 1000; i++) {
-      board->read("seconds");
-      //sleep(1);
+   I2CSema* i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL);
+   cout << i2c->getBusCap() << endl;
+   uint8_t buffer;
+   printf("Addr : 0x%X\n", ATCA_EEPROM);
+   for (int i = 0; i < 16; i++) {
+      buffer = 2*i;
+      i2c->sendData(ATCA_EEPROM, (char*)&buffer, 1, i);
+      buffer = 0;
+      i2c->receiveData(ATCA_EEPROM, (char*)&buffer, 1, i);
+      printf("%d : %X\n", i, buffer);
    }
-   //board->write("SRAM1", a);
-   //cout << "SRAM1: " << board->read("SRAM1") << endl;
+   printf("Addr : 0x%X\n", ATCA_ARBITER);
+   buffer = 0x7b;
+   i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x05);
+   buffer = 0x64;
+   i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x03);
+   buffer = 0x01;
+   i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
+   for (int i = 0; i < 0b111; i++) {
+      uint8_t buffer = 0;
+      i2c->receiveData(ATCA_ARBITER, (char*)&buffer, 1, i);
+      printf("%d : %X\n", i, buffer);
+   }
+   printf("\n");
    return 0;
 }
