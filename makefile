@@ -12,7 +12,7 @@ INC := -Iinclude -I/opt/Sema/include -I/opt/pybind11/include
 
 $(TARGET): $(OBJECTS)
 #	@echo "Linking..."
-	$(CC) $(CFLAGS) $(INC) `python-config --cflags --ldflags` -c -o $(BUILDDIR)/libI2C.o test/python/libI2C.cpp
+	$(CC) $(CFLAGS) $(INC) `python-config --cflags --ldflags` -c -o $(BUILDDIR)/libI2C.o libsrc/libI2C.cpp
 	@echo "$(CC) -shared $^ $(BUILDDIR)/libI2C.o -o $(TARGET) $(LIB)"; $(CC) -shared $^ $(BUILDDIR)/libI2C.o -o $(TARGET) $(LIB)
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
