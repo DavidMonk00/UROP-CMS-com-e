@@ -1,7 +1,16 @@
+/**
+  diagnostics.cpp
+  Purpose: defines functions for the Diagnostics class.
+  @author David Monk
+  @version 1.0
+*/
+
 #include "diagnostics.h"
 
-//Initialise SEMA library.
-Diagnostics::Diagnostics() {
+/**
+  Constructor function if library has yet to initialised.
+*/
+Diagnostics::Diagnostics(void) {
   //IP address is localhost
   char ipAddr[24] = "127.0.0.1";
   uint32_t ret = 0;
@@ -11,33 +20,42 @@ Diagnostics::Diagnostics() {
   }
 }
 
-/*Constructor used if library has already been initialised but diagnostics
-  need to be performed.*/
+/**
+  Constructor function if library has already been initialised but diagnostics
+  need to be performed.
+*/
 Diagnostics::Diagnostics(uint32_t h) {
   handler = h;
 }
 
-//Uninitialise library within destructor
-Diagnostics::~Diagnostics() {
+/**
+  Class destructor.
+*/
+Diagnostics::~Diagnostics(void) {
 }
 
-/*Print selcted information about the COM-e board.
+/**
+  Print selcted information about the COM-e board.
   Current information printed: Board Manufacturer and Board Name.
 */
-void Diagnostics::printBoardInfo() {
+void Diagnostics::printBoardInfo(void) {
   printf("\n******** BOARD INFORMATION ********\n");
   getBoardInfo(EAPI_ID_BOARD_MANUFACTURER_STR, "Board Manufacturer");
   getBoardInfo(EAPI_ID_BOARD_NAME_STR, "Board Name");
 }
 
-/*Print current board and CPU temperatures.*/
+/**
+  Print current board and CPU temperatures.
+*/
 void Diagnostics::printBoardTemperatures(void) {
   printf("\n******** TEMPERATURES ********\n");
   getBoardTemp(EAPI_ID_HWMON_SYSTEM_TEMP, "System Temperature");
   getBoardTemp(EAPI_ID_HWMON_CPU_TEMP, "CPU Temperature");
 }
 
-/*Print available I2C buses.*/
+/**
+  Print available I2C buses.
+*/
 void Diagnostics::printI2CSupport(void) {
   printf("\n******** I2C Status ********\n");
   uint32_t ret = 0;
@@ -62,7 +80,11 @@ void Diagnostics::printI2CSupport(void) {
 }
 
 //Private functions
-/*Function to get individual board strings*/
+/**
+  Get individual board strings.
+  @param id - ID for board values
+  @param message - text to display before value
+*/
 void Diagnostics::getBoardInfo(EApiId_t id, string message) {
   char buffer[256] = {};
   uint32_t ret = 0;
@@ -77,7 +99,11 @@ void Diagnostics::getBoardInfo(EApiId_t id, string message) {
   printf("\n");
 }
 
-/*Function to get individual temperature values.*/
+/**
+  Get individual temperatures.
+  @param id - ID for board values
+  @param message - text to display before value
+*/
 void Diagnostics::getBoardTemp(uint32_t id, string message) {
   uint32_t ret = 0;
   uint32_t buf;
@@ -92,7 +118,12 @@ void Diagnostics::getBoardTemp(uint32_t id, string message) {
   }
 }
 
-/*DEPRECATED - Fuction to get the hexadicemal value of the board capabilities.*/
+/**
+  DEPRECATED
+  Get the hexadicemal value of the board capabilities.
+  @param id - ID for board values
+  @param message - text to display before value
+*/
 void Diagnostics::getBoardCapabilitiesHex(uint32_t id, string message) {
   uint32_t ret = 0;
   uint32_t buf;

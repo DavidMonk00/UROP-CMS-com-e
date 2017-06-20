@@ -4,6 +4,10 @@
 #include <stdint.h>
 using namespace std;
 
+/**
+  Base I2C class. Has no functionality in current state but acts as a basis for
+  derived I2C classes
+*/
 class I2C {
 protected:
   uint32_t addr;

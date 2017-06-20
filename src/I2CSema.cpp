@@ -1,5 +1,17 @@
+/**
+  SEMA.cpp
+  Purpose: defines functions for the the derived I2CSema class.
+  @author David Monk
+  @version 1.0
+*/
+
 #include "I2CSema.h"
 
+/**
+  Constructor function.
+  @param ID - I2C bus ID
+  @param address - address of slave module
+*/
 I2CSema::I2CSema(uint32_t ID, uint8_t address) {
   //IP address is localhost
   char ipAddr[24] = "127.0.0.1";
@@ -13,7 +25,12 @@ I2CSema::I2CSema(uint32_t ID, uint8_t address) {
   addr = address;
 }
 
-//Initialise SEMA library and run diagnostics
+/**
+  Constructor function with additional diagnostics.
+  @param ID - I2C bus ID
+  @param address - address of slave module
+  @param diag - set to true to display diagnostics
+*/
 I2CSema::I2CSema(uint32_t ID, uint8_t address, bool diag) {
   //IP address is localhost
   char ipAddr[24] = "127.0.0.1";
@@ -34,12 +51,17 @@ I2CSema::I2CSema(uint32_t ID, uint8_t address, bool diag) {
   addr = address;
 }
 
-//Uninitialise library within destructor
+/**
+  Class destructor.
+*/
 I2CSema::~I2CSema(void) {
   SemaEApiLibUnInitialize(handler);
 }
 
-/*Get the maximum block length for given I2C bus ID.*/
+/**
+  Get the maximum block length for given I2C bus ID.
+  @return block length as integer
+*/
 uint32_t I2CSema::getBusCap(void) {
   uint32_t buffer;
   uint32_t ret = 0;
@@ -52,13 +74,12 @@ uint32_t I2CSema::getBusCap(void) {
   return -1;
 }
 
-/*receive data data from addressed slave.
-  Inputs:
-          char* buffer - pointer to byte array where data will be written
-          uint32_t bytecnt - length of buffer
-          uint32_t start_point - starting address within slave
-  Outputs:
-          char* - returns pointer to array where data was written
+/**
+  Receive data data from addressed slave.
+  @param buffer - pointer to byte array where data will be written
+  @param bytecnt - length of buffer
+  @param start_point - starting address within slave
+  @return pointer to array where data was written
 */
 char* I2CSema::receiveData(char* buffer, uint32_t bytecnt, uint32_t start_point) {
   uint32_t Cmd = start_point;
@@ -72,11 +93,11 @@ char* I2CSema::receiveData(char* buffer, uint32_t bytecnt, uint32_t start_point)
   }
 }
 
-/*send data data to addressed slave.
-  Inputs:
-          char* buffer - pointer to byte array where data will be sent from
-          uint32_t bytecnt - length of buffer
-          uint32_t start_point - starting address within slave
+/**
+  Send data data to addressed slave.
+  @param buffer - pointer to byte array where data will be sent from
+  @param bytecnt - length of buffer
+  @param start_point - starting address within slave
 */
 void I2CSema::sendData(char* buffer, uint32_t bytecnt, uint32_t start_point) {
   uint32_t Cmd = start_point;

@@ -6,6 +6,9 @@
 #include <Sema.h>
 using namespace std;
 
+/**
+  SEMA diagnostics class. Displays useful information about the board.
+*/
 class Diagnostics {
 private:
   uint32_t handler;

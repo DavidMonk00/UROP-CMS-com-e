@@ -1,8 +1,14 @@
+/**
+  SEMA.cpp
+  Purpose: main function file for testing SEMA I2C connection.
+  @author David Monk
+  @version 1.0
+*/
+
 #include "I2CSema.h"
 using namespace std;
 
 int main() {
-
   I2CSema I = I2CSema(EAPI_ID_I2C_EXTERNAL, DS3232);
   char msg[] = "Hello World";
   int length = 11;

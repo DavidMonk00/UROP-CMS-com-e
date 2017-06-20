@@ -7,6 +7,10 @@
 #include "I2C_define.h"
 using namespace std;
 
+/**
+  Derived class from I2C which implements SEMA function calls to communicate
+  with bus.
+*/
 class I2CSema: public I2C {
 private:
   uint32_t handler;
