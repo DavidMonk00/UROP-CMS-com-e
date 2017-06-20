@@ -3,18 +3,19 @@ using namespace std;
 
 int main() {
   I2CSema I = I2CSema();
-  char msg[12] = "Hello world";
-  char* data = (char*)malloc(12*sizeof(char));
-  for (int i = 0; i < 12; i++) {
+  char msg[] = "Hello world";
+  char* data = (char*)malloc(11*sizeof(char));
+  for (int i = 0; i < 11; i++) {
     data[i] = msg[i];
     printf("%d ", data[i]);
   }
   printf("\n");
-  I.sendData(data);
+  I.sendData(data, 11);
   uint32_t max = I.getBusCap();
-  //printf("Max block length: %d\n", max);
+  printf("Max block length: %d\n", max);
+  max = 0x20;
   unsigned char* dat = (unsigned char*)malloc(max*sizeof(unsigned char));
-  dat = (unsigned char*)I.receiveData((char*)dat);
+  dat = (unsigned char*)I.receiveData((char*)dat, (uint32_t)max);
   for (int i = 0; i < max; i++) {
     if (dat[i] < 0) {
       dat[i] = 256 + dat[i];

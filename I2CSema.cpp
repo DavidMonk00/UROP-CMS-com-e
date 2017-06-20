@@ -34,12 +34,11 @@ uint32_t I2CSema::getBusCap(void) {
   return -1;
 }
 
-char* I2CSema::receiveData(char* buffer) {
-  uint32_t addr = 0b1101000;
+char* I2CSema::receiveData(char* buffer, uint32_t ByteCnt) {
+  uint32_t addr = 0b11010000;
   uint32_t Cmd = 0x00;
   uint32_t ret = 0;
-  uint32_t BufLen = sizeof(buffer)/(sizeof(char));
-  uint32_t ByteCnt = BufLen;
+  uint32_t BufLen = ByteCnt;
   ret = SemaEApiI2CReadTransfer(handler, id, addr, Cmd, (void*)buffer, BufLen, ByteCnt);
   if (ret != EAPI_STATUS_SUCCESS) {
     printf("ERROR: 0x%X", ret);
@@ -48,12 +47,11 @@ char* I2CSema::receiveData(char* buffer) {
   }
 }
 
-void I2CSema::sendData(char* buffer) {
-  uint32_t addr = 0b1101000;
-  uint32_t Cmd = 0x20;
+void I2CSema::sendData(char* buffer, uint32_t ByteCnt) {
+  uint32_t addr = 0b11010000;
+  uint32_t Cmd = 0x15;
   uint32_t ret = 0;
-  uint32_t BufLen = sizeof(buffer)/(sizeof(char));
-  uint32_t ByteCnt = BufLen;
+  printf("%d\n", ByteCnt);
   ret = SemaEApiI2CWriteTransfer(handler, id, addr, Cmd, (void*)buffer, ByteCnt);
   if (ret != EAPI_STATUS_SUCCESS) {
     printf("ERROR: 0x%X", ret);
