@@ -1,3 +1,10 @@
+/**
+  I2CSema.h
+  Purpose: defines I2CSema class.
+  @author David Monk
+  @version 1.0
+*/
+
 #pragma once
 #include <cstdlib>
 #include <stdio.h>

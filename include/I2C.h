@@ -1,3 +1,10 @@
+/**
+  I2C.h
+  Purpose: defines I2C base class.
+  @author David Monk
+  @version 1.0
+*/
+
 #pragma once
 #include <cstdlib>
 #include <stdio.h>

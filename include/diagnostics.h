@@ -1,3 +1,10 @@
+/**
+  diagnostics.h
+  Purpose: defines Diagnostics class.
+  @author David Monk
+  @version 1.0
+*/
+
 #pragma once
 #include <cstdlib>
 #include <stdio.h>
