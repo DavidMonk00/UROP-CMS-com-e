@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
   I2CSema I = I2CSema(EAPI_ID_I2C_EXTERNAL, DS3232);
-  char msg[] = "Hello world";
+  char msg[] = "Hello World";
   char* data = (char*)malloc(11*sizeof(char));
   for (int i = 0; i < 11; i++) {
     data[i] = msg[i];
