@@ -2,22 +2,22 @@
 using namespace std;
 
 int main() {
+
   I2CSema I = I2CSema(EAPI_ID_I2C_EXTERNAL, DS3232);
   char msg[] = "Hello World";
-  char* data = (char*)malloc(11*sizeof(char));
-  for (int i = 0; i < 11; i++) {
-    data[i] = msg[i];
-    printf("%d ", data[i]);
-  }
-  printf("\n");
-  I.sendData(data, 11);
-  uint32_t max = I.getBusCap();
-  printf("Max block length: %d\n", max);
-  max = 0x20;
-  unsigned char* dat = (unsigned char*)malloc(max*sizeof(unsigned char));
-  dat = (unsigned char*)I.receiveData((char*)dat, (uint32_t)max);
+  int length = 11;
+  char* data = (char*)malloc(length*sizeof(char));
+  printf("Sending %d bytes...\n", length);
+  for (int i = 0; i < length; i++) { data[i] = msg[i]; }
+  I.sendData(data, length, 0x15);
+  printf("Done.\n");
+
+  int max = 0x20;
+  char* dat = (char*)malloc(max*sizeof(unsigned char));
+  dat = I.receiveData(dat, (uint32_t)max, 0x00);
+  printf("Reading %d bytes:\n", max);
   for (int i = 0; i < max; i++) {
-    printf("%03d ", dat[i]);
+    printf("%03d ", (unsigned char)dat[i]);
     if (i%8 == 7) {
       printf("\n");
     }
