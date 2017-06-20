@@ -1,7 +1,7 @@
 #include "I2CSema.h"
 
 //Initialise SEMA library
-I2CSema::I2CSema(void) {
+I2CSema::I2CSema(uint32_t ID, uint8_t address) {
   //IP address is localhost
   char ipAddr[24] = "127.0.0.1";
   uint32_t ret = 0;
@@ -11,9 +11,12 @@ I2CSema::I2CSema(void) {
   }
   //Check I2C availibilty through the Diagnostics class
   printf("Initialised library. Checking I2C status...\n");
-  id = EAPI_ID_I2C_EXTERNAL;
   Diagnostics d = Diagnostics(handler);
-  //d.printI2CSupport();
+  d.printI2CSupport();
+  printf("\n");
+  //Set I2C addresses
+  id = ID;
+  addr = address;
 }
 
 //Uninitialise library within destructor
@@ -35,7 +38,7 @@ uint32_t I2CSema::getBusCap(void) {
 }
 
 char* I2CSema::receiveData(char* buffer, uint32_t ByteCnt) {
-  uint32_t addr = 0b11010000;
+  uint32_t addr = DS3232;
   uint32_t Cmd = 0x00;
   uint32_t ret = 0;
   uint32_t BufLen = ByteCnt;
@@ -48,7 +51,7 @@ char* I2CSema::receiveData(char* buffer, uint32_t ByteCnt) {
 }
 
 void I2CSema::sendData(char* buffer, uint32_t ByteCnt) {
-  uint32_t addr = 0b11010000;
+  uint32_t addr = DS3232;
   uint32_t Cmd = 0x15;
   uint32_t ret = 0;
   printf("%d\n", ByteCnt);

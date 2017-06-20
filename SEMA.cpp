@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-  I2CSema I = I2CSema();
+  I2CSema I = I2CSema(EAPI_ID_I2C_EXTERNAL, DS3232);
   char msg[] = "Hello world";
   char* data = (char*)malloc(11*sizeof(char));
   for (int i = 0; i < 11; i++) {
@@ -17,9 +17,6 @@ int main() {
   unsigned char* dat = (unsigned char*)malloc(max*sizeof(unsigned char));
   dat = (unsigned char*)I.receiveData((char*)dat, (uint32_t)max);
   for (int i = 0; i < max; i++) {
-    if (dat[i] < 0) {
-      dat[i] = 256 + dat[i];
-    }
     printf("%03d ", dat[i]);
     if (i%8 == 7) {
       printf("\n");
