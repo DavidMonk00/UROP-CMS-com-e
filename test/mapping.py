@@ -10,17 +10,23 @@ import devices as d
 class Measurement:
     def __init__(self, device):
         self.device = d.devices[device]
+    def printDeviceInformation(self):
+        print "Device address: %s"%bin(self.device.address)
     def printProperties(self):
-        for i in self.device.keys():
-            print i
+        print "Available properties:"
+        for i in self.device.properties.keys():
+            print "'%s'"%i
     def read(self, property):
-        p = self.device[property]
+        p = self.device.properties[property]
         if ('r' in p.rw):
             return p.unit
+        else:
+            raise Exception('Property cannot be read')
 
 def main():
     M = Measurement("DS3232")
-    #M.printProperties()
+    M.printDeviceInformation()
+    M.printProperties()
     print M.read("seconds")
 
 
