@@ -8,7 +8,7 @@
 #include "RTC.h"
 
 RTC::RTC(void) {
-  i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL, DS3232);
+  i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL, DS3232_ADDR);
 }
 
 RTC::~RTC(void) {

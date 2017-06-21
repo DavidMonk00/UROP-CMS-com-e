@@ -1,16 +1,74 @@
 #include "devices.h"
 
-Property::Property(uint32_t addr, uint32_t s, char* rw, char* u) {
+Property::Property(uint32_t addr, uint32_t s, string rw, string fmt, string u) {
    address = addr;
    size = s;
-   char* end = rw + sizeof(rw)/sizeof(rw[0]);
-   char* position = std::find(rw, end, 'r');
+   const char* rw_char = rw.c_str();
+   const char* end = rw_char + sizeof(rw_char)/sizeof(rw_char[0]);
+   const char* position = std::find(rw_char, end, 'r');
    read = position != end;
-   position = std::find(rw, end, 'w');
+   position = std::find(rw_char, end, 'w');
    write = position != end;
+   format = fmt;
    unit = u;
+ }
+
+Property::~Property(void) {}
+
+uint32_t Property::getAddress(void){
+  return address;
 }
 
-Property::~Property(void) {
-   
+uint32_t Property::getSize(void){
+  return size;
+}
+
+bool Property::getReadStatus(void) {
+  return read;
+}
+
+bool Property::getWriteStatus(void) {
+  return write;
+}
+
+string Property::getFormat(void) {
+  return format;
+}
+
+string Property::getUnit(void) {
+  return unit;
+}
+
+Device::Device(uint32_t address, unordered_map<string, Property*> p) {
+  properties = p;
+  i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL, (uint8_t)address);
+}
+
+Device::~Device(void) {}
+
+string Device::read(string property) {
+  Property* p = properties[property];
+  if (p->getReadStatus()) {
+    char* buffer = (char*)malloc(64*sizeof(char));
+    buffer = i2c->receiveData(buffer, p->getSize(), p->getAddress());
+    char str[64];
+    sprintf(str, p->getFormat().c_str(), buffer[0]);
+    for (int i = 1; i < p->getSize(); i++) {
+      sprintf(str + strlen(str), p->getFormat().c_str(), buffer[i]);
+    }
+    sprintf(str + strlen(str), " %s", p->getUnit().c_str());
+    string s(str);
+    return s;
+  } else {
+    return "Exception: property cannot be read.";
+  }
+}
+
+vector<string>Device::getKeys(void) {
+  vector<string> v;
+  v.reserve(properties.size());
+  for (auto kv : properties) {
+    v.push_back(kv.first);
+  }
+  return v;
 }
