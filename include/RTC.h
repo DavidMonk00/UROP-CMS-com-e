@@ -8,7 +8,7 @@
 #pragma once
 #include <cstdlib>
 #include <stdio.h>
-#include "I2CSema.h"
+#include "I2C.h"
 #include "I2C_define.h"
 using namespace std;
 

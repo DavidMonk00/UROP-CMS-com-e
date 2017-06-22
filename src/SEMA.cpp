@@ -5,7 +5,7 @@
   @version 1.0
 */
 
-#include "I2CSema.h"
+#include "I2C.h"
 #include "Measurement.h"
 #include <string>
 using namespace std;
@@ -13,7 +13,7 @@ using namespace std;
 int main() {
   Measurement M = Measurement("DS3232");
   M.printProperties();
-  string s = M.read("temperature");
+  string s = M.read("hours");
   printf("%s\n", s.c_str());
   return 0;
 }

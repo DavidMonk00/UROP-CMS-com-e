@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 #include "devices.h"
+#include "I2C.h"
 using namespace std;
 
 class Measurement {

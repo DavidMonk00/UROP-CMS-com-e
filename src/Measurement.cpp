@@ -4,7 +4,7 @@ unordered_map<string, Property*> DS3232 = {{"seconds", new Property(0x00,1,"rw",
                                            {"minutes", new Property(0x01,1,"rw","%X","minutes")},
                                            {"hours", new Property(0x02,1,"rw","%X","hours")},
                                            {"temperature", new Property(0x11,2,"r","%X","kelvin")}};
-unordered_map<string, Device*> map_devices = {{"DS3232", new Device(DS3232_ADDR, DS3232)}};
+unordered_map<string, Device*> map_devices = {{"DS3232", new Device("SEMA", DS3232_ADDR, DS3232)}};
 
 Measurement::Measurement(string d) {
   device = map_devices[d];

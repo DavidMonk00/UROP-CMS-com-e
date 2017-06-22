@@ -6,7 +6,8 @@
 #include <algorithm>
 #include <string>
 #include <vector>
-#include "I2CSema.h"
+#include <boost/variant.hpp>
+#include "I2C.h"
 using namespace std;
 
 class Property {
@@ -30,10 +31,11 @@ public:
 
 class Device {
 private:
-  I2CSema* i2c;
+  int index;
+  I2CSema* i2c_sema;
 public:
   unordered_map<string, Property*> properties;
-  Device(uint32_t address, unordered_map<string, Property*> p);
+  Device(string I2Ctype, uint32_t address, unordered_map<string, Property*> p);
   ~Device(void);
   string read(string property);
   vector<string> getKeys(void);
