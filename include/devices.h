@@ -31,12 +31,15 @@ public:
 
 class Device {
 private:
+  uint32_t address;
   int index;
-  I2CSema* i2c_sema;
+  I2C_base* i2c;
 public:
   unordered_map<string, Property*> properties;
+  Device(uint32_t address, unordered_map<string, Property*> p);
   Device(string I2Ctype, uint32_t address, unordered_map<string, Property*> p);
   ~Device(void);
+  void setI2C(string I2Ctype);
   string read(string property);
   vector<string> getKeys(void);
 };

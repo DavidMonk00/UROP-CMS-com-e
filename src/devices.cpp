@@ -39,11 +39,17 @@ string Property::getUnit(void) {
   return unit;
 }
 
-Device::Device(string I2Ctype, uint32_t address, unordered_map<string, Property*> p) {
+Device::Device(uint32_t addr, unordered_map<string, Property*> p) {
+  address = addr;
+  properties = p;
+}
+
+Device::Device(string I2Ctype, uint32_t addr, unordered_map<string, Property*> p) {
+  address = addr;
   properties = p;
   if (I2Ctype == "SEMA") {
     index = 0;
-    i2c_sema = new I2CSema(EAPI_ID_I2C_EXTERNAL, address);
+    i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL, address);
   } else {
     printf("No valid I2C protocol specified\n");
     exit(-1);
@@ -52,14 +58,21 @@ Device::Device(string I2Ctype, uint32_t address, unordered_map<string, Property*
 
 Device::~Device(void) {}
 
+void Device::setI2C(string I2Ctype) {
+  if (I2Ctype == "SEMA") {
+    index = 0;
+    i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL, address);
+  } else {
+    printf("No valid I2C protocol specified\n");
+    exit(-1);
+  }
+}
+
 string Device::read(string property) {
   Property* p = properties[property];
   if (p->getReadStatus()) {
     char* buffer = (char*)malloc(64*sizeof(char));
-    switch (index) {
-      case 0:
-        buffer = i2c_sema->receiveData(buffer, p->getSize(), p->getAddress());
-    }
+    buffer = i2c->receiveData(buffer, p->getSize(), p->getAddress());
     char str[64];
     sprintf(str, p->getFormat().c_str(), buffer[0]);
     for (int i = 1; i < p->getSize(); i++) {
