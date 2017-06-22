@@ -1,6 +1,6 @@
 /**
   I2C.h
-  Purpose: defines I2C base class.
+  Purpose: defines I2CSema class.
   @author David Monk
   @version 1.0
 */
@@ -8,19 +8,25 @@
 #pragma once
 #include <cstdlib>
 #include <stdio.h>
-#include <stdint.h>
+#include <Sema.h>
+#include "diagnostics.h"
+#include "I2C_base.h"
+#include "I2C_define.h"
 using namespace std;
 
 /**
-  Base I2C class. Has no functionality in current state but acts as a basis for
-  derived I2C classes
+  Derived class from I2C which implements SEMA function calls to communicate
+  with bus.
 */
-class I2C {
-protected:
-  uint32_t addr;
+class I2CSema: public I2C_base {
+private:
+  uint32_t handler;
+  uint32_t id;
 public:
-  I2C(void); //Initialise class
-  ~I2C(void); //Class destructor
-  void sendData(char* data); //Send data
-  char* receiveData(char* buffer); //Receive data
+  I2CSema(uint32_t ID, uint8_t address, bool diag);
+  I2CSema(uint32_t ID, uint8_t address);
+  ~I2CSema(void);
+  uint32_t getBusCap(void);
+  char* receiveData(char* buffer, uint32_t bytecnt, uint32_t start_point);
+  void sendData(char* buffer, uint32_t bytecnt, uint32_t start_point);
 };
