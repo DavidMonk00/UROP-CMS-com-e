@@ -6,11 +6,20 @@
 #include <boost/spirit/include/phoenix_operator.hpp>
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <boost/assert.hpp>
+#include <boost/typeof/std/complex.hpp>
+#include <boost/units/systems/si/energy.hpp>
+#include <boost/units/systems/si/force.hpp>
+#include <boost/units/systems/si/length.hpp>
+#include <boost/units/systems/si/electric_potential.hpp>
+#include <boost/units/systems/si/current.hpp>
+#include <boost/units/systems/si/resistance.hpp>
+#include <boost/units/systems/si/io.hpp>
 #include <iostream>
 #include <string>
 #include <cstdlib>
 #include <vector>
 #include <map>
+#include <complex>
 #include <stdlib.h>
 
 template <typename P, typename T>
@@ -29,17 +38,21 @@ void test_parser_attr(char const* input, P const& p, T& attr, bool full_match = 
 namespace qi = boost::spirit::qi;
 namespace ascii = boost::spirit::ascii;
 
+typedef std::pair<std::string, std::string> pair_type;
+typedef std::vector<pair_type> pairs_type;
+
 template <typename Iterator>
-struct units_and_powers : qi::grammar<Iterator, std::map<std::string, std::string>()> {
+struct units_and_powers : qi::grammar<Iterator, pairs_type()> {
    units_and_powers() : units_and_powers::base_type(query) {
-        query =  pair >> *((qi::lit(';') | '&') >> pair);
+        query =  pair >> *((qi::lit(';') | ' ') >> pair);
         pair  =  unit >> -('^' >> power);
         unit  =  qi::char_("a-zA-Z_") >> *qi::char_("a-zA-Z_0-9");
-        power = +qi::char_("a-zA-Z_0-9");
+        power = +qi::char_("a-zA-Z_0-9")|qi::char_('-') >> *qi::char_("a-zA-Z_0-9");
     }
-    qi::rule<Iterator, std::map<std::string, std::string>()> query;
-    qi::rule<Iterator, std::pair<std::string, std::string>()> pair;
-    qi::rule<Iterator, std::string()> unit, power;
+    qi::rule<Iterator, pairs_type()> query;
+    qi::rule<Iterator, pair_type()> pair;
+    qi::rule<Iterator, std::string()> unit;
+    qi::rule<Iterator, std::string()> power;
 };
 
 std::string parseUnit(std::string unit) {
@@ -49,39 +62,42 @@ std::string parseUnit(std::string unit) {
       ("m","metres")
       ("K","kelvin")
       ("s","seconds")
+      ("Hz","Hertz")
+      ("kg","kilograms")
    ;
    std::string i = "Error";
    test_parser_attr(unit.c_str(), sym, i);
    return i;
 }
 
-void splitUnits(std::string units) {
-   using qi:: char_;
-   using qi:: parse;
-   std::vector<std::string> unit;
-   parse(units.begin(), units.end(), *(char_), unit);
-   for(int i=0; i<unit.size(); ++i) {
-      std::cout << unit[i] << ' ';
+std::vector<std::pair<std::string, int> > splitUnits(std::string units) {
+   std::string::iterator begin = units.begin();
+   std::string::iterator end = units.end();
+   units_and_powers<std::string::iterator> p;
+   pairs_type m;
+   bool result = qi::parse(begin, end, p, m);
+   std::vector<std::pair<std::string, int> > u;
+   for(int i = 0; i < m.size(); i++){
+      if (m[i].second == "") {m[i].second = "1";}
+      u.push_back({m[i].first, atoi(m[i].second.c_str())});
    }
-   std::cout << std::endl;
+   return u;
 }
 
-int main(void) {
+std::pair<double, std::vector<std::pair<std::string, int> > > getValue(std::string input) {
+   std::pair<double, std::vector<std::pair<std::string, int> > > value;
    using qi:: char_;
    using qi::double_;
    using qi:: parse;
-   std::string t("31.5ms^-1");
-   double value;
    std::string units;
-   parse(t.begin(), t.end(), double_ >> *char_, value, units);
-   printf("Value: %.02f\nUnits: %s\n", value, units.c_str());
-   splitUnits(units);
-   std::string input("s^3;m;K^2");  // input to parse
-   std::string::iterator begin = input.begin();
-   std::string::iterator end = input.end();
-   units_and_powers<std::string::iterator> p;    // create instance of parser
-   std::map<std::string, std::string> m;        // map to receive results
-   bool result = qi::parse(begin, end, p, m);
-   std::cout << m["s"] << '\n';   // returns true if successful
+   parse(input.begin(), input.end(), double_ >> " " >> *char_, value.first, units);
+   printf("Value: %.02f\nUnits: %s\n", value.first, units.c_str());
+   value.second = splitUnits(units);
+   return value;
+}
+
+int main(void) {
+   std::pair<double, std::vector<std::pair<std::string, int> > > value;
+   value = getValue("9.81 kg m s^-2");
    return 0;
 }
