@@ -99,5 +99,8 @@ std::pair<double, std::vector<std::pair<std::string, int> > > getValue(std::stri
 int main(void) {
    std::pair<double, std::vector<std::pair<std::string, int> > > value;
    value = getValue("9.81 kg m s^-2");
+   for(int i = 0; i < value.second.size(); i++){
+      std::cout << value.second[i].second << '\n';
+   }
    return 0;
 }

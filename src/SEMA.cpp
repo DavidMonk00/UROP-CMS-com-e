@@ -5,8 +5,8 @@
   @version 1.0
 */
 
-#include "I2C.h"
 #include "Measurement.h"
+#include "parser.h"
 #include <string>
 using namespace std;
 
@@ -15,5 +15,11 @@ int main() {
   M.printProperties();
   string s = M.read("hours");
   printf("%s\n", s.c_str());
+  Parser P;
+  std::pair<double, std::vector<std::pair<std::string, int> > > value;
+  value = P.getValue("9.81 kg m s^-2");
+  for(int i = 0; i < value.second.size(); i++){
+     std::cout << value.second[i].second << '\n';
+  }
   return 0;
 }
