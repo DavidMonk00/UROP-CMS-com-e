@@ -23,8 +23,6 @@
 #include <complex>
 #include <stdlib.h>
 
-
-
 namespace qi = boost::spirit::qi;
 namespace ascii = boost::spirit::ascii;
 

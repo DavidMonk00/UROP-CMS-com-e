@@ -9,6 +9,7 @@ std::string Parser::parseUnit(std::string unit) {
       ("s","seconds")
       ("Hz","Hertz")
       ("kg","kilograms")
+      ("J", "joules")
    ;
    std::string i = "Error";
    test_parser_attr(unit.c_str(), sym, i);
