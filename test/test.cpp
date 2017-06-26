@@ -7,6 +7,7 @@
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <boost/assert.hpp>
 #include <boost/typeof/std/complex.hpp>
+#include <boost/units/pow.hpp>
 #include <boost/units/systems/si/energy.hpp>
 #include <boost/units/systems/si/force.hpp>
 #include <boost/units/systems/si/length.hpp>
@@ -14,6 +15,7 @@
 #include <boost/units/systems/si/current.hpp>
 #include <boost/units/systems/si/resistance.hpp>
 #include <boost/units/systems/si/io.hpp>
+#include <boost/variant.hpp>
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -22,85 +24,92 @@
 #include <complex>
 #include <stdlib.h>
 
-template <typename P, typename T>
-void test_parser_attr(char const* input, P const& p, T& attr, bool full_match = true) {
-   using boost::spirit::qi::parse;
-   char const* f(input);
-   char const* l(f + strlen(f));
-   if (parse(f, l, p, attr) && (!full_match || (f == l))) {
-   } else {
-      std::cout << "Parse failed." << std::endl;
-      std::cout << input << std::endl;
-      exit(-1);
-   }
-}
-
 namespace qi = boost::spirit::qi;
 namespace ascii = boost::spirit::ascii;
+using namespace boost::units;
+using namespace boost::units::si;
 
-typedef std::pair<std::string, std::string> pair_type;
+typedef std::pair<int, int> pair_type;
 typedef std::vector<pair_type> pairs_type;
+typedef std::pair<double , pairs_type> phys_quant;
+typedef boost::variant< double , quantity<length>, quantity<mass> > units_variant;
 
-template <typename Iterator>
-struct units_and_powers : qi::grammar<Iterator, pairs_type()> {
+struct units_and_powers : qi::grammar<std::string::iterator, phys_quant()> {
    units_and_powers() : units_and_powers::base_type(query) {
-        query =  pair >> *((qi::lit(';') | ' ') >> pair);
-        pair  =  unit >> -('^' >> power);
-        unit  =  qi::char_("a-zA-Z_") >> *qi::char_("a-zA-Z_0-9");
-        power = +qi::char_("a-zA-Z_0-9")|qi::char_('-') >> *qi::char_("a-zA-Z_0-9");
-    }
-    qi::rule<Iterator, pairs_type()> query;
-    qi::rule<Iterator, pair_type()> pair;
-    qi::rule<Iterator, std::string()> unit;
-    qi::rule<Iterator, std::string()> power;
+      unit.add
+         ("m",1)
+         ("K",2)
+         ("s",3)
+         ("Hz",4)
+         ("kg",5);
+
+      unit_power = qi::lit('^') >> qi::int_|qi::attr(1);
+      units =  (unit >> -unit_power) % (+qi::lit(" "));
+      query = qi::double_ >> +(qi::lit(" ")) >> units;
+   }
+   qi::symbols<char, int> unit;
+   qi::rule<std::string::iterator, int()> unit_power;
+   qi::rule<std::string::iterator, pairs_type()> units;
+   qi::rule<std::string::iterator, phys_quant()> query;
 };
 
-std::string parseUnit(std::string unit) {
-   using qi::symbols;
-   symbols<char, std::string> sym;
-   sym.add
-      ("m","metres")
-      ("K","kelvin")
-      ("s","seconds")
-      ("Hz","Hertz")
-      ("kg","kilograms")
-   ;
-   std::string i = "Error";
-   test_parser_attr(unit.c_str(), sym, i);
-   return i;
-}
+/*quantity<energy> work(const quantity<force>& F, const quantity<length>& dx) {
+    return F * dx;
+}*/
 
-std::vector<std::pair<std::string, int> > splitUnits(std::string units) {
-   std::string::iterator begin = units.begin();
-   std::string::iterator end = units.end();
-   units_and_powers<std::string::iterator> p;
-   pairs_type m;
-   bool result = qi::parse(begin, end, p, m);
-   std::vector<std::pair<std::string, int> > u;
-   for(int i = 0; i < m.size(); i++){
-      if (m[i].second == "") {m[i].second = "1";}
-      u.push_back({m[i].first, atoi(m[i].second.c_str())});
+
+class times_two_generic
+    : public boost::static_visitor<>
+{
+public:
+    units_variant mRet;
+    double mDouble;
+
+    times_two_generic( double aDouble ) : mDouble( aDouble ) {}
+
+    template <typename T>
+    void operator()( T & operand )
+    {
+        mRet = operand * mDouble;
+    }
+
+};
+
+
+int main()
+{
+
+   phys_quant m;
+   std::string units("9.81 kg m^2 s^-2");
+   units_and_powers p;
+   bool result = qi::parse(units.begin(), units.end(), p,  m);
+   std::cout << m.first << std::endl;
+   for (auto i:  m.second)
+   {
+      std::cout << i.first << " : " << i.second << std::endl;
    }
-   return u;
-}
 
-std::pair<double, std::vector<std::pair<std::string, int> > > getValue(std::string input) {
-   std::pair<double, std::vector<std::pair<std::string, int> > > value;
-   using qi:: char_;
-   using qi::double_;
-   using qi:: parse;
-   std::string units;
-   parse(input.begin(), input.end(), double_ >> " " >> *char_, value.first, units);
-   printf("Value: %.02f\nUnits: %s\n", value.first, units.c_str());
-   value.second = splitUnits(units);
-   return value;
-}
+   units_variant l( 3.1415 );
+   l = 6.1 * si::kilogram;
 
-int main(void) {
-   std::pair<double, std::vector<std::pair<std::string, int> > > value;
+   times_two_generic v(2.0);
+   boost::apply_visitor( v , l );
+   l = v.mRet;
+   std::cout << l << " " << v.mRet << std::endl;
+
+   /*std::pair<double, std::vector<std::pair<std::string, int> > > value;
    value = getValue("9.81 kg m s^-2");
    for(int i = 0; i < value.second.size(); i++){
-      std::cout << value.second[i].second << '\n';
+      std::cout << value.second[i].first << " to the power "<< value.second[i].second << '\n';
    }
+   units_variant dx;
+   U = 2.0*meter;
+   quantity<force>     F(2.0 * newton); // Define a quantity of force.
+   quantity<length>    dx(2.0 * meter); // and a distance,
+   quantity<energy>    E(work(F,dx));  // and calculate the work done.
+   std::cout << "F  = " << F << std::endl
+             << "dx = " << dx << std::endl
+             << "E  = " << E << std::endl
+             << "U  = " << U << std::endl;*/
    return 0;
 }
