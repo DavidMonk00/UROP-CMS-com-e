@@ -32,7 +32,6 @@ public:
 class Device {
 private:
   uint32_t address;
-  int index;
   I2C_base* i2c;
 public:
   unordered_map<string, Property*> properties;
