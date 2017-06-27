@@ -12,7 +12,7 @@
   @param ID - I2C bus ID
   @param address - address of slave module
 */
-I2CSema::I2CSema(uint32_t ID, uint8_t address) {
+I2CSema::I2CSema(uint32_t ID, uint32_t address) {
   //IP address is localhost
   char ipAddr[24] = "127.0.0.1";
   uint32_t ret = 0;
@@ -31,7 +31,7 @@ I2CSema::I2CSema(uint32_t ID, uint8_t address) {
   @param address - address of slave module
   @param diag - set to true to display diagnostics
 */
-I2CSema::I2CSema(uint32_t ID, uint8_t address, bool diag) {
+I2CSema::I2CSema(uint32_t ID, uint32_t address, bool diag) {
   //IP address is localhost
   char ipAddr[24] = "127.0.0.1";
   uint32_t ret = 0;

@@ -23,8 +23,8 @@ private:
   uint32_t handler;
   uint32_t id;
 public:
-  I2CSema(uint32_t ID, uint8_t address, bool diag);
-  I2CSema(uint32_t ID, uint8_t address);
+  I2CSema(uint32_t ID, uint32_t address, bool diag);
+  I2CSema(uint32_t ID, uint32_t address);
   ~I2CSema(void);
   uint32_t getBusCap(void);
   char* receiveData(char* buffer, uint32_t bytecnt, uint32_t start_point);

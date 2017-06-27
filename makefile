@@ -2,6 +2,7 @@ CC := g++
 SRCDIR := src
 BUILDDIR := build
 TARGET := bin/SEMA
+PCIGEN := bin/PCIGEN
 
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
