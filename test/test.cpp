@@ -22,6 +22,8 @@
 #include <vector>
 #include <map>
 #include <complex>
+#include <unordered_map>
+#include <algorithm>
 #include <stdlib.h>
 
 namespace qi = boost::spirit::qi;
@@ -32,7 +34,6 @@ using namespace boost::units::si;
 typedef std::pair<int, int> pair_type;
 typedef std::vector<pair_type> pairs_type;
 typedef std::pair<double , pairs_type> phys_quant;
-typedef boost::variant< double , quantity<length>, quantity<mass> > units_variant;
 
 struct units_and_powers : qi::grammar<std::string::iterator, phys_quant()> {
    units_and_powers() : units_and_powers::base_type(query) {
@@ -57,24 +58,19 @@ struct units_and_powers : qi::grammar<std::string::iterator, phys_quant()> {
     return F * dx;
 }*/
 
+typedef boost::variant< double , quantity<length>, quantity<mass> > units_variant;
 
-class times_two_generic
-    : public boost::static_visitor<>
-{
+class times_two_generic : public boost::static_visitor<> {
 public:
     units_variant mRet;
     double mDouble;
 
     times_two_generic( double aDouble ) : mDouble( aDouble ) {}
-
     template <typename T>
-    void operator()( T & operand )
-    {
+    void operator()( T & operand ) {
         mRet = operand * mDouble;
     }
-
 };
-
 
 int main()
 {
@@ -94,8 +90,9 @@ int main()
 
    times_two_generic v(2.0);
    boost::apply_visitor( v , l );
-   l = v.mRet;
+   //l = v.mRet;
    std::cout << l << " " << v.mRet << std::endl;
+   std::cout << boost::get<quantity<mass> >(l) << '\n';
 
    /*std::pair<double, std::vector<std::pair<std::string, int> > > value;
    value = getValue("9.81 kg m s^-2");
