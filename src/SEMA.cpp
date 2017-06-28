@@ -12,6 +12,7 @@
 #include "I2C_define.h"
 #include <string>
 #include <stdio.h>
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -23,10 +24,13 @@ int main() {
   Parser P;
   phys_quant value = P.getQuantity("9.81 kg m s^-2");*/
   I2CDevice d = I2CDevice(new I2CSema(EAPI_ID_I2C_EXTERNAL, DS3232_ADDR));
-  uint8_t x = d.read("seconds");
-  printf("%X\n", x);
-  d.write("SRAM0", 'H');
+  units_variant x = d.read("temperature");
+  cout << x << endl;
+  //printf("%X\n", x);
+  quantity<temperature> t = 56*kelvin;
+  d.write("SRAM0", t);
   x = d.read("SRAM0");
-  printf("%d\n", x);
+  //printf("%d\n", x);
+  cout << x << endl;
   return 0;
 }

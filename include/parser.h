@@ -8,6 +8,7 @@
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <boost/assert.hpp>
 #include <boost/typeof/std/complex.hpp>
+#include <boost/units/io.hpp>
 #include <boost/units/pow.hpp>
 #include <boost/units/systems/si/energy.hpp>
 #include <boost/units/systems/si/force.hpp>
