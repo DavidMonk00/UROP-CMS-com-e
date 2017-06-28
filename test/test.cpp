@@ -60,21 +60,19 @@ struct units_and_powers : qi::grammar<std::string::iterator, phys_quant()> {
 
 typedef boost::variant< double , quantity<length>, quantity<mass> > units_variant;
 
-class times_two_generic : public boost::static_visitor<> {
+class multiply : public boost::static_visitor<> {
 public:
     units_variant mRet;
     double mDouble;
 
-    times_two_generic( double aDouble ) : mDouble( aDouble ) {}
+    multiply ( double aDouble ) : mDouble( aDouble ) {}
     template <typename T>
     void operator()( T & operand ) {
         mRet = operand * mDouble;
     }
 };
 
-int main()
-{
-
+int main() {
    phys_quant m;
    std::string units("9.81 kg m^2 s^-2");
    units_and_powers p;
@@ -88,7 +86,7 @@ int main()
    units_variant l( 3.1415 );
    l = 6.1 * si::kilogram;
 
-   times_two_generic v(2.0);
+   multiply v(2.0);
    boost::apply_visitor( v , l );
    //l = v.mRet;
    std::cout << l << " " << v.mRet << std::endl;
