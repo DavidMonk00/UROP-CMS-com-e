@@ -81,15 +81,13 @@ uint32_t I2CSema::getBusCap(void) {
   @param start_point - starting address within slave
   @return pointer to array where data was written
 */
-char* I2CSema::receiveData(char* buffer, uint32_t bytecnt, uint32_t start_point) {
+void I2CSema::receiveData(char* buffer, uint32_t bytecnt, uint32_t start_point) {
   uint32_t Cmd = start_point;
   uint32_t ret = 0;
   uint32_t BufLen = bytecnt;
   ret = SemaEApiI2CReadTransfer(handler, id, addr, Cmd, (void*)buffer, BufLen, bytecnt);
   if (ret != EAPI_STATUS_SUCCESS) {
     printf("ERROR: 0x%X", ret);
-  } else {
-    return buffer;
   }
 }
 

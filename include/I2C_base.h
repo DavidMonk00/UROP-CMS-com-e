@@ -21,6 +21,6 @@ protected:
 public:
   I2C_base(void); //Initialise class
   ~I2C_base(void); //Class destructor
-  virtual char* receiveData(char* buffer, uint32_t bytecnt, uint32_t start_point)=0;
+  virtual void receiveData(char* buffer, uint32_t bytecnt, uint32_t start_point)=0;
   virtual void sendData(char* buffer, uint32_t bytecnt, uint32_t start_point)=0;
 };

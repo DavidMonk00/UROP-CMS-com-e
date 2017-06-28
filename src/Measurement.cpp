@@ -11,7 +11,9 @@ Measurement::Measurement(string d) {
   device->setI2C("SEMA");
 }
 
-Measurement::~Measurement(void) {}
+Measurement::~Measurement(void) {
+  delete device;
+}
 
 string Measurement::read(string property) {
   return device->read(property);
