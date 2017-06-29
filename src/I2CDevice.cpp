@@ -8,8 +8,8 @@
 #include "I2CDevice.h"
 
 //Register map for DS3232 chip.
-register_map DS3232_reg = {{"seconds",     new TimeI2CRegister(0x00, [](double t){return t*si::seconds;}
-                                                                     [](units_variant value) {return (uint8_t)boost::get<quantity<si::seconds> >(value).value();})},
+register_map DS3232_reg = {{"seconds",     new TimeI2CRegister(0x00, [](double t){return t*si::seconds;},
+                                                                     [](units_variant value) {return (uint8_t)boost::get<quantity<si::time> >(value).value();})},
                            {"temperature", new GenericI2CRegister(0x12, [](double value){return value*kelvin;},
                                                                         [](units_variant value) {return (uint8_t)boost::get<quantity<temperature> >(value).value();})},
                            {"SRAM0",       new GenericI2CRegister(0x14, [](double value){return value;},
