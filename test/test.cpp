@@ -31,9 +31,24 @@ namespace ascii = boost::spirit::ascii;
 using namespace boost::units;
 using namespace boost::units::si;
 
+template <typename P, typename T>
+void test_parser_attr(
+    char const* input, P const& p, T& attr, bool full_match = true)
+{
+    using boost::spirit::qi::parse;
+
+    char const* f(input);
+    char const* l(f + strlen(f));
+    if (parse(f, l, p, attr) && (!full_match || (f == l)))
+        std::cout << "ok" << std::endl;
+    else
+        std::cout << "fail" << std::endl;
+}
+
 typedef std::pair<int, int> pair_type;
 typedef std::vector<pair_type> pairs_type;
 typedef std::pair<double , pairs_type> phys_quant;
+typedef make_scaled_unit<si::time, scale<10, static_rational<-9> > >::type nanosecond;
 
 struct units_and_powers : qi::grammar<std::string::iterator, phys_quant()> {
    units_and_powers() : units_and_powers::base_type(query) {
@@ -58,7 +73,7 @@ struct units_and_powers : qi::grammar<std::string::iterator, phys_quant()> {
     return F * dx;
 }*/
 
-typedef boost::variant< double , quantity<length>, quantity<mass> > units_variant;
+typedef boost::variant< double , quantity<length>, quantity<mass>, quantity<si::time> > units_variant;
 
 class multiply : public boost::static_visitor<> {
 public:
@@ -92,6 +107,53 @@ int main() {
    std::cout << l << " " << v.mRet << std::endl;
    std::cout << boost::get<quantity<mass> >(l) << '\n';
 
+   auto lambda = [](auto x, auto y){return x*y;};
+
+   std::vector<units_variant> vec = {1.0*kilograms,1.0*meters,1.0*seconds};
+   std::vector<int> powers = {1,1,2};
+   auto x = 3.14159;
+   auto y = lambda(x,kilograms);
+   printf("%d\n", powers[0]);
+   auto z = x * pow<1>(kilograms) * pow<2>(meters) * pow<-3>(seconds);
+   //for (int i = 0; i < 2; i++) {
+   //   auto y = lambda(y, meters);
+   //}
+   std::cout << y << '\n';
+   std::cout << 2.0*amperes << '\n';
+
+   std::string s("MHz");
+   std::vector<char> pre = {'p','n','u','m','k','M','G','T','P','E'};
+   auto lambda1 = [](std::string s, std::vector<char> pre){bool in = false;for (auto i : pre) {if (s.c_str()[0] == i) {in = true;}};return in;};
+   if (lambda1(s, pre)) {
+      std::cout << s.substr(1,s.length()) << '\n';
+   } else {
+      std::cout << s << '\n';
+   }
+
+   quantity<nanosecond> t(1.0 * si::seconds);
+   std::cout << t << std::endl;
+
+   using boost::spirit::qi::symbols;
+   symbols<char, int> sym;
+   sym.add
+      ("p", -12)
+      ("n", -9)
+      ("u", -6)
+      ("m", -3)
+      ("k", 3)
+      ("M", 6)
+      ("G", 9)
+      ("T", 12)
+      ("P", 15)
+      ("E", 18)
+   ;
+   double a = 3.0;
+   int i;
+   test_parser_attr("E", sym, i);
+   std::cout << 3*std::pow(10,i) << std::endl;
+
+
+   //std::cout << vec[0] << '\n';
    /*std::pair<double, std::vector<std::pair<std::string, int> > > value;
    value = getValue("9.81 kg m s^-2");
    for(int i = 0; i < value.second.size(); i++){
