@@ -1,3 +1,10 @@
+/**
+  Measurement.h
+  Purpose: defines Measurment class.
+  @author David Monk
+  @version 1.0
+*/
+
 #pragma once
 #include <cstdlib>
 #include <stdint.h>
@@ -10,6 +17,9 @@
 #include "I2C.h"
 using namespace std;
 
+/**
+   Wrapper around device class. Takes string based input for register ID.
+*/
 class Measurement {
 private:
   Device* device;

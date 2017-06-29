@@ -1,7 +1,7 @@
 /**
   diagnostics.cpp
   Purpose: defines functions for the Diagnostics class.
-  @author David Monk
+  @author David Monk - Imperial College London
   @version 1.0
 */
 

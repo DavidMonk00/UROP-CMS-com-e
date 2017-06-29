@@ -1,7 +1,7 @@
 /**
   I2C_define.h
   Purpose: useful definitions.
-  @author David Monk
+  @author David Monk - Imperial College London
   @version 1.0
 */
 

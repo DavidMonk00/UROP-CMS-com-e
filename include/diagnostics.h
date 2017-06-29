@@ -1,7 +1,7 @@
 /**
   diagnostics.h
-  Purpose: defines Diagnostics class.
-  @author David Monk
+  Purpose: defines SEMA Diagnostics class.
+  @author David Monk - Imperial College London
   @version 1.0
 */
 

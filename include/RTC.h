@@ -1,7 +1,7 @@
 /**
   RTC.h
   Purpose: defines RTC class.
-  @author David Monk
+  @author David Monk - Imperial College London
   @version 1.0
 */
 
@@ -12,6 +12,9 @@
 #include "I2C_define.h"
 using namespace std;
 
+/**
+   Specific class for RTC clock I2C chip.
+*/
 class RTC {
 private:
   I2CSema* i2c;

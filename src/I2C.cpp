@@ -1,7 +1,7 @@
 /**
-  SEMA.cpp
-  Purpose: defines functions for the the derived I2CSema class.
-  @author David Monk
+  I2C.cpp
+  Purpose: defines functions for the derived I2CSema class.
+  @author David Monk - Imperial College London
   @version 1.0
 */
 

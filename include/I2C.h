@@ -1,7 +1,7 @@
 /**
   I2C.h
   Purpose: defines derived I2C classes.
-  @author David Monk
+  @author David Monk - Imperial College London
   @version 1.0
 */
 
@@ -15,7 +15,7 @@
 using namespace std;
 
 /**
-  Derived class from I2C which implements SEMA function calls to communicate
+  Derived class from I2C which implements SEMA API function calls to communicate
   with bus.
 */
 class I2CSema: public I2C_base {

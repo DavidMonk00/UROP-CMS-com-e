@@ -1,7 +1,7 @@
 /**
   SEMA.cpp
   Purpose: main function file for testing SEMA I2C connection.
-  @author David Monk
+  @author David Monk - Imperial College London
   @version 1.0
 */
 

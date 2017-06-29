@@ -1,5 +1,20 @@
+/**
+  I2C.cpp
+  Purpose: defines functions for the Property and Device classes.
+  @author David Monk - Imperial College London
+  @version 1.0
+*/
+
 #include "devices.h"
 
+/**
+  Class constructor.
+  @param addr - address of I2C register within device
+  @param s - size of property, i.e. the number of registers it spans
+  @param rw - the read/write status of the register
+  @param fmt - format for output
+  @param u - unit of output
+*/
 Property::Property(uint32_t addr, uint32_t s, string rw, string fmt, string u) {
    address = addr;
    size = s;
@@ -13,8 +28,12 @@ Property::Property(uint32_t addr, uint32_t s, string rw, string fmt, string u) {
    unit = u;
  }
 
+/**
+   Class destructor.
+*/
 Property::~Property(void) {}
 
+// --- Get functions for each parameter ---
 uint32_t Property::getAddress(void){
   return address;
 }
@@ -39,11 +58,22 @@ string Property::getUnit(void) {
   return unit;
 }
 
+/**
+  Class constructor.
+  @param address - address of I2C device
+  @param p - map of properties assosciated with I2C device
+*/
 Device::Device(uint32_t addr, unordered_map<string, Property*> p) {
   address = addr;
   properties = p;
 }
 
+/**
+  Class constructor with user defined I2C API type.
+  @param I2Ctype - string defining the I2C API to use
+  @param address - address of I2C device
+  @param p - map of properties assosciated with I2C device
+*/
 Device::Device(string I2Ctype, uint32_t addr, unordered_map<string, Property*> p) {
   address = addr;
   properties = p;
@@ -55,10 +85,17 @@ Device::Device(string I2Ctype, uint32_t addr, unordered_map<string, Property*> p
   }
 }
 
+/**
+   Class destructor.
+*/
 Device::~Device(void) {
   delete i2c;
 }
 
+/**
+  Set I2C type manually.
+  @param I2Ctype - specifies the API to use for I2C calls.
+*/
 void Device::setI2C(string I2Ctype) {
   if (I2Ctype == "SEMA") {
     i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL, address);
@@ -68,6 +105,11 @@ void Device::setI2C(string I2Ctype) {
   }
 }
 
+/**
+  Read data from register.
+  @param property - the property to be read
+  @return string with value and unit
+*/
 string Device::read(string property) {
   Property* p = properties[property];
   if (p->getReadStatus()) {
@@ -86,6 +128,10 @@ string Device::read(string property) {
   }
 }
 
+/**
+  Get all possible registers for given device.
+  @return vector of strings assosciated with the properties.
+*/
 vector<string>Device::getKeys(void) {
   vector<string> v;
   v.reserve(properties.size());

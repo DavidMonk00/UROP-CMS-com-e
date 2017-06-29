@@ -1,3 +1,10 @@
+/**
+  devices.h
+  Purpose: defines Property and device class.
+  @author David Monk - Imperial College London
+  @version 1.0
+*/
+
 #pragma once
 #include <cstdlib>
 #include <stdint.h>

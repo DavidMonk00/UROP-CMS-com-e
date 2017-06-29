@@ -1,3 +1,10 @@
+/**
+  I2CDevice.h
+  Purpose: defines I2CDevice class.
+  @author David Monk
+  @version 1.0
+*/
+
 #pragma once
 #include <string>
 #include <cstdlib>
@@ -26,9 +33,13 @@ using namespace boost::units::si;
 
 typedef std::unordered_map<std::string, I2CBaseRegister*> register_map;
 
+/**
+  Class represents a single I2C device with a number of registers. Read/Write
+  functions take a string-based ID for a given register.
+*/
 class I2CDevice {
 private:
-  std::unordered_map<std::string, I2CBaseRegister*> registers;
+  register_map registers;
   I2CBaseRegister* i2c_reg;
   I2C_base* i2c;
 public:

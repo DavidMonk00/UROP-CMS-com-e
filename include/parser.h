@@ -1,3 +1,10 @@
+/**
+  parser.h
+  Purpose: defines Parser class.
+  @author David Monk
+  @version 1.0
+*/
+
 #pragma once
 #include <boost/config/warning_disable.hpp>
 #include <boost/spirit/include/qi.hpp>
@@ -31,11 +38,16 @@ namespace ascii = boost::spirit::ascii;
 using namespace boost::units;
 using namespace boost::units::si;
 
+//Type definitions
 typedef std::pair<int, int> pair_type;
 typedef std::vector<pair_type> pairs_type;
 typedef std::pair<double , pairs_type> phys_quant;
 typedef boost::variant< double , quantity<length>, quantity<mass> > units_variant;
 
+/**
+  Template for parser to convert into value and units.
+  @param Iterator - input, generally std::string::iterator
+*/
 template <typename Iterator>
 struct units_and_powers : qi::grammar<Iterator, phys_quant()> {
    units_and_powers() : units_and_powers::base_type(query) {
@@ -56,6 +68,9 @@ struct units_and_powers : qi::grammar<Iterator, phys_quant()> {
    qi::rule<Iterator, phys_quant()> query;
 };
 
+/**
+   Simple class to call boost::spirit parser to convert string to value and units.
+*/
 class Parser {
 public:
   phys_quant getQuantity(std::string input);

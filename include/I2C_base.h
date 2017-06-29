@@ -1,7 +1,7 @@
 /**
   I2C_base.h
   Purpose: defines I2C base class.
-  @author David Monk
+  @author David Monk - Imperial College London
   @version 1.0
 */
 
@@ -19,8 +19,6 @@ class I2C_base {
 protected:
   uint32_t addr;
 public:
-  I2C_base(void); //Initialise class
-  ~I2C_base(void); //Class destructor
   virtual void receiveData(char* buffer, uint32_t bytecnt, uint32_t start_point)=0;
   virtual void sendData(char* buffer, uint32_t bytecnt, uint32_t start_point)=0;
 };
