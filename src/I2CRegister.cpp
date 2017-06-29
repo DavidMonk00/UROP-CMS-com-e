@@ -16,7 +16,7 @@ units_variant GenericI2CRegister::read(I2C_base* i2c_ptr) {
 
 void GenericI2CRegister::write(I2C_base* i2c_ptr, units_variant value) {
   char buffer = mWrite(value);
-  i2c_ptr->sendData(&buffer, 1, 0x11);
+  i2c_ptr->sendData(&buffer, 1, address);
 }
 
 TimeI2CRegister::TimeI2CRegister(uint32_t addr, std::function<units_variant(double)> read_func) {

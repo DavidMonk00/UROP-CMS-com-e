@@ -1,6 +1,6 @@
 /**
   I2C.h
-  Purpose: defines I2CSema class.
+  Purpose: defines derived I2C classes.
   @author David Monk
   @version 1.0
 */
