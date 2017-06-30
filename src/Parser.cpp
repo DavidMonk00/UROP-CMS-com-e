@@ -12,7 +12,7 @@
    @param input - string of value and units
    @return pbys_quant type containing value and units
 */
-phys_quant Parser::getQuantity(std::string input) {
+phys_quant LegacyParser::getQuantity(std::string input) {
   phys_quant m;
   std::string units("9.81 kg m^2 s^-2");
   units_and_powers<std::string::iterator> p;

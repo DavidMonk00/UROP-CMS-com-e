@@ -10,6 +10,7 @@
 #include "I2CDevice.h"
 #include "I2C.h"
 #include "I2C_define.h"
+#include "parser.h"
 #include <string>
 #include <stdio.h>
 #include <iostream>
@@ -20,13 +21,15 @@ int main() {
   M->printProperties();
   string s = M->read("seconds");
   delete M;
-  printf("%s\n", s.c_str());
-  Parser P;
-  phys_quant value = P.getQuantity("9.81 kg m s^-2");*/
+  printf("%s\n", s.c_str());*/
+  LegacyParser P;
+  phys_quant value = P.getQuantity("9.81 kg m s^-2");
   I2CDevice d = I2CDevice(new I2CSema(EAPI_ID_I2C_EXTERNAL, DS3232_ADDR));
   units_variant x = d.read("seconds");
   cout << x << endl;
   //printf("%X\n", x);
+  x = d.read("temperature");
+  cout << x << endl;
   quantity<temperature> t = 61*kelvin;
   d.write("SRAM1", t);
   x = d.read("SRAM1");

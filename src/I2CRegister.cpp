@@ -86,6 +86,51 @@ units_variant TimeI2CRegister::read(I2C_base* i2c_ptr) {
   @param value - data to be written. Must be of correct type
 */
 void TimeI2CRegister::write(I2C_base* i2c_ptr, units_variant value) {
+  char buffer = (char)mWrite(value);
+  i2c_ptr->sendData(&buffer, 1, address);
+}
+
+/**
+  Class constructor.
+  @param addr - address of register within I2C device
+  @param read_func - lambda function to convert hexadecimal value into correct
+                     units type
+  @param write_func - lambda function to convert units type into uint8_t to be
+                      to be written
+*/
+DS3232TemperatureI2CRegister::DS3232TemperatureI2CRegister(uint32_t addr, std::function<units_variant(double)> read_func,
+                                                                          std::function<uint8_t(units_variant)> write_func) {
+  address = addr;
+  mRead = read_func;
+  mWrite = write_func;
+}
+
+/**
+   Class destructor.
+*/
+DS3232TemperatureI2CRegister::~DS3232TemperatureI2CRegister(void) {}
+
+/**
+  Read data from register.
+  @param i2c_ptr - pointer to I2C class used for transport
+  @return units_variant containing quantity of correct type.
+*/
+units_variant DS3232TemperatureI2CRegister::read(I2C_base* i2c_ptr) {
+  char* buffer = (char*)malloc(2*sizeof(char));
+  i2c_ptr->receiveData(buffer, 2, address);
+  uint16_t temp;
+  temp = buffer[1] >> 6;
+  temp = temp || buffer[0] << 2;
+  free(buffer);
+  return mRead((double)temp);
+}
+
+/**
+  Write data to register.
+  @param i2c_ptr - pointer to I2C class used for transport
+  @param value - data to be written. Must be of correct type
+*/
+void DS3232TemperatureI2CRegister::write(I2C_base* i2c_ptr, units_variant value) {
   char buffer = (char)boost::get<quantity<si::time> >(value).value();
   i2c_ptr->sendData(&buffer, 1, address);
 }
