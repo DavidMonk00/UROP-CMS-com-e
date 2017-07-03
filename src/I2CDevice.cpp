@@ -6,6 +6,7 @@
 */
 
 #include "I2CDevice.h"
+extern register_map registers::DS3232;
 
 /**
   Class constructor.
@@ -13,7 +14,7 @@
 */
 I2CDevice::I2CDevice(I2C_base* i2c_if) {
   i2c = i2c_if;
-  registers = DS3232_reg;
+  registers = registers::DS3232;
 }
 
 /**

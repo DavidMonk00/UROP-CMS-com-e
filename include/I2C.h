@@ -8,8 +8,8 @@
 #pragma once
 #include <cstdlib>
 #include <stdio.h>
-#include <Sema.h>
-#include "diagnostics.h"
+//#include <Sema.h>
+//#include "diagnostics.h"
 #include "I2C_base.h"
 #include "I2C_define.h"
 using namespace std;

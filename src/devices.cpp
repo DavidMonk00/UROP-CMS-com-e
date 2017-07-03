@@ -74,7 +74,7 @@ Device::Device(uint32_t addr, unordered_map<string, Property*> p) {
   @param address - address of I2C device
   @param p - map of properties assosciated with I2C device
 */
-Device::Device(string I2Ctype, uint32_t addr, unordered_map<string, Property*> p) {
+/*Device::Device(string I2Ctype, uint32_t addr, unordered_map<string, Property*> p) {
   address = addr;
   properties = p;
   if (I2Ctype == "SEMA") {
@@ -84,7 +84,7 @@ Device::Device(string I2Ctype, uint32_t addr, unordered_map<string, Property*> p
     exit(-1);
   }
 }
-
+*/
 /**
    Class destructor.
 */
@@ -96,6 +96,7 @@ Device::~Device(void) {
   Set I2C type manually.
   @param I2Ctype - specifies the API to use for I2C calls.
 */
+/*
 void Device::setI2C(string I2Ctype) {
   if (I2Ctype == "SEMA") {
     i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL, address);
@@ -104,6 +105,7 @@ void Device::setI2C(string I2Ctype) {
     exit(-1);
   }
 }
+*/
 
 /**
   Read data from register.
