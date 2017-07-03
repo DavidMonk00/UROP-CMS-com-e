@@ -28,12 +28,15 @@ typedef std::unordered_map<std::string, I2CBaseRegister*> register_map;
 */
 class I2CDevice {
 private:
-  register_map registers;
+  std::unordered_map<std::string, I2CBaseRegister*> registers;
   I2CBaseRegister* i2c_reg;
   I2C_base* i2c;
 public:
-  I2CDevice(I2C_base* i2c_if);
+  enum class tI2Ctype {SEMA,FTDI,PCIe};
+  I2CDevice(std::unordered_map<std::string, I2CBaseRegister*> reg_map);
+  I2CDevice(void);
   ~I2CDevice(void);
+  void setI2CType(tI2Ctype type);
   units_variant read(std::string reg);
   void write(std::string reg, units_variant value);
   std::vector<std::string>getProperties(void);

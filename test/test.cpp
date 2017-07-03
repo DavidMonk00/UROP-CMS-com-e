@@ -201,5 +201,15 @@ int main() {
          var = pair.first;
    }
    std::cout << var << std::endl;
+
+   enum tTest {SEMA, FTDI, PCIe};
+   tTest en = SEMA;
+   switch (en) {
+      case SEMA:
+         std::cout << "SEMA" << '\n';
+         break;
+      default:
+         std::cout << "Something else" << '\n';
+   }
    return 0;
 }

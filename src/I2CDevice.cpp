@@ -21,9 +21,20 @@ register_map DS3232_reg = {{"seconds",     new TimeI2CRegister(0x00, [](double t
   Class constructor.
   @param i2c_if pointer to I2C class used for transport.
 */
-I2CDevice::I2CDevice(I2C_base* i2c_if) {
-  i2c = i2c_if;
-  registers = DS3232_reg;
+I2CDevice::I2CDevice(std::unordered_map<std::string, I2CBaseRegister*> reg_map) {
+  registers = reg_map;
+}
+
+I2CDevice::I2CDevice(void) {}
+
+void I2CDevice::setI2CType(tI2Ctype type) {
+   switch (type) {
+      case tI2Ctype::SEMA:
+         std::cout << "SEMA" << '\n';
+         break;
+      default:
+         std::cout << "Something else" << '\n';
+   }
 }
 
 /**

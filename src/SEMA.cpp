@@ -14,6 +14,7 @@
 #include <string>
 #include <stdio.h>
 #include <iostream>
+#include "Map.h"
 using namespace std;
 
 int main(int argc, char* argv[]) {
@@ -26,7 +27,10 @@ int main(int argc, char* argv[]) {
    Parser P;
    units_variant var = P.getQuantity(a);
    std::cout << var << '\n';
-   I2CDevice d = I2CDevice(new I2CSema(EAPI_ID_I2C_EXTERNAL, DS3232_ADDR));
+   I2CDevice iic;
+   iic.setI2CType(iic.tI2Ctype::SEMA);
+   Map* m = new Map();
+   /*I2CDevice d = I2CDevice(new I2CSema(EAPI_ID_I2C_EXTERNAL, DS3232_ADDR));
    for (auto i : d.getProperties()) {
       std::cout << i << '\n';
    }
@@ -39,6 +43,6 @@ int main(int argc, char* argv[]) {
    d.write("SRAM1", t);
    x = d.read("SRAM1");
    //printf("%d\n", x);
-   cout << x << endl;
+   cout << x << endl;*/
    return 0;
 }
