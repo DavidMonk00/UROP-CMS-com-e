@@ -20,12 +20,11 @@
 #include <boost/units/systems/si/io.hpp>
 #include <boost/variant.hpp>
 #include "I2CRegister.h"
+#include "device_maps.h"
 #include "I2C_base.h"
 
 using namespace boost::units;
 using namespace boost::units::si;
-
-typedef std::unordered_map<std::string, I2CBaseRegister*> register_map;
 
 /**
   Class represents a single I2C device with a number of registers. Read/Write

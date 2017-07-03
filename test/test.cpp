@@ -39,10 +39,7 @@ void test_parser_attr(
 
     char const* f(input);
     char const* l(f + strlen(f));
-    if (parse(f, l, p, attr) && (!full_match || (f == l)))
-        std::cout << "ok" << std::endl;
-    else
-        std::cout << "fail" << std::endl;
+    parse(f, l, p, attr);
 }
 
 typedef std::pair<int, int> pair_type;
@@ -69,11 +66,11 @@ struct units_and_powers : qi::grammar<std::string::iterator, phys_quant()> {
    qi::rule<std::string::iterator, phys_quant()> query;
 };
 
-/*quantity<energy> work(const quantity<force>& F, const quantity<length>& dx) {
-    return F * dx;
-}*/
-
-typedef boost::variant< double , quantity<length>, quantity<mass>, quantity<si::time> > units_variant;
+typedef boost::variant< double,
+                        quantity<length>,
+                        quantity<mass>,
+                        quantity<si::time>
+                         > units_variant;
 
 class multiply : public boost::static_visitor<> {
 public:
@@ -152,7 +149,6 @@ int main() {
 
    multiply v(2.0);
    boost::apply_visitor( v , l );
-   //l = v.mRet;
    std::cout << l << " " << v.mRet << std::endl;
    std::cout << boost::get<quantity<mass> >(l) << '\n';
 
@@ -164,9 +160,6 @@ int main() {
    auto y = lambda(x,kilograms);
    printf("%d\n", powers[0]);
    auto z = x * pow<1>(kilograms) * pow<2>(meters) * pow<-3>(seconds);
-   //for (int i = 0; i < 2; i++) {
-   //   auto y = lambda(y, meters);
-   //}
    std::cout << y << '\n';
    std::cout << 2.0*amperes << '\n';
 
@@ -179,15 +172,14 @@ int main() {
       std::cout << s << '\n';
    }
 
-   quantity<nanosecond> t(1.0 * si::seconds);
-   std::cout << t << std::endl;
-
-   std::string str("2.1");
+   std::string str("2.1K");
    std::pair<double,int> pair = foo(str);
    boost::variant<double,
                   quantity<electric_potential>,
                   quantity<current>,
-                  quantity<si::time> > var;
+                  quantity<si::time>,
+                  quantity<frequency>,
+                  quantity<temperature> > var;
    switch (pair.second) {
       case 2:
          var = pair.first*volts;
@@ -198,25 +190,16 @@ int main() {
       case 4:
          var = pair.first*seconds;
          break;
+      case 5:
+         var = pair.first*hertz;
+         break;
+      case 6:
+         var = pair.first*kelvin;
+         break;
       case 1:
       default:
          var = pair.first;
    }
    std::cout << var << std::endl;
-   //std::cout << vec[0] << '\n';
-   /*std::pair<double, std::vector<std::pair<std::string, int> > > value;
-   value = getValue("9.81 kg m s^-2");
-   for(int i = 0; i < value.second.size(); i++){
-      std::cout << value.second[i].first << " to the power "<< value.second[i].second << '\n';
-   }
-   units_variant dx;
-   U = 2.0*meter;
-   quantity<force>     F(2.0 * newton); // Define a quantity of force.
-   quantity<length>    dx(2.0 * meter); // and a distance,
-   quantity<energy>    E(work(F,dx));  // and calculate the work done.
-   std::cout << "F  = " << F << std::endl
-             << "dx = " << dx << std::endl
-             << "E  = " << E << std::endl
-             << "U  = " << U << std::endl;*/
    return 0;
 }
