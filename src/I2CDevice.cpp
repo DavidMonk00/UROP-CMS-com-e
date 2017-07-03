@@ -42,3 +42,16 @@ void I2CDevice::write(std::string reg, units_variant value) {
   I2C_base* ptr;
   i2c_reg->write(i2c, value);
 }
+
+/**
+  Get all possible registers for given device.
+  @return vector of strings assosciated with the properties.
+*/
+std::vector<std::string>I2CDevice::getProperties(void) {
+  std::vector<std::string> v;
+  v.reserve(registers.size());
+  for (auto kv : registers) {
+    v.push_back(kv.first);
+  }
+  return v;
+}

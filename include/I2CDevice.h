@@ -40,4 +40,5 @@ public:
   ~I2CDevice(void);
   units_variant read(std::string reg);
   void write(std::string reg, units_variant value);
+  std::vector<std::string>getProperties(void)
 };
