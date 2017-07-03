@@ -6,21 +6,11 @@
 */
 
 #pragma once
-#include <boost/config/warning_disable.hpp>
-#include <boost/spirit/include/qi.hpp>
-#include <boost/fusion/include/std_pair.hpp>
-#include <boost/spirit/include/support_utree.hpp>
-#include <boost/assert.hpp>
-#include <boost/units/io.hpp>
-#include <boost/units/pow.hpp>
-#include <boost/units/systems/si/electric_potential.hpp>
-#include <boost/units/systems/si/current.hpp>
-#include <boost/units/systems/si/io.hpp>
-#include <boost/variant.hpp>
 #include <string>
 #include <cstdlib>
 #include <vector>
 #include <stdlib.h>
+#include "units_define.h"
 
 namespace qi = boost::spirit::qi;
 namespace ascii = boost::spirit::ascii;
@@ -31,10 +21,6 @@ using namespace boost::units::si;
 typedef std::pair<int, int> pair_type;
 typedef std::vector<pair_type> pairs_type;
 typedef std::pair<double , pairs_type> phys_quant;
-typedef boost::variant<double,
-                       quantity<length>,
-                       quantity<boost::units::si::time>,
-                       quantity<temperature> > units_variant;
 
 /**
   Parser for symbol parsing.
@@ -71,6 +57,13 @@ struct units_and_powers : qi::grammar<Iterator, phys_quant()> {
    qi::rule<Iterator, int()> unit_power;
    qi::rule<Iterator, pairs_type()> units;
    qi::rule<Iterator, phys_quant()> query;
+};
+
+class Parser {
+private:
+   std::pair<double, int> getQuantityPair(std::string input);
+public:
+   units_variant getQuantity(std::string input);
 };
 
 /**

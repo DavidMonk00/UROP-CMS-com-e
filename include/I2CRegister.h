@@ -11,23 +11,10 @@
 #include <stdlib.h>
 #include <functional>
 #include <stdio.h>
-#include <boost/units/io.hpp>
-#include <boost/units/pow.hpp>
-#include <boost/units/systems/si/electric_potential.hpp>
-#include <boost/units/systems/si/current.hpp>
-#include <boost/units/systems/si/io.hpp>
-#include <boost/variant.hpp>
 #include "I2C_base.h"
-
-using namespace boost::units;
-using namespace boost::units::si;
+#include "units_define.h"
 
 //TODO Add minutes, hours to units namespace
-
-typedef boost::variant<double,
-                       quantity<length>,
-                       quantity<boost::units::si::time>,
-                       quantity<temperature> > units_variant;
 
 /**
   Base class for I2C register is pure virtual and thus should not be constructed.
