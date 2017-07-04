@@ -12,4 +12,6 @@ protected:
 public:
    virtual std::unordered_map<std::string, I2CBus*> getMap(void) = 0;
    void setBus(std::string bus);
+   void setDevice(std::string device);
+   void setDevice(std::string bus, std::string device);
 };
