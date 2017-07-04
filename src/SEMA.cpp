@@ -8,6 +8,7 @@
 #include <string>
 #include <stdio.h>
 #include <iostream>
+#include <unistd.h>
 #include "I2C.h"
 #include "COMETestBoard.h"
 using namespace std;
@@ -20,8 +21,11 @@ int main(int argc, char* argv[]) {
    board->setI2CType(new I2CSema(EAPI_ID_I2C_EXTERNAL));
    std::cout << "Available registers:" << '\n';
    for (auto i : board->getProperties()) { std::cout << i << '\n'; }
-   cout << "Seconds: " << board->read("seconds") << endl;
-   board->write("SRAM1", a);
-   cout << "SRAM1: " << board->read("SRAM1") << endl;
+   for (int i = 0; i < 20; i++) {
+      cout << "Seconds: " << board->read("seconds") << endl;
+      board->write("SRAM1", a);
+      cout << "SRAM1: " << board->read("SRAM1") << endl;
+      sleep(1);
+   }
    return 0;
 }
