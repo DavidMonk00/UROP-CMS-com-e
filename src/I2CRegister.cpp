@@ -15,11 +15,17 @@
   @param write_func - lambda function to convert units type into uint8_t to be
                       to be written
 */
-GenericI2CRegister::GenericI2CRegister(uint32_t r, std::function<units_variant(double)> read_func,
+GenericI2CRegister::GenericI2CRegister(uint32_t r, std::string rw, std::function<units_variant(double)> read_func,
                                                       std::function<uint8_t(units_variant)> write_func) {
   reg = r;
   mRead = read_func;
   mWrite = write_func;
+  const char* rw_char = rw.c_str();
+  const char* end = rw_char + sizeof(rw_char)/sizeof(rw_char[0]);
+  const char* position = std::find(rw_char, end, 'r');
+  b_read = position != end;
+  position = std::find(rw_char, end, 'w');
+  b_write = position != end;
 }
 
 /**
@@ -56,11 +62,17 @@ void GenericI2CRegister::write(I2C_base* i2c_ptr, uint32_t address, units_varian
   @param write_func - lambda function to convert units type into uint8_t to be
                       to be written
 */
-TimeI2CRegister::TimeI2CRegister(uint32_t r, std::function<units_variant(double)> read_func,
+TimeI2CRegister::TimeI2CRegister(uint32_t r, std::string rw, std::function<units_variant(double)> read_func,
                                                 std::function<uint8_t(units_variant)> write_func) {
   reg = r;
   mRead = read_func;
   mWrite = write_func;
+  const char* rw_char = rw.c_str();
+  const char* end = rw_char + sizeof(rw_char)/sizeof(rw_char[0]);
+  const char* position = std::find(rw_char, end, 'r');
+  b_read = position != end;
+  position = std::find(rw_char, end, 'w');
+  b_write = position != end;
 }
 
 /**
@@ -98,11 +110,17 @@ void TimeI2CRegister::write(I2C_base* i2c_ptr, uint32_t address, units_variant v
   @param write_func - lambda function to convert units type into uint8_t to be
                       to be written
 */
-DS3232TemperatureI2CRegister::DS3232TemperatureI2CRegister(uint32_t r, std::function<units_variant(double)> read_func,
+DS3232TemperatureI2CRegister::DS3232TemperatureI2CRegister(uint32_t r, std::string rw, std::function<units_variant(double)> read_func,
                                                                           std::function<uint8_t(units_variant)> write_func) {
   reg = r;
   mRead = read_func;
   mWrite = write_func;
+  const char* rw_char = rw.c_str();
+  const char* end = rw_char + sizeof(rw_char)/sizeof(rw_char[0]);
+  const char* position = std::find(rw_char, end, 'r');
+  b_read = position != end;
+  position = std::find(rw_char, end, 'w');
+  b_write = position != end;
 }
 
 /**

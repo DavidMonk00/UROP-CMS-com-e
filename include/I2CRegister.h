@@ -22,6 +22,8 @@
 class I2CBaseRegister {
 protected:
    uint32_t reg;
+   bool b_read;
+   bool b_write;
 public:
    virtual units_variant read(I2C_base* i2c_ptr, uint32_t address) = 0;
    virtual void write(I2C_base* i2c_ptr, uint32_t address, units_variant value) = 0;
@@ -35,7 +37,7 @@ class GenericI2CRegister : public I2CBaseRegister {
    std::function<units_variant(double value)> mRead;
    std::function<uint8_t(units_variant)> mWrite;
 public:
-   GenericI2CRegister(uint32_t r, std::function<units_variant(double value)> read_func,
+   GenericI2CRegister(uint32_t r, std::string rw, std::function<units_variant(double value)> read_func,
                                      std::function<uint8_t(units_variant)> write_func);
    ~GenericI2CRegister(void);
    units_variant read(I2C_base* i2c_ptr, uint32_t address);
@@ -50,7 +52,7 @@ class TimeI2CRegister : public I2CBaseRegister {
   std::function<units_variant(double)> mRead;
   std::function<uint8_t(units_variant)> mWrite;
 public:
-  TimeI2CRegister(uint32_t r, std::function<units_variant(double)> read_func,
+  TimeI2CRegister(uint32_t r, std::string rw, std::function<units_variant(double)> read_func,
                                  std::function<uint8_t(units_variant)> write_func);
   ~TimeI2CRegister(void);
   units_variant read(I2C_base* i2c_ptr, uint32_t address);
@@ -64,7 +66,7 @@ class DS3232TemperatureI2CRegister : public I2CBaseRegister {
   std::function<units_variant(double)> mRead;
   std::function<uint8_t(units_variant)> mWrite;
 public:
-  DS3232TemperatureI2CRegister(uint32_t addr, std::function<units_variant(double)> read_func,
+  DS3232TemperatureI2CRegister(uint32_t addr, std::string rw, std::function<units_variant(double)> read_func,
                                  std::function<uint8_t(units_variant)> write_func);
   ~DS3232TemperatureI2CRegister(void);
   units_variant read(I2C_base* i2c_ptr, uint32_t address);
