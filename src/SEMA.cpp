@@ -24,8 +24,8 @@ int main(int argc, char* argv[]) {
    Parser P;
    units_variant var = P.getQuantity(a);
    std::cout << var << '\n';
-   COMETestBoard* m = new COMETestBoard();
-   I2CBus* bus = m->getMap()["0"];
+   Board* board = new COMETestBoard();
+   I2CBus* bus = board->getMap()["0"];
    bus->setDevice("DS3232");
    bus->setI2CType("SEMA");
    for (auto i : bus->getProperties()) {
