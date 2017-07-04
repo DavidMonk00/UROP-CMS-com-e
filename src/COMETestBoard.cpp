@@ -1,6 +1,6 @@
-#include "Map.h"
+#include "COMETestBoard.h"
 
-Map::Map(void) {
+COMETestBoard::COMETestBoard(void) {
    bus_map.insert({
       "0", new I2CBus(std::unordered_map<std::string, I2CDevice*> {
          {"DS3232", new I2CDevice(DS3232_ADDR, std::unordered_map<std::string, I2CBaseRegister*>{
@@ -17,6 +17,6 @@ Map::Map(void) {
    });
 }
 
-std::unordered_map<std::string, I2CBus*> Map::getMap(void) {
+std::unordered_map<std::string, I2CBus*> COMETestBoard::getMap(void) {
    return bus_map;
 }

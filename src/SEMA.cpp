@@ -14,7 +14,7 @@
 #include <string>
 #include <stdio.h>
 #include <iostream>
-#include "Map.h"
+#include "COMETestBoard.h"
 #include "I2CBus.h"
 using namespace std;
 
@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
    Parser P;
    units_variant var = P.getQuantity(a);
    std::cout << var << '\n';
-   Map* m = new Map();
+   COMETestBoard* m = new COMETestBoard();
    I2CBus* bus = m->getMap()["0"];
    bus->setDevice("DS3232");
    bus->setI2CType("SEMA");
