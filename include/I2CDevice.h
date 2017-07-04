@@ -16,6 +16,7 @@
 #include <boost/variant.hpp>
 #include "I2CRegister.h"
 #include "I2C_base.h"
+#include "I2C.h"
 
 using namespace boost::units;
 using namespace boost::units::si;

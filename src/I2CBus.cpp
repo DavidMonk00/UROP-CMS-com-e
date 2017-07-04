@@ -12,6 +12,12 @@ void I2CBus::setDevice(std::string device_id) {
    device = devices[device_id];
 }
 
+void I2CBus::setI2CType(std::string I2CType) {
+   if (I2CType == "SEMA") {
+      device->setI2CType(device->tI2Ctype::SEMA);
+   }
+}
+
 std::vector<std::string> I2CBus::getProperties(void) {
    return device->getProperties();
 }

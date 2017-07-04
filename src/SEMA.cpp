@@ -27,13 +27,14 @@ int main(int argc, char* argv[]) {
    Map* m = new Map();
    I2CBus* bus = m->getMap()["0"];
    bus->setDevice("DS3232");
+   bus->setI2CType("SEMA");
    for (auto i : bus->getProperties()) {
       std::cout << i << '\n';
    }
-   /*units_variant x = d.read("seconds");
+   units_variant x = bus->read("seconds");
    cout << x << endl;
    //printf("%X\n", x);
-   x = d.read("temperature");
+   /*x = d.read("temperature");
    cout << x << endl;
    quantity<temperature> t = 61*kelvin;
    d.write("SRAM1", t);

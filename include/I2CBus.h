@@ -13,6 +13,7 @@ public:
    I2CBus(std::unordered_map<std::string, I2CDevice*> device_map);
    ~I2CBus(void);
    void setDevice(std::string device_id);
+   void setI2CType(std::string I2CType);
    std::vector<std::string> getProperties(void);
    units_variant read(std::string property);
    void write(std::string property, units_variant value);

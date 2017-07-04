@@ -133,6 +133,13 @@ std::pair<double,int> foo(std::string input) {
    }
 }
 
+class Test {
+public:
+  Test(int x) {
+    std::cout << x << '\n';
+  }
+};
+
 int main() {
    phys_quant m;
    std::string units("9.81 kg m^2 s^-2");
@@ -207,6 +214,7 @@ int main() {
    switch (en) {
       case SEMA:
          std::cout << "SEMA" << '\n';
+         Test T = Test(2);
          break;
       default:
          std::cout << "Something else" << '\n';

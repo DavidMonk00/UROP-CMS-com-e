@@ -21,7 +21,7 @@ I2CDevice::I2CDevice(void) {}
 void I2CDevice::setI2CType(tI2Ctype type) {
    switch (type) {
       case tI2Ctype::SEMA:
-         //i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL);
+         i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL);
          break;
       default:
          std::cout << "Something else" << '\n';
