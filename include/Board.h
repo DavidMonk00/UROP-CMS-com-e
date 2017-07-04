@@ -14,5 +14,5 @@ public:
    void setBus(std::string bus);
    void setDevice(std::string device);
    void setDevice(std::string bus, std::string device);
-   void setI2CType(std::string I2CType);
+   void setI2CType(I2C_base* i2c_type);
 };

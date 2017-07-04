@@ -29,7 +29,7 @@ int main(int argc, char* argv[]) {
    board->setDevice("0", "DS3232");
    I2CBus* bus = board->getMap()["0"];
    bus->setDevice("DS3232");
-   bus->setI2CType("SEMA");
+   bus->setI2CType(new I2CSema(EAPI_ID_I2C_EXTERNAL));
    for (auto i : bus->getProperties()) {
       std::cout << i << '\n';
    }

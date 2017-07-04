@@ -18,14 +18,8 @@ I2CDevice::I2CDevice(uint32_t addr, std::unordered_map<std::string, I2CBaseRegis
 
 I2CDevice::I2CDevice(void) {}
 
-void I2CDevice::setI2CType(tI2Ctype type) {
-   switch (type) {
-      case tI2Ctype::SEMA:
-         i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL);
-         break;
-      default:
-         std::cout << "Something else" << '\n';
-   }
+void I2CDevice::setI2CType(I2C_base* i2c_type) {
+   i2c = i2c_type;
 }
 
 /**

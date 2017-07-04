@@ -38,7 +38,7 @@ public:
    I2CDevice(uint32_t addr, std::unordered_map<std::string, I2CBaseRegister*> reg_map);
    I2CDevice(void);
    ~I2CDevice(void);
-   void setI2CType(tI2Ctype type);
+   void setI2CType(I2C_base* i2c_type);
    units_variant read(std::string reg);
    void write(std::string reg, units_variant value);
    std::vector<std::string> getProperties(void);
