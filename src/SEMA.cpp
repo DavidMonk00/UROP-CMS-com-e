@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
    //std::cout << "Available registers:" << '\n';
    //for (auto i : board->getProperties()) { std::cout << i << '\n'; }
    for (int i = 0; i < 1000; i++) {
-      cout << "Seconds: " << board->read("seconds") << endl;
+      board->read("seconds");
       //sleep(1);
    }
    //board->write("SRAM1", a);
