@@ -23,9 +23,9 @@ int main(int argc, char* argv[]) {
    for (auto i : board->getProperties()) { std::cout << i << '\n'; }
    for (int i = 0; i < 20; i++) {
       cout << "Seconds: " << board->read("seconds") << endl;
-      board->write("SRAM1", a);
-      cout << "SRAM1: " << board->read("SRAM1") << endl;
       sleep(1);
    }
+   board->write("SRAM1", a);
+   cout << "SRAM1: " << board->read("SRAM1") << endl;
    return 0;
 }
