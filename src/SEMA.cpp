@@ -25,7 +25,8 @@ int main(int argc, char* argv[]) {
    units_variant var = P.getQuantity(a);
    std::cout << var << '\n';
    Board* board = new COMETestBoard();
-   board->setBus("0");
+   //board->setBus("0");
+   board->setDevice("0", "DS3232");
    I2CBus* bus = board->getMap()["0"];
    bus->setDevice("DS3232");
    bus->setI2CType("SEMA");
