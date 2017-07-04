@@ -21,7 +21,6 @@ using namespace std;
 int main(int argc, char* argv[]) {
    std::string a;
    a = argc > 1 ? argv[1] : "200K";
-   Parser P;
    Board* board = new COMETestBoard();
    board->setDevice("0", "DS3232");
    board->setI2CType(new I2CSema(EAPI_ID_I2C_EXTERNAL));
