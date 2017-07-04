@@ -19,6 +19,9 @@
 using namespace std;
 
 int main(int argc, char* argv[]) {
+   std::string a;
+   a = argc > 1 ? argv[1] : "200K";
+   Parser P;
    Board* board = new COMETestBoard();
    board->setDevice("0", "DS3232");
    board->setI2CType(new I2CSema(EAPI_ID_I2C_EXTERNAL));
@@ -29,7 +32,7 @@ int main(int argc, char* argv[]) {
    cout << x << endl;
    x = board->read("temperature");
    cout << x << endl;
-   board->write("SRAM1", "61K");
+   board->write("SRAM1", a);
    x = board->read("SRAM1");
    cout << x << endl;
    return 0;
