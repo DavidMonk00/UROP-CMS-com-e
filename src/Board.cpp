@@ -16,3 +16,12 @@ void Board::setDevice(std::string bus, std::string device) {
 void Board::setI2CType(I2C_base* i2c_type) {
    i2c_bus->setI2CType(i2c_type);
 }
+
+std::vector<std::string> Board::getProperties(void) {
+   return i2c_bus->getProperties();
+}
+
+std::string Board::read(std::string property) {
+   units_variant value = i2c_bus->read(property);
+   return boost::units::to_string(value);
+}

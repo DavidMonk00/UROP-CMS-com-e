@@ -27,19 +27,17 @@ int main(int argc, char* argv[]) {
    Board* board = new COMETestBoard();
    //board->setBus("0");
    board->setDevice("0", "DS3232");
-   I2CBus* bus = board->getMap()["0"];
-   bus->setDevice("DS3232");
-   bus->setI2CType(new I2CSema(EAPI_ID_I2C_EXTERNAL));
-   for (auto i : bus->getProperties()) {
+   board->setI2CType(new I2CSema(EAPI_ID_I2C_EXTERNAL));
+   for (auto i : board->getProperties()) {
       std::cout << i << '\n';
    }
-   units_variant x = bus->read("seconds");
+   std::string x = board->read("seconds");
    cout << x << endl;
-   x = bus->read("temperature");
+   /*x = bus->read("temperature");
    cout << x << endl;
    quantity<temperature> t = 61*kelvin;
    bus->write("SRAM1", t);
    x = bus->read("SRAM1");
-   cout << x << endl;
+   cout << x << endl;*/
    return 0;
 }
