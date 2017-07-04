@@ -11,7 +11,7 @@
    Class constructor.
 */
 RTC::RTC(void) {
-  i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL, DS3232_ADDR);
+  i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL, DS3232_ADDR, true);
 }
 
 /**

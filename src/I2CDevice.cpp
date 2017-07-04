@@ -7,22 +7,13 @@
 
 #include "I2CDevice.h"
 
-register_map DS3232_reg = {{"seconds",     new TimeI2CRegister(0x00, [](double t){return t*si::seconds;},
-                                                                     [](units_variant value) {return (uint8_t)boost::get<quantity<si::time> >(value).value();})},
-                           {"temperature", new DS3232TemperatureI2CRegister(0x11, [](double value){return value*kelvin;},
-                                                                        [](units_variant value) {return (uint8_t)boost::get<quantity<temperature> >(value).value();})},
-                           {"SRAM0",       new GenericI2CRegister(0x14, [](double value){return value;},
-                                                                        [](units_variant value) {return (uint8_t)boost::get<double>(value);})},
-                           {"SRAM1",       new GenericI2CRegister(0x14, [](double value){return value*kelvin;},
-                                                                        [](units_variant value) {return (uint8_t)boost::get<quantity<temperature> >(value).value();})}};
-
-
 /**
   Class constructor.
   @param i2c_if pointer to I2C class used for transport.
 */
-I2CDevice::I2CDevice(std::unordered_map<std::string, I2CBaseRegister*> reg_map) {
+I2CDevice::I2CDevice(uint32_t addr, std::unordered_map<std::string, I2CBaseRegister*> reg_map) {
   registers = reg_map;
+  address = addr;
 }
 
 I2CDevice::I2CDevice(void) {}
@@ -30,7 +21,7 @@ I2CDevice::I2CDevice(void) {}
 void I2CDevice::setI2CType(tI2Ctype type) {
    switch (type) {
       case tI2Ctype::SEMA:
-         std::cout << "SEMA" << '\n';
+         //i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL);
          break;
       default:
          std::cout << "Something else" << '\n';
@@ -49,8 +40,7 @@ I2CDevice::~I2CDevice(void) {}
 */
 units_variant I2CDevice::read(std::string reg) {
   i2c_reg = registers[reg];
-  I2C_base* ptr;
-  return i2c_reg->read(i2c);
+  return i2c_reg->read(i2c, address);
 }
 
 /**
@@ -60,8 +50,7 @@ units_variant I2CDevice::read(std::string reg) {
 */
 void I2CDevice::write(std::string reg, units_variant value) {
   i2c_reg = registers[reg];
-  I2C_base* ptr;
-  i2c_reg->write(i2c, value);
+  i2c_reg->write(i2c, address, value);
 }
 
 /**

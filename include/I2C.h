@@ -24,9 +24,9 @@ private:
   uint32_t id;
 public:
   I2CSema(uint32_t ID, uint32_t address, bool diag);
-  I2CSema(uint32_t ID, uint32_t address);
+  I2CSema(uint32_t ID);
   ~I2CSema(void);
   uint32_t getBusCap(void);
-  void receiveData(char* buffer, uint32_t bytecnt, uint32_t start_point);
-  void sendData(char* buffer, uint32_t bytecnt, uint32_t start_point);
+  void receiveData(uint32_t address, char* buffer, uint32_t bytecnt, uint32_t start_point);
+  void sendData(uint32_t address, char* buffer, uint32_t bytecnt, uint32_t start_point);
 };

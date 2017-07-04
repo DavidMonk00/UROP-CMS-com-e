@@ -15,26 +15,22 @@
 #include <stdio.h>
 #include <iostream>
 #include "Map.h"
+#include "I2CBus.h"
 using namespace std;
 
 int main(int argc, char* argv[]) {
    std::string a;
-   if (argc > 1) {
-      a = argv[1];
-   } else {
-      a = "3.14159";
-   }
+   a = argc > 1 ? argv[1] : "3.14159";
    Parser P;
    units_variant var = P.getQuantity(a);
    std::cout << var << '\n';
-   I2CDevice iic;
-   iic.setI2CType(iic.tI2Ctype::SEMA);
    Map* m = new Map();
-   /*I2CDevice d = I2CDevice(new I2CSema(EAPI_ID_I2C_EXTERNAL, DS3232_ADDR));
-   for (auto i : d.getProperties()) {
+   I2CBus* bus = m->getMap()["0"];
+   bus->setDevice("DS3232");
+   for (auto i : bus->getProperties()) {
       std::cout << i << '\n';
    }
-   units_variant x = d.read("seconds");
+   /*units_variant x = d.read("seconds");
    cout << x << endl;
    //printf("%X\n", x);
    x = d.read("temperature");

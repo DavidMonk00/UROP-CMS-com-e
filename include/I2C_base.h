@@ -19,6 +19,6 @@ class I2C_base {
 protected:
   uint32_t addr;
 public:
-  virtual void receiveData(char* buffer, uint32_t bytecnt, uint32_t start_point)=0;
-  virtual void sendData(char* buffer, uint32_t bytecnt, uint32_t start_point)=0;
+  virtual void receiveData(uint32_t address, char* buffer, uint32_t bytecnt, uint32_t start_point)=0;
+  virtual void sendData(uint32_t address, char* buffer, uint32_t bytecnt, uint32_t start_point)=0;
 };

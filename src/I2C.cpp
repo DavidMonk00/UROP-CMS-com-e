@@ -12,7 +12,7 @@
   @param ID - I2C bus ID
   @param address - address of slave module
 */
-I2CSema::I2CSema(uint32_t ID, uint32_t address) {
+I2CSema::I2CSema(uint32_t ID) {
   //IP address is localhost
   char ipAddr[24] = "127.0.0.1";
   uint32_t ret = 0;
@@ -22,7 +22,6 @@ I2CSema::I2CSema(uint32_t ID, uint32_t address) {
   }
   //Set I2C addresses
   id = ID;
-  addr = address;
 }
 
 /**
@@ -81,11 +80,11 @@ uint32_t I2CSema::getBusCap(void) {
   @param start_point - starting address within slave
   @return pointer to array where data was written
 */
-void I2CSema::receiveData(char* buffer, uint32_t bytecnt, uint32_t start_point) {
+void I2CSema::receiveData(uint32_t address, char* buffer, uint32_t bytecnt, uint32_t start_point) {
   uint32_t Cmd = start_point;
   uint32_t ret = 0;
   uint32_t BufLen = bytecnt;
-  ret = SemaEApiI2CReadTransfer(handler, id, addr, Cmd, (void*)buffer, BufLen, bytecnt);
+  ret = SemaEApiI2CReadTransfer(handler, id, address, Cmd, (void*)buffer, BufLen, bytecnt);
   if (ret != EAPI_STATUS_SUCCESS) {
     printf("ERROR: 0x%X", ret);
   }
@@ -97,10 +96,10 @@ void I2CSema::receiveData(char* buffer, uint32_t bytecnt, uint32_t start_point) 
   @param bytecnt - length of buffer
   @param start_point - starting address within slave
 */
-void I2CSema::sendData(char* buffer, uint32_t bytecnt, uint32_t start_point) {
+void I2CSema::sendData(uint32_t address, char* buffer, uint32_t bytecnt, uint32_t start_point) {
   uint32_t Cmd = start_point;
   uint32_t ret = 0;
-  ret = SemaEApiI2CWriteTransfer(handler, id, addr, Cmd, (void*)buffer, bytecnt);
+  ret = SemaEApiI2CWriteTransfer(handler, id, address, Cmd, (void*)buffer, bytecnt);
   if (ret != EAPI_STATUS_SUCCESS) {
     printf("ERROR: 0x%X", ret);
   }
