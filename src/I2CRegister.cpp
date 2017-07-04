@@ -39,9 +39,14 @@ GenericI2CRegister::~GenericI2CRegister(void) {}
   @return units_variant containing quantity of correct type.
 */
 units_variant GenericI2CRegister::read(I2C_base* i2c_ptr, uint32_t address) {
-  char buffer = 0;
-  i2c_ptr->receiveData(address, &buffer, 1, reg);
-  return mRead((double)buffer);
+   if (b_read) {
+      char buffer = 0;
+      i2c_ptr->receiveData(address, &buffer, 1, reg);
+      return mRead((double)buffer);
+   } else {
+      printf("Register cannot be read.\n");
+      exit(-1);
+   }
 }
 
 /**
@@ -50,8 +55,13 @@ units_variant GenericI2CRegister::read(I2C_base* i2c_ptr, uint32_t address) {
   @param value - data to be written. Must be of correct type
 */
 void GenericI2CRegister::write(I2C_base* i2c_ptr, uint32_t address, units_variant value) {
-  char buffer = mWrite(value);
-  i2c_ptr->sendData(address, &buffer, 1, reg);
+   if (b_write) {
+      char buffer = mWrite(value);
+      i2c_ptr->sendData(address, &buffer, 1, reg);
+   } else {
+      printf("Register cannot be written to.\n");
+      exit(-1);
+   }
 }
 
 /**
@@ -86,10 +96,15 @@ TimeI2CRegister::~TimeI2CRegister(void) {}
   @return units_variant containing quantity of correct type.
 */
 units_variant TimeI2CRegister::read(I2C_base* i2c_ptr, uint32_t address) {
-  char buffer = 0;
-  i2c_ptr->receiveData(address, &buffer, 1, reg);
-  double t = 10*(buffer/16) + buffer%16;
-  return mRead(t);
+   if (b_read) {
+      char buffer = 0;
+      i2c_ptr->receiveData(address, &buffer, 1, reg);
+      double t = 10*(buffer/16) + buffer%16;
+      return mRead(t);
+   } else {
+      printf("Register cannot be read.\n");
+      exit(-1);
+   }
 }
 
 /**
@@ -98,8 +113,13 @@ units_variant TimeI2CRegister::read(I2C_base* i2c_ptr, uint32_t address) {
   @param value - data to be written. Must be of correct type
 */
 void TimeI2CRegister::write(I2C_base* i2c_ptr, uint32_t address, units_variant value) {
-  char buffer = (char)mWrite(value);
-  i2c_ptr->sendData(address, &buffer, 1, reg);
+   if (b_write) {
+      char buffer = (char)mWrite(value);
+      i2c_ptr->sendData(address, &buffer, 1, reg);
+   } else {
+      printf("Register cannot be written to.\n");
+      exit(-1);
+   }
 }
 
 /**
@@ -134,13 +154,18 @@ DS3232TemperatureI2CRegister::~DS3232TemperatureI2CRegister(void) {}
   @return units_variant containing quantity of correct type.
 */
 units_variant DS3232TemperatureI2CRegister::read(I2C_base* i2c_ptr, uint32_t address) {
-  char* buffer = (char*)malloc(2*sizeof(char));
-  i2c_ptr->receiveData(address, buffer, 2, reg);
-  uint16_t temp;
-  temp = buffer[1] >> 6;
-  temp = temp || buffer[0] << 2;
-  free(buffer);
-  return mRead((double)temp);
+   if (b_read) {
+      char* buffer = (char*)malloc(2*sizeof(char));
+      i2c_ptr->receiveData(address, buffer, 2, reg);
+      uint16_t temp;
+      temp = buffer[1] >> 6;
+      temp = temp || buffer[0] << 2;
+      free(buffer);
+      return mRead((double)temp);
+   } else {
+      printf("Register cannot be read.\n");
+      exit(-1);
+   }
 }
 
 /**
@@ -149,6 +174,11 @@ units_variant DS3232TemperatureI2CRegister::read(I2C_base* i2c_ptr, uint32_t add
   @param value - data to be written. Must be of correct type
 */
 void DS3232TemperatureI2CRegister::write(I2C_base* i2c_ptr, uint32_t address, units_variant value) {
-  char buffer = (char)boost::get<quantity<si::time> >(value).value();
-  i2c_ptr->sendData(address, &buffer, 1, reg);
+   if (b_write) {
+      char buffer = (char)boost::get<quantity<si::time> >(value).value();
+      i2c_ptr->sendData(address, &buffer, 1, reg);
+   } else {
+      printf("Register cannot be written to.\n");
+      exit(-1);
+   }
 }
