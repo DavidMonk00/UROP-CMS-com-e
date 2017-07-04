@@ -24,12 +24,11 @@ int main(int argc, char* argv[]) {
    Board* board = new COMETestBoard();
    board->setDevice("0", "DS3232");
    board->setI2CType(new I2CSema(EAPI_ID_I2C_EXTERNAL));
+   std::cout << "Available registers:" << '\n';
    for (auto i : board->getProperties()) {
       std::cout << i << '\n';
    }
    std::string x = board->read("seconds");
-   cout << x << endl;
-   x = board->read("temperature");
    cout << x << endl;
    board->write("SRAM1", a);
    x = board->read("SRAM1");
