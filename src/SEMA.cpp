@@ -19,13 +19,7 @@
 using namespace std;
 
 int main(int argc, char* argv[]) {
-   std::string a;
-   a = argc > 1 ? argv[1] : "3.14159";
-   Parser P;
-   units_variant var = P.getQuantity(a);
-   std::cout << var << '\n';
    Board* board = new COMETestBoard();
-   //board->setBus("0");
    board->setDevice("0", "DS3232");
    board->setI2CType(new I2CSema(EAPI_ID_I2C_EXTERNAL));
    for (auto i : board->getProperties()) {
