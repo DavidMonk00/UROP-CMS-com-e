@@ -5,17 +5,11 @@
   @version 1.0
 */
 
-//#include "Measurement.h"
-//#include "parser.h"
-#include "I2CDevice.h"
-#include "I2C.h"
-#include "I2C_define.h"
-#include "parser.h"
 #include <string>
 #include <stdio.h>
 #include <iostream>
+#include "I2C.h"
 #include "COMETestBoard.h"
-#include "I2CBus.h"
 using namespace std;
 
 int main(int argc, char* argv[]) {
@@ -29,9 +23,9 @@ int main(int argc, char* argv[]) {
       std::cout << i << '\n';
    }
    std::string x = board->read("seconds");
-   cout << x << endl;
+   cout << "Seconds: " << x << endl;
    board->write("SRAM1", a);
    x = board->read("SRAM1");
-   cout << x << endl;
+   cout << "SRAM1: " << x << endl;
    return 0;
 }
