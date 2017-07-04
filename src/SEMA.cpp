@@ -19,13 +19,13 @@ int main(int argc, char* argv[]) {
    Board* board = new COMETestBoard();
    board->setDevice("0", "DS3232");
    board->setI2CType(new I2CSema(EAPI_ID_I2C_EXTERNAL));
-   std::cout << "Available registers:" << '\n';
-   for (auto i : board->getProperties()) { std::cout << i << '\n'; }
-   for (int i = 0; i < 20; i++) {
+   //std::cout << "Available registers:" << '\n';
+   //for (auto i : board->getProperties()) { std::cout << i << '\n'; }
+   for (int i = 0; i < 1000; i++) {
       cout << "Seconds: " << board->read("seconds") << endl;
-      sleep(1);
+      //sleep(1);
    }
-   board->write("SRAM1", a);
-   cout << "SRAM1: " << board->read("SRAM1") << endl;
+   //board->write("SRAM1", a);
+   //cout << "SRAM1: " << board->read("SRAM1") << endl;
    return 0;
 }
