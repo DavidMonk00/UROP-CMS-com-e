@@ -8,6 +8,8 @@
 class Board {
 protected:
    std::unordered_map<std::string, I2CBus*> bus_map;
+   I2CBus* i2c_bus;
 public:
    virtual std::unordered_map<std::string, I2CBus*> getMap(void) = 0;
+   void setBus(std::string bus);
 };
