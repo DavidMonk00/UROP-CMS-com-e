@@ -19,13 +19,9 @@ int main(int argc, char* argv[]) {
    board->setDevice("0", "DS3232");
    board->setI2CType(new I2CSema(EAPI_ID_I2C_EXTERNAL));
    std::cout << "Available registers:" << '\n';
-   for (auto i : board->getProperties()) {
-      std::cout << i << '\n';
-   }
-   std::string x = board->read("seconds");
-   cout << "Seconds: " << x << endl;
+   for (auto i : board->getProperties()) { std::cout << i << '\n'; }
+   cout << "Seconds: " << board->read("seconds") << endl;
    board->write("SRAM1", a);
-   x = board->read("SRAM1");
-   cout << "SRAM1: " << x << endl;
+   cout << "SRAM1: " << board->read("SRAM1") << endl;
    return 0;
 }
