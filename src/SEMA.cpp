@@ -33,11 +33,10 @@ int main(int argc, char* argv[]) {
    }
    std::string x = board->read("seconds");
    cout << x << endl;
-   /*x = bus->read("temperature");
+   x = board->read("temperature");
    cout << x << endl;
-   quantity<temperature> t = 61*kelvin;
-   bus->write("SRAM1", t);
-   x = bus->read("SRAM1");
-   cout << x << endl;*/
+   board->write("SRAM1", "61K");
+   x = board->read("SRAM1");
+   cout << x << endl;
    return 0;
 }

@@ -25,3 +25,9 @@ std::string Board::read(std::string property) {
    units_variant value = i2c_bus->read(property);
    return boost::units::to_string(value);
 }
+
+void Board::write(std::string property, std::string value) {
+   Parser P;
+   units_variant var = P.getQuantity(value);
+   i2c_bus->write(property, var);
+}

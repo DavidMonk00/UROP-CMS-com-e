@@ -5,6 +5,7 @@
 #include <vector>
 #include "I2CBus.h"
 #include "I2C_define.h"
+#include "parser.h"
 #include <boost/units/io.hpp>
 
 class Board {
@@ -19,4 +20,5 @@ public:
    void setI2CType(I2C_base* i2c_type);
    std::vector<std::string> getProperties(void);
    std::string read(std::string property);
+   void write(std::string property, std::string value);
 };
