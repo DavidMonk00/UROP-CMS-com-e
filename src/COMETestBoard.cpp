@@ -1,5 +1,16 @@
+/**
+  @file COMETestBoard.cpp
+  @brief Defines functions for the COMETestBoard derived class.
+  @author David Monk - Imperial College London
+  @version 1.0
+*/
+
 #include "COMETestBoard.h"
 
+/**
+   @brief Class constructor.
+   Full bus/device/register map is defined here.
+*/
 COMETestBoard::COMETestBoard(void) {
    bus_map.insert({
       "0", new I2CBus(std::unordered_map<std::string, I2CDevice*> {
@@ -17,6 +28,10 @@ COMETestBoard::COMETestBoard(void) {
    });
 }
 
+/**
+   @brief Get the map.
+   @return Unordered map of string identifiers and I2CBus pointers.
+*/
 std::unordered_map<std::string, I2CBus*> COMETestBoard::getMap(void) {
    return bus_map;
 }

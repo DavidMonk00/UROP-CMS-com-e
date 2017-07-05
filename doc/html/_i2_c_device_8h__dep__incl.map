@@ -1,0 +1,10 @@
+<map id="include/I2CDevice.h" name="include/I2CDevice.h">
+<area shape="rect" id="node2" href="$_i2_c_bus_8h.html" title="include/I2CBus.h" alt="" coords="203,80,326,107"/>
+<area shape="rect" id="node9" href="$_i2_c_device_8cpp.html" title="Defines functions for the I2CDevice class. " alt="" coords="350,80,481,107"/>
+<area shape="rect" id="node3" href="$_board_8h.html" title="include/Board.h" alt="" coords="209,155,321,181"/>
+<area shape="rect" id="node4" href="$_c_o_m_e_test_board_8h.html" title="include/COMETestBoard.h" alt="" coords="82,229,261,256"/>
+<area shape="rect" id="node8" href="$_i2_c_bus_8cpp.html" title="Defines functions for the I2CBus class. " alt="" coords="345,155,459,181"/>
+<area shape="rect" id="node7" href="$_board_8cpp.html" title="Defines functions for the Board base class. " alt="" coords="285,229,388,256"/>
+<area shape="rect" id="node5" href="$_c_o_m_e_test_board_8cpp.html" title="Defines functions for the COMETestBoard derived class. " alt="" coords="5,304,175,331"/>
+<area shape="rect" id="node6" href="$_s_e_m_a_8cpp.html" title="src/SEMA.cpp" alt="" coords="199,304,306,331"/>
+</map>

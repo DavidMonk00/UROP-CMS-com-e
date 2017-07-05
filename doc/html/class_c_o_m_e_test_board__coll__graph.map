@@ -1,0 +1,4 @@
+<map id="COMETestBoard" name="COMETestBoard">
+<area shape="rect" id="node2" href="$class_board.html" title="Board" alt="" coords="39,95,95,121"/>
+<area shape="rect" id="node3" href="$class_i2_c_bus.html" title="I2CBus" alt="" coords="33,5,100,32"/>
+</map>

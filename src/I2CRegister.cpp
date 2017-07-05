@@ -1,6 +1,6 @@
 /**
-  I2CRegister.cpp
-  Purpose: defines functions for the derived I2CBaseRegister classes.
+  @file I2CRegister.cpp
+  @brief Defines functions for the derived I2CBaseRegister classes.
   @author David Monk - Imperial College London
   @version 1.0
 */
@@ -8,12 +8,10 @@
 #include "I2CRegister.h"
 
 /**
-  Class constructor.
-  @param r - reg of register within I2C device
-  @param read_func - lambda function to convert hexadecimal value into correct
-                     units type
-  @param write_func - lambda function to convert units type into uint8_t to be
-                      to be written
+  @brief Class constructor.
+  @param r - Address of register within I2C device.
+  @param read_func - Lambda function to convert hexadecimal value into correct units type.
+  @param write_func - Lambda function to convert units type into uint8_t to be written.
 */
 GenericI2CRegister::GenericI2CRegister(uint32_t r, std::string rw, std::function<units_variant(double)> read_func,
                                                       std::function<uint8_t(units_variant)> write_func) {
@@ -29,13 +27,13 @@ GenericI2CRegister::GenericI2CRegister(uint32_t r, std::string rw, std::function
 }
 
 /**
-   Class destructor.
+   @brief Class destructor.
 */
 GenericI2CRegister::~GenericI2CRegister(void) {}
 
 /**
-  Read data from register.
-  @param i2c_ptr - pointer to I2C class used for transport
+  @brief Read data from register.
+  @param i2c_ptr - Pointer to I2C_base class used for transport.
   @return units_variant containing quantity of correct type.
 */
 units_variant GenericI2CRegister::read(I2C_base* i2c_ptr, uint32_t address) {
@@ -50,9 +48,9 @@ units_variant GenericI2CRegister::read(I2C_base* i2c_ptr, uint32_t address) {
 }
 
 /**
-  Write data to register.
-  @param i2c_ptr - pointer to I2C class used for transport
-  @param value - data to be written. Must be of correct type
+  @brief Write data to register.
+  @param i2c_ptr - Pointer to I2C_base class used for transport.
+  @param value - Data to be written. Must be of correct type.
 */
 void GenericI2CRegister::write(I2C_base* i2c_ptr, uint32_t address, units_variant value) {
    if (b_write) {
@@ -65,12 +63,10 @@ void GenericI2CRegister::write(I2C_base* i2c_ptr, uint32_t address, units_varian
 }
 
 /**
-  Class constructor.
-  @param r - reg of register within I2C device
-  @param read_func - lambda function to convert hexadecimal value into correct
-                     units type
-  @param write_func - lambda function to convert units type into uint8_t to be
-                      to be written
+  @brief Class constructor.
+  @param r - Address of register within I2C device.
+  @param read_func - Lambda function to convert hexadecimal value into correct units type
+  @param write_func - Lambda function to convert units type into uint8_t to be written.
 */
 TimeI2CRegister::TimeI2CRegister(uint32_t r, std::string rw, std::function<units_variant(double)> read_func,
                                                 std::function<uint8_t(units_variant)> write_func) {
@@ -86,13 +82,13 @@ TimeI2CRegister::TimeI2CRegister(uint32_t r, std::string rw, std::function<units
 }
 
 /**
-   Class destructor.
+   @brief Class destructor.
 */
 TimeI2CRegister::~TimeI2CRegister(void) {}
 
 /**
-  Read data from register.
-  @param i2c_ptr - pointer to I2C class used for transport
+  @brief Read data from register.
+  @param i2c_ptr - Pointer to I2C_base class used for transport.
   @return units_variant containing quantity of correct type.
 */
 units_variant TimeI2CRegister::read(I2C_base* i2c_ptr, uint32_t address) {
@@ -108,9 +104,9 @@ units_variant TimeI2CRegister::read(I2C_base* i2c_ptr, uint32_t address) {
 }
 
 /**
-  Write data to register.
-  @param i2c_ptr - pointer to I2C class used for transport
-  @param value - data to be written. Must be of correct type
+  @brief Write data to register.
+  @param i2c_ptr - pointer to I2C_base class used for transport
+  @param value - Data to be written. Must be of correct type.
 */
 void TimeI2CRegister::write(I2C_base* i2c_ptr, uint32_t address, units_variant value) {
    if (b_write) {
@@ -123,12 +119,10 @@ void TimeI2CRegister::write(I2C_base* i2c_ptr, uint32_t address, units_variant v
 }
 
 /**
-  Class constructor.
-  @param r - reg of register within I2C device
-  @param read_func - lambda function to convert hexadecimal value into correct
-                     units type
-  @param write_func - lambda function to convert units type into uint8_t to be
-                      to be written
+  @brief Class constructor.
+  @param r - Address of register within I2C device.
+  @param read_func - Lambda function to convert hexadecimal value into correct units type.
+  @param write_func - Lambda function to convert units type into uint8_t to be written.
 */
 DS3232TemperatureI2CRegister::DS3232TemperatureI2CRegister(uint32_t r, std::string rw, std::function<units_variant(double)> read_func,
                                                                           std::function<uint8_t(units_variant)> write_func) {
@@ -144,13 +138,13 @@ DS3232TemperatureI2CRegister::DS3232TemperatureI2CRegister(uint32_t r, std::stri
 }
 
 /**
-   Class destructor.
+   @brief Class destructor.
 */
 DS3232TemperatureI2CRegister::~DS3232TemperatureI2CRegister(void) {}
 
 /**
-  Read data from register.
-  @param i2c_ptr - pointer to I2C class used for transport
+  @brief Read data from register.
+  @param i2c_ptr - Pointer to I2C_base class used for transport.
   @return units_variant containing quantity of correct type.
 */
 units_variant DS3232TemperatureI2CRegister::read(I2C_base* i2c_ptr, uint32_t address) {
@@ -169,9 +163,9 @@ units_variant DS3232TemperatureI2CRegister::read(I2C_base* i2c_ptr, uint32_t add
 }
 
 /**
-  Write data to register.
-  @param i2c_ptr - pointer to I2C class used for transport
-  @param value - data to be written. Must be of correct type
+  @brief Write data to register.
+  @param i2c_ptr - Pointer to I2C_base class used for transport.
+  @param value - Data to be written. Must be of correct type.
 */
 void DS3232TemperatureI2CRegister::write(I2C_base* i2c_ptr, uint32_t address, units_variant value) {
    if (b_write) {

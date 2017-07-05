@@ -18,11 +18,10 @@ int main(int argc, char* argv[]) {
    a = argc > 1 ? argv[1] : "200K";
    Board* board = new COMETestBoard();
    board->setDevice("0", "DS3232");
+   for (auto i : board->getProperties("0","DS3232")) { std::cout << i << '\n'; }
    board->setI2CType(new I2CSema(EAPI_ID_I2C_EXTERNAL));
-   //std::cout << "Available registers:" << '\n';
-   //for (auto i : board->getProperties()) { std::cout << i << '\n'; }
    for (int i = 0; i < 1000; i++) {
-      board->read("seconds");
+      //board->read("seconds");
       //sleep(1);
    }
    //board->write("SRAM1", a);

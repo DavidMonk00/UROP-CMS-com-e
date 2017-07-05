@@ -1,6 +1,6 @@
 /**
-  I2C.cpp
-  Purpose: defines functions for the Property and Device classes.
+  @file I2C.cpp
+  @brief Defines functions for the Property and Device classes.
   @author David Monk - Imperial College London
   @version 1.0
 */
@@ -8,12 +8,12 @@
 #include "devices.h"
 
 /**
-  Class constructor.
-  @param addr - address of I2C register within device
-  @param s - size of property, i.e. the number of registers it spans
-  @param rw - the read/write status of the register
-  @param fmt - format for output
-  @param u - unit of output
+  @brief Class constructor.
+  @param addr - Address of I2C register within device.
+  @param s - Size of property, i.e. the number of registers it spans.
+  @param rw - The read/write status of the register.
+  @param fmt - Format for output.
+  @param u - Unit of output.
 */
 Property::Property(uint32_t addr, uint32_t s, string rw, string fmt, string u) {
    address = addr;
@@ -29,7 +29,7 @@ Property::Property(uint32_t addr, uint32_t s, string rw, string fmt, string u) {
  }
 
 /**
-   Class destructor.
+   @brief Class destructor.
 */
 Property::~Property(void) {}
 
@@ -59,9 +59,9 @@ string Property::getUnit(void) {
 }
 
 /**
-  Class constructor.
-  @param address - address of I2C device
-  @param p - map of properties assosciated with I2C device
+  @brief Class constructor.
+  @param address - Address of I2C device.
+  @param p - Map of properties assosciated with I2C device.
 */
 Device::Device(uint32_t addr, unordered_map<string, Property*> p) {
   address = addr;
@@ -69,10 +69,10 @@ Device::Device(uint32_t addr, unordered_map<string, Property*> p) {
 }
 
 /**
-  Class constructor with user defined I2C API type.
-  @param I2Ctype - string defining the I2C API to use
-  @param address - address of I2C device
-  @param p - map of properties assosciated with I2C device
+  @brief Class constructor with user defined I2C API type.
+  @param I2Ctype - String defining the I2C API to use.
+  @param address - Address of I2C device.
+  @param p - Map of properties assosciated with I2C device.
 */
 Device::Device(string I2Ctype, uint32_t addr, unordered_map<string, Property*> p) {
   address = addr;
@@ -86,15 +86,15 @@ Device::Device(string I2Ctype, uint32_t addr, unordered_map<string, Property*> p
 }
 
 /**
-   Class destructor.
+   @brief Class destructor.
 */
 Device::~Device(void) {
   delete i2c;
 }
 
 /**
-  Set I2C type manually.
-  @param I2Ctype - specifies the API to use for I2C calls.
+  @brief Set I2C type manually.
+  @param I2Ctype - Specifies the API to use for I2C calls.
 */
 void Device::setI2C(string I2Ctype) {
   if (I2Ctype == "SEMA") {
@@ -106,9 +106,9 @@ void Device::setI2C(string I2Ctype) {
 }
 
 /**
-  Read data from register.
-  @param property - the property to be read
-  @return string with value and unit
+  @brief Read data from register.
+  @param property - The property to be read.
+  @return String with value and unit.
 */
 string Device::read(string property) {
   Property* p = properties[property];
@@ -129,8 +129,8 @@ string Device::read(string property) {
 }
 
 /**
-  Get all possible registers for given device.
-  @return vector of strings assosciated with the properties.
+  @brief Get all possible registers for given device.
+  @return Vector of strings assosciated with the properties.
 */
 vector<string>Device::getKeys(void) {
   vector<string> v;

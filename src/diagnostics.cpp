@@ -1,6 +1,6 @@
 /**
-  diagnostics.cpp
-  Purpose: defines functions for the Diagnostics class.
+  @file diagnostics.cpp
+  @brief Defines functions for the Diagnostics class.
   @author David Monk - Imperial College London
   @version 1.0
 */
@@ -8,7 +8,7 @@
 #include "diagnostics.h"
 
 /**
-  Constructor function if library has yet to initialised.
+  @brief Constructor function if library has yet to initialised.
 */
 Diagnostics::Diagnostics(void) {
   //IP address is localhost
@@ -21,17 +21,17 @@ Diagnostics::Diagnostics(void) {
 }
 
 /**
-  Constructor function if library has already been initialised but diagnostics
-  need to be performed.
+  @brief Constructor function if library has already been initialised but diagnostics need to be performed.
 */
 Diagnostics::Diagnostics(uint32_t h) {
   handler = h;
 }
 
 /**
-  Class destructor.
+  @brief Class destructor.
 */
 Diagnostics::~Diagnostics(void) {
+   //TODO unitialise SEMA library here.
 }
 
 /**
@@ -81,9 +81,9 @@ void Diagnostics::printI2CSupport(void) {
 
 //Private functions
 /**
-  Get individual board strings.
-  @param id - ID for board values
-  @param message - text to display before value
+  @brief Get individual board strings.
+  @param id - ID for board values.
+  @param message - Text to display before value.
 */
 void Diagnostics::getBoardInfo(EApiId_t id, string message) {
   char buffer[256] = {};
@@ -100,9 +100,9 @@ void Diagnostics::getBoardInfo(EApiId_t id, string message) {
 }
 
 /**
-  Get individual temperatures.
-  @param id - ID for board values
-  @param message - text to display before value
+  @brief Get individual temperatures.
+  @param id - ID for board values.
+  @param message - Text to display before value.
 */
 void Diagnostics::getBoardTemp(uint32_t id, string message) {
   uint32_t ret = 0;
@@ -120,9 +120,9 @@ void Diagnostics::getBoardTemp(uint32_t id, string message) {
 
 /**
   DEPRECATED
-  Get the hexadicemal value of the board capabilities.
-  @param id - ID for board values
-  @param message - text to display before value
+  @brief Get the hexadicemal value of the board capabilities.
+  @param id - ID for board values.
+  @param message - Text to display before value.
 */
 void Diagnostics::getBoardCapabilitiesHex(uint32_t id, string message) {
   uint32_t ret = 0;

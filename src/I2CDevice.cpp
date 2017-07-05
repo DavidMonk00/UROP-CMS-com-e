@@ -1,6 +1,6 @@
 /**
-  I2CDevice.cpp
-  Purpose: defines functions for the I2CDevice class.
+  @file I2CDevice.cpp
+  @brief Defines functions for the I2CDevice class.
   @author David Monk - Imperial College London
   @version 1.0
 */
@@ -8,14 +8,18 @@
 #include "I2CDevice.h"
 
 /**
-  Class constructor.
-  @param i2c_if pointer to I2C class used for transport.
+  @brief Class constructor.
+  @param addr - Address of device.
+  @param reg_map - Unordered map of registers available on device.
 */
 I2CDevice::I2CDevice(uint32_t addr, std::unordered_map<std::string, I2CBaseRegister*> reg_map) {
   registers = reg_map;
   address = addr;
 }
 
+/**
+   @brief Default class constructor.
+*/
 I2CDevice::I2CDevice(void) {}
 
 void I2CDevice::setI2CType(I2C_base* i2c_type) {
@@ -23,13 +27,13 @@ void I2CDevice::setI2CType(I2C_base* i2c_type) {
 }
 
 /**
-   Class destructor.
+   @brief Class destructor.
 */
 I2CDevice::~I2CDevice(void) {}
 
 /**
-  Read data from register.
-  @param reg - property to read
+  @brief Read data from register.
+  @param reg - Property to read.
   @return units_variant containing quantity of correct type.
 */
 units_variant I2CDevice::read(std::string reg) {
@@ -38,9 +42,9 @@ units_variant I2CDevice::read(std::string reg) {
 }
 
 /**
-  Write data to register.
-  @param reg - property to write to
-  @param value - data to write to register. Must be of the correct type
+  @brief Write data to register.
+  @param reg - Property to write to.
+  @param value - Data to write to register. Must be of the correct type.
 */
 void I2CDevice::write(std::string reg, units_variant value) {
   i2c_reg = registers[reg];
@@ -48,8 +52,8 @@ void I2CDevice::write(std::string reg, units_variant value) {
 }
 
 /**
-  Get all possible registers for given device.
-  @return vector of strings assosciated with the properties.
+  @brief Get all possible registers for given device.
+  @return Vector of strings assosciated with the properties.
 */
 std::vector<std::string>I2CDevice::getProperties(void) {
   std::vector<std::string> v;

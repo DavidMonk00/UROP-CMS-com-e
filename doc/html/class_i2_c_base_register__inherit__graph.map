@@ -1,0 +1,5 @@
+<map id="I2CBaseRegister" name="I2CBaseRegister">
+<area shape="rect" id="node2" href="$class_d_s3232_temperature_i2_c_register.html" title="DS3232TemperatureI2CRegister" alt="" coords="5,80,217,107"/>
+<area shape="rect" id="node3" href="$class_generic_i2_c_register.html" title="GenericI2CRegister" alt="" coords="241,80,379,107"/>
+<area shape="rect" id="node4" href="$class_time_i2_c_register.html" title="TimeI2CRegister" alt="" coords="403,80,524,107"/>
+</map>
