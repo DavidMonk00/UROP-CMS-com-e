@@ -11,7 +11,6 @@ var hierarchy =
     [ "Board", "class_board.html", [
       [ "COMETestBoard", "class_c_o_m_e_test_board.html", null ]
     ] ],
-    [ "Device", "class_device.html", null ],
     [ "devices.Device", "classdevices_1_1_device.html", null ],
     [ "Diagnostics", "class_diagnostics.html", null ],
     [ "grammar", null, [
@@ -30,11 +29,8 @@ var hierarchy =
     [ "I2CBus", "class_i2_c_bus.html", null ],
     [ "I2CDevice", "class_i2_c_device.html", null ],
     [ "LegacyParser", "class_legacy_parser.html", null ],
-    [ "Measurement", "class_measurement.html", null ],
     [ "Parser", "class_parser.html", null ],
     [ "PCIGen", "class_p_c_i_gen.html", null ],
-    [ "Property", "class_property.html", null ],
-    [ "RTC", "class_r_t_c.html", null ],
     [ "static_visitor", null, [
       [ "multiply", "classmultiply.html", null ]
     ] ],

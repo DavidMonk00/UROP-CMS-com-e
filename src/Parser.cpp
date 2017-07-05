@@ -1,12 +1,17 @@
 /**
-  Parer.cpp
-  Purpose: defines functions for the Parser class.
+  @file Parser.cpp
+  @brief Defines functions for the Parser class.
   @author David Monk - Imperial College London
   @version 1.0
 */
 
 #include "parser.h"
 
+/**
+   @brief Parse string input into scaled double value and integer representation of unit.
+   @param input - String input.
+   @return Pair of double and integer.
+*/
 std::pair<double,int> Parser::getQuantityPair(std::string input) {
    std::pair<double, int> quantity;
    using qi:: char_;
@@ -56,6 +61,11 @@ std::pair<double,int> Parser::getQuantityPair(std::string input) {
    }
 }
 
+/**
+   @brief Parse string input into boost::units quantity.
+   @param input - String input.
+   @return Value with associated unit.
+*/
 units_variant Parser::getQuantity(std::string input) {
    std::pair<double,int> pair = getQuantityPair(input);
    boost::variant<double,
@@ -88,9 +98,9 @@ units_variant Parser::getQuantity(std::string input) {
 }
 
 /**
-   Get number as value and vector of pairs of strings.
-   @param input - string of value and units
-   @return pbys_quant type containing value and units
+   @brief Get number as value and vector of pairs of strings.
+   @param input - String of value and units.
+   @return phys_quant type containing value and units.
 */
 phys_quant LegacyParser::getQuantity(std::string input) {
   phys_quant m;

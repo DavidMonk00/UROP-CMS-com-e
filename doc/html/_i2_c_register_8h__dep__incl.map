@@ -1,6 +1,6 @@
 <map id="include/I2CRegister.h" name="include/I2CRegister.h">
 <area shape="rect" id="node2" href="$_i2_c_device_8h.html" title="include/I2CDevice.h" alt="" coords="269,80,409,107"/>
-<area shape="rect" id="node11" href="$_i2_c_register_8cpp.html" title="src/I2CRegister.cpp" alt="" coords="434,80,573,107"/>
+<area shape="rect" id="node11" href="$_i2_c_register_8cpp.html" title="Defines functions for the derived I2CBaseRegister classes. " alt="" coords="434,80,573,107"/>
 <area shape="rect" id="node3" href="$_i2_c_bus_8h.html" title="include/I2CBus.h" alt="" coords="203,155,326,181"/>
 <area shape="rect" id="node10" href="$_i2_c_device_8cpp.html" title="Defines functions for the I2CDevice class. " alt="" coords="350,155,481,181"/>
 <area shape="rect" id="node4" href="$_board_8h.html" title="include/Board.h" alt="" coords="209,229,321,256"/>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['second_5fbase_5funit',['second_base_unit',['../structboost_1_1units_1_1test_1_1second__base__unit.html',1,'boost::units::test']]]
+  ['test',['Test',['../class_test.html',1,'']]],
+  ['timei2cregister',['TimeI2CRegister',['../class_time_i2_c_register.html',1,'']]]
 ];

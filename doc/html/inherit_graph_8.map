@@ -1,4 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_i2_c__base.html" title="I2C_base" alt="" coords="5,5,84,32"/>
-<area shape="rect" id="node2" href="$class_i2_c_sema.html" title="I2CSema" alt="" coords="132,5,209,32"/>
+<area shape="rect" id="node1" href="$class_i2_c_base_register.html" title="I2CBaseRegister" alt="" coords="5,56,128,83"/>
+<area shape="rect" id="node2" href="$class_d_s3232_temperature_i2_c_register.html" title="DS3232TemperatureI2CRegister" alt="" coords="176,5,388,32"/>
+<area shape="rect" id="node3" href="$class_generic_i2_c_register.html" title="GenericI2CRegister" alt="" coords="213,56,351,83"/>
+<area shape="rect" id="node4" href="$class_time_i2_c_register.html" title="TimeI2CRegister" alt="" coords="221,107,343,133"/>
 </map>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['test',['Test',['../class_test.html',1,'']]],
-  ['timei2cregister',['TimeI2CRegister',['../class_time_i2_c_register.html',1,'']]]
+  ['units_5fand_5fpowers',['units_and_powers',['../structunits__and__powers.html',1,'']]]
 ];

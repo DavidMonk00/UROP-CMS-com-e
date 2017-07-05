@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_diagnostics.html" title="Diagnostics" alt="" coords="5,5,96,32"/>
+<area shape="rect" id="node1" href="$class_i2_c__base.html" title="I2C_base" alt="" coords="5,5,84,32"/>
+<area shape="rect" id="node2" href="$class_i2_c_sema.html" title="I2CSema" alt="" coords="132,5,209,32"/>
 </map>

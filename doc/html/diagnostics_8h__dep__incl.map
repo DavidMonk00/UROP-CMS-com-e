@@ -1,13 +1,10 @@
 <map id="include/diagnostics.h" name="include/diagnostics.h">
-<area shape="rect" id="node2" href="$_i2_c_8h.html" title="include/I2C.h" alt="" coords="524,80,623,107"/>
-<area shape="rect" id="node21" href="$diagnostics_8cpp.html" title="Defines functions for the Diagnostics class. " alt="" coords="647,80,782,107"/>
+<area shape="rect" id="node2" href="$_i2_c_8h.html" title="include/I2C.h" alt="" coords="381,80,480,107"/>
+<area shape="rect" id="node15" href="$diagnostics_8cpp.html" title="Defines functions for the Diagnostics class. " alt="" coords="505,80,639,107"/>
 <area shape="rect" id="node3" href="$_i2_c_device_8h.html" title="include/I2CDevice.h" alt="" coords="211,155,351,181"/>
 <area shape="rect" id="node8" href="$_s_e_m_a_8cpp.html" title="src/SEMA.cpp" alt="" coords="269,453,376,480"/>
-<area shape="rect" id="node12" href="$devices_8h.html" title="include/devices.h" alt="" coords="512,155,635,181"/>
-<area shape="rect" id="node13" href="$_measurement_8h.html" title="include/Measurement.h" alt="" coords="427,229,584,256"/>
-<area shape="rect" id="node16" href="$_r_t_c_8h.html" title="include/RTC.h" alt="" coords="659,155,765,181"/>
-<area shape="rect" id="node18" href="$_i2_c_8cpp.html" title="Defines functions for the Property and Device classes. " alt="" coords="789,155,880,181"/>
-<area shape="rect" id="node19" href="$pcigen_8h.html" title="test/pcigen.h" alt="" coords="905,155,1002,181"/>
+<area shape="rect" id="node12" href="$_i2_c_8cpp.html" title="Defines functions for the derived I2CSema class. " alt="" coords="427,155,517,181"/>
+<area shape="rect" id="node13" href="$pcigen_8h.html" title="test/pcigen.h" alt="" coords="542,155,639,181"/>
 <area shape="rect" id="node4" href="$_i2_c_bus_8h.html" title="include/I2CBus.h" alt="" coords="75,229,197,256"/>
 <area shape="rect" id="node11" href="$_i2_c_device_8cpp.html" title="Defines functions for the I2CDevice class. " alt="" coords="221,229,352,256"/>
 <area shape="rect" id="node5" href="$_board_8h.html" title="include/Board.h" alt="" coords="91,304,203,331"/>
@@ -15,8 +12,5 @@
 <area shape="rect" id="node10" href="$_i2_c_bus_8cpp.html" title="Defines functions for the I2CBus class. " alt="" coords="227,304,341,331"/>
 <area shape="rect" id="node9" href="$_board_8cpp.html" title="Defines functions for the Board base class. " alt="" coords="209,379,311,405"/>
 <area shape="rect" id="node7" href="$_c_o_m_e_test_board_8cpp.html" title="Defines functions for the COMETestBoard derived class. " alt="" coords="10,453,179,480"/>
-<area shape="rect" id="node15" href="$devices_8cpp.html" title="src/devices.cpp" alt="" coords="608,229,723,256"/>
-<area shape="rect" id="node14" href="$_measurement_8cpp.html" title="src/Measurement.cpp" alt="" coords="431,304,579,331"/>
-<area shape="rect" id="node17" href="$_r_t_c_8cpp.html" title="src/RTC.cpp" alt="" coords="747,229,845,256"/>
-<area shape="rect" id="node20" href="$pcigen_8cpp.html" title="test/pcigen.cpp" alt="" coords="898,229,1009,256"/>
+<area shape="rect" id="node14" href="$pcigen_8cpp.html" title="test/pcigen.cpp" alt="" coords="535,229,646,256"/>
 </map>
