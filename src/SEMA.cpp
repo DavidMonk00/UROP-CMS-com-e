@@ -17,10 +17,41 @@ using namespace std;
 
 #define ATCA_EEPROM 0xAE
 #define ATCA_ARBITER 0xE0
+#define ATCA_U43 0xE2
+
+void requestBus(I2C_base* i2c) {
+   uint8_t buffer;
+   buffer = 0x7b; //enable interrupt
+   i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x05);
+   buffer = 0xff; //set request time
+   i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x03);
+   buffer = 0x01; //request downstream
+   i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
+   buffer = 0;
+   i2c->receiveData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
+   printf("CONTR: 0x%X\n", buffer);
+   if ((buffer >> 1) & 0b1) {
+      cout << "Downstream available" << endl;
+   } else {
+      cout << "Downstream unavailable" << endl;
+   }
+   buffer = 0;
+   i2c->receiveData(ATCA_ARBITER, (char*)&buffer, 1, 0x02);
+   printf("STATUS: 0x%X\n", buffer);
+   buffer = 0;
+   i2c->receiveData(ATCA_U43, (char*)&buffer, 1, 0x00);
+   printf("Control register: %X\n", buffer);
+   buffer = 0;
+   i2c->receiveData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
+   if ((buffer >> 1) & 0b1) {
+      cout << "Downstream available" << endl;
+   } else {
+      cout << "Downstream unavailable" << endl;
+   }
+}
 
 int main(int argc, char* argv[]) {
    I2CSema* i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL);
-   cout << i2c->getBusCap() << endl;
    uint8_t buffer;
    printf("Addr : 0x%X\n", ATCA_EEPROM);
    for (int i = 0; i < 16; i++) {
@@ -31,17 +62,7 @@ int main(int argc, char* argv[]) {
       printf("%d : %X\n", i, buffer);
    }
    printf("Addr : 0x%X\n", ATCA_ARBITER);
-   buffer = 0x7b;
-   i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x05);
-   buffer = 0x64;
-   i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x03);
-   buffer = 0x01;
-   i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
-   for (int i = 0; i < 0b111; i++) {
-      uint8_t buffer = 0;
-      i2c->receiveData(ATCA_ARBITER, (char*)&buffer, 1, i);
-      printf("%d : %X\n", i, buffer);
-   }
+   requestBus(i2c);
    printf("\n");
    return 0;
 }
