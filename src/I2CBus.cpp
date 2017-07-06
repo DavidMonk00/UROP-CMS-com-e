@@ -49,9 +49,22 @@ std::vector<std::string> I2CBus::getProperties(void) {
    @param device - String identifier for device.
    @return Vector of strings of each property for the device.
 */
-std::vector<std::string> I2CBus::getProperties(std::string device) {
-   I2CDevice* device_temp = devices[device];
+std::vector<std::string> I2CBus::getProperties(std::string device_ID) {
+   I2CDevice* device_temp = devices[device_ID];
    return device_temp->getProperties();
+}
+
+/**
+   @brief Get devices on bus.
+   @return Vector of strings of each device ID.
+*/
+std::vector<std::string>I2CBus::getDevices(void) {
+  std::vector<std::string> v;
+  v.reserve(devices.size());
+  for (auto kv : devices) {
+    v.push_back(kv.first);
+  }
+  return v;
 }
 
 /**

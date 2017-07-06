@@ -41,12 +41,12 @@ void Board::setI2CType(I2C_base* i2c_type) {
    i2c_bus->setI2CType(i2c_type);
 }
 
-//TODO Implement getDevices function.
 /**
    @brief Get available devices on selected bus.
    @return Vector of string IDs for available devices.
 */
 std::vector<std::string> Board::getDevices(void) {
+   return i2c_bus->getDevices();
 }
 
 /**
@@ -55,6 +55,8 @@ std::vector<std::string> Board::getDevices(void) {
    @return Vector of string IDs for available devices.
 */
 std::vector<std::string> Board::getDevices(std::string bus) {
+   I2CBus* i2c_bus_temp = bus_map[bus];
+   return i2c_bus_temp->getDevices();
 }
 
 /**

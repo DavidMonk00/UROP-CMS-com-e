@@ -15,7 +15,8 @@ public:
    void setDevice(std::string device_id);
    void setI2CType(I2C_base* i2c_type);
    std::vector<std::string> getProperties(void);
-   std::vector<std::string> getProperties(std::string device);
+   std::vector<std::string> getProperties(std::string device_ID);
+   std::vector<std::string> getDevices(void);
    units_variant read(std::string property);
    void write(std::string property, units_variant value);
 };

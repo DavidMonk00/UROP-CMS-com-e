@@ -11,27 +11,31 @@
   @brief Constructor function if library has yet to initialised.
 */
 Diagnostics::Diagnostics(void) {
-  //IP address is localhost
-  char ipAddr[24] = "127.0.0.1";
-  uint32_t ret = 0;
-  ret = SemaEApiLibInitialize(false, IP_V4, ipAddr, 0, (char*)"123", &handler);
-  if (ret != EAPI_STATUS_SUCCESS) {
-    printf("Can't initialise library. Error code: %X\n", ret);
-  }
+   newHandler = true;
+   //IP address is localhost
+   char ipAddr[24] = "127.0.0.1";
+   uint32_t ret = 0;
+   ret = SemaEApiLibInitialize(false, IP_V4, ipAddr, 0, (char*)"123", &handler);
+   if (ret != EAPI_STATUS_SUCCESS) {
+      printf("Can't initialise library. Error code: %X\n", ret);
+   }
 }
 
 /**
   @brief Constructor function if library has already been initialised but diagnostics need to be performed.
 */
 Diagnostics::Diagnostics(uint32_t h) {
-  handler = h;
+   newHandler = false;
+   handler = h;
 }
 
 /**
   @brief Class destructor.
 */
 Diagnostics::~Diagnostics(void) {
-   //TODO unitialise SEMA library here.
+   if (newHandler) {
+      SemaEApiLibUnInitialize(handler);
+   }
 }
 
 /**
