@@ -21,4 +21,6 @@ protected:
 public:
   virtual void receiveData(uint32_t address, char* buffer, uint32_t bytecnt, uint32_t start_point)=0;
   virtual void sendData(uint32_t address, char* buffer, uint32_t bytecnt, uint32_t start_point)=0;
+  virtual void receiveDataRaw(uint32_t address, char* buffer, uint32_t bytecnt) = 0;
+  virtual void sendDataRaw(uint32_t address, char* buffer, uint32_t bytecnt) = 0;
 };

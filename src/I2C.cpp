@@ -74,8 +74,9 @@ uint32_t I2CSema::getBusCap(void) {
 }
 
 /**
-  Receive data data from addressed slave.
-  @param buffer - pointer to byte array where data will be written
+  Receive data from addressed slave.
+  @param address - Address of device.
+  @param buffer - ointer to byte array where data will be written
   @param bytecnt - length of buffer
   @param start_point - starting address within slave
   @return pointer to array where data was written
@@ -91,7 +92,7 @@ void I2CSema::receiveData(uint32_t address, char* buffer, uint32_t bytecnt, uint
 }
 
 /**
-  Send data data to addressed slave.
+  Send data to addressed slave.
   @param buffer - pointer to byte array where data will be sent from
   @param bytecnt - length of buffer
   @param start_point - starting address within slave
@@ -100,6 +101,36 @@ void I2CSema::sendData(uint32_t address, char* buffer, uint32_t bytecnt, uint32_
   uint32_t Cmd = start_point;
   uint32_t ret = 0;
   ret = SemaEApiI2CWriteTransfer(handler, id, address, Cmd, (void*)buffer, bytecnt);
+  if (ret != EAPI_STATUS_SUCCESS) {
+    printf("ERROR: 0x%X", ret);
+  }
+}
+
+/**
+  Receive raw data from addressed slave.
+  @param buffer - pointer to byte array where data will be read
+  @param bytecnt - length of buffer
+  @param start_point - starting address within slave
+*/
+void I2CSema::receiveDataRaw(uint32_t address, char* buffer, uint32_t bytecnt) {
+  uint32_t ret = 0;
+  uint32_t BufLen = bytecnt;
+  ret = SemaEApiI2CWriteReadRaw(handler, id, address, NULL, 0, (void*)buffer, BufLen, bytecnt + 1);
+  if (ret != EAPI_STATUS_SUCCESS) {
+    printf("ERROR: 0x%X", ret);
+  }
+}
+
+/**
+  Send raw data to addressed slave.
+  @param buffer - pointer to byte array where data will be written
+  @param bytecnt - length of buffer
+  @param start_point - starting address within slave
+*/
+void I2CSema::sendDataRaw(uint32_t address, char* buffer, uint32_t bytecnt) {
+  uint32_t ret = 0;
+  uint32_t BufLen = bytecnt;
+  ret = SemaEApiI2CWriteReadRaw(handler, id, address, (void*)buffer, bytecnt+1, NULL, 0, 0);
   if (ret != EAPI_STATUS_SUCCESS) {
     printf("ERROR: 0x%X", ret);
   }

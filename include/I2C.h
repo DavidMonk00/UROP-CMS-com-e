@@ -29,4 +29,6 @@ public:
   uint32_t getBusCap(void);
   void receiveData(uint32_t address, char* buffer, uint32_t bytecnt, uint32_t start_point);
   void sendData(uint32_t address, char* buffer, uint32_t bytecnt, uint32_t start_point);
+  void receiveDataRaw(uint32_t address, char* buffer, uint32_t bytecnt);
+  void sendDataRaw(uint32_t address, char* buffer, uint32_t bytecnt);
 };

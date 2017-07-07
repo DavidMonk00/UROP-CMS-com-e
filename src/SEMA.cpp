@@ -9,60 +9,82 @@
 #include <stdio.h>
 #include <iostream>
 #include <unistd.h>
+#include <functional>
 #include "I2C.h"
-#include "COMETestBoard.h"
-#include "diagnostics.h"
+//#include "COMETestBoard.h"
+//#include "diagnostics.h"
+//#include <boost/timer/timer.hpp>
+//#include <Sema.h>
 
 using namespace std;
 
 #define ATCA_EEPROM 0xAE
 #define ATCA_ARBITER 0xE0
-#define ATCA_U43 0xE2
+#define ATCA_U21 0xE4
+#define ATCA_ETH_PHY 0xAC
+#define ATCA_PCI_CLK 0xD8
 
-void requestBus(I2C_base* i2c) {
+class ATCA {
+private:
+   I2C_base* i2c;
    uint8_t buffer;
-   buffer = 0x7b; //enable interrupt
-   i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x05);
-   buffer = 0xff; //set request time
-   i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x03);
-   buffer = 0x01; //request downstream
-   i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
-   buffer = 0;
-   i2c->receiveData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
-   printf("CONTR: 0x%X\n", buffer);
-   if ((buffer >> 1) & 0b1) {
-      cout << "Downstream available" << endl;
-   } else {
-      cout << "Downstream unavailable" << endl;
+public:
+   ATCA(I2C_base* i2c_ptr) {
+      i2c = i2c_ptr;
    }
-   buffer = 0;
-   i2c->receiveData(ATCA_ARBITER, (char*)&buffer, 1, 0x02);
-   printf("STATUS: 0x%X\n", buffer);
-   buffer = 0;
-   i2c->receiveData(ATCA_U43, (char*)&buffer, 1, 0x00);
-   printf("Control register: %X\n", buffer);
-   buffer = 0;
-   i2c->receiveData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
-   if ((buffer >> 1) & 0b1) {
-      cout << "Downstream available" << endl;
-   } else {
-      cout << "Downstream unavailable" << endl;
+   ~ATCA(void) {}
+   bool checkAvailability(void) {
+      i2c->receiveData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
+      return (buffer >> 1) & 0b1;
    }
-}
+   void requestBus() {
+      buffer = 0x7b; //enable interrupt
+      i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x05);
+      buffer = 0xff; //set request time
+      i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x03);
+      buffer = 0x01; //request downstream
+      i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
+      if (checkAvailability()) {
+         buffer = 0x05; //enable downstream
+         i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
+      } else {
+         std::cout << "Bus not available." << '\n';
+         exit(-1);
+      }
+   }
+   void setFanOut(uint8_t buses) {
+      buffer = buses;
+      i2c->sendData(ATCA_U21, (char*)&buffer, 1, 0x00);
+   }
+   void printRegisters(void) {
+      for (uint8_t i = 0; i < 8; i++) {
+          buffer = 0x00;
+          i2c->receiveData(ATCA_PCI_CLK, (char*)&buffer, 1, i|0b10000000);
+          printf("PCI clock byte %d : 0x%X\n", i, buffer);
+      }
+      std::cout << checkAvailability() << '\n';
+   }
+};
 
 int main(int argc, char* argv[]) {
+   uint8_t buffer = 0;
    I2CSema* i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL);
-   uint8_t buffer;
-   printf("Addr : 0x%X\n", ATCA_EEPROM);
-   for (int i = 0; i < 16; i++) {
-      buffer = 2*i;
-      i2c->sendData(ATCA_EEPROM, (char*)&buffer, 1, i);
-      buffer = 0;
-      i2c->receiveData(ATCA_EEPROM, (char*)&buffer, 1, i);
-      printf("%d : %X\n", i, buffer);
+   ATCA* A = new ATCA(i2c);
+   A->requestBus();
+   A->setFanOut(0b00000010);
+   sleep(1);
+   A->requestBus();
+   buffer = 0x00;
+   i2c->sendData(ATCA_PCI_CLK, (char*)&buffer, 1, 0|0b10000000);
+   sleep(1);
+   std::cout << A->checkAvailability() << '\n';
+   while (true) {
+      std::cout << A->checkAvailability() << '\n';
+      A->requestBus();
+      A->printRegisters();
+      sleep(5);
    }
-   printf("Addr : 0x%X\n", ATCA_ARBITER);
-   requestBus(i2c);
-   printf("\n");
+   buffer = 0x00;
+   i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
    return 0;
 }
