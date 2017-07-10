@@ -72,3 +72,11 @@ public:
   units_variant read(I2C_base* i2c_ptr, uint32_t address);
   void write(I2C_base* i2c_ptr, uint32_t address, units_variant value);
 };
+
+class PCIClockPLLModeRegister : public I2CBaseRegister {
+public:
+   PCIClockPLLModeRegister(uint32_t addr, std::string rw);
+   ~PCIClockPLLModeRegister(void)
+   units_variant read(I2C_base* i2c_ptr, uint32_t address);
+   void write(I2C_base* i2c_ptr, uint32_t address, units_variant value);
+};
