@@ -21,11 +21,11 @@ int main(int argc, char* argv[]) {
    for (auto i : board->getDevices()) { std::cout << i << '\n'; }
    for (auto i : board->getProperties("0","DS3232")) { std::cout << i << '\n'; }
    board->setI2CType(new I2CSema(EAPI_ID_I2C_EXTERNAL));
-   for (int i = 0; i < 1000; i++) {
-      //board->read("seconds");
+   for (int i = 0; i < 10; i++) {
+      cout << board->read("seconds") << endl;
       //sleep(1);
    }
-   //board->write("SRAM1", a);
-   //cout << "SRAM1: " << board->read("SRAM1") << endl;
+   board->write("SRAM1", a);
+   cout << "SRAM1: " << board->read("SRAM1") << endl;
    return 0;
 }
