@@ -44,7 +44,7 @@ COMETestBoard::COMETestBoard(I2C_base* i2c_type) {
                                                                         [](units_variant value) {return (uint8_t)boost::get<quantity<temperature> >(value).value();})},
             {"SRAM0",       new GenericI2CRegister(0x14, "rw",          [](uint8_t value){return value;},
                                                                         [](units_variant value) {return (uint8_t)boost::get<double>(value);})},
-            {"SRAM1",       new GenericI2CRegister(0x14, "rw",          [](uint8_t value){double val = (double)(unsigned int)value; return val*kelvin;},
+            {"SRAM1",       new GenericI2CRegister(0x14, "rw",          [](uint8_t value){double val = value; return val*kelvin;},
                                                                         [](units_variant value) {return (uint8_t)boost::get<quantity<temperature> >(value).value();})}
          })}
       })
