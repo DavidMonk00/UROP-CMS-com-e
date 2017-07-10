@@ -29,7 +29,7 @@ void Board::setDevice(std::string device) {
   @param device - String identifier for device.
 */
 void Board::setDevice(std::string bus, std::string device) {
-   i2c_bus = bus_map[bus];
+   setBus(bus);
    i2c_bus->setDevice(device);
 }
 

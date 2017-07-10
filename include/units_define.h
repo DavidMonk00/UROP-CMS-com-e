@@ -19,7 +19,7 @@ typedef boost::variant<double,
                        quantity<length>,
                        quantity<boost::units::si::time>,
                        quantity<temperature> > legacy_units_variant;
-typedef boost::variant<uint8_t,
+typedef boost::variant<int,
                double,
                quantity<electric_potential>,
                quantity<current>,

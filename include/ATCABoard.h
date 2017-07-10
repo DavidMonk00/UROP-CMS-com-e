@@ -5,7 +5,7 @@
 
 #define ATCA_EEPROM 0xAE
 #define ATCA_ARBITER 0xE0
-#define ATCA_U21 0xE4
+#define ATCA_FANOUT 0xE4
 #define ATCA_ETH_PHY 0xAC
 #define ATCA_PCI_CLK 0xD8
 
