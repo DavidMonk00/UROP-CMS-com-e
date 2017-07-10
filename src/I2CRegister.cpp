@@ -40,7 +40,7 @@ units_variant GenericI2CRegister::read(I2C_base* i2c_ptr, uint32_t address) {
    if (b_read) {
       char buffer = 0;
       i2c_ptr->receiveData(address, &buffer, 1, reg);
-      return mRead((double)buffer);
+      return mRead(buffer);
    } else {
       printf("Register cannot be read.\n");
       exit(-1);

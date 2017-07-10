@@ -1,7 +1,9 @@
 #include "ATCABoard.h"
 
-ATCABoard::ATCABoard(void) {
+ATCABoard::ATCABoard(I2C_base* i2c_type) {
+   i2c = i2c_type;
    downstream_available = false;
+   requestBus();
 }
 
 ATCABoard::~ATCABoard(void) {
@@ -32,4 +34,22 @@ void ATCABoard::requestBus(void) {
       downstream_available = false;
       exit(-1);
    }
+}
+
+void ATCABoard::setFanOut(uint8_t buses) {
+   buffer = buses;
+   i2c->sendData(ATCA_U21, (char*)&buffer, 1, 0x00);
+}
+
+void ATCABoard::setBus(std::string bus) {
+   i2c_bus = bus_map[bus];
+   setFanOut(atoi(bus.c_str()));
+}
+
+/**
+   @brief Get the map.
+   @return Unordered map of string identifiers and I2CBus pointers.
+*/
+std::unordered_map<std::string, I2CBus*> ATCABoard::getMap(void) {
+   return bus_map;
 }

@@ -3,16 +3,24 @@
 #include <iostream>
 #include <stdio.h>
 
+#define ATCA_EEPROM 0xAE
+#define ATCA_ARBITER 0xE0
+#define ATCA_U21 0xE4
+#define ATCA_ETH_PHY 0xAC
+#define ATCA_PCI_CLK 0xD8
+
 class ATCABoard : public Board {
 private:
-   I2C_base* i2c;
    uint8_t buffer;
    bool downstream_available;
    bool checkAvailability(void);
-   void requestBus(void);
+   void requestBus(void); //TODO add argument for arbiter timeout. Current default is infinity.
+   void setFanOut(uint8_t buses);
 public:
-   ATCABoard(void);
+   ATCABoard(I2C_base* i2c_type);
    ~ATCABoard(void);
+   std::unordered_map<std::string, I2CBus*> getMap(void);
+   void setBus(std::string bus);
 };
 
 /*class ATCA {
