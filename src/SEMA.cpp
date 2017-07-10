@@ -25,6 +25,7 @@ int main(int argc, char* argv[]) {
       cout << board->read("seconds") << endl;
       //sleep(1);
    }
+   a = "150K";
    board->write("SRAM1", a);
    cout << "SRAM1: " << board->read("SRAM1") << endl;
    return 0;
