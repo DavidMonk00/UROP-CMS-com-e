@@ -7,13 +7,14 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <string>
 #include "I2C.h"
 
 using namespace std;
 
 #define ATCA_EEPROM 0xAE
 #define ATCA_ARBITER 0xE0
-#define ATCA_U21 0xE4
+#define ATCA_FANOUT 0xE4
 #define ATCA_ETH_PHY 0xAC
 #define ATCA_PCI_CLK 0xD8
 
@@ -56,7 +57,7 @@ public:
    }
    void setFanOut(uint8_t buses) {
       buffer = buses;
-      i2c->sendData(ATCA_U21, (char*)&buffer, 1, 0x00);
+      i2c->sendData(ATCA_FANOUT, (char*)&buffer, 1, 0x00);
    }
    void printSynthRegisters(void) {
       for (uint8_t i = 0; i < 8; i++) {
@@ -81,6 +82,8 @@ int main(int argc, char* argv[]) {
    buffer = 0x00;
    i2c->sendData(ATCA_PCI_CLK, (char*)&buffer, 1, 0|0b10000000);
    A->printSynthRegisters();
+   string s("0");
+   cout << atoi(s.c_str()) << endl;
    delete A;
    return 0;
 }
