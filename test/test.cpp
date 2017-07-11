@@ -140,6 +140,18 @@ public:
   }
 };
 
+class ToString : public boost::static_visitor<> {
+public:
+   std::string mRet;
+   void operator() (std::string & operand ) {
+      mRet = operand;
+   }
+   template <typename T>
+   void operator()( T & operand ) {
+      mRet = boost::units::to_string(operand);
+   }
+};
+
 int main() {
    phys_quant m;
    std::string units("9.81 kg m^2 s^-2");
@@ -154,7 +166,7 @@ int main() {
    units_variant l( 3.1415 );
    l = 6.1 * si::kilogram;
 
-   multiply v(2.0);
+   ToString v;
    boost::apply_visitor( v , l );
    std::cout << l << " " << v.mRet << std::endl;
    std::cout << boost::get<quantity<mass> >(l) << '\n';
@@ -209,15 +221,5 @@ int main() {
    }
    std::cout << var << std::endl;
 
-   enum tTest {SEMA, FTDI, PCIe};
-   tTest en = SEMA;
-   switch (en) {
-      case SEMA:
-         std::cout << "SEMA" << '\n';
-         Test T = Test(2);
-         break;
-      default:
-         std::cout << "Something else" << '\n';
-   }
    return 0;
 }

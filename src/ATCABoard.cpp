@@ -14,6 +14,8 @@ ATCABoard::ATCABoard(I2C_base* i2c_type) {
                                                                  [](units_variant value) {return boost::get<int>(value);})},
             {"clock frequency", new GenericI2CRegister(0x00|0x80, "r", [](int value){quantity<frequency> val = value & 1 ? 100e6*hertz : 133e6*hertz; return val;},
                                                                        [](units_variant value) {return boost::get<int>(value);})},
+            {"PLL mode", new PCIClockPLLModeRegister(0x00|0x80, "rw")},
+            {"output enable", new PCIClockOutputEnableRegister(0x01|0x80, "rw")},
          })}
       })
    });

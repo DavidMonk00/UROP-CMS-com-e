@@ -19,21 +19,15 @@ int main(int argc, char* argv[]) {
    board->setDevice("1","PCI Clock");
    for (auto i : board->getDevices()) { std::cout << i << '\n'; }
    for (auto i : board->getProperties()) { std::cout << i << '\n'; }
-   printf("0x%X\n", atoi(board->read("vendor ID").c_str()));
-   printf("0x%X\n", atoi(board->read("device ID").c_str()));
+   printf("Vendor ID: 0x%X\n", atoi(board->read("vendor ID").c_str()));
+   printf("Device ID: 0x%X\n", atoi(board->read("device ID").c_str()));
    std::cout << board->read("clock frequency") << '\n';
-   /*Board* board = new COMETestBoard();
-   board->setDevice("0", "DS3232");
-   for (auto i : board->getDevices()) { std::cout << i << '\n'; }
-   for (auto i : board->getProperties("0","DS3232")) { std::cout << i << '\n'; }
-   board->setI2CType(new I2CSema(EAPI_ID_I2C_EXTERNAL));
-   for (int i = 0; i < 10; i++) {
-      cout << board->read("seconds") << endl;
-      //sleep(1);
-   }
-   a = "150K";
-   board->write("SRAM1", a);
-   cout << "SRAM1: " << board->read("SRAM1") << endl;*/
+   std::cout << board->read("PLL mode") << '\n';
+   board->write("PLL mode", "2");
+   std::cout << board->read("PLL mode") << '\n';
+   std::cout << board->read("output enable") << '\n';
+   board->write("output enable", "15");
+   std::cout << board->read("output enable") << '\n';
    delete board;
    return 0;
 }

@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <functional>
 #include <stdio.h>
+#include <iostream>
 #include "I2C_base.h"
 #include "units_define.h"
 
@@ -76,7 +77,15 @@ public:
 class PCIClockPLLModeRegister : public I2CBaseRegister {
 public:
    PCIClockPLLModeRegister(uint32_t addr, std::string rw);
-   ~PCIClockPLLModeRegister(void)
+   ~PCIClockPLLModeRegister(void);
+   units_variant read(I2C_base* i2c_ptr, uint32_t address);
+   void write(I2C_base* i2c_ptr, uint32_t address, units_variant value);
+};
+
+class PCIClockOutputEnableRegister : public I2CBaseRegister {
+public:
+   PCIClockOutputEnableRegister(uint32_t addr, std::string rw);
+   ~PCIClockOutputEnableRegister(void);
    units_variant read(I2C_base* i2c_ptr, uint32_t address);
    void write(I2C_base* i2c_ptr, uint32_t address, units_variant value);
 };

@@ -31,9 +31,6 @@ void Board::setDevice(std::string device) {
 void Board::setDevice(std::string bus, std::string device) {
    setBus(bus);
    i2c_bus->setDevice(device);
-   ToString T;
-   boost::apply_visitor( T , value );
-   return T.mRet;
 }
 
 /**
@@ -97,7 +94,9 @@ std::vector<std::string> Board::getProperties(std::string bus, std::string devic
 */
 std::string Board::read(std::string property) {
    units_variant value = i2c_bus->read(property);
-   return boost::units::to_string(value);
+   ToString T;
+   boost::apply_visitor( T , value );
+   return T.mRet;
 }
 
 /**

@@ -14,6 +14,11 @@ public:
    void operator() (std::string & operand ) {
       mRet = operand;
    }
+   void operator() (int & operand) {
+      char str[64];
+      sprintf(str, "0x%X", operand);
+      mRet = str;
+   }
    template <typename T>
    void operator()( T & operand ) {
       mRet = boost::units::to_string(operand);
