@@ -82,8 +82,12 @@ int main(int argc, char* argv[]) {
    buffer = 0x00;
    i2c->sendData(ATCA_PCI_CLK, (char*)&buffer, 1, 0|0b10000000);
    A->printSynthRegisters();
-   string s("0");
-   cout << atoi(s.c_str()) << endl;
+   int N = 16;
+   uint8_t* b = (uint8_t*)malloc(N*sizeof(uint8_t));
+   i2c->receiveData(ATCA_ETH_PHY, (char*)b, N, 0x00);
+   for (int i = 0; i < N; i++) {
+      printf("Ethernet PHY byte %d : 0x%X\n", i, b[i]);
+   }
    delete A;
    return 0;
 }
