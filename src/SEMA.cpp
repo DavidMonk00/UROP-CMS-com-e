@@ -23,10 +23,6 @@ int main(int argc, char* argv[]) {
    printf("Device ID: 0x%X\n", atoi(board->read("device ID").c_str()));
    std::cout << board->read("clock frequency") << '\n';
    std::cout << board->read("PLL mode") << '\n';
-   board->write("PLL mode", "2");
-   std::cout << board->read("PLL mode") << '\n';
-   std::cout << board->read("output enable") << '\n';
-   board->write("output enable", "15");
    std::cout << board->read("output enable") << '\n';
    delete board;
    return 0;
