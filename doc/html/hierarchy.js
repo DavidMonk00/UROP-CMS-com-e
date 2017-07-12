@@ -9,6 +9,7 @@ var hierarchy =
     [ "boost::units::base_unit_info< test::meter_base_unit >", "structboost_1_1units_1_1base__unit__info_3_01test_1_1meter__base__unit_01_4.html", null ],
     [ "boost::units::base_unit_info< test::second_base_unit >", "structboost_1_1units_1_1base__unit__info_3_01test_1_1second__base__unit_01_4.html", null ],
     [ "Board", "class_board.html", [
+      [ "ATCABoard", "class_a_t_c_a_board.html", null ],
       [ "COMETestBoard", "class_c_o_m_e_test_board.html", null ]
     ] ],
     [ "devices.Device", "classdevices_1_1_device.html", null ],
@@ -24,6 +25,8 @@ var hierarchy =
       [ "DS3232TemperatureI2CRegister", "class_d_s3232_temperature_i2_c_register.html", null ],
       [ "GenericI2CRegister", "class_generic_i2_c_register.html", null ],
       [ "GenericI2CRegister", "class_generic_i2_c_register.html", null ],
+      [ "PCIClockOutputEnableRegister", "class_p_c_i_clock_output_enable_register.html", null ],
+      [ "PCIClockPLLModeRegister", "class_p_c_i_clock_p_l_l_mode_register.html", null ],
       [ "TimeI2CRegister", "class_time_i2_c_register.html", null ]
     ] ],
     [ "I2CBus", "class_i2_c_bus.html", null ],
@@ -32,7 +35,9 @@ var hierarchy =
     [ "Parser", "class_parser.html", null ],
     [ "PCIGen", "class_p_c_i_gen.html", null ],
     [ "static_visitor", null, [
-      [ "multiply", "classmultiply.html", null ]
+      [ "multiply", "classmultiply.html", null ],
+      [ "ToString", "class_to_string.html", null ],
+      [ "ToString", "class_to_string.html", null ]
     ] ],
     [ "Test", "class_test.html", null ]
 ];

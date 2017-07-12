@@ -1,0 +1,12 @@
+<map id="include/ATCABoard.h" name="include/ATCABoard.h">
+<area shape="rect" id="node2" href="$_i2_c_8h.html" title="I2C.h" alt="" coords="299,304,354,331"/>
+<area shape="rect" id="node12" href="$_board_8h.html" title="Defines the base Board class. " alt="" coords="1157,80,1224,107"/>
+<area shape="rect" id="node6" href="$diagnostics_8h.html" title="diagnostics.h" alt="" coords="115,379,213,405"/>
+<area shape="rect" id="node9" href="$_i2_c__base_8h.html" title="I2C_base.h" alt="" coords="798,379,887,405"/>
+<area shape="rect" id="node11" href="$_i2_c__define_8h.html" title="I2C_define.h" alt="" coords="339,379,435,405"/>
+<area shape="rect" id="node16" href="$_i2_c_bus_8h.html" title="I2CBus.h" alt="" coords="1076,155,1153,181"/>
+<area shape="rect" id="node33" href="$parser_8h.html" title="parser.h" alt="" coords="1304,304,1373,331"/>
+<area shape="rect" id="node17" href="$_i2_c_device_8h.html" title="I2CDevice.h" alt="" coords="993,229,1087,256"/>
+<area shape="rect" id="node22" href="$units__define_8h.html" title="units_define.h" alt="" coords="1559,379,1662,405"/>
+<area shape="rect" id="node21" href="$_i2_c_register_8h.html" title="I2CRegister.h" alt="" coords="989,304,1091,331"/>
+</map>

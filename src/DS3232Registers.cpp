@@ -1,3 +1,10 @@
+/**
+  @file COMETestBoard.cpp
+  @brief Defines functions for the derived classes specific to the DS3232 component.
+  @author David Monk - Imperial College London
+  @version 1.0
+*/
+
 #include "I2CRegister.h"
 
 /**

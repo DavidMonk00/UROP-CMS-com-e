@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['i2c',['i2c',['../class_board.html#aec7b3a540a138062fc54587e1040d917',1,'Board']]],
   ['i2c_2ecpp',['I2C.cpp',['../_i2_c_8cpp.html',1,'']]],
   ['i2c_2eh',['I2C.h',['../_i2_c_8h.html',1,'']]],
   ['i2c_5fbase',['I2C_base',['../class_i2_c__base.html',1,'']]],

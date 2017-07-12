@@ -1,8 +1,10 @@
 <map id="include/I2CBus.h" name="include/I2CBus.h">
-<area shape="rect" id="node2" href="$_board_8h.html" title="include/Board.h" alt="" coords="209,80,321,107"/>
-<area shape="rect" id="node3" href="$_c_o_m_e_test_board_8h.html" title="include/COMETestBoard.h" alt="" coords="82,155,261,181"/>
-<area shape="rect" id="node7" href="$_i2_c_bus_8cpp.html" title="Defines functions for the I2CBus class. " alt="" coords="345,80,459,107"/>
-<area shape="rect" id="node6" href="$_board_8cpp.html" title="Defines functions for the Board base class. " alt="" coords="285,155,388,181"/>
-<area shape="rect" id="node4" href="$_c_o_m_e_test_board_8cpp.html" title="Defines functions for the COMETestBoard derived class. " alt="" coords="5,229,175,256"/>
-<area shape="rect" id="node5" href="$_s_e_m_a_8cpp.html" title="src/SEMA.cpp" alt="" coords="199,229,306,256"/>
+<area shape="rect" id="node2" href="$_board_8h.html" title="Defines the base Board class. " alt="" coords="259,80,371,107"/>
+<area shape="rect" id="node6" href="$_c_o_m_e_test_board_8h.html" title="include/COMETestBoard.h" alt="" coords="373,155,552,181"/>
+<area shape="rect" id="node9" href="$_i2_c_bus_8cpp.html" title="Defines functions for the I2CBus class. " alt="" coords="482,80,595,107"/>
+<area shape="rect" id="node3" href="$_a_t_c_a_board_8h.html" title="Defines the derived ATCABoard class. " alt="" coords="74,155,222,181"/>
+<area shape="rect" id="node8" href="$_board_8cpp.html" title="Defines functions for the Board base class. " alt="" coords="246,155,349,181"/>
+<area shape="rect" id="node4" href="$_a_t_c_a_board_8cpp.html" title="Defines functions for the ATCABoard class. " alt="" coords="5,229,144,256"/>
+<area shape="rect" id="node5" href="$_s_e_m_a_8cpp.html" title="src/SEMA.cpp" alt="" coords="168,229,275,256"/>
+<area shape="rect" id="node7" href="$_c_o_m_e_test_board_8cpp.html" title="Defines functions for the COMETestBoard derived class. " alt="" coords="378,229,547,256"/>
 </map>

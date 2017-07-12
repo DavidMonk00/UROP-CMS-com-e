@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['second_5fbase_5funit',['second_base_unit',['../structboost_1_1units_1_1test_1_1second__base__unit.html',1,'boost::units::test']]]
+  ['parser',['Parser',['../class_parser.html',1,'']]],
+  ['pciclockoutputenableregister',['PCIClockOutputEnableRegister',['../class_p_c_i_clock_output_enable_register.html',1,'']]],
+  ['pciclockpllmoderegister',['PCIClockPLLModeRegister',['../class_p_c_i_clock_p_l_l_mode_register.html',1,'']]],
+  ['pcigen',['PCIGen',['../class_p_c_i_gen.html',1,'']]]
 ];

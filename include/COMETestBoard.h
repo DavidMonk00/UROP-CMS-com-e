@@ -1,3 +1,10 @@
+/**
+  @file Board.h
+  @brief Defines the derived COMETestBoard class.
+  @author David Monk - Imperial College London
+  @version 1.0
+*/
+
 #pragma once
 
 #include <unordered_map>

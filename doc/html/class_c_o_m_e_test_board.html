@@ -129,8 +129,9 @@ Collaboration diagram for COMETestBoard:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_c_o_m_e_test_board__coll__graph.png" border="0" usemap="#_c_o_m_e_test_board_coll__map" alt="Collaboration graph"/></div>
 <map name="_c_o_m_e_test_board_coll__map" id="_c_o_m_e_test_board_coll__map">
-<area shape="rect" id="node2" href="class_board.html" title="Board" alt="" coords="39,95,95,121"/>
-<area shape="rect" id="node3" href="class_i2_c_bus.html" title="I2CBus" alt="" coords="33,5,100,32"/>
+<area shape="rect" id="node2" href="class_board.html" title="Board" alt="" coords="65,95,121,121"/>
+<area shape="rect" id="node3" href="class_i2_c__base.html" title="I2C_base" alt="" coords="5,5,84,32"/>
+<area shape="rect" id="node4" href="class_i2_c_bus.html" title="I2CBus" alt="" coords="109,5,175,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -139,6 +140,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abd1d32e78d5c885e6982421c9af3ca84"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_o_m_e_test_board.html#abd1d32e78d5c885e6982421c9af3ca84">COMETestBoard</a> (void)</td></tr>
 <tr class="memdesc:abd1d32e78d5c885e6982421c9af3ca84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class constructor. Full bus/device/register map is defined here.  <a href="#abd1d32e78d5c885e6982421c9af3ca84">More...</a><br /></td></tr>
 <tr class="separator:abd1d32e78d5c885e6982421c9af3ca84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a373116ab895fdabcec6c73b193b925e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_o_m_e_test_board.html#a373116ab895fdabcec6c73b193b925e7">COMETestBoard</a> (<a class="el" href="class_i2_c__base.html">I2C_base</a> *i2c_type)</td></tr>
+<tr class="memdesc:a373116ab895fdabcec6c73b193b925e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class constructor. Full bus/device/register map is defined here.  <a href="#a373116ab895fdabcec6c73b193b925e7">More...</a><br /></td></tr>
+<tr class="separator:a373116ab895fdabcec6c73b193b925e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8eff50bf63fbc98650b17579c858d73"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, <a class="el" href="class_i2_c_bus.html">I2CBus</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_o_m_e_test_board.html#ac8eff50bf63fbc98650b17579c858d73">getMap</a> (void)</td></tr>
 <tr class="memdesc:ac8eff50bf63fbc98650b17579c858d73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the map.  <a href="#ac8eff50bf63fbc98650b17579c858d73">More...</a><br /></td></tr>
 <tr class="separator:ac8eff50bf63fbc98650b17579c858d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,10 +188,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:ac5fa25970ad12aa7d2c710bbcdd05339 inherit pro_attribs_class_board"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4458164bae62e6ba213a08a767242f9f inherit pro_attribs_class_board"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i2_c_bus.html">I2CBus</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a4458164bae62e6ba213a08a767242f9f">i2c_bus</a></td></tr>
 <tr class="separator:a4458164bae62e6ba213a08a767242f9f inherit pro_attribs_class_board"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec7b3a540a138062fc54587e1040d917 inherit pro_attribs_class_board"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i2_c__base.html">I2C_base</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#aec7b3a540a138062fc54587e1040d917">i2c</a></td></tr>
+<tr class="separator:aec7b3a540a138062fc54587e1040d917 inherit pro_attribs_class_board"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_c_o_m_e_test_board_8h_source.html#l00009">9</a> of file <a class="el" href="_c_o_m_e_test_board_8h_source.html">COMETestBoard.h</a>.</p>
+<p>Definition at line <a class="el" href="_c_o_m_e_test_board_8h_source.html#l00016">16</a> of file <a class="el" href="_c_o_m_e_test_board_8h_source.html">COMETestBoard.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="abd1d32e78d5c885e6982421c9af3ca84"></a>
 <div class="memitem">
@@ -206,6 +212,32 @@ Additional Inherited Members</h2></td></tr>
 <p>Class constructor. Full bus/device/register map is defined here. </p>
 
 <p>Definition at line <a class="el" href="_c_o_m_e_test_board_8cpp_source.html#l00014">14</a> of file <a class="el" href="_c_o_m_e_test_board_8cpp_source.html">COMETestBoard.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a373116ab895fdabcec6c73b193b925e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">COMETestBoard::COMETestBoard </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_i2_c__base.html">I2C_base</a> *&#160;</td>
+          <td class="paramname"><em>i2c_type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Class constructor. Full bus/device/register map is defined here. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i2c_type</td><td>- Pointer to I2C transport class to be used. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_c_o_m_e_test_board_8cpp_source.html#l00036">36</a> of file <a class="el" href="_c_o_m_e_test_board_8cpp_source.html">COMETestBoard.cpp</a>.</p>
 
 </div>
 </div>
@@ -237,7 +269,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_board.html#a7579517a69f81e2fcbe9e18857a11545">Board</a>.</p>
 
-<p>Definition at line <a class="el" href="_c_o_m_e_test_board_8cpp_source.html#l00035">35</a> of file <a class="el" href="_c_o_m_e_test_board_8cpp_source.html">COMETestBoard.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_c_o_m_e_test_board_8cpp_source.html#l00058">58</a> of file <a class="el" href="_c_o_m_e_test_board_8cpp_source.html">COMETestBoard.cpp</a>.</p>
 
 </div>
 </div>

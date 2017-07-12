@@ -117,6 +117,7 @@ $(document).ready(function(){initNavTree('_i2_c_register_8h.html','');});
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 <code>#include &quot;<a class="el" href="_i2_c__base_8h_source.html">I2C_base.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="units__define_8h_source.html">units_define.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -124,8 +125,8 @@ Include dependency graph for I2CRegister.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_i2_c_register_8h__incl.png" border="0" usemap="#include_2_i2_c_register_8h" alt=""/></div>
 <map name="include_2_i2_c_register_8h" id="include_2_i2_c_register_8h">
-<area shape="rect" id="node8" href="_i2_c__base_8h.html" title="I2C_base.h" alt="" coords="463,80,552,107"/>
-<area shape="rect" id="node10" href="units__define_8h.html" title="units_define.h" alt="" coords="1331,80,1433,107"/>
+<area shape="rect" id="node9" href="_i2_c__base_8h.html" title="I2C_base.h" alt="" coords="463,80,552,107"/>
+<area shape="rect" id="node11" href="units__define_8h.html" title="units_define.h" alt="" coords="1333,80,1436,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -133,16 +134,20 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="_i2_c_register_8h__dep__incl.png" border="0" usemap="#include_2_i2_c_register_8hdep" alt=""/></div>
 <map name="include_2_i2_c_register_8hdep" id="include_2_i2_c_register_8hdep">
-<area shape="rect" id="node2" href="_i2_c_device_8h.html" title="include/I2CDevice.h" alt="" coords="269,80,409,107"/>
-<area shape="rect" id="node11" href="_i2_c_register_8cpp.html" title="Defines functions for the derived I2CBaseRegister classes. " alt="" coords="434,80,573,107"/>
-<area shape="rect" id="node3" href="_i2_c_bus_8h.html" title="include/I2CBus.h" alt="" coords="203,155,326,181"/>
-<area shape="rect" id="node10" href="_i2_c_device_8cpp.html" title="Defines functions for the I2CDevice class. " alt="" coords="350,155,481,181"/>
-<area shape="rect" id="node4" href="_board_8h.html" title="include/Board.h" alt="" coords="209,229,321,256"/>
-<area shape="rect" id="node5" href="_c_o_m_e_test_board_8h.html" title="include/COMETestBoard.h" alt="" coords="82,304,261,331"/>
-<area shape="rect" id="node9" href="_i2_c_bus_8cpp.html" title="Defines functions for the I2CBus class. " alt="" coords="345,229,459,256"/>
-<area shape="rect" id="node8" href="_board_8cpp.html" title="Defines functions for the Board base class. " alt="" coords="285,304,388,331"/>
-<area shape="rect" id="node6" href="_c_o_m_e_test_board_8cpp.html" title="Defines functions for the COMETestBoard derived class. " alt="" coords="5,379,175,405"/>
-<area shape="rect" id="node7" href="_s_e_m_a_8cpp.html" title="src/SEMA.cpp" alt="" coords="199,379,306,405"/>
+<area shape="rect" id="node2" href="_i2_c_device_8h.html" title="include/I2CDevice.h" alt="" coords="449,80,589,107"/>
+<area shape="rect" id="node13" href="_d_s3232_registers_8cpp.html" title="src/DS3232Registers.cpp" alt="" coords="613,80,785,107"/>
+<area shape="rect" id="node14" href="_i2_c_register_8cpp.html" title="Defines functions for the derived I2CBaseRegister classes. " alt="" coords="809,80,948,107"/>
+<area shape="rect" id="node15" href="_si53106_registers_8cpp.html" title="src/Si53106Registers.cpp" alt="" coords="973,80,1145,107"/>
+<area shape="rect" id="node3" href="_i2_c_bus_8h.html" title="include/I2CBus.h" alt="" coords="383,155,505,181"/>
+<area shape="rect" id="node12" href="_i2_c_device_8cpp.html" title="Defines functions for the I2CDevice class. " alt="" coords="529,155,660,181"/>
+<area shape="rect" id="node4" href="_board_8h.html" title="Defines the base Board class. " alt="" coords="259,229,371,256"/>
+<area shape="rect" id="node8" href="_c_o_m_e_test_board_8h.html" title="include/COMETestBoard.h" alt="" coords="373,304,552,331"/>
+<area shape="rect" id="node11" href="_i2_c_bus_8cpp.html" title="Defines functions for the I2CBus class. " alt="" coords="482,229,595,256"/>
+<area shape="rect" id="node5" href="_a_t_c_a_board_8h.html" title="Defines the derived ATCABoard class. " alt="" coords="74,304,222,331"/>
+<area shape="rect" id="node10" href="_board_8cpp.html" title="Defines functions for the Board base class. " alt="" coords="246,304,349,331"/>
+<area shape="rect" id="node6" href="_a_t_c_a_board_8cpp.html" title="Defines functions for the ATCABoard class. " alt="" coords="5,379,144,405"/>
+<area shape="rect" id="node7" href="_s_e_m_a_8cpp.html" title="src/SEMA.cpp" alt="" coords="168,379,275,405"/>
+<area shape="rect" id="node9" href="_c_o_m_e_test_board_8cpp.html" title="Defines functions for the COMETestBoard derived class. " alt="" coords="378,379,547,405"/>
 </map>
 </div>
 </div>
@@ -157,6 +162,10 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_time_i2_c_register.html">TimeI2CRegister</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_s3232_temperature_i2_c_register.html">DS3232TemperatureI2CRegister</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_i_clock_p_l_l_mode_register.html">PCIClockPLLModeRegister</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_p_c_i_clock_output_enable_register.html">PCIClockOutputEnableRegister</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

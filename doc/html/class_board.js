@@ -13,5 +13,6 @@ var class_board =
     [ "setI2CType", "class_board.html#ad8b29f72cded4b6a994b1999e91d7062", null ],
     [ "write", "class_board.html#ab99bb344ee68485ab89e1ed5b9d79d4e", null ],
     [ "bus_map", "class_board.html#ac5fa25970ad12aa7d2c710bbcdd05339", null ],
+    [ "i2c", "class_board.html#aec7b3a540a138062fc54587e1040d917", null ],
     [ "i2c_bus", "class_board.html#a4458164bae62e6ba213a08a767242f9f", null ]
 ];

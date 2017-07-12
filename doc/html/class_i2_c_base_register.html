@@ -122,17 +122,19 @@ Inheritance diagram for I2CBaseRegister:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_i2_c_base_register__inherit__graph.png" border="0" usemap="#_i2_c_base_register_inherit__map" alt="Inheritance graph"/></div>
 <map name="_i2_c_base_register_inherit__map" id="_i2_c_base_register_inherit__map">
-<area shape="rect" id="node2" href="class_d_s3232_temperature_i2_c_register.html" title="DS3232TemperatureI2CRegister" alt="" coords="5,80,217,107"/>
-<area shape="rect" id="node3" href="class_generic_i2_c_register.html" title="GenericI2CRegister" alt="" coords="241,80,379,107"/>
-<area shape="rect" id="node4" href="class_time_i2_c_register.html" title="TimeI2CRegister" alt="" coords="403,80,524,107"/>
+<area shape="rect" id="node2" href="class_d_s3232_temperature_i2_c_register.html" title="DS3232TemperatureI2CRegister" alt="" coords="176,5,388,32"/>
+<area shape="rect" id="node3" href="class_generic_i2_c_register.html" title="GenericI2CRegister" alt="" coords="213,56,351,83"/>
+<area shape="rect" id="node4" href="class_p_c_i_clock_output_enable_register.html" title="PCIClockOutputEnableRegister" alt="" coords="179,107,385,133"/>
+<area shape="rect" id="node5" href="class_p_c_i_clock_p_l_l_mode_register.html" title="PCIClockPLLModeRegister" alt="" coords="191,157,373,184"/>
+<area shape="rect" id="node6" href="class_time_i2_c_register.html" title="TimeI2CRegister" alt="" coords="221,208,343,235"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a947d834a745d3036c4cd8a2d5e19cd0d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="units__define_8h.html#a8fb54b211f7f00ddcbc9b0759a57446c">units_variant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i2_c_base_register.html#a947d834a745d3036c4cd8a2d5e19cd0d">read</a> (<a class="el" href="class_i2_c__base.html">I2C_base</a> *i2c_ptr, uint32_t address)=0</td></tr>
+<tr class="memitem:a947d834a745d3036c4cd8a2d5e19cd0d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="units__define_8h.html#a95d46867fa79633565c288a0b4bd5408">units_variant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i2_c_base_register.html#a947d834a745d3036c4cd8a2d5e19cd0d">read</a> (<a class="el" href="class_i2_c__base.html">I2C_base</a> *i2c_ptr, uint32_t address)=0</td></tr>
 <tr class="separator:a947d834a745d3036c4cd8a2d5e19cd0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3f9f1404fe6af3e10e8f204b16d2066"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i2_c_base_register.html#ad3f9f1404fe6af3e10e8f204b16d2066">write</a> (<a class="el" href="class_i2_c__base.html">I2C_base</a> *i2c_ptr, uint32_t address, <a class="el" href="units__define_8h.html#a8fb54b211f7f00ddcbc9b0759a57446c">units_variant</a> value)=0</td></tr>
+<tr class="memitem:ad3f9f1404fe6af3e10e8f204b16d2066"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i2_c_base_register.html#ad3f9f1404fe6af3e10e8f204b16d2066">write</a> (<a class="el" href="class_i2_c__base.html">I2C_base</a> *i2c_ptr, uint32_t address, <a class="el" href="units__define_8h.html#a95d46867fa79633565c288a0b4bd5408">units_variant</a> value)=0</td></tr>
 <tr class="separator:ad3f9f1404fe6af3e10e8f204b16d2066"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1f72d5762a6141699b6af08333c4fda"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i2_c_base_register.html#af1f72d5762a6141699b6af08333c4fda">read</a> (void *i2c_ptr, uint32_t addr)=0</td></tr>
 <tr class="separator:af1f72d5762a6141699b6af08333c4fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,7 +154,7 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p><a class="el" href="_i2_c_register_8h.html">I2CRegister.h</a> Purpose: defines <a class="el" href="class_i2_c_base_register.html">I2CBaseRegister</a> class and its derivations. </p><dl class="section author"><dt>Author</dt><dd>David Monk </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 Base class for I2C register is pure virtual and thus should not be constructed. </dd></dl>
 
-<p>Definition at line <a class="el" href="_i2_c_register_8h_source.html#l00022">22</a> of file <a class="el" href="_i2_c_register_8h_source.html">I2CRegister.h</a>.</p>
+<p>Definition at line <a class="el" href="_i2_c_register_8h_source.html#l00023">23</a> of file <a class="el" href="_i2_c_register_8h_source.html">I2CRegister.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="af1f72d5762a6141699b6af08333c4fda"></a>
 <div class="memitem">
@@ -198,7 +200,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="units__define_8h.html#a8fb54b211f7f00ddcbc9b0759a57446c">units_variant</a> I2CBaseRegister::read </td>
+          <td class="memname">virtual <a class="el" href="units__define_8h.html#a95d46867fa79633565c288a0b4bd5408">units_variant</a> I2CBaseRegister::read </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i2_c__base.html">I2C_base</a> *&#160;</td>
           <td class="paramname"><em>i2c_ptr</em>, </td>
@@ -222,7 +224,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_d_s3232_temperature_i2_c_register.html#ab8733916ac8d733eb8d0e2b72df4efc2">DS3232TemperatureI2CRegister</a>, <a class="el" href="class_time_i2_c_register.html#a0b4f819644bed5adc645a089aec521da">TimeI2CRegister</a>, and <a class="el" href="class_generic_i2_c_register.html#a86c28b9c5eecacca106132e7718b2646">GenericI2CRegister</a>.</p>
+<p>Implemented in <a class="el" href="class_p_c_i_clock_output_enable_register.html#a045c8a20c9ac76b937f7224aaba4a4ff">PCIClockOutputEnableRegister</a>, <a class="el" href="class_p_c_i_clock_p_l_l_mode_register.html#afb680bb132c11af7c7f8ed5cba6a7150">PCIClockPLLModeRegister</a>, <a class="el" href="class_d_s3232_temperature_i2_c_register.html#ab8733916ac8d733eb8d0e2b72df4efc2">DS3232TemperatureI2CRegister</a>, <a class="el" href="class_time_i2_c_register.html#a0b4f819644bed5adc645a089aec521da">TimeI2CRegister</a>, and <a class="el" href="class_generic_i2_c_register.html#a86c28b9c5eecacca106132e7718b2646">GenericI2CRegister</a>.</p>
 
 </div>
 </div>
@@ -284,7 +286,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="units__define_8h.html#a8fb54b211f7f00ddcbc9b0759a57446c">units_variant</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="units__define_8h.html#a95d46867fa79633565c288a0b4bd5408">units_variant</a>&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
@@ -300,7 +302,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_d_s3232_temperature_i2_c_register.html#a69c3e1c321d2161d8c69e984031d7fc8">DS3232TemperatureI2CRegister</a>, <a class="el" href="class_time_i2_c_register.html#a49301d14f0d10afa0f0ad7edeb6b30a7">TimeI2CRegister</a>, and <a class="el" href="class_generic_i2_c_register.html#ad6f38b7b54c95e3f8502de01f6122d60">GenericI2CRegister</a>.</p>
+<p>Implemented in <a class="el" href="class_p_c_i_clock_output_enable_register.html#a85f345cbd4dac441680dbfebd20a15c0">PCIClockOutputEnableRegister</a>, <a class="el" href="class_p_c_i_clock_p_l_l_mode_register.html#a19290b05f08da81c02cf34c9730f2b17">PCIClockPLLModeRegister</a>, <a class="el" href="class_d_s3232_temperature_i2_c_register.html#a69c3e1c321d2161d8c69e984031d7fc8">DS3232TemperatureI2CRegister</a>, <a class="el" href="class_time_i2_c_register.html#a49301d14f0d10afa0f0ad7edeb6b30a7">TimeI2CRegister</a>, and <a class="el" href="class_generic_i2_c_register.html#ad6f38b7b54c95e3f8502de01f6122d60">GenericI2CRegister</a>.</p>
 
 </div>
 </div>
@@ -323,7 +325,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i2_c_register_8h_source.html#l00025">25</a> of file <a class="el" href="_i2_c_register_8h_source.html">I2CRegister.h</a>.</p>
+<p>Definition at line <a class="el" href="_i2_c_register_8h_source.html#l00026">26</a> of file <a class="el" href="_i2_c_register_8h_source.html">I2CRegister.h</a>.</p>
 
 </div>
 </div>
@@ -345,7 +347,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i2_c_register_8h_source.html#l00026">26</a> of file <a class="el" href="_i2_c_register_8h_source.html">I2CRegister.h</a>.</p>
+<p>Definition at line <a class="el" href="_i2_c_register_8h_source.html#l00027">27</a> of file <a class="el" href="_i2_c_register_8h_source.html">I2CRegister.h</a>.</p>
 
 </div>
 </div>
@@ -367,7 +369,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i2_c_register_8h_source.html#l00024">24</a> of file <a class="el" href="_i2_c_register_8h_source.html">I2CRegister.h</a>.</p>
+<p>Definition at line <a class="el" href="_i2_c_register_8h_source.html#l00025">25</a> of file <a class="el" href="_i2_c_register_8h_source.html">I2CRegister.h</a>.</p>
 
 </div>
 </div>

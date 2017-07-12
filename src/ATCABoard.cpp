@@ -1,5 +1,17 @@
+/**
+  @file ATCABoard.cpp
+  @brief Defines functions for the ATCABoard class.
+  @author David Monk - Imperial College London
+  @version 1.0
+*/
+
 #include "ATCABoard.h"
 
+/**
+   @brief Class constructor.
+   Full bus/device/register map is defined here. Also requests downstream bus from arbiter.
+   @param i2c_type - Pointer to I2C_base transport object.
+*/
 ATCABoard::ATCABoard(I2C_base* i2c_type) {
    i2c = i2c_type;
    i2c_set = true;
@@ -21,6 +33,10 @@ ATCABoard::ATCABoard(I2C_base* i2c_type) {
    });
 }
 
+/**
+   @brief Class destructor.
+   Gives up downstream bus to arbiter.
+*/
 ATCABoard::~ATCABoard(void) {
    if (downstream_available) {
       buffer = 0x00;
@@ -29,11 +45,18 @@ ATCABoard::~ATCABoard(void) {
    delete i2c;
 }
 
+/**
+   @brief Check if downstream bus is available to access.
+   @return Boolean value, true if available.
+*/
 bool ATCABoard::checkAvailability(void) {
    i2c->receiveData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
    return (buffer >> 1) & 0b1;
 }
 
+/**
+   @brief Requests downstream bus from arbiter. Throws error if not available.
+*/
 void ATCABoard::requestBus(void) {
    buffer = 0x7b; //enable interrupt
    i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x05);
@@ -52,17 +75,29 @@ void ATCABoard::requestBus(void) {
    }
 }
 
+/**
+   @brief Set which bus to use within I2C fan out.
+   @param - 8 bit integer. Each bit corresponds to output bus. Set bit to one to open bus.
+*/
 void ATCABoard::setFanOut(uint8_t buses) {
    buffer = buses;
    i2c->sendData(ATCA_FANOUT, (char*)&buffer, 1, 0x00);
 }
 
+/**
+  @brief Set bus to communicate over.
+  @param bus - String identifier for bus.
+*/
 void ATCABoard::setBus(std::string bus) {
    i2c_bus = bus_map[bus];
    uint8_t b = 0b1 << atoi(bus.c_str());
    setFanOut(b);
 }
 
+/**
+  @brief Set device to communicate to.
+  @param device - String identifier for device.
+*/
 void ATCABoard::setDevice(std::string device) {
    i2c_bus->setDevice(device);
    if (i2c_set) {
@@ -70,6 +105,11 @@ void ATCABoard::setDevice(std::string device) {
    }
 }
 
+/**
+  @brief Set device to communicate to.
+  @param bus - String identifier for bus.
+  @param device - String identifier for device.
+*/
 void ATCABoard::setDevice(std::string bus, std::string device) {
    setBus(bus);
    i2c_bus->setDevice(device);

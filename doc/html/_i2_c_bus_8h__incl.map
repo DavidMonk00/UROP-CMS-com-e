@@ -1,9 +1,9 @@
 <map id="include/I2CBus.h" name="include/I2CBus.h">
-<area shape="rect" id="node5" href="$_i2_c_device_8h.html" title="I2CDevice.h" alt="" coords="733,80,827,107"/>
-<area shape="rect" id="node13" href="$units__define_8h.html" title="units_define.h" alt="" coords="1294,229,1397,256"/>
-<area shape="rect" id="node10" href="$_i2_c_register_8h.html" title="I2CRegister.h" alt="" coords="729,155,831,181"/>
-<area shape="rect" id="node11" href="$_i2_c__base_8h.html" title="I2C_base.h" alt="" coords="427,229,517,256"/>
-<area shape="rect" id="node24" href="$_i2_c_8h.html" title="I2C.h" alt="" coords="327,155,382,181"/>
-<area shape="rect" id="node26" href="$diagnostics_8h.html" title="diagnostics.h" alt="" coords="83,229,181,256"/>
-<area shape="rect" id="node29" href="$_i2_c__define_8h.html" title="I2C_define.h" alt="" coords="307,229,403,256"/>
+<area shape="rect" id="node5" href="$_i2_c_device_8h.html" title="I2CDevice.h" alt="" coords="516,80,611,107"/>
+<area shape="rect" id="node14" href="$units__define_8h.html" title="units_define.h" alt="" coords="1385,229,1488,256"/>
+<area shape="rect" id="node10" href="$_i2_c_register_8h.html" title="I2CRegister.h" alt="" coords="431,155,533,181"/>
+<area shape="rect" id="node12" href="$_i2_c__base_8h.html" title="I2C_base.h" alt="" coords="735,229,824,256"/>
+<area shape="rect" id="node25" href="$_i2_c_8h.html" title="I2C.h" alt="" coords="619,155,673,181"/>
+<area shape="rect" id="node27" href="$diagnostics_8h.html" title="diagnostics.h" alt="" coords="510,229,609,256"/>
+<area shape="rect" id="node29" href="$_i2_c__define_8h.html" title="I2C_define.h" alt="" coords="1003,229,1099,256"/>
 </map>

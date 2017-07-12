@@ -2,6 +2,7 @@ var annotated_dup =
 [
     [ "boost", "namespaceboost.html", "namespaceboost" ],
     [ "devices", "namespacedevices.html", "namespacedevices" ],
+    [ "ATCABoard", "class_a_t_c_a_board.html", "class_a_t_c_a_board" ],
     [ "Board", "class_board.html", "class_board" ],
     [ "COMETestBoard", "class_c_o_m_e_test_board.html", "class_c_o_m_e_test_board" ],
     [ "Diagnostics", "class_diagnostics.html", "class_diagnostics" ],
@@ -15,8 +16,11 @@ var annotated_dup =
     [ "LegacyParser", "class_legacy_parser.html", "class_legacy_parser" ],
     [ "multiply", "classmultiply.html", "classmultiply" ],
     [ "Parser", "class_parser.html", "class_parser" ],
+    [ "PCIClockOutputEnableRegister", "class_p_c_i_clock_output_enable_register.html", "class_p_c_i_clock_output_enable_register" ],
+    [ "PCIClockPLLModeRegister", "class_p_c_i_clock_p_l_l_mode_register.html", "class_p_c_i_clock_p_l_l_mode_register" ],
     [ "PCIGen", "class_p_c_i_gen.html", "class_p_c_i_gen" ],
     [ "Test", "class_test.html", "class_test" ],
     [ "TimeI2CRegister", "class_time_i2_c_register.html", "class_time_i2_c_register" ],
+    [ "ToString", "class_to_string.html", "class_to_string" ],
     [ "units_and_powers", "structunits__and__powers.html", "structunits__and__powers" ]
 ];

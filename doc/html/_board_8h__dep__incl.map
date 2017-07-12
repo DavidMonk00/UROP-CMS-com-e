@@ -1,6 +1,8 @@
 <map id="include/Board.h" name="include/Board.h">
-<area shape="rect" id="node2" href="$_c_o_m_e_test_board_8h.html" title="include/COMETestBoard.h" alt="" coords="82,80,261,107"/>
-<area shape="rect" id="node5" href="$_board_8cpp.html" title="Defines functions for the Board base class. " alt="" coords="285,80,388,107"/>
-<area shape="rect" id="node3" href="$_c_o_m_e_test_board_8cpp.html" title="Defines functions for the COMETestBoard derived class. " alt="" coords="5,155,175,181"/>
-<area shape="rect" id="node4" href="$_s_e_m_a_8cpp.html" title="src/SEMA.cpp" alt="" coords="199,155,306,181"/>
+<area shape="rect" id="node2" href="$_a_t_c_a_board_8h.html" title="Defines the derived ATCABoard class. " alt="" coords="134,80,282,107"/>
+<area shape="rect" id="node5" href="$_c_o_m_e_test_board_8h.html" title="include/COMETestBoard.h" alt="" coords="307,80,485,107"/>
+<area shape="rect" id="node7" href="$_board_8cpp.html" title="Defines functions for the Board base class. " alt="" coords="510,80,613,107"/>
+<area shape="rect" id="node3" href="$_a_t_c_a_board_8cpp.html" title="Defines functions for the ATCABoard class. " alt="" coords="5,155,144,181"/>
+<area shape="rect" id="node4" href="$_s_e_m_a_8cpp.html" title="src/SEMA.cpp" alt="" coords="168,155,275,181"/>
+<area shape="rect" id="node6" href="$_c_o_m_e_test_board_8cpp.html" title="Defines functions for the COMETestBoard derived class. " alt="" coords="311,155,481,181"/>
 </map>

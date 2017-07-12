@@ -3,6 +3,7 @@ var test_8cpp =
     [ "units_and_powers", "structunits__and__powers.html", "structunits__and__powers" ],
     [ "multiply", "classmultiply.html", "classmultiply" ],
     [ "Test", "class_test.html", "class_test" ],
+    [ "ToString", "class_to_string.html", "class_to_string" ],
     [ "nanosecond", "test_8cpp.html#ae0bc7ab5733e359780e7c9a5c4ae787d", null ],
     [ "pair_type", "test_8cpp.html#a6b16b1518344aff7cbf8aaa9ae9cdd39", null ],
     [ "pairs_type", "test_8cpp.html#ab598806586272ab27a10406c3b8436fe", null ],

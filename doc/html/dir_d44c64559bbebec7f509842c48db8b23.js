@@ -1,6 +1,8 @@
 var dir_d44c64559bbebec7f509842c48db8b23 =
 [
+    [ "ATCABoard.h", "_a_t_c_a_board_8h.html", "_a_t_c_a_board_8h" ],
     [ "Board.h", "_board_8h.html", [
+      [ "ToString", "class_to_string.html", "class_to_string" ],
       [ "Board", "class_board.html", "class_board" ]
     ] ],
     [ "COMETestBoard.h", "_c_o_m_e_test_board_8h.html", [
@@ -24,7 +26,9 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
       [ "I2CBaseRegister", "class_i2_c_base_register.html", "class_i2_c_base_register" ],
       [ "GenericI2CRegister", "class_generic_i2_c_register.html", "class_generic_i2_c_register" ],
       [ "TimeI2CRegister", "class_time_i2_c_register.html", "class_time_i2_c_register" ],
-      [ "DS3232TemperatureI2CRegister", "class_d_s3232_temperature_i2_c_register.html", "class_d_s3232_temperature_i2_c_register" ]
+      [ "DS3232TemperatureI2CRegister", "class_d_s3232_temperature_i2_c_register.html", "class_d_s3232_temperature_i2_c_register" ],
+      [ "PCIClockPLLModeRegister", "class_p_c_i_clock_p_l_l_mode_register.html", "class_p_c_i_clock_p_l_l_mode_register" ],
+      [ "PCIClockOutputEnableRegister", "class_p_c_i_clock_output_enable_register.html", "class_p_c_i_clock_output_enable_register" ]
     ] ],
     [ "parser.h", "parser_8h.html", "parser_8h" ],
     [ "units_define.h", "units__define_8h.html", "units__define_8h" ]

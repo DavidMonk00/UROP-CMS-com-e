@@ -1,5 +1,16 @@
+/**
+  @file COMETestBoard.cpp
+  @brief Defines functions for the derived classes specific to the Si53106 component.
+  @author David Monk - Imperial College London
+  @version 1.0
+*/
+
 #include "I2CRegister.h"
 
+/**
+  @brief Class constructor.
+  @param r - Address of register within I2C device.
+*/
 PCIClockPLLModeRegister::PCIClockPLLModeRegister(uint32_t addr, std::string rw) {
    reg = addr;
    const char* rw_char = rw.c_str();
@@ -10,8 +21,16 @@ PCIClockPLLModeRegister::PCIClockPLLModeRegister(uint32_t addr, std::string rw) 
    b_write = position != end;
 }
 
+/**
+   @brief Class destructor.
+*/
 PCIClockPLLModeRegister::~PCIClockPLLModeRegister(void) {}
 
+/**
+  @brief Read data from register.
+  @param i2c_ptr - Pointer to I2C_base class used for transport.
+  @return units_variant containing quantity of correct type.
+*/
 units_variant PCIClockPLLModeRegister::read(I2C_base* i2c_ptr, uint32_t address) {
    if (b_read) {
       uint8_t buffer = 0;
@@ -37,6 +56,11 @@ units_variant PCIClockPLLModeRegister::read(I2C_base* i2c_ptr, uint32_t address)
    }
 }
 
+/**
+  @brief Write data to register.
+  @param i2c_ptr - pointer to I2C_base class used for transport
+  @param value - Data to be written. Must be of correct type.
+*/
 void PCIClockPLLModeRegister::write(I2C_base* i2c_ptr, uint32_t address, units_variant value) {
    std::unordered_map<double, uint8_t> modes = {{2, 0xE},
                                                 {1, 0xA},
@@ -51,7 +75,10 @@ void PCIClockPLLModeRegister::write(I2C_base* i2c_ptr, uint32_t address, units_v
    }
 }
 
-
+/**
+  @brief Class constructor.
+  @param r - Address of register within I2C device.
+*/
 PCIClockOutputEnableRegister::PCIClockOutputEnableRegister(uint32_t addr, std::string rw) {
    reg = addr;
    const char* rw_char = rw.c_str();
@@ -62,8 +89,16 @@ PCIClockOutputEnableRegister::PCIClockOutputEnableRegister(uint32_t addr, std::s
    b_write = position != end;
 }
 
+/**
+   @brief Class destructor.
+*/
 PCIClockOutputEnableRegister::~PCIClockOutputEnableRegister(void) {}
 
+/**
+  @brief Read data from register.
+  @param i2c_ptr - Pointer to I2C_base class used for transport.
+  @return units_variant containing quantity of correct type.
+*/
 units_variant PCIClockOutputEnableRegister::read(I2C_base* i2c_ptr, uint32_t address) {
    if (b_read) {
       uint8_t* buffer = (uint8_t*)malloc(2*sizeof(uint8_t));
@@ -78,6 +113,11 @@ units_variant PCIClockOutputEnableRegister::read(I2C_base* i2c_ptr, uint32_t add
    }
 }
 
+/**
+  @brief Write data to register.
+  @param i2c_ptr - pointer to I2C_base class used for transport
+  @param value - Data to be written. Must be of correct type.
+*/
 void PCIClockOutputEnableRegister::write(I2C_base* i2c_ptr, uint32_t address, units_variant value) {
    if (b_write) {
       uint8_t out = (uint8_t)boost::get<double>(value);

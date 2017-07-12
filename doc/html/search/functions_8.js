@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['main',['main',['../_s_e_m_a_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;SEMA.cpp'],['../pcigen_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;pcigen.cpp'],['../structure_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main(void):&#160;structure.cpp'],['../test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;test.cpp'],['../main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main(void):&#160;main.cpp']]],
-  ['multiply',['multiply',['../classmultiply.html#a30dc2fc906aa297217f8696cc37958a3',1,'multiply']]]
+  ['i2cbus',['I2CBus',['../class_i2_c_bus.html#a53db5c5daff720905da00259e8ea5709',1,'I2CBus']]],
+  ['i2cdevice',['I2CDevice',['../class_i2_c_device.html#a2e69a2e93dd5c82309f9e4983b3a9e74',1,'I2CDevice::I2CDevice(uint32_t addr, std::unordered_map&lt; std::string, I2CBaseRegister * &gt; reg_map)'],['../class_i2_c_device.html#a2edfce0d3f4d430f118fd6cc01483791',1,'I2CDevice::I2CDevice(void)']]],
+  ['i2csema',['I2CSema',['../class_i2_c_sema.html#ad9b53f523e31c4a24a73463591473358',1,'I2CSema::I2CSema(uint32_t ID, uint32_t address, bool diag)'],['../class_i2_c_sema.html#a627eb561a9ca1bb08f39a4f58cae0b3c',1,'I2CSema::I2CSema(uint32_t ID)']]]
 ];

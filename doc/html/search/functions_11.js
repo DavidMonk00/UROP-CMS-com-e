@@ -1,11 +1,4 @@
 var searchData=
 [
-  ['_7ediagnostics',['~Diagnostics',['../class_diagnostics.html#ad05cd98138d8ef3a0c1284412fbddd6b',1,'Diagnostics']]],
-  ['_7eds3232temperaturei2cregister',['~DS3232TemperatureI2CRegister',['../class_d_s3232_temperature_i2_c_register.html#a58d1a1797e2d18138a7ee53c4b89036d',1,'DS3232TemperatureI2CRegister']]],
-  ['_7egenerici2cregister',['~GenericI2CRegister',['../class_generic_i2_c_register.html#a17eb3844eb23aabe6fddfcef798e692f',1,'GenericI2CRegister']]],
-  ['_7ei2cbus',['~I2CBus',['../class_i2_c_bus.html#acdaf1b4ec82f6de308cc9604ce5e5e42',1,'I2CBus']]],
-  ['_7ei2cdevice',['~I2CDevice',['../class_i2_c_device.html#a6d3bfa5e15112985958df9366589cdc5',1,'I2CDevice']]],
-  ['_7ei2csema',['~I2CSema',['../class_i2_c_sema.html#ade6cfd73c317f5339a5b02558b5f5a11',1,'I2CSema']]],
-  ['_7epcigen',['~PCIGen',['../class_p_c_i_gen.html#af58edcfbfcc7582ab50283d84c384115',1,'PCIGen']]],
-  ['_7etimei2cregister',['~TimeI2CRegister',['../class_time_i2_c_register.html#a997bf1e5e4fafb70d9499ff0cca41581',1,'TimeI2CRegister']]]
+  ['write',['write',['../class_board.html#ab99bb344ee68485ab89e1ed5b9d79d4e',1,'Board::write()'],['../class_i2_c_bus.html#aa3b0ce715377ed393d07916a4e75c2a9',1,'I2CBus::write()'],['../class_i2_c_device.html#a916d9450534684ea0260cacf94a0b79b',1,'I2CDevice::write()'],['../class_i2_c_base_register.html#ad3f9f1404fe6af3e10e8f204b16d2066',1,'I2CBaseRegister::write()'],['../class_generic_i2_c_register.html#ad6f38b7b54c95e3f8502de01f6122d60',1,'GenericI2CRegister::write()'],['../class_time_i2_c_register.html#a49301d14f0d10afa0f0ad7edeb6b30a7',1,'TimeI2CRegister::write()'],['../class_d_s3232_temperature_i2_c_register.html#a69c3e1c321d2161d8c69e984031d7fc8',1,'DS3232TemperatureI2CRegister::write()'],['../class_p_c_i_clock_p_l_l_mode_register.html#a19290b05f08da81c02cf34c9730f2b17',1,'PCIClockPLLModeRegister::write()'],['../class_p_c_i_clock_output_enable_register.html#a85f345cbd4dac441680dbfebd20a15c0',1,'PCIClockOutputEnableRegister::write()'],['../class_i2_c_base_register.html#aed4dc86915a116908c4b5d7e8ffbde17',1,'I2CBaseRegister::write()'],['../class_generic_i2_c_register.html#a77b68755fe06268a21402f1e3190bd95',1,'GenericI2CRegister::write()']]]
 ];

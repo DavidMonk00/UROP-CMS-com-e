@@ -1,3 +1,11 @@
+/**
+  @file ATCABoard.h
+  @brief Defines the derived ATCABoard class.
+  @author David Monk - Imperial College London
+  @version 1.0
+*/
+
+#pragma once
 #include "I2C.h"
 #include "Board.h"
 #include <iostream>
