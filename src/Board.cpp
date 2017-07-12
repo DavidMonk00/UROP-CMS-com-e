@@ -23,7 +23,9 @@ std::vector<std::string> Board::getProperties(void) {
 
 std::string Board::read(std::string property) {
    units_variant value = i2c_bus->read(property);
-   return boost::units::to_string(value);
+   ToString T;
+   boost::apply_visitor( T , value );
+   return T.mRet;
 }
 
 void Board::write(std::string property, std::string value) {

@@ -66,7 +66,8 @@ struct units_and_powers : qi::grammar<std::string::iterator, phys_quant()> {
    qi::rule<std::string::iterator, phys_quant()> query;
 };
 
-typedef boost::variant< double,
+typedef boost::variant< std::string,
+                        double,
                         quantity<length>,
                         quantity<mass>,
                         quantity<si::time>
@@ -74,14 +75,18 @@ typedef boost::variant< double,
 
 class multiply : public boost::static_visitor<> {
 public:
-    units_variant mRet;
-    double mDouble;
-
-    multiply ( double aDouble ) : mDouble( aDouble ) {}
-    template <typename T>
-    void operator()( T & operand ) {
-        mRet = operand * mDouble;
-    }
+   std::string mRet;
+   void operator() (std::string & operand) {
+      mRet = operand;
+   }
+   void operator() (double & operand ) {
+      mRet = "doublee";
+   }
+   template <typename T>
+   void operator()( T & operand ) {
+      mRet = boost::units::to_string(operand);
+      //mRet = operand * mDouble;
+   }
 };
 
 std::pair<double,int> foo(std::string input) {
@@ -151,10 +156,10 @@ int main() {
       std::cout << i.first << " : " << i.second << std::endl;
    }
 
-   units_variant l( 3.1415 );
-   l = 6.1 * si::kilogram;
+   units_variant l( "hello there" );
+   //l = 6.1 * si::kilogram;
 
-   multiply v(2.0);
+   multiply v;
    boost::apply_visitor( v , l );
    std::cout << l << " " << v.mRet << std::endl;
    std::cout << boost::get<quantity<mass> >(l) << '\n';
@@ -209,15 +214,5 @@ int main() {
    }
    std::cout << var << std::endl;
 
-   enum tTest {SEMA, FTDI, PCIe};
-   tTest en = SEMA;
-   switch (en) {
-      case SEMA:
-         std::cout << "SEMA" << '\n';
-         Test T = Test(2);
-         break;
-      default:
-         std::cout << "Something else" << '\n';
-   }
    return 0;
 }

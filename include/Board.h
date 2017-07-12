@@ -8,6 +8,18 @@
 #include "parser.h"
 #include <boost/units/io.hpp>
 
+class ToString : public boost::static_visitor<> {
+public:
+   std::string mRet;
+   void operator() (std::string & operand ) {
+      mRet = operand;
+   }
+   template <typename T>
+   void operator()( T & operand ) {
+      mRet = boost::units::to_string(operand);
+   }
+};
+
 class Board {
 protected:
    std::unordered_map<std::string, I2CBus*> bus_map;
