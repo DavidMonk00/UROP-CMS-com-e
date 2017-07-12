@@ -66,7 +66,8 @@ struct units_and_powers : qi::grammar<std::string::iterator, phys_quant()> {
    qi::rule<std::string::iterator, phys_quant()> query;
 };
 
-typedef boost::variant< double,
+typedef boost::variant< std::string,
+                        double,
                         quantity<length>,
                         quantity<mass>,
                         quantity<si::time>
@@ -75,6 +76,9 @@ typedef boost::variant< double,
 class multiply : public boost::static_visitor<> {
 public:
    std::string mRet;
+   void operator() (std::string & operand) {
+      mRet = operand;
+   }
    void operator() (double & operand ) {
       mRet = "doublee";
    }
@@ -152,7 +156,7 @@ int main() {
       std::cout << i.first << " : " << i.second << std::endl;
    }
 
-   units_variant l( 3.1415 );
+   units_variant l( "hello there" );
    //l = 6.1 * si::kilogram;
 
    multiply v;
