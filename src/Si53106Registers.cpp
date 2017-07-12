@@ -69,6 +69,7 @@ units_variant PCIClockOutputEnableRegister::read(I2C_base* i2c_ptr, uint32_t add
       uint8_t* buffer = (uint8_t*)malloc(2*sizeof(uint8_t));
       i2c_ptr->receiveData(address, (char*)buffer, 2, reg);
       uint8_t out = (0b11&(buffer[0]>>1))|(0b1100&(buffer[0]>>3))|((0b1&buffer[1])<<4)|((0b1&(buffer[1]>>2))<<5);
+      free(buffer);
       units_variant var = out;
       return var;
    } else {
@@ -84,6 +85,7 @@ void PCIClockOutputEnableRegister::write(I2C_base* i2c_ptr, uint32_t address, un
       buffer[0] = ((0b0011&out)<<1)|((0b1100&out)<<3);
       buffer[1] = (0b1&(out>>4))|(0b100&(out>>3));
       i2c_ptr->sendData(address, (char*)buffer, 2, reg);
+      free(buffer);
    } else {
       printf("Register cannot be written to.\n");
       exit(-1);
