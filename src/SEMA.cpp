@@ -79,14 +79,18 @@ int main(int argc, char* argv[]) {
    ATCA* A = new ATCA(i2c);
    A->requestBus();
    A->setFanOut(0b00000010);
-   buffer = 0x00;
-   i2c->sendData(ATCA_PCI_CLK, (char*)&buffer, 1, 0|0b10000000);
-   A->printSynthRegisters();
-   int N = 16;
+   //buffer = 0x00;
+   //i2c->sendData(ATCA_PCI_CLK, (char*)&buffer, 1, 0|0b10000000);
+   //A->printSynthRegisters();
+   int N = 2;
    uint8_t* b = (uint8_t*)malloc(N*sizeof(uint8_t));
-   i2c->receiveData(ATCA_ETH_PHY, (char*)b, N, 0x00);
-   for (int i = 0; i < N; i++) {
-      printf("Ethernet PHY byte %d : 0x%X\n", i, b[i]);
+   for (int i = 0; i < 30; i++) {
+      A->printSynthRegisters();
+      i2c->receiveData(0b1010110, (char*)b, N, 0x00);
+      for (int i = 0; i < N; i++) {
+         printf("Ethernet PHY byte %d : 0x%X\n", i, b[i]);
+      }
+      sleep(2);
    }
    delete A;
    return 0;
