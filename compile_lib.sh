@@ -1,0 +1,1 @@
+g++ -O3 -shared -std=c++14 -fPIC -I/opt/pybind11/include `python-config --cflags --ldflags` -lsemaeapi -L/opt/Sema/lib -Iinclude -I/opt/Sema/include -I/opt/pybind11/include  test/python/libI2C.cpp -o bin/libI2C.so

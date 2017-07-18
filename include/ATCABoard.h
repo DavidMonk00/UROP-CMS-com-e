@@ -24,6 +24,7 @@ private:
    void setFanOut(uint8_t buses);
 public:
    ATCABoard(I2C_base* i2c_type);
+   ATCABoard(std::string i2c_string);
    ~ATCABoard(void);
    std::unordered_map<std::string, I2CBus*> getMap(void);
    void setBus(std::string bus);

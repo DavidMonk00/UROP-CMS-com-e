@@ -34,6 +34,36 @@ ATCABoard::ATCABoard(I2C_base* i2c_type) {
 }
 
 /**
+   @brief Class constructor.
+   Full bus/device/register map is defined here. Also requests downstream bus from arbiter.
+   @param i2c_type - Pointer to I2C_base transport object.
+*/
+ATCABoard::ATCABoard(std::string i2c_string) {
+   if (i2c_string == "SEMA") {
+      i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL);
+      i2c_set = true;
+      downstream_available = false;
+      requestBus();
+   } else {
+      exit(-1);
+   }
+   bus_map.insert({
+      "1", new I2CBus(std::unordered_map<std::string, I2CDevice*> {
+         {"PCI Clock", new I2CDevice(PCICLOCK_ADDR, std::unordered_map<std::string, I2CBaseRegister*>{
+            {"vendor ID", new GenericI2CRegister(0x06|0x80, "r", [](int value){return value;},
+                                                                 [](units_variant value) {return boost::get<int>(value);})},
+            {"device ID", new GenericI2CRegister(0x07|0x80, "r", [](int value){return value;},
+                                                                 [](units_variant value) {return boost::get<int>(value);})},
+            {"clock frequency", new GenericI2CRegister(0x00|0x80, "r", [](int value){quantity<frequency> val = value & 1 ? 100e6*hertz : 133e6*hertz; return val;},
+                                                                       [](units_variant value) {return boost::get<int>(value);})},
+            {"PLL mode", new PCIClockPLLModeRegister(0x00|0x80, "rw")},
+            {"output enable", new PCIClockOutputEnableRegister(0x01|0x80, "rw")},
+         })}
+      })
+   });
+}
+
+/**
    @brief Class destructor.
    Gives up downstream bus to arbiter.
 */

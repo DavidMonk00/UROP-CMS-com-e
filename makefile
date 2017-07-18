@@ -9,7 +9,7 @@ SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 CFLAGS := -g -std=c++11
 LIB := -lsemaeapi -L/opt/Sema/lib
-INC := -Iinclude -I/opt/Sema/include
+INC := -Iinclude -I/opt/Sema/include -I/opt/pybind11/include
 
 $(TARGET): $(OBJECTS)
 	@echo "Linking..."
