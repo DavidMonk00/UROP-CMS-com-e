@@ -17,6 +17,7 @@ using namespace std;
 #define ATCA_FANOUT 0xE4
 #define ATCA_ETH_PHY 0xAC
 #define ATCA_PCI_CLK 0xD8
+#define ATCA_GPIO 0x80
 
 class ATCA {
 private:
@@ -79,18 +80,39 @@ int main(int argc, char* argv[]) {
    ATCA* A = new ATCA(i2c);
    A->requestBus();
    A->setFanOut(0b00000010);
-   //buffer = 0x00;
-   //i2c->sendData(ATCA_PCI_CLK, (char*)&buffer, 1, 0|0b10000000);
+   buffer = 0xB1;
+   //i2c->sendData(0xA0, (char*)&buffer, 1, 0xFE);
    //A->printSynthRegisters();
-   int N = 2;
+   int N = 1;
    uint8_t* b = (uint8_t*)malloc(N*sizeof(uint8_t));
-   for (int i = 0; i < 30; i++) {
-      A->printSynthRegisters();
-      i2c->receiveData(0b1010110, (char*)b, N, 0x00);
-      for (int i = 0; i < N; i++) {
-         printf("Ethernet PHY byte %d : 0x%X\n", i, b[i]);
+   for (int i = 0; i < 0x01; i=i+2) {
+      uint8_t addr = ATCA_GPIO;
+      buffer = 0b01010000;
+      i2c->sendData(ATCA_GPIO, (char*)&buffer, 1, 0x13);
+      buffer = 0b00010000;
+      i2c->sendData(ATCA_GPIO, (char*)&buffer, 1, 0x10);
+      // i2c->sendData(ATCA_GPIO, (char*)&buffer, 1, 0x22);
+      //A->printSynthRegisters();
+      for (int j = 0; j < 0x25; j++) {
+         i2c->receiveData(addr, (char*)b, N, j);
+         if (b[0] != 0xF0) {
+            printf("Address 0x%02X byte 0x%02X : 0x%02X\n", addr, j, b[0]);
+         } else {
+            //printf("Address 0x%02X byte 0x%02X : Not available\n", addr, j, b[0]);
+         }
       }
-      sleep(2);
+      // N = 2;
+      addr = ATCA_ETH_PHY;
+      i2c->receiveData(addr, (char*)b, N, 0x00);
+      for (int j = 0; j < N; j++) {
+         if (b[j] != 0xF0) {
+            printf("Address 0x%X byte %d : 0x%X\n", addr, j, b[j]);
+         } else {
+            printf("Address 0x%02X byte 0x%02X : Not available\n", addr, j, b[0]);
+         }
+      }
+      //sleep(2);
+      //cin.ignore();
    }
    delete A;
    return 0;
