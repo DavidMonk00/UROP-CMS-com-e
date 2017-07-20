@@ -60,9 +60,8 @@ struct units_and_powers : qi::grammar<Iterator, phys_quant()> {
 };
 
 class Parser {
-private:
-   std::pair<double, int> getQuantityPair(std::string input);
 public:
+   std::pair<double, int> getQuantityPair(std::string input);
    units_variant getQuantity(std::string input);
 };
 
