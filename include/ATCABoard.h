@@ -6,10 +6,7 @@
 */
 
 #pragma once
-#include "I2C.h"
 #include "Board.h"
-#include <iostream>
-#include <stdio.h>
 
 #define ATCA_ARBITER 0xE0
 #define ATCA_FANOUT 0xE4

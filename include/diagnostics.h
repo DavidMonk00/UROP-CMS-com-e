@@ -8,8 +8,7 @@
 #pragma once
 #include <cstdlib>
 #include <stdio.h>
-#include <iostream>
-#include <string.h>
+#include <string>
 #include <Sema.h>
 using namespace std;
 

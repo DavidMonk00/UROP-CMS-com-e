@@ -1,19 +1,18 @@
 CC := g++
 SRCDIR := src
 BUILDDIR := build
-TARGET := bin/libI2C.so
+TARGET := bin/SEMA
 
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
-CFLAGS := -g -std=c++14 -fPIC
-LIB := -lsemaeapi -L/opt/Sema/lib `python-config --cflags --ldflags`
-INC := -Iinclude -I/opt/Sema/include -I/opt/pybind11/include
+CFLAGS := -g -std=c++11
+LIB := -lsemaeapi -L/opt/Sema/lib
+INC := -Iinclude -I/opt/Sema/include
 
 $(TARGET): $(OBJECTS)
-#	@echo "Linking..."
-	$(CC) $(CFLAGS) $(INC) `python-config --cflags --ldflags` -c -o $(BUILDDIR)/libI2C.o libsrc/libI2C.cpp
-	@echo "$(CC) -shared $^ $(BUILDDIR)/libI2C.o -o $(TARGET) $(LIB)"; $(CC) -shared $^ $(BUILDDIR)/libI2C.o -o $(TARGET) $(LIB)
+	@echo "Linking..."
+	@echo "$(CC) $^ -o $(TARGET) $(LIB)"; $(CC) $^ -o $(TARGET) $(LIB)
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
 	@mkdir -p $(BUILDDIR)

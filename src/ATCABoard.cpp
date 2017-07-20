@@ -99,7 +99,7 @@ void ATCABoard::requestBus(void) {
       i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
       downstream_available = true;
    } else {
-      std::cout << "Bus not available." << '\n';
+      printf("Bus not available.\n");
       downstream_available = false;
       exit(-1);
    }

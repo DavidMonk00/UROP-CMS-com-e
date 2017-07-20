@@ -106,9 +106,5 @@ phys_quant LegacyParser::getQuantity(std::string input) {
   phys_quant m;
   units_and_powers<std::string::iterator> p;
   bool result = qi::parse(input.begin(), input.end(), p,  m);
-  std::cout << m.first << std::endl;
-  for (auto i:  m.second) {
-     std::cout << i.first << " : " << i.second << std::endl;
-  }
   return m;
 }
