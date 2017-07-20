@@ -6,10 +6,7 @@
 */
 
 #pragma once
-#include "I2C.h"
 #include "Board.h"
-#include <iostream>
-#include <stdio.h>
 
 class ATCABoard : public Board {
 private:

@@ -5,14 +5,10 @@
   @version 1.0
 */
 
-#include <string>
-#include <cstdlib>
+#pragma once
 #include <unordered_map>
-#include <stdlib.h>
 #include <functional>
-#include <stdio.h>
-#include <iostream>
-#include "I2C_base.h"
+#include "I2C.h"
 #include "units_define.h"
 
 //TODO Add minutes, hours to units namespace

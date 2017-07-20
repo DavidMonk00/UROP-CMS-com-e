@@ -1,5 +1,4 @@
 #pragma once
-#include <string>
 #include "I2C.h"
 
 class I2CRaw {

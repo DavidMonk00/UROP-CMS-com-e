@@ -7,13 +7,8 @@
 
 #pragma once
 
-#include <unordered_map>
-#include <string>
-#include <vector>
 #include "I2CBus.h"
-#include "I2C_define.h"
 #include "parser.h"
-#include <boost/units/io.hpp>
 
 class ToString : public boost::static_visitor<> {
 public:

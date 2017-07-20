@@ -30,7 +30,7 @@ void I2CRaw::requestBus(void) {
       buffer = 0x05; //enable downstream
       i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
    } else {
-      std::cout << "Bus not available." << '\n';
+      printf("Bus not available.\n"); //TODO throw exception instead.
       exit(-1);
    }
 }
