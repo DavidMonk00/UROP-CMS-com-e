@@ -43,6 +43,7 @@ public:
    void setDevice(std::string device);
    void setDevice(std::string bus, std::string device);
    void setI2CType(I2C_base* i2c_type);
+   std::vector<std::string> getBuses(void);
    std::vector<std::string> getDevices(void);
    std::vector<std::string> getDevices(std::string bus);
    std::vector<std::string> getProperties(void);

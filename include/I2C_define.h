@@ -14,3 +14,5 @@
 // --------- ATCABoard ---------
 //I2C Addresses
 #define PCICLOCK_ADDR 0xD8
+#define ATCA_ARBITER 0xE0
+#define ATCA_FANOUT 0xE4

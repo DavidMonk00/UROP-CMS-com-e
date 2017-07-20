@@ -11,9 +11,6 @@
 #include <iostream>
 #include <stdio.h>
 
-#define ATCA_ARBITER 0xE0
-#define ATCA_FANOUT 0xE4
-
 class ATCABoard : public Board {
 private:
    uint8_t buffer;

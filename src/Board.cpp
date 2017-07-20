@@ -42,6 +42,19 @@ void Board::setI2CType(I2C_base* i2c_type) {
 }
 
 /**
+   @brief Get available buses on board.
+   @return Vector of string IDs for available buses.
+*/
+std::vector<std::string> Board::getBuses(void) {
+   std::vector<std::string> v;
+   v.reserve(bus_map.size());
+   for (auto kv : bus_map) {
+     v.push_back(kv.first);
+   }
+   return v;
+}
+
+/**
    @brief Get available devices on selected bus.
    @return Vector of string IDs for available devices.
 */
