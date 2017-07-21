@@ -30,7 +30,9 @@
        cmake ..
        make check -j 4
        ```
-- Crontab:
+### Clone repository
+`git clone https://github.com/DavidMonk00/UROP-CMS-com-e.git`
+### Crontab:
     * `crontab -e`:
       ```
       * * * * * /path-to-folder/bin/main.py
