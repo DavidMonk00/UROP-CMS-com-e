@@ -19,7 +19,6 @@ def getData():
             properties = [str(i) for i in A.getProperties()]
             for prop in properties:
                 board_dict[bus][device][prop] = str(A.read(prop))
-    #print board_dict
     server = couchdb.Server("http://127.0.0.1:5984")
     db = server['data']
     doc_id, doc_rev = db.save(board_dict)
@@ -35,6 +34,7 @@ def updateServer():
     c.setopt(pycurl.POST, 1)
     c.setopt(pycurl.POSTFIELDS, data)
     c.perform()
+
 def main():
     getData()
     updateServer()
