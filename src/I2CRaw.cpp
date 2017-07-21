@@ -3,7 +3,7 @@
 I2CRaw::I2CRaw() {
    i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL);
    requestBus();
-   setFanOut(0b00000010);
+   setFanOut(0b00000100);
 }
 
 I2CRaw::~I2CRaw() {

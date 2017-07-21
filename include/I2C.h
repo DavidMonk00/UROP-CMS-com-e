@@ -21,6 +21,7 @@ class I2CSema: public I2C_base {
 private:
   uint32_t handler;
   uint32_t id;
+  Diagnostics* diagnostics;
 public:
   I2CSema(uint32_t ID, uint32_t address, bool diag);
   I2CSema(uint32_t ID);

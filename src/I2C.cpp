@@ -39,10 +39,10 @@ I2CSema::I2CSema(uint32_t ID, uint32_t address, bool diag) {
     printf("Can't initialise library. Error code: %X\n", ret);
   }
   //Check I2C availibilty through the Diagnostics class
+  diagnostics = new Diagnostics(handler);
   if (diag) {
     printf("Initialised library. Checking I2C status...\n");
-    Diagnostics d = Diagnostics(handler);
-    d.printI2CSupport();
+    diagnostics->printI2CSupport();
     printf("\n");
   }
   //Set I2C addresses

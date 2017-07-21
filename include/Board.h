@@ -18,7 +18,7 @@ public:
    }
    void operator() (int & operand) {
       char str[64];
-      sprintf(str, "0x%X", operand);
+      sprintf(str, "%d", operand);
       mRet = str;
    }
    template <typename T>
