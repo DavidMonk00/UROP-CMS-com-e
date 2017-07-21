@@ -9,7 +9,7 @@
     * `scl enable devtoolset-4 bash`
 - SEMA libraries:
     1. Download from http://www.adlinktech.com/PD/web/PD_Driver.php?cp=Driver&PDNo=1274&kind=UT
-    2. Run LINUX_x64 within binaries within archive
+    2. Run `/archive-directory/binaries/linux64/SEMA_x64` as root
     3. Copy header files to /opt/Sema/include
     4. Link binaries from /usr/local/SEMA/lib -> /opt/Sema/lib
     5. Create header file "Sema.h" to collect includes
