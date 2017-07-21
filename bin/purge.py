@@ -9,7 +9,7 @@ def main():
     now = datetime.datetime.now()
     time = int(now.strftime("%Y%m%d%H%M%S"))
     for i in docs:
-        if ((time-i)>6000):
+        if ((time-i)>10000):
             del db[str(i)]
 
 if (__name__ == '__main__'):
