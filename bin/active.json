@@ -1,0 +1,25 @@
+{
+    "1": {
+        "PCI-Clock": {
+            "vendorID":false,
+            "deviceID":false,
+            "clock-frequency":true,
+            "PLLmode":true,
+            "outputenable":true
+        }
+    },
+    "internal": {
+        "CPU": {
+            "temperature":true,
+            "voltage":true
+        },
+        "System": {
+            "temperature":true,
+            "running-time":true,
+            "boot-counter":false,
+            "voltage25":true,
+            "voltage33":true,
+            "voltage5":true
+        }
+    }
+}

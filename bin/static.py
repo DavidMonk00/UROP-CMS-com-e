@@ -4,23 +4,13 @@ import datetime
 import pycurl
 import json
 
-active = {
-    "1":{
-        "PCI-Clock":{
-            "vendorID":False,
-            "deviceID":False,
-            "clock-frequency":True,
-            "PLLmode":True,
-            "outputenable":True
-        }
-    }
-}
-
 def getData():
     ATCA = ATCABoard("SEMA")
     now = datetime.datetime.now()
     board_dict = {'_id': 'static'}
     buses = [str(i) for i in ATCA.getBuses()]
+    with open('active.json') as data_file:
+        active = json.load(data_file)
     for bus in buses:
         board_dict[bus] = {}
         ATCA.setBus(bus)
@@ -44,8 +34,9 @@ def getData():
 def updateServer():
     c = pycurl.Curl()
     url = 'http://127.0.0.1:5984/_replicate'
+    target = [line.strip() for line in open('config.txt')][0]
     data = json.dumps({"source":"data",
-                       "target":"http://129.31.149.64:5984/atca001",
+                       "target":target,
                        "filter":"filters/replicate_filter"})
     c.setopt(pycurl.URL, url)
     c.setopt(pycurl.HTTPHEADER, ['Content-Type:application/json'])
