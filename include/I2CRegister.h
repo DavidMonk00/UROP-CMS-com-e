@@ -85,3 +85,13 @@ public:
    units_variant read(I2C_base* i2c_ptr, uint32_t address);
    void write(I2C_base* i2c_ptr, uint32_t address, units_variant value);
 };
+
+class InternalRegister : public I2CBaseRegister {
+   std::function<units_variant(double value)> mRead;
+   std::function<uint8_t(units_variant)> mWrite;
+public:
+   InternalRegister(uint32_t r, std::string rw, std::function<units_variant(double value)> read_func);
+   ~InternalRegister(void);
+   units_variant read(I2C_base* i2c_ptr, uint32_t address);
+   void write(I2C_base* i2c_ptr, uint32_t address, units_variant value);
+};

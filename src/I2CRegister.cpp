@@ -61,3 +61,47 @@ void GenericI2CRegister::write(I2C_base* i2c_ptr, uint32_t address, units_varian
       exit(-1);
    }
 }
+
+/**
+  @brief Class constructor.
+  @param read_func - Lambda function to convert hexadecimal value into correct units type.
+  @param write_func - Lambda function to convert units type into uint8_t to be written.
+*/
+InternalRegister::InternalRegister(uint32_t r, std::string rw, std::function<units_variant(double)> read_func) {
+  reg = r;
+  mRead = read_func;
+  const char* rw_char = rw.c_str();
+  const char* end = rw_char + sizeof(rw_char)/sizeof(rw_char[0]);
+  const char* position = std::find(rw_char, end, 'r');
+  b_read = position != end;
+  position = std::find(rw_char, end, 'w');
+  b_write = position != end;
+}
+
+/**
+   @brief Class destructor.
+*/
+InternalRegister::~InternalRegister(void) {}
+
+/**
+  @brief Read data from register.
+  @param i2c_ptr - Pointer to I2C_base class used for transport.
+  @return units_variant containing quantity of correct type.
+*/
+units_variant InternalRegister::read(I2C_base* i2c_ptr, uint32_t address) {
+   if (b_read) {
+      uint32_t buffer = 0;
+      i2c_ptr->getBoardValue(reg, &buffer);
+      return mRead((int)buffer);
+   } else {
+      printf("Register cannot be read.\n");
+      exit(-1);
+   }
+}
+
+/**
+  @brief VALUES CANNOT BE WRITTEN TO.
+  @param i2c_ptr - Pointer to I2C_base class used for transport.
+  @param value - Data to be written. Must be of correct type.
+*/
+void InternalRegister::write(I2C_base* i2c_ptr, uint32_t address, units_variant value) {}

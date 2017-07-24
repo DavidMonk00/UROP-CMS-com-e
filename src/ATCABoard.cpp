@@ -31,6 +31,13 @@ ATCABoard::ATCABoard(I2C_base* i2c_type) {
          })}
       })
    });
+   bus_map.insert({
+      "internal", new I2CBus(std::unordered_map<std::string, I2CDevice*> {
+         {"CPU", new I2CDevice(0x00, std::unordered_map<std::string, I2CBaseRegister*>{
+            {"temperature", new InternalRegister(EAPI_ID_HWMON_CPU_TEMP, "r", [](int value){double temp = ((double)value)/10; return temp*kelvin;})}
+         })}
+      })
+   });
 }
 
 /**
@@ -58,6 +65,22 @@ ATCABoard::ATCABoard(std::string i2c_string) {
                                                                        [](units_variant value) {return boost::get<int>(value);})},
             {"PLLmode", new PCIClockPLLModeRegister(0x00|0x80, "rw")},
             {"outputenable", new PCIClockOutputEnableRegister(0x01|0x80, "rw")},
+         })}
+      })
+   });
+   bus_map.insert({
+      "internal", new I2CBus(std::unordered_map<std::string, I2CDevice*> {
+         {"CPU", new I2CDevice(0x00, std::unordered_map<std::string, I2CBaseRegister*>{
+            {"temperature", new InternalRegister(EAPI_ID_HWMON_CPU_TEMP, "r", [](int value){double temp = ((double)value)/10; return temp*kelvin;})},
+            {"voltage", new InternalRegister(EAPI_ID_HWMON_VOLTAGE_VCORE, "r", [](int value){double temp = ((double)value)/1000; return temp*volts;})}
+         })},
+         {"System", new I2CDevice(0x00, std::unordered_map<std::string, I2CBaseRegister*>{
+            {"temperature", new InternalRegister(EAPI_ID_HWMON_SYSTEM_TEMP, "r", [](int value){double temp = ((double)value)/10; return temp*kelvin;})},
+            {"running-time", new InternalRegister(EAPI_ID_BOARD_RUNNING_TIME_METER_VAL, "r", [](int value){double temp = ((double)value)*60; return temp*seconds;})},
+            {"voltage25", new InternalRegister(EAPI_ID_HWMON_VOLTAGE_2V5, "r", [](int value){double temp = ((double)value)/1000; return temp*volts;})},
+            {"voltage33", new InternalRegister(EAPI_ID_HWMON_VOLTAGE_3V3, "r", [](int value){double temp = ((double)value)/1000; return temp*volts;})},
+            {"voltage5", new InternalRegister(EAPI_ID_HWMON_VOLTAGE_5V, "r", [](int value){double temp = ((double)value)/1000; return temp*volts;})},
+            {"boot-counter", new InternalRegister(EAPI_ID_BOARD_BOOT_COUNTER_VAL, "r", [](int value){return value;})}
          })}
       })
    });

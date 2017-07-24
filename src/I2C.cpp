@@ -104,3 +104,11 @@ void I2CSema::sendData(uint32_t address, char* buffer, uint32_t bytecnt, uint32_
     printf("ERROR: 0x%X", ret);
   }
 }
+
+void I2CSema::getBoardValue(uint32_t value, uint32_t* buffer) {
+   uint32_t ret;
+   ret = SemaEApiBoardGetValue(handler, value, buffer);
+   if (ret != EAPI_STATUS_SUCCESS) {
+      printf("ERROR: 0x%X", ret);
+   }
+}

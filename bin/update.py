@@ -4,6 +4,32 @@ import datetime
 import pycurl
 import json
 
+active = {
+    "1":{
+        "PCI-Clock":{
+            "vendorID":False,
+            "deviceID":False,
+            "clock-frequency":True,
+            "PLLmode":True,
+            "outputenable":True
+        }
+    },
+    "internal":{
+        "CPU":{
+            "temperature":True,
+            "voltage":True
+        },
+        "System":{
+            "temperature":True,
+            "running-time":True,
+            "boot-counter":False,
+            "voltage25":True,
+            "voltage33":True,
+            "voltage5":True
+        }
+    }
+}
+
 def getData():
     A = ATCABoard("SEMA")
     now = datetime.datetime.now()
@@ -18,7 +44,8 @@ def getData():
             A.setDevice(device)
             properties = [str(i) for i in A.getProperties()]
             for prop in properties:
-                board_dict[bus][device][prop] = str(A.read(prop))
+                if active[bus][device][prop]:
+                    board_dict[bus][device][prop] = str(A.read(prop))
     server = couchdb.Server("http://127.0.0.1:5984")
     db = server['data']
     doc_id, doc_rev = db.save(board_dict)

@@ -21,4 +21,5 @@ protected:
 public:
   virtual void receiveData(uint32_t address, char* buffer, uint32_t bytecnt, uint32_t start_point)=0;
   virtual void sendData(uint32_t address, char* buffer, uint32_t bytecnt, uint32_t start_point)=0;
+  virtual void getBoardValue(uint32_t value, uint32_t* buffer)=0;
 };
