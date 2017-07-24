@@ -14,5 +14,6 @@ class COMETestBoard : public Board {
 public:
    COMETestBoard(I2C_base* i2c_type);
    COMETestBoard(std::string i2c_string);
+   ~COMETestBoard(void);
    std::unordered_map<std::string, I2CBus*> getMap(void);
 };
