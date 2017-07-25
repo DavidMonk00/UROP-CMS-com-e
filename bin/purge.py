@@ -2,6 +2,9 @@ import couchdb
 import datetime
 
 def main():
+    s = [line.strip() for line in open("config.txt")]
+    conn_test = couchdb.Server(s[0])
+    print conn_test['_all_dbs']
     server = couchdb.Server("http://127.0.0.1:5984")
     db = server['data']
     docs = [id for id in db if (id[0] == '2')]
