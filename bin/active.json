@@ -17,9 +17,7 @@
             "temperature":true,
             "running-time":true,
             "boot-counter":false,
-            "voltage25":true,
-            "voltage33":true,
-            "voltage5":true
+            "voltage33":true
         }
     }
 }

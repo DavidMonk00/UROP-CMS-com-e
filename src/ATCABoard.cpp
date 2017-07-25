@@ -77,9 +77,7 @@ ATCABoard::ATCABoard(std::string i2c_string) {
          {"System", new I2CDevice(0x00, std::unordered_map<std::string, I2CBaseRegister*>{
             {"temperature", new InternalRegister(EAPI_ID_HWMON_SYSTEM_TEMP, "r", [](int value){double temp = ((double)value)/10; return temp*kelvin;})},
             {"running-time", new InternalRegister(EAPI_ID_BOARD_RUNNING_TIME_METER_VAL, "r", [](int value){double temp = ((double)value)*60; return temp*seconds;})},
-            {"voltage25", new InternalRegister(EAPI_ID_HWMON_VOLTAGE_2V5, "r", [](int value){double temp = ((double)value)/1000; return temp*volts;})},
             {"voltage33", new InternalRegister(EAPI_ID_HWMON_VOLTAGE_3V3, "r", [](int value){double temp = ((double)value)/1000; return temp*volts;})},
-            {"voltage5", new InternalRegister(EAPI_ID_HWMON_VOLTAGE_5V, "r", [](int value){double temp = ((double)value)/1000; return temp*volts;})},
             {"boot-counter", new InternalRegister(EAPI_ID_BOARD_BOOT_COUNTER_VAL, "r", [](int value){return value;})}
          })}
       })

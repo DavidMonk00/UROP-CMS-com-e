@@ -4,7 +4,7 @@ import datetime
 def main():
     server = couchdb.Server("http://127.0.0.1:5984")
     db = server['data']
-    docs = [id for id in db if (id[0] != '_')]
+    docs = [id for id in db if (id[0] == '2')]
     docs = [int(i) for i in docs]
     now = datetime.datetime.now()
     time = int(now.strftime("%Y%m%d%H%M%S"))
