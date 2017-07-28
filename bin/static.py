@@ -9,7 +9,7 @@ def getData():
     now = datetime.datetime.now()
     board_dict = {'_id': 'static'}
     buses = [str(i) for i in ATCA.getBuses()]
-    with open('active.json') as data_file:
+    with open('/root/I2C/bin/active.json') as data_file:
         active = json.load(data_file)
     for bus in buses:
         board_dict[bus] = {}
@@ -34,7 +34,7 @@ def getData():
 def updateServer():
     c = pycurl.Curl()
     url = 'http://127.0.0.1:5984/_replicate'
-    target = [line.strip() for line in open('config.txt')][0]
+    target = [line.strip() for line in open('/root/I2C/bin/config.txt')][0]
     data = json.dumps({"source":"data",
                        "target":target,
                        "filter":"filters/replicate_filter"})
