@@ -17,9 +17,13 @@ public:
       mRet = operand;
    }
    void operator() (int & operand) {
-      char str[64];
-      sprintf(str, "%d", operand);
-      mRet = str;
+      if (operand == 0xF0) {
+         mRet = "Register not available.";
+      } else {
+         char str[64];
+         sprintf(str, "%d", operand);
+         mRet = str;
+      }
    }
    template <typename T>
    void operator()( T & operand ) {
