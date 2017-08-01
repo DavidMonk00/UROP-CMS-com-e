@@ -18,7 +18,7 @@ ATCABoard::ATCABoard(I2C_base* i2c_type) {
    downstream_available = false;
    requestBus();
    bus_map.insert({
-      "1", new I2CBus(std::unordered_map<std::string, I2CDevice*> {
+      "one", new I2CBus(std::unordered_map<std::string, I2CDevice*> {
          {"PCI-Clock", new I2CDevice(PCICLOCK_ADDR, std::unordered_map<std::string, I2CBaseRegister*>{
             {"vendorID", new GenericI2CRegister(0x06|0x80, "r", [](int value){return value;},
                                                                  [](units_variant value) {return boost::get<int>(value);})},
@@ -55,7 +55,7 @@ ATCABoard::ATCABoard(std::string i2c_string) {
       exit(-1);
    }
    bus_map.insert({
-      "1", new I2CBus(std::unordered_map<std::string, I2CDevice*> {
+      "one", new I2CBus(std::unordered_map<std::string, I2CDevice*> {
          {"PCI-Clock", new I2CDevice(PCICLOCK_ADDR, std::unordered_map<std::string, I2CBaseRegister*>{
             {"vendorID", new GenericI2CRegister(0x06|0x80, "r", [](int value){return value;},
                                                                  [](units_variant value) {return boost::get<int>(value);})},

@@ -1,4 +1,5 @@
 #!/bin/bash
+couchdb &> /dev/null &
 while true; do
-   python update.py & sleep 5
+   python /root/I2C/bin/update.py &> /dev/null & sleep 5
 done

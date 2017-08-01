@@ -16,7 +16,7 @@ def main():
         if ((time-i)>10000):
             del db[str(i)]
     c = pycurl.Curl()
-    url = 'http://127.0.0.1:5984/_compact'
+    url = 'http://127.0.0.1:5984/data/_compact'
     c.setopt(pycurl.URL, url)
     c.setopt(pycurl.HTTPHEADER, ['Content-Type:application/json'])
     c.setopt(pycurl.POST, 1)
