@@ -12,8 +12,11 @@ class Update {
 private:
    ATCABoard* board;
    Server* server;
+   std::vector<std::string> target;
+   void sendFlag(json data, json metadata);
 public:
    Update(void);
    ~Update(void);
    void saveActive(void);
+   void saveStatic(void);
 };

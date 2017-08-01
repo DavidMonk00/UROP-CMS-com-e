@@ -30,6 +30,7 @@ void SEMA(void) {
 
 int main(int argc, char* argv[]) {
    Update* update = new Update();
-   //update->saveActive();
+   update->saveActive();
+   update->saveStatic();
    delete update;
 }
