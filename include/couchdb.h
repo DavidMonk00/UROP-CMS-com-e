@@ -29,6 +29,7 @@ public:
    void uploadDocument(json data);
    void uploadDocument(std::string url_, json data);
    void pushDatabase(void);
+   void pushDatabase(json params);
    std::string getDocument(std::string doc);
    std::vector<std::pair<std::string,std::string> > getDocumentIDs(void);
    bool checkOnline(std::string url_);
