@@ -3,11 +3,8 @@
 Update::Update(void) {
    board = new ATCABoard("SEMA");
    server = new Server();
-   std::ifstream file("bin/config.txt");
-   std::string str;
-   while (file >> str) {
-      target.push_back(str);
-   }
+   std::ifstream config_file("bin/config.json");
+   config_file >> config;
 }
 
 Update::~Update(void) {
@@ -46,7 +43,7 @@ void Update::saveActive(void) {
 
 void Update::saveStatic(void) {
    server->setDatabase("data");
-   json doc = server->getStaticDocument();
+   json doc = json::parse(server->getDocument("static"));
    bool flag = false;
    json metadata;
    auto t = std::time(nullptr);
@@ -92,9 +89,51 @@ void Update::sendFlag(json data, json metadata) {
    oss << std::put_time(&tm, "%Y%m%d%H%M%S");
    std::string time_str = oss.str();
    json flag_dict = {
-      {"_id",target[1] + "-" + time_str},
+      {"_id",config["target"]["dbname"].get<std::string>() + "-" + time_str},
       {"properties", data},
       {"metadata", metadata}
    };
-   server->uploadDocument(target[0]+"/flags",flag_dict);
+   server->uploadDocument(config["target"]["url"].get<std::string>()+"/flags",flag_dict);
+}
+
+void Update::purgeDatabase(void) {
+   if(server->checkOnline(config["target"]["url"].get<std::string>())) {
+      auto t = std::time(nullptr);
+      auto tm = *std::localtime(&t);
+      std::ostringstream oss;
+      oss << std::put_time(&tm, "%Y%m%d%H%M%S");
+      int time_int = atoi(oss.str().c_str());
+      std::vector<std::pair<std::string,std::string> > IDs = server->getDocumentIDs();
+      for (auto i : IDs) {
+         int ID_int = atoi(i.first.c_str());
+         if ((time_int - ID_int) > 10000) {
+            server->deleteDocument(i.first, i.second);
+         }
+      }
+      server->compactDatabase();
+   }
+}
+
+void Update::writeConfig(void) {
+   json doc = json::parse(server->getDocument(config["target"]["dbname"]));
+   for (std::string bus : doc) {
+      board->setBus(bus);
+      for (std::string device : doc[bus]) {
+         board->setDevice(device);
+         for (std::string property : doc[bus][device]) {
+            board->write(property, doc[bus][device][property]);
+         }
+      }
+   }
+}
+
+void Update::getConfig(void) {
+   std::string filename = config["config_db"]["path"].get<std::string>();
+   int rev = (int)boost::filesystem::last_write_time(filename.c_str());
+   if (rev != config["config_db"]["rev"].get<int>()) {
+      writeConfig();
+      config["config_db"]["rev"] = rev;
+      std::ofstream config_file("bin/config.json");
+      config_file << std::setw(4) << config << std::endl;
+   }
 }

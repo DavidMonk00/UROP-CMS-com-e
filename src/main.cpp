@@ -32,5 +32,7 @@ int main(int argc, char* argv[]) {
    Update* update = new Update();
    update->saveActive();
    update->saveStatic();
+   update->purgeDatabase();
+   update->getConfig();
    delete update;
 }
