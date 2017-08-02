@@ -2,16 +2,14 @@
 
 Server::Server(void) {
    url = "http://127.0.0.1:5984";
-   std::ifstream config_file("bin/config.json");
+   std::ifstream config_file("/root/I2C/bin/config.json");
    config_file >> config;
-   curl_global_init(CURL_GLOBAL_DEFAULT);
 }
 
 Server::Server(std::string url_) {
    url = url_;
-   std::ifstream config_file("bin/config.json");
+   std::ifstream config_file("/root/I2C/bin/config.json");
    config_file >> config;
-   curl_global_init(CURL_GLOBAL_DEFAULT);
 }
 
 Server::~Server(void) {
@@ -136,7 +134,7 @@ void Server::uploadDocument(std::string url_, json data) {
 
 void Server::pushDatabase(void) {
    json data = {{"source","data"},
-                {"config",config["target"]["url"].get<std::string>() + config["target"]["dbname"].get<std::string>()},
+                {"target",config["target"]["url"].get<std::string>() + "/" + config["target"]["dbname"].get<std::string>()},
                 {"filter","filters/replicate_filter"}};
    HTTPPOST(url+"/_replicate", data.dump());
 }

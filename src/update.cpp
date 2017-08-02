@@ -3,7 +3,7 @@
 Update::Update(void) {
    board = new ATCABoard("SEMA");
    server = new Server();
-   std::ifstream config_file("bin/config.json");
+   std::ifstream config_file("/root/I2C/bin/config.json");
    config_file >> config;
 }
 
@@ -20,7 +20,7 @@ void Update::saveActive(void) {
    std::string time_str = oss.str();
    json board_dict;
    board_dict["_id"] = time_str;
-   std::ifstream data_file("bin/active.json");
+   std::ifstream data_file("/root/I2C/bin/active.json");
    json active;
    data_file >> active;
    for (auto bus : board->getBuses()) {
@@ -54,7 +54,7 @@ void Update::saveStatic(void) {
    json board_dict;
    board_dict["_id"] = doc["_id"];
    board_dict["_rev"] = doc["_rev"];
-   std::ifstream data_file("bin/active.json");
+   std::ifstream data_file("/root/I2C/bin/active.json");
    json active;
    data_file >> active;
    for (auto bus : board->getBuses()) {
@@ -115,13 +115,17 @@ void Update::purgeDatabase(void) {
 }
 
 void Update::writeConfig(void) {
+   server->setDatabase("config");
    json doc = json::parse(server->getDocument(config["target"]["dbname"]));
-   for (std::string bus : doc) {
-      board->setBus(bus);
-      for (std::string device : doc[bus]) {
-         board->setDevice(device);
-         for (std::string property : doc[bus][device]) {
-            board->write(property, doc[bus][device][property]);
+   for (json::iterator bus = doc.begin(); bus != doc.end(); ++bus) {
+      if (bus.key().at(0) != '_') {
+         board->setBus(bus.key());
+         for (json::iterator device = bus.value().begin(); device != bus.value().end(); ++device) {
+            board->setDevice(device.key());
+            for (json::iterator property = device.value().begin(); property != device.value().end(); ++property) {
+               std::cout << property.key() << " , " << property.value() << '\n';
+               board->write(property.key(), property.value());
+            }
          }
       }
    }
@@ -133,7 +137,7 @@ void Update::getConfig(void) {
    if (rev != config["config_db"]["rev"].get<int>()) {
       writeConfig();
       config["config_db"]["rev"] = rev;
-      std::ofstream config_file("bin/config.json");
+      std::ofstream config_file("/root/I2C/bin/config.json");
       config_file << std::setw(4) << config << std::endl;
    }
 }
