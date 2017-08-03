@@ -60,6 +60,7 @@ void staticLoop(Update* update) {
 int main(int argc, char* argv[]) {
    std::cout << "Initialising couchdb..." << '\n';
    std::system("couchdb &");
+   sleep(1);
    std::cout << "Initialising..." << '\n';
    curl_global_init(CURL_GLOBAL_DEFAULT);
    std::cout << "Creating object..." << '\n';

@@ -9,7 +9,7 @@
 
 using json = nlohmann::json;
 
-class Server {
+class Client {
 private:
    std::string url;
    std::string database;
@@ -21,9 +21,9 @@ private:
    void HTTPPOST(std::string url_, std::string data);
    void HTTPDELETE(std::string url_);
 public:
-   Server(void);
-   Server(std::string url_);
-   ~Server(void);
+   Client(void);
+   Client(std::string url_);
+   ~Client(void);
    std::vector<std::string> getDatabases(void);
    void setDatabase(std::string db);
    void uploadDocument(json data);

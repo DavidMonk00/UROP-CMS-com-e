@@ -1,22 +1,22 @@
 #include "couchdb.h"
 
-Server::Server(void) {
+Client::Client(void) {
    url = "http://127.0.0.1:5984";
    std::ifstream config_file("/root/I2C/bin/config.json");
    config_file >> config;
 }
 
-Server::Server(std::string url_) {
+Client::Client(std::string url_) {
    url = url_;
    std::ifstream config_file("/root/I2C/bin/config.json");
    config_file >> config;
 }
 
-Server::~Server(void) {
+Client::~Client(void) {
    curl_easy_cleanup(curl);
 }
 
-size_t Server::CallbackFunc(void *contents, size_t size, size_t nmemb, std::string* s) {
+size_t Client::CallbackFunc(void *contents, size_t size, size_t nmemb, std::string* s) {
     size_t newLength = size*nmemb;
     size_t oldLength = s->size();
     try {
@@ -29,7 +29,7 @@ size_t Server::CallbackFunc(void *contents, size_t size, size_t nmemb, std::stri
     return size*nmemb;
 }
 
-std::string Server::HTTPGET(std::string url_) {
+std::string Client::HTTPGET(std::string url_) {
    curl = curl_easy_init();
    CURLcode res;
    std::string s;
@@ -46,7 +46,7 @@ std::string Server::HTTPGET(std::string url_) {
    return s;
 }
 
-void Server::HTTPPUT(std::string url_, std::string data) {
+void Client::HTTPPUT(std::string url_, std::string data) {
    curl = curl_easy_init();
    CURLcode res;
    std::string s;
@@ -64,7 +64,7 @@ void Server::HTTPPUT(std::string url_, std::string data) {
    }
 }
 
-void Server::HTTPPOST(std::string url_, std::string data) {
+void Client::HTTPPOST(std::string url_, std::string data) {
    curl = curl_easy_init();
    CURLcode res;
    std::string s;
@@ -85,7 +85,7 @@ void Server::HTTPPOST(std::string url_, std::string data) {
    }
 }
 
-void Server::HTTPDELETE(std::string url_) {
+void Client::HTTPDELETE(std::string url_) {
    curl = curl_easy_init();
    CURLcode res;
    std::string s;
@@ -102,7 +102,7 @@ void Server::HTTPDELETE(std::string url_) {
    }
 }
 
-std::vector<std::string> Server::getDatabases(void) {
+std::vector<std::string> Client::getDatabases(void) {
    std::vector<std::string> v;
    std::string s = HTTPGET(url+"/_all_dbs");
    auto j = json::parse(s);
@@ -112,11 +112,11 @@ std::vector<std::string> Server::getDatabases(void) {
    return v;
 }
 
-void Server::setDatabase(std::string db) {
+void Client::setDatabase(std::string db) {
    database = db;
 }
 
-void Server::uploadDocument(json data) {
+void Client::uploadDocument(json data) {
    if (!database.empty()) {
       std::string doc_id = data["_id"];
       std::string url_ = url + "/" + database + "/" + doc_id;
@@ -125,21 +125,21 @@ void Server::uploadDocument(json data) {
    }
 }
 
-void Server::uploadDocument(std::string url_, json data) {
+void Client::uploadDocument(std::string url_, json data) {
    std::string doc_id = data["_id"];
    std::string url__ = url_ + "/" + doc_id;
    std::string jsn = data.dump();
    HTTPPUT(url__,jsn);
 }
 
-void Server::pushDatabase(void) {
+void Client::pushDatabase(void) {
    json data = {{"source",database},
                 {"target",config["target"]["url"].get<std::string>() + "/" + config["target"]["dbname"].get<std::string>()},
                 {"filter","filters/replicate_filter"}};
    HTTPPOST(url+"/_replicate", data.dump());
 }
 
-void Server::pushDatabase(json params) {
+void Client::pushDatabase(json params) {
    json data = {{"source",database},
                 {"target",config["target"]["url"].get<std::string>() + "/" + config["target"]["dbname"].get<std::string>()},
                 {"filter","filters/replicate_filter"}};
@@ -147,13 +147,13 @@ void Server::pushDatabase(json params) {
    HTTPPOST(url+"/_replicate", data.dump());
 }
 
-std::string Server::getDocument(std::string doc) {
+std::string Client::getDocument(std::string doc) {
    std::string url_ = url + "/"  + database + "/" + doc;
    std::string data = HTTPGET(url_);
    return data;
 }
 
-std::vector<std::pair<std::string,std::string> > Server::getDocumentIDs(void) {
+std::vector<std::pair<std::string,std::string> > Client::getDocumentIDs(void) {
    std::vector<std::pair<std::string,std::string> > v;
    std::string s = HTTPGET(url+"/"+database+"/_design/"+database+"/_view/listAllActive");
    auto j = json::parse(s);
@@ -164,18 +164,18 @@ std::vector<std::pair<std::string,std::string> > Server::getDocumentIDs(void) {
    return v;
 }
 
-bool Server::checkOnline(std::string url_) {
+bool Client::checkOnline(std::string url_) {
    std::string ret = HTTPGET(url_);
    json j = json::parse(ret);
    return true;
 }
 
-void Server::deleteDocument(std::string ID, std::string rev) {
+void Client::deleteDocument(std::string ID, std::string rev) {
    std::string url_ = url + "/" + database + "/" + ID + "?rev=" + rev;
    HTTPDELETE(url_);
 }
 
-void Server::compactDatabase(void) {
+void Client::compactDatabase(void) {
    std::string url_ = url + "/" + database + "/_compact";
    HTTPPOST(url_, "");
 }

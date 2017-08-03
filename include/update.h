@@ -13,7 +13,7 @@ class Update {
 private:
    ATCABoard* board;
    json config;
-   void sendFlag(json data, json metadata, Server* server);
+   void sendFlag(json data, json metadata, Client* client);
    void writeConfig(void);
 public:
    Update(void);

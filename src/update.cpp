@@ -34,17 +34,17 @@ void Update::saveActive(void) {
          }
       }
    }
-   Server* server = new Server();
-   server->setDatabase("data");
-   server->uploadDocument(board_dict);
-   server->pushDatabase();
-   delete server;
+   Client* client = new Client();
+   client->setDatabase("data");
+   client->uploadDocument(board_dict);
+   client->pushDatabase();
+   delete client;
 }
 
 void Update::saveStatic(void) {
-   Server* server = new Server();
-   server->setDatabase("data");
-   json doc = json::parse(server->getDocument("static"));
+   Client* client = new Client();
+   client->setDatabase("data");
+   json doc = json::parse(client->getDocument("static"));
    bool flag = false;
    json metadata;
    auto t = std::time(nullptr);
@@ -77,14 +77,14 @@ void Update::saveStatic(void) {
       }
    }
    if (flag) {
-      sendFlag(board_dict, metadata, server);
+      sendFlag(board_dict, metadata, client);
    }
-   server->uploadDocument(board_dict);
-   server->pushDatabase();
-   delete server;
+   client->uploadDocument(board_dict);
+   client->pushDatabase();
+   delete client;
 }
 
-void Update::sendFlag(json data, json metadata, Server* server) {
+void Update::sendFlag(json data, json metadata, Client* client) {
    auto t = std::time(nullptr);
    auto tm = *std::localtime(&t);
    std::ostringstream oss;
@@ -95,35 +95,35 @@ void Update::sendFlag(json data, json metadata, Server* server) {
       {"properties", data},
       {"metadata", metadata}
    };
-   server->uploadDocument(config["target"]["url"].get<std::string>()+"/flags",flag_dict);
+   client->uploadDocument(config["target"]["url"].get<std::string>()+"/flags",flag_dict);
 }
 
 void Update::purgeDatabase(void) {
-   Server* server = new Server();
-   server->setDatabase("data");
-   if(server->checkOnline(config["target"]["url"].get<std::string>())) {
+   Client* client = new Client();
+   client->setDatabase("data");
+   if(client->checkOnline(config["target"]["url"].get<std::string>())) {
       auto t = std::time(nullptr);
       auto tm = *std::localtime(&t);
       std::ostringstream oss;
       oss << std::put_time(&tm, "%Y%m%d%H%M%S");
       int time_int = atoi(oss.str().c_str());
-      std::vector<std::pair<std::string,std::string> > IDs = server->getDocumentIDs();
+      std::vector<std::pair<std::string,std::string> > IDs = client->getDocumentIDs();
       for (auto i : IDs) {
          int ID_int = atoi(i.first.c_str());
          if ((time_int - ID_int) > 10000) {
-            server->deleteDocument(i.first, i.second);
+            client->deleteDocument(i.first, i.second);
          }
       }
-      server->compactDatabase();
+      client->compactDatabase();
    }
-   delete server;
+   delete client;
 }
 
 void Update::writeConfig(void) {
-   Server* server = new Server();
-   server->setDatabase("config");
-   json doc = json::parse(server->getDocument(config["target"]["dbname"]));
-   delete server;
+   Client* client = new Client();
+   client->setDatabase("config");
+   json doc = json::parse(client->getDocument(config["target"]["dbname"]));
+   delete client;
    for (json::iterator bus = doc.begin(); bus != doc.end(); ++bus) {
       if (bus.key().at(0) != '_') {
          board->setBus(bus.key());
