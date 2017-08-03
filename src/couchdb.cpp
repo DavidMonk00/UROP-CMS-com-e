@@ -150,7 +150,7 @@ std::vector<std::pair<std::string,std::string> > Server::getDocumentIDs(void) {
    std::string s = HTTPGET(url+"/"+database+"/_design/"+database+"/_view/listAllActive");
    auto j = json::parse(s);
    for (auto& element : j["rows"]) {
-      std::pair<std::string,std::string> p(element["id"].get<std::string>(), element["key"].get<std::string>());
+      std::pair<std::string,std::string> p(element["key"].get<std::string>(), element["value"].get<std::string>());
       v.push_back(p);
    }
    return v;

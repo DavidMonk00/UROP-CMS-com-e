@@ -2,17 +2,16 @@
 
 Update::Update(void) {
    board = new ATCABoard("SEMA");
-   server = new Server();
    std::ifstream config_file("/root/I2C/bin/config.json");
    config_file >> config;
 }
 
 Update::~Update(void) {
    delete board;
-   delete server;
 }
 
 void Update::saveActive(void) {
+   Server* server = new Server();
    auto t = std::time(nullptr);
    auto tm = *std::localtime(&t);
    std::ostringstream oss;
@@ -39,9 +38,11 @@ void Update::saveActive(void) {
    server->setDatabase("data");
    server->uploadDocument(board_dict);
    server->pushDatabase();
+   delete server;
 }
 
 void Update::saveStatic(void) {
+   Server* server = new Server();
    server->setDatabase("data");
    json doc = json::parse(server->getDocument("static"));
    bool flag = false;
@@ -76,13 +77,14 @@ void Update::saveStatic(void) {
       }
    }
    if (flag) {
-      sendFlag(board_dict, metadata);
+      sendFlag(board_dict, metadata, server);
    }
    server->uploadDocument(board_dict);
    server->pushDatabase();
+   delete server;
 }
 
-void Update::sendFlag(json data, json metadata) {
+void Update::sendFlag(json data, json metadata, Server* server) {
    auto t = std::time(nullptr);
    auto tm = *std::localtime(&t);
    std::ostringstream oss;
@@ -97,6 +99,8 @@ void Update::sendFlag(json data, json metadata) {
 }
 
 void Update::purgeDatabase(void) {
+   Server* server = new Server();
+   server->setDatabase("data");
    if(server->checkOnline(config["target"]["url"].get<std::string>())) {
       auto t = std::time(nullptr);
       auto tm = *std::localtime(&t);
@@ -112,9 +116,10 @@ void Update::purgeDatabase(void) {
       }
       server->compactDatabase();
    }
+   delete server;
 }
 
-void Update::writeConfig(void) {
+void Update::writeConfig(Server* server) {
    server->setDatabase("config");
    json doc = json::parse(server->getDocument(config["target"]["dbname"]));
    for (json::iterator bus = doc.begin(); bus != doc.end(); ++bus) {
@@ -132,12 +137,14 @@ void Update::writeConfig(void) {
 }
 
 void Update::getConfig(void) {
+   Server* server = new Server();
    std::string filename = config["config_db"]["path"].get<std::string>();
    int rev = (int)boost::filesystem::last_write_time(filename.c_str());
    if (rev != config["config_db"]["rev"].get<int>()) {
-      writeConfig();
+      writeConfig(server);
       config["config_db"]["rev"] = rev;
       std::ofstream config_file("/root/I2C/bin/config.json");
       config_file << std::setw(4) << config << std::endl;
    }
+   delete server;
 }
