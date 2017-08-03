@@ -14,7 +14,7 @@ private:
    ATCABoard* board;
    json config;
    void sendFlag(json data, json metadata, Server* server);
-   void writeConfig(Server* server);
+   void writeConfig(void);
 public:
    Update(void);
    ~Update(void);

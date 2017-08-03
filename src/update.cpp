@@ -11,7 +11,6 @@ Update::~Update(void) {
 }
 
 void Update::saveActive(void) {
-   Server* server = new Server();
    auto t = std::time(nullptr);
    auto tm = *std::localtime(&t);
    std::ostringstream oss;
@@ -35,6 +34,7 @@ void Update::saveActive(void) {
          }
       }
    }
+   Server* server = new Server();
    server->setDatabase("data");
    server->uploadDocument(board_dict);
    server->pushDatabase();
@@ -119,16 +119,17 @@ void Update::purgeDatabase(void) {
    delete server;
 }
 
-void Update::writeConfig(Server* server) {
+void Update::writeConfig(void) {
+   Server* server = new Server();
    server->setDatabase("config");
    json doc = json::parse(server->getDocument(config["target"]["dbname"]));
+   delete server;
    for (json::iterator bus = doc.begin(); bus != doc.end(); ++bus) {
       if (bus.key().at(0) != '_') {
          board->setBus(bus.key());
          for (json::iterator device = bus.value().begin(); device != bus.value().end(); ++device) {
             board->setDevice(device.key());
             for (json::iterator property = device.value().begin(); property != device.value().end(); ++property) {
-               std::cout << property.key() << " , " << property.value() << '\n';
                board->write(property.key(), property.value());
             }
          }
@@ -137,14 +138,13 @@ void Update::writeConfig(Server* server) {
 }
 
 void Update::getConfig(void) {
-   Server* server = new Server();
    std::string filename = config["config_db"]["path"].get<std::string>();
    int rev = (int)boost::filesystem::last_write_time(filename.c_str());
    if (rev != config["config_db"]["rev"].get<int>()) {
-      writeConfig(server);
+      std::cout << "Changing registers..." << '\n';
+      writeConfig();
       config["config_db"]["rev"] = rev;
       std::ofstream config_file("/root/I2C/bin/config.json");
       config_file << std::setw(4) << config << std::endl;
    }
-   delete server;
 }
