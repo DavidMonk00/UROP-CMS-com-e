@@ -133,9 +133,17 @@ void Server::uploadDocument(std::string url_, json data) {
 }
 
 void Server::pushDatabase(void) {
-   json data = {{"source","data"},
+   json data = {{"source",database},
                 {"target",config["target"]["url"].get<std::string>() + "/" + config["target"]["dbname"].get<std::string>()},
                 {"filter","filters/replicate_filter"}};
+   HTTPPOST(url+"/_replicate", data.dump());
+}
+
+void Server::pushDatabase(json params) {
+   json data = {{"source",database},
+                {"target",config["target"]["url"].get<std::string>() + "/" + config["target"]["dbname"].get<std::string>()},
+                {"filter","filters/replicate_filter"}};
+   data["query_params"] = params;
    HTTPPOST(url+"/_replicate", data.dump());
 }
 
