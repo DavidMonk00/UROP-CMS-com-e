@@ -1,22 +1,6 @@
 #include "couchdb.h"
 
-Client::Client(void) {
-   url = "http://127.0.0.1:5984";
-   std::ifstream config_file("/root/I2C/bin/config.json");
-   config_file >> config;
-}
-
-Client::Client(std::string url_) {
-   url = url_;
-   std::ifstream config_file("/root/I2C/bin/config.json");
-   config_file >> config;
-}
-
-Client::~Client(void) {
-   curl_easy_cleanup(curl);
-}
-
-size_t Client::CallbackFunc(void *contents, size_t size, size_t nmemb, std::string* s) {
+size_t CouchDB::CallbackFunc(void *contents, size_t size, size_t nmemb, std::string* s) {
     size_t newLength = size*nmemb;
     size_t oldLength = s->size();
     try {
@@ -29,7 +13,7 @@ size_t Client::CallbackFunc(void *contents, size_t size, size_t nmemb, std::stri
     return size*nmemb;
 }
 
-std::string Client::HTTPGET(std::string url_) {
+std::string CouchDB::HTTPGET(std::string url_) {
    curl = curl_easy_init();
    CURLcode res;
    std::string s;
@@ -46,7 +30,7 @@ std::string Client::HTTPGET(std::string url_) {
    return s;
 }
 
-void Client::HTTPPUT(std::string url_, std::string data) {
+void CouchDB::HTTPPUT(std::string url_, std::string data) {
    curl = curl_easy_init();
    CURLcode res;
    std::string s;
@@ -64,7 +48,7 @@ void Client::HTTPPUT(std::string url_, std::string data) {
    }
 }
 
-void Client::HTTPPOST(std::string url_, std::string data) {
+void CouchDB::HTTPPOST(std::string url_, std::string data) {
    curl = curl_easy_init();
    CURLcode res;
    std::string s;
@@ -85,7 +69,7 @@ void Client::HTTPPOST(std::string url_, std::string data) {
    }
 }
 
-void Client::HTTPDELETE(std::string url_) {
+void CouchDB::HTTPDELETE(std::string url_) {
    curl = curl_easy_init();
    CURLcode res;
    std::string s;
@@ -100,6 +84,22 @@ void Client::HTTPDELETE(std::string url_) {
                    curl_easy_strerror(res));
       }
    }
+}
+
+Client::Client(void) {
+   url = "http://127.0.0.1:5984";
+   std::ifstream config_file("/root/I2C/bin/config.json");
+   config_file >> config;
+}
+
+Client::Client(std::string url_) {
+   url = url_;
+   std::ifstream config_file("/root/I2C/bin/config.json");
+   config_file >> config;
+}
+
+Client::~Client(void) {
+   curl_easy_cleanup(curl);
 }
 
 std::vector<std::string> Client::getDatabases(void) {

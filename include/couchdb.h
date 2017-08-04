@@ -9,8 +9,8 @@
 
 using json = nlohmann::json;
 
-class Client {
-private:
+class CouchDB {
+protected:
    std::string url;
    std::string database;
    json config;
@@ -20,6 +20,9 @@ private:
    void HTTPPUT(std::string url_, std::string data);
    void HTTPPOST(std::string url_, std::string data);
    void HTTPDELETE(std::string url_);
+};
+
+class Client : public CouchDB {
 public:
    Client(void);
    Client(std::string url_);

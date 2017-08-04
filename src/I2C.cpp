@@ -105,6 +105,11 @@ void I2CSema::sendData(uint32_t address, char* buffer, uint32_t bytecnt, uint32_
   }
 }
 
+/**
+  @brief Get value from board registers.
+  @param value - ID of internal regiter to read.
+  @param buffer - Pointer to byte array where data will be sent from.
+*/
 void I2CSema::getBoardValue(uint32_t value, uint32_t* buffer) {
    uint32_t ret;
    ret = SemaEApiBoardGetValue(handler, value, buffer);
