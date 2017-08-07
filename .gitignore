@@ -1,6 +1,7 @@
 # Ignore the build and lib dirs
 build
 lib
+doc/html
 
 # Ignore any executables
 bin
