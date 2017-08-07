@@ -1565,7 +1565,7 @@
 <table>
 <tr><td>Bits</td><td>Name</td><td>R/W</td><td>Description</td><td>Default</td></tr>
 <tr><td>31:25</td><td>RESERVED</td><td>R/W</td><td>Reserved</td><td>0x0</td></tr>
-<tr><td>24:16 PPPOE_SESSION_PARSE_E</td><td>R/W</td><td>This configuration bit can be set by software to</td><td>0x0</td></tr>
+<tr><td>24:16</td><td>PPPOE_SESSION_PARSE_E</td><td>R/W</td><td>This configuration bit can be set by software to</td><td>0x0</td></tr>
 <tr><td /><td>N</td><td /><td>enable parsing of PPPOE Session stage packets</td><td /></tr>
 <tr><td /><td /><td /><td>from each ingress port.</td><td /></tr>
 <tr><td /><td /><td /><td>1: Enable parsing of PPPOE Session Stage</td><td /></tr>
@@ -9886,7 +9886,7 @@
 <tr><td /><td /><td /><td> 1. When the SPCP_RMK_DISABLE and CPCP_RMK_DISABLE are set to 0 in CFP action, this bit will OR with S_PCP_RMK_EN or C_PCP_RMK_EN. This will be backward compatible with BCM53125 family. </td><td /></tr>
 <tr><td /><td /><td /><td> 2. When the SPCP_RMK_DISABLE or </td><td /></tr>
 <tr><td /><td /><td /><td>CPCP_RMK_DISABLE is set to 1 in CFP action, the PCP Remarking will also be disabled (no matter this bit is enabled or disabled) depends on the PCP field whether in the outmost tag.</td><td /></tr>
-<tr><td>15:9 RESERVED_0</td><td>R/W</td><td>Reserved</td><td>0x0</td></tr>
+<tr><td>15:9</td><td>RESERVED_0</td><td>R/W</td><td>Reserved</td><td>0x0</td></tr>
 <tr><td>8:0</td><td>CFI_RMK_EN</td><td>R/W</td><td>CFI/DEI Remark Enable</td><td>0x0</td></tr>
 <tr><td /><td /><td /><td>A bitmap representing one bit per port.</td><td /></tr>
 <tr><td /><td /><td /><td>If a bit is set, the CFI (in C-Tag) or the DEI (in S-</td><td /></tr>
@@ -9954,7 +9954,7 @@
 <tr><td /><td /><td /><td>Bit[21:16]: Port 5 - Port 0 Note:</td><td /></tr>
 <tr><td /><td /><td /><td> 1. When the CPCP_RMK_DISABLE is set to 0 in CFP action, this bit will OR with PCP_RMK_EN for the C-PCP remarking. This will be backward compatible with BCM53125 family.</td><td /></tr>
 <tr><td /><td /><td /><td> 2. When the CPCP_RMK_DISABLE is set to 1 in CFP action, the C-PCP Remarking will also be disabled (no matter this bit is enabled or disabled).</td><td /></tr>
-<tr><td>15:9 RESERVED_0</td><td>R/W</td><td>Reserved</td><td>0x0</td></tr>
+<tr><td>15:9</td><td>RESERVED_0</td><td>R/W</td><td>Reserved</td><td>0x0</td></tr>
 <tr><td>8:0</td><td>S_PCP_RMK_EN</td><td>R/W</td><td>S-Tag PCP Remark Enable in Egress Port</td><td>0x0</td></tr>
 <tr><td /><td /><td /><td>Enable S-PCP marking of all S-tagged packets</td><td /></tr>
 <tr><td /><td /><td /><td>transmitted on the egress port.</td><td /></tr>

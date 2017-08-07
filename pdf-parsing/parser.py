@@ -32,12 +32,8 @@ def main():
     print "Total lines", len(lines)
     book = getPages(lines)
     lines = [i for i in lines if (i[:4] != "Page")]
-    print "Total lines", len(lines)
     for i in book:
-        i.getAddresses(lines)
-        for j in i.addresses:
-            print j.description
-            j.getBits(lines)
+        print "%s,%s"%(i.number,i.description)
 
 if (__name__ == "__main__"):
     main()

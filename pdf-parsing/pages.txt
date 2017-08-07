@@ -1,0 +1,49 @@
+4f,Port Queue 7 Shaper Control Register
+a1,CFP Configuration Register
+70,Port MIB Snapshot Control Register
+ff,SPI Register
+43,MSPT (Multi Spanning Tree) Control Register
+95,RED Control Register
+4a,Port Queue 2 Shaper Control Register
+91,Traffic Remarking Registers
+4b,Port Queue 3 Shaper Control Register
+07,(Reserved)
+05,ARL/VTABLE Access Register
+4c,Port Queue 4 Shaper Control Register
+93,1588 Control Register
+10,Internal GPHY MII Register
+11,Internal GPHY MII Register
+12,Internal GPHY MII Register
+13,Internal GPHY MII Register
+4e,Port Queue 6 Shaper Control Register
+45,Source MAC Address Limit Control Register
+47,Port Shaper Control Register
+49,Port Queue 1 Shaper Control Register
+88,IMP port External PHY MII Register
+94,Heartbeat Time Stamp Control Register
+72,Loop Discovery Register
+28,IMP port MIB counter Register
+30,QoS Register
+46,Port QoS Priority Control Register
+a0,CFP TCAM Register
+04,ARL Control Register
+03,Interrupt Control Register
+06,(Reserved)
+85,Port 5 External PHY MII Register
+32,Trunking Register
+40,Jumbo Frame Control Register
+42,EAP Control Register
+71,Port MIB Snapshot counter Register
+00,Control Register
+92,EEE Register
+31,Port Based VLAN Register
+41,Common Ingress Rate control Register
+4d,Port Queue 5 Shaper Control Register
+20,Port MIB Counter Register
+21,Port MIB Counter Register
+22,Port MIB Counter Register
+23,Port MIB Counter Register
+01,Status Register
+48,Port Queue 0 Shaper Control Register
+36,DOS Prevent Register
+02,Management/Mirroring Register
