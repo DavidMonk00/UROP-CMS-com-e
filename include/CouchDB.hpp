@@ -39,3 +39,14 @@ public:
    void deleteDocument(std::string ID, std::string rev);
    void compactDatabase(void);
 };
+
+class Server : public CouchDB {
+private:
+   json slaves;
+public:
+   Server(void);
+   ~Server(void);
+   void editConfig(std::string property, std::string value);
+   void editConfig(std::string device, std::string property, std::string value);
+   void pushChanges(void);
+};

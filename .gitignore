@@ -5,3 +5,6 @@ doc/html
 
 # Ignore any executables
 bin
+
+# Ignore main.cpp
+src/main.cpp

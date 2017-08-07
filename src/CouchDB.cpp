@@ -1,4 +1,4 @@
-#include "couchdb.hpp"
+#include "CouchDB.hpp"
 
 size_t CouchDB::CallbackFunc(void *contents, size_t size, size_t nmemb, std::string* s) {
     size_t newLength = size*nmemb;
@@ -178,4 +178,27 @@ void Client::deleteDocument(std::string ID, std::string rev) {
 void Client::compactDatabase(void) {
    std::string url_ = url + "/" + database + "/_compact";
    HTTPPOST(url_, "");
+}
+
+Server::Server(void) {
+   url = "http://127.0.0.1:5984";
+   slaves = json::parse(HTTPGET(url+"/slaves/_all_docs"))["rows"];
+}
+
+Server::~Server(void) {
+   curl_easy_cleanup(curl);
+}
+
+void Server::editConfig(std::string property, std::string value) {
+
+}
+
+void Server::editConfig(std::string device, std::string property, std::string value) {
+
+}
+
+void pushChanges(void) {
+   for (auto i : slaves) {
+      std::cout << i["_id"] << '\n';
+   }
 }
