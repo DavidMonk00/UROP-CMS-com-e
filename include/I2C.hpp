@@ -8,9 +8,9 @@
 #pragma once
 #include <string>
 #include <Sema.h>
-#include "diagnostics.h"
-#include "I2C_base.h"
-#include "I2C_define.h"
+#include "diagnostics.hpp"
+#include "I2C_base.hpp"
+#include "I2C_define.hpp"
 using namespace std;
 
 /**

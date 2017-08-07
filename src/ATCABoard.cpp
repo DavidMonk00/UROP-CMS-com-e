@@ -5,7 +5,7 @@
   @version 1.0
 */
 
-#include "ATCABoard.h"
+#include "ATCABoard.hpp"
 
 /**
    @brief Class constructor.

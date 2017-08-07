@@ -1,5 +1,5 @@
 #pragma once
-#include "I2C.h"
+#include "I2C.hpp"
 
 class I2CRaw {
 private:

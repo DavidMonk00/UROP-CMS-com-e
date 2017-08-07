@@ -1,5 +1,5 @@
 /**
-  @file Board.h
+  @file Board.hpp
   @brief Defines the base Board class.
   @author David Monk - Imperial College London
   @version 1.0
@@ -7,8 +7,8 @@
 
 #pragma once
 
-#include "I2CBus.h"
-#include "parser.h"
+#include "I2CBus.hpp"
+#include "parser.hpp"
 
 class ToString : public boost::static_visitor<> {
 public:

@@ -5,7 +5,7 @@
   @version 1.0
 */
 
-#include "I2C.h"
+#include "I2C.hpp"
 
 /**
   @brief Constructor function.

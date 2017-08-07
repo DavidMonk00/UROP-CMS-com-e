@@ -5,7 +5,7 @@
   @version 1.0
 */
 
-#include "Board.h"
+#include "Board.hpp"
 
 /**
   @brief Set bus to communicate over.

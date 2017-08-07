@@ -8,8 +8,8 @@
 #pragma once
 #include <unordered_map>
 #include <functional>
-#include "I2C.h"
-#include "units_define.h"
+#include "I2C.hpp"
+#include "units_define.hpp"
 
 //TODO Add minutes, hours to units namespace
 

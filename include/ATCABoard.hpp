@@ -1,12 +1,12 @@
 /**
-  @file ATCABoard.h
+  @file ATCABoard.hpp
   @brief Defines the derived ATCABoard class.
   @author David Monk - Imperial College London
   @version 1.0
 */
 
 #pragma once
-#include "Board.h"
+#include "Board.hpp"
 
 class ATCABoard : public Board {
 private:

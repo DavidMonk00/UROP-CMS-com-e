@@ -1,5 +1,5 @@
 #pragma once
-#include "I2CDevice.h"
+#include "I2CDevice.hpp"
 
 class I2CBus {
 private:

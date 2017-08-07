@@ -1,4 +1,4 @@
-#include "couchdb.h"
+#include "couchdb.hpp"
 
 size_t CouchDB::CallbackFunc(void *contents, size_t size, size_t nmemb, std::string* s) {
     size_t newLength = size*nmemb;

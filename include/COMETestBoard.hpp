@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "Board.h"
+#include "Board.hpp"
 
 class COMETestBoard : public Board {
    bool i2c_set;

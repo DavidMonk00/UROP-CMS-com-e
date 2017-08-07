@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "I2CRegister.h"
+#include "I2CRegister.hpp"
 
 using namespace boost::units;
 using namespace boost::units::si;

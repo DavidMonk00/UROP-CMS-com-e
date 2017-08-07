@@ -1,6 +1,6 @@
 #pragma once
-#include "couchdb.h"
-#include "ATCABoard.h"
+#include "couchdb.hpp"
+#include "ATCABoard.hpp"
 #include <iostream>
 #include <iomanip>
 #include <ctime>

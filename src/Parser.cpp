@@ -5,7 +5,7 @@
   @version 1.0
 */
 
-#include "parser.h"
+#include "parser.hpp"
 
 /**
    @brief Parse string input into scaled double value and integer representation of unit.

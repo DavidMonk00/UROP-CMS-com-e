@@ -1,4 +1,4 @@
-#include "I2CRaw.h"
+#include "I2CRaw.hpp"
 
 I2CRaw::I2CRaw() {
    i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL);
