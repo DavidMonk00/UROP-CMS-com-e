@@ -1,4 +1,4 @@
-#include "update.h"
+#include "update.hpp"
 
 Update::Update(void) {
    board = new ATCABoard("SEMA");

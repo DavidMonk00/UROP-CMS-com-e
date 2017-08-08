@@ -5,7 +5,7 @@
   @version 1.0
 */
 
-#include "diagnostics.h"
+#include "diagnostics.hpp"
 
 /**
   @brief Constructor function if library has yet to initialised.

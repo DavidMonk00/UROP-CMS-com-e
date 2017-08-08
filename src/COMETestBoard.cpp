@@ -5,7 +5,7 @@
   @version 1.0
 */
 
-#include "COMETestBoard.h"
+#include "COMETestBoard.hpp"
 
 /**
    @brief Class constructor.

@@ -5,7 +5,7 @@
   @version 1.0
 */
 
-#include "I2CDevice.h"
+#include "I2CDevice.hpp"
 
 /**
   @brief Class constructor.

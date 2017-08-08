@@ -5,7 +5,7 @@
   @version 1.0
 */
 
-#include "I2CRegister.h"
+#include "I2CRegister.hpp"
 
 /**
   @brief Class constructor.

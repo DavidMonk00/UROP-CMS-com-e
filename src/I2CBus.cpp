@@ -5,7 +5,7 @@
   @version 1.0
 */
 
-#include "I2CBus.h"
+#include "I2CBus.hpp"
 
 /**
    @brief Class constructor.
