@@ -2,7 +2,8 @@
 .ad l
 .nh
 .SH NAME
-include/units_define.hpp \- 
+include/units_define.hpp \- Type definitons for units_variant\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -39,16 +40,35 @@ include/units_define.hpp \-
 .RI "typedef boost::variant< std::string, int, double, quantity< electric_potential >, quantity< current >, quantity< si::time >, quantity< frequency >, quantity< temperature > > \fBunits_variant\fP"
 .br
 .in -1c
+.SH "Detailed Description"
+.PP 
+Type definitons for units_variant\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+David Monk - Imperial College London 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+
+.PP
+Definition in file \fBunits_define\&.hpp\fP\&.
 .SH "Typedef Documentation"
 .PP 
 .SS "typedef boost::variant<double, quantity<length>, quantity<boost::units::si::time>, quantity<temperature> > \fBlegacy_units_variant\fP"
 
 .PP
-Definition at line 21 of file units_define\&.hpp\&.
+Definition at line 28 of file units_define\&.hpp\&.
 .SS "typedef boost::variant<std::string, int, double, quantity<electric_potential>, quantity<current>, quantity<si::time>, quantity<frequency>, quantity<temperature> > \fBunits_variant\fP"
 
 .PP
-Definition at line 29 of file units_define\&.hpp\&.
+Definition at line 36 of file units_define\&.hpp\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

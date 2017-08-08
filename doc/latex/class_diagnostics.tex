@@ -1,0 +1,118 @@
+\hypertarget{class_diagnostics}{}\section{Diagnostics Class Reference}
+\label{class_diagnostics}\index{Diagnostics@{Diagnostics}}
+
+
+{\ttfamily \#include $<$diagnostics.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_diagnostics_a84423ad40c376ce8d8a4f02dc0b7f44c}{Diagnostics} (void)
+\begin{DoxyCompactList}\small\item\em Constructor function if library has yet to initialised. \end{DoxyCompactList}\item 
+\hyperlink{class_diagnostics_ab4cf66446bf7d4af44315629de9a910b}{Diagnostics} (uint32\+\_\+t h)
+\begin{DoxyCompactList}\small\item\em Constructor function if library has already been initialised but diagnostics need to be performed. \end{DoxyCompactList}\item 
+\hyperlink{class_diagnostics_ad05cd98138d8ef3a0c1284412fbddd6b}{$\sim$\+Diagnostics} ()
+\begin{DoxyCompactList}\small\item\em Class destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_diagnostics_a8263e91e26d536a03442d59e6c5b0d12}{print\+Board\+Info} (void)
+\item 
+void \hyperlink{class_diagnostics_a686255ad134138a830d0b917334cb264}{print\+Board\+Temperatures} (void)
+\item 
+void \hyperlink{class_diagnostics_af25cdb55c895228c3d312345e1782c55}{print\+I2\+C\+Support} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+S\+E\+MA diagnostics class. Displays useful information about the board. 
+
+Definition at line 18 of file diagnostics.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Diagnostics@{Diagnostics}!Diagnostics@{Diagnostics}}
+\index{Diagnostics@{Diagnostics}!Diagnostics@{Diagnostics}}
+\subsubsection[{\texorpdfstring{Diagnostics(void)}{Diagnostics(void)}}]{\setlength{\rightskip}{0pt plus 5cm}Diagnostics\+::\+Diagnostics (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_diagnostics_a84423ad40c376ce8d8a4f02dc0b7f44c}{}\label{class_diagnostics_a84423ad40c376ce8d8a4f02dc0b7f44c}
+
+
+Constructor function if library has yet to initialised. 
+
+
+
+Definition at line 13 of file diagnostics.\+cpp.
+
+\index{Diagnostics@{Diagnostics}!Diagnostics@{Diagnostics}}
+\index{Diagnostics@{Diagnostics}!Diagnostics@{Diagnostics}}
+\subsubsection[{\texorpdfstring{Diagnostics(uint32\+\_\+t h)}{Diagnostics(uint32_t h)}}]{\setlength{\rightskip}{0pt plus 5cm}Diagnostics\+::\+Diagnostics (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{h}
+\end{DoxyParamCaption}
+)}\hypertarget{class_diagnostics_ab4cf66446bf7d4af44315629de9a910b}{}\label{class_diagnostics_ab4cf66446bf7d4af44315629de9a910b}
+
+
+Constructor function if library has already been initialised but diagnostics need to be performed. 
+
+
+
+Definition at line 27 of file diagnostics.\+cpp.
+
+\index{Diagnostics@{Diagnostics}!````~Diagnostics@{$\sim$\+Diagnostics}}
+\index{````~Diagnostics@{$\sim$\+Diagnostics}!Diagnostics@{Diagnostics}}
+\subsubsection[{\texorpdfstring{$\sim$\+Diagnostics()}{~Diagnostics()}}]{\setlength{\rightskip}{0pt plus 5cm}Diagnostics\+::$\sim$\+Diagnostics (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_diagnostics_ad05cd98138d8ef3a0c1284412fbddd6b}{}\label{class_diagnostics_ad05cd98138d8ef3a0c1284412fbddd6b}
+
+
+Class destructor. 
+
+
+
+Definition at line 35 of file diagnostics.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Diagnostics@{Diagnostics}!print\+Board\+Info@{print\+Board\+Info}}
+\index{print\+Board\+Info@{print\+Board\+Info}!Diagnostics@{Diagnostics}}
+\subsubsection[{\texorpdfstring{print\+Board\+Info(void)}{printBoardInfo(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Diagnostics\+::print\+Board\+Info (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_diagnostics_a8263e91e26d536a03442d59e6c5b0d12}{}\label{class_diagnostics_a8263e91e26d536a03442d59e6c5b0d12}
+Print selcted information about the C\+O\+M-\/e board. Current information printed\+: \hyperlink{class_board}{Board} Manufacturer and \hyperlink{class_board}{Board} Name. 
+
+Definition at line 45 of file diagnostics.\+cpp.
+
+\index{Diagnostics@{Diagnostics}!print\+Board\+Temperatures@{print\+Board\+Temperatures}}
+\index{print\+Board\+Temperatures@{print\+Board\+Temperatures}!Diagnostics@{Diagnostics}}
+\subsubsection[{\texorpdfstring{print\+Board\+Temperatures(void)}{printBoardTemperatures(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Diagnostics\+::print\+Board\+Temperatures (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_diagnostics_a686255ad134138a830d0b917334cb264}{}\label{class_diagnostics_a686255ad134138a830d0b917334cb264}
+Print current board and C\+PU temperatures. 
+
+Definition at line 54 of file diagnostics.\+cpp.
+
+\index{Diagnostics@{Diagnostics}!print\+I2\+C\+Support@{print\+I2\+C\+Support}}
+\index{print\+I2\+C\+Support@{print\+I2\+C\+Support}!Diagnostics@{Diagnostics}}
+\subsubsection[{\texorpdfstring{print\+I2\+C\+Support(void)}{printI2CSupport(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Diagnostics\+::print\+I2\+C\+Support (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_diagnostics_af25cdb55c895228c3d312345e1782c55}{}\label{class_diagnostics_af25cdb55c895228c3d312345e1782c55}
+Print available I2C buses. 
+
+Definition at line 63 of file diagnostics.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{diagnostics_8hpp}{diagnostics.\+hpp}\item 
+src/\hyperlink{diagnostics_8cpp}{diagnostics.\+cpp}\end{DoxyCompactItemize}

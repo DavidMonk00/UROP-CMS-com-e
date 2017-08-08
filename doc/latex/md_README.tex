@@ -1,0 +1,38 @@
+\subsection*{Installation Notes}
+
+\subsubsection*{Prerequisites\+:}
+
+
+\begin{DoxyItemize}
+\item Boost libraries\+: {\ttfamily yum install boost-\/devel}
+\item C++14 compatible compiler (G\+CC 5.\+3.\+1)\+: 
+\begin{DoxyCode}
+1 sudo yum install centos-release-scl
+2 sudo yum install devtoolset-4-gcc*
+3 scl enable devtoolset-4 bash
+\end{DoxyCode}
+
+\item S\+E\+MA libraries\+:
+\begin{DoxyEnumerate}
+\item Download from \href{http://www.adlinktech.com/PD/web/PD_Driver.php?cp=Driver&PDNo=1274&kind=UT}{\tt http\+://www.\+adlinktech.\+com/\+P\+D/web/\+P\+D\+\_\+\+Driver.\+php?cp=\+Driver\&\+P\+D\+No=1274\&kind=\+UT}
+\item Run {\ttfamily /archive-\/directory/binaries/linux64/\+S\+E\+M\+A\+\_\+x64} as root
+\item Copy header files to {\ttfamily /opt/\+Sema/include}
+\item Link binaries from {\ttfamily /usr/local/\+S\+E\+M\+A/lib} -\/$>$ {\ttfamily /opt/\+Sema/lib}
+\item Create header file \char`\"{}\+Sema.\+h\char`\"{} to collect includes
+\end{DoxyEnumerate}
+\item pybind11 libraries\+:
+\begin{DoxyEnumerate}
+\item Install developer extensions for python\+: ``` pip install pytest yum install python-\/devel ``{\ttfamily }
+\item {\ttfamily Clone repository}git clone \href{https://github.com/pybind/pybind11.git}{\tt https\+://github.\+com/pybind/pybind11.\+git}` into /opt
+\item Check installation\+: ``` cd /opt/pybind11 mkdir build cd build cmake .. make check -\/j 4 ``` \subsubsection*{Clone repository}
+\end{DoxyEnumerate}
+
+{\ttfamily git clone \href{https://github.com/DavidMonk00/UROP-CMS-com-e.git}{\tt https\+://github.\+com/\+David\+Monk00/\+U\+R\+O\+P-\/\+C\+M\+S-\/com-\/e.\+git}} \subsubsection*{Crontab\+:}
+
+{\ttfamily crontab -\/e}\+: 
+\begin{DoxyCode}
+1 * * * * * /path-to-folder/bin/main.py
+2 0 * * * * /path-to-folder/bin/purge.py
+\end{DoxyCode}
+ 
+\end{DoxyItemize}

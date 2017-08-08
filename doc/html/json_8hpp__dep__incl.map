@@ -1,7 +1,7 @@
 <map id="include/json.hpp" name="include/json.hpp">
-<area shape="rect" id="node2" href="$_couch_d_b_8hpp.html" title="include/CouchDB.hpp" alt="" coords="118,80,267,107"/>
+<area shape="rect" id="node2" href="$_couch_d_b_8hpp.html" title="Defines the CouchDB base class and Server and Client derived classes. " alt="" coords="118,80,267,107"/>
 <area shape="rect" id="node3" href="$update_8hpp.html" title="include/update.hpp" alt="" coords="51,155,182,181"/>
-<area shape="rect" id="node6" href="$_couch_d_b_8cpp.html" title="src/CouchDB.cpp" alt="" coords="207,155,333,181"/>
+<area shape="rect" id="node6" href="$_couch_d_b_8cpp.html" title="Defines functions for the base CouchDB class and its derived children. " alt="" coords="207,155,333,181"/>
 <area shape="rect" id="node4" href="$src_2main_8cpp.html" title="src/main.cpp" alt="" coords="5,229,103,256"/>
-<area shape="rect" id="node5" href="$update_8cpp.html" title="src/update.cpp" alt="" coords="127,229,235,256"/>
+<area shape="rect" id="node5" href="$update_8cpp.html" title="Defines functions for the Update class. " alt="" coords="127,229,235,256"/>
 </map>

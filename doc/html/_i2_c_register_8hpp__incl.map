@@ -1,6 +1,6 @@
 <map id="include/I2CRegister.hpp" name="include/I2CRegister.hpp">
 <area shape="rect" id="node4" href="$_i2_c_8hpp.html" title="I2C.hpp" alt="" coords="359,80,427,107"/>
-<area shape="rect" id="node13" href="$units__define_8hpp.html" title="units_define.hpp" alt="" coords="1239,80,1357,107"/>
+<area shape="rect" id="node13" href="$units__define_8hpp.html" title="Type definitons for units_variant. " alt="" coords="1239,80,1357,107"/>
 <area shape="rect" id="node7" href="$diagnostics_8hpp.html" title="diagnostics.hpp" alt="" coords="153,162,267,189"/>
 <area shape="rect" id="node10" href="$_i2_c__base_8hpp.html" title="I2C_base.hpp" alt="" coords="27,162,129,189"/>
 <area shape="rect" id="node12" href="$_i2_c__define_8hpp.html" title="I2C_define.hpp" alt="" coords="291,162,401,189"/>

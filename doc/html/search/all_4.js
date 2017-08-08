@@ -14,6 +14,7 @@ var searchData=
   ['compactdatabase',['compactDatabase',['../class_client.html#ab4703ff4ad0742e72c5416f33971cc2f',1,'Client']]],
   ['compatiblelimits',['CompatibleLimits',['../structnlohmann_1_1detail_1_1is__compatible__integer__type__impl_3_01true_00_01_real_integer_type78b0ba77f36a8c8169cdb79b01d1a4bf.html#a3bf8ee2f76e74f997258c9ba40c64bc4',1,'nlohmann::detail::is_compatible_integer_type_impl&lt; true, RealIntegerType, CompatibleNumberIntegerType &gt;']]],
   ['config',['config',['../class_couch_d_b.html#ada3dd3c5112ccf493eafe278ce4a521c',1,'CouchDB']]],
+  ['configloop',['configLoop',['../src_2main_8cpp.html#a5ac40b4560272201328502c000751577',1,'main.cpp']]],
   ['configurespichannel',['configureSPIChannel',['../classantenna__usb__rewrite_1_1_cp2130.html#ad05ed18628162c64fc32dadd09cb4419',1,'antenna_usb_rewrite.Cp2130.configureSPIChannel()'],['../classantenna__usb__rewrite__list_1_1_cp2130.html#ad09266cdf8989135a43896a2e20cae7a',1,'antenna_usb_rewrite_list.Cp2130.configureSPIChannel()']]],
   ['conjunction',['conjunction',['../structnlohmann_1_1detail_1_1conjunction.html',1,'nlohmann::detail']]],
   ['conjunction_3c_20b1_20_3e',['conjunction&lt; B1 &gt;',['../structnlohmann_1_1detail_1_1conjunction_3_01_b1_01_4.html',1,'nlohmann::detail']]],

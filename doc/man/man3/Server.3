@@ -16,54 +16,105 @@ Inherits \fBCouchDB\fP\&.
 .ti -1c
 .RI "\fBServer\fP (void)"
 .br
+.RI "\fIClass constructor\&. \fP"
 .ti -1c
 .RI "\fB~Server\fP (void)"
 .br
+.RI "\fIClass destructor\&. \fP"
 .ti -1c
 .RI "void \fBeditConfig\fP (std::string bus, std::string device, std::string property, std::string value)"
 .br
+.RI "\fIEdit config entry for all slaves\&. \fP"
 .ti -1c
 .RI "void \fBeditConfig\fP (std::string board, std::string bus, std::string device, std::string property, std::string value)"
 .br
+.RI "\fIEdit config entry for specific board\&. \fP"
 .ti -1c
 .RI "void \fBpushDatabase\fP (\fBjson\fP \fBdatabase\fP)"
 .br
+.RI "\fIPush config database to slave\&. \fP"
 .ti -1c
 .RI "void \fBpushChanges\fP (void)"
 .br
+.RI "\fIPush config databases to slaves\&. \fP"
 .in -1c
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-Definition at line 43 of file CouchDB\&.hpp\&.
+Definition at line 50 of file CouchDB\&.hpp\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "Server::Server (void)"
 
 .PP
-Definition at line 183 of file CouchDB\&.cpp\&.
+Class constructor\&. 
+.PP
+Definition at line 267 of file CouchDB\&.cpp\&.
 .SS "Server::~Server (void)"
 
 .PP
-Definition at line 188 of file CouchDB\&.cpp\&.
+Class destructor\&. 
+.PP
+Definition at line 275 of file CouchDB\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void Server::editConfig (std::string bus, std::string device, std::string property, std::string value)"
 
 .PP
-Definition at line 192 of file CouchDB\&.cpp\&.
+Edit config entry for all slaves\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbus\fP - Bus of property\&. 
+.br
+\fIdevice\fP - Device of property\&. 
+.br
+\fIproperty\fP - Property ID\&. 
+.br
+\fIvalue\fP - Value to be written\&. 
+.RE
+.PP
+
+.PP
+Definition at line 286 of file CouchDB\&.cpp\&.
 .SS "void Server::editConfig (std::string board, std::string bus, std::string device, std::string property, std::string value)"
 
 .PP
-Definition at line 201 of file CouchDB\&.cpp\&.
+Edit config entry for specific board\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbus\fP - Bus of property\&. 
+.br
+\fIdevice\fP - Device of property\&. 
+.br
+\fIproperty\fP - Property ID\&. 
+.br
+\fIvalue\fP - Value to be written\&. 
+.RE
+.PP
+
+.PP
+Definition at line 302 of file CouchDB\&.cpp\&.
 .SS "void Server::pushChanges (void)"
 
 .PP
-Definition at line 216 of file CouchDB\&.cpp\&.
+Push config databases to slaves\&. 
+.PP
+Definition at line 324 of file CouchDB\&.cpp\&.
 .SS "void Server::pushDatabase (\fBjson\fP database)"
 
 .PP
-Definition at line 208 of file CouchDB\&.cpp\&.
+Push config database to slave\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdatabase\fP - JSON of metadat for database to psush to\&. 
+.RE
+.PP
+
+.PP
+Definition at line 313 of file CouchDB\&.cpp\&.
 
 .SH "Author"
 .PP 

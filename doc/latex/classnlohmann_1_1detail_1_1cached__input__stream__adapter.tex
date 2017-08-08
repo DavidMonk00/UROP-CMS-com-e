@@ -1,0 +1,114 @@
+\hypertarget{classnlohmann_1_1detail_1_1cached__input__stream__adapter}{}\section{nlohmann\+:\+:detail\+:\+:cached\+\_\+input\+\_\+stream\+\_\+adapter$<$ Buffer\+Size $>$ Class Template Reference}
+\label{classnlohmann_1_1detail_1_1cached__input__stream__adapter}\index{nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter$<$ Buffer\+Size $>$@{nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter$<$ Buffer\+Size $>$}}
+
+
+input adapter for cached stream input  
+
+
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+
+
+Inheritance diagram for nlohmann\+:\+:detail\+:\+:cached\+\_\+input\+\_\+stream\+\_\+adapter$<$ Buffer\+Size $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classnlohmann_1_1detail_1_1cached__input__stream__adapter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nlohmann\+:\+:detail\+:\+:cached\+\_\+input\+\_\+stream\+\_\+adapter$<$ Buffer\+Size $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classnlohmann_1_1detail_1_1cached__input__stream__adapter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnlohmann_1_1detail_1_1cached__input__stream__adapter_a4827c5bf63460dc04ce04d97d52d73b1}{cached\+\_\+input\+\_\+stream\+\_\+adapter} (std\+::istream \&i)
+\item 
+\hyperlink{classnlohmann_1_1detail_1_1cached__input__stream__adapter_a81ed6a4a86aee8d2cdb21a84a62744bb}{$\sim$cached\+\_\+input\+\_\+stream\+\_\+adapter} () override
+\item 
+int \hyperlink{classnlohmann_1_1detail_1_1cached__input__stream__adapter_a4a6fc864751cf727b134f1c2bf31b523}{get\+\_\+character} () override
+\item 
+\hyperlink{namespacenlohmann_1_1detail_a90aa5ef615aa8305e9ea20d8a947980fab45cffe084dd3d20d928bee85e7b0f21}{std\+::string} \hyperlink{classnlohmann_1_1detail_1_1cached__input__stream__adapter_ab9531a66a29685ec87646e99b516c263}{read} (std\+::size\+\_\+t offset, std\+::size\+\_\+t length) override
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$std\+::size\+\_\+t Buffer\+Size$>$\\*
+class nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter$<$ Buffer\+Size $>$}
+
+input adapter for cached stream input 
+
+Definition at line 1306 of file json.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter}!cached\+\_\+input\+\_\+stream\+\_\+adapter@{cached\+\_\+input\+\_\+stream\+\_\+adapter}}
+\index{cached\+\_\+input\+\_\+stream\+\_\+adapter@{cached\+\_\+input\+\_\+stream\+\_\+adapter}!nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter}}
+\subsubsection[{\texorpdfstring{cached\+\_\+input\+\_\+stream\+\_\+adapter(std\+::istream \&i)}{cached_input_stream_adapter(std::istream &i)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t Buffer\+Size$>$ {\bf nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter}$<$ Buffer\+Size $>$\+::{\bf cached\+\_\+input\+\_\+stream\+\_\+adapter} (
+\begin{DoxyParamCaption}
+\item[{std\+::istream \&}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\hypertarget{classnlohmann_1_1detail_1_1cached__input__stream__adapter_a4827c5bf63460dc04ce04d97d52d73b1}{}\label{classnlohmann_1_1detail_1_1cached__input__stream__adapter_a4827c5bf63460dc04ce04d97d52d73b1}
+
+
+Definition at line 1309 of file json.\+hpp.
+
+\index{nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter}!````~cached\+\_\+input\+\_\+stream\+\_\+adapter@{$\sim$cached\+\_\+input\+\_\+stream\+\_\+adapter}}
+\index{````~cached\+\_\+input\+\_\+stream\+\_\+adapter@{$\sim$cached\+\_\+input\+\_\+stream\+\_\+adapter}!nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter}}
+\subsubsection[{\texorpdfstring{$\sim$cached\+\_\+input\+\_\+stream\+\_\+adapter() override}{~cached_input_stream_adapter() override}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t Buffer\+Size$>$ {\bf nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter}$<$ Buffer\+Size $>$\+::$\sim${\bf cached\+\_\+input\+\_\+stream\+\_\+adapter} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}\hypertarget{classnlohmann_1_1detail_1_1cached__input__stream__adapter_a81ed6a4a86aee8d2cdb21a84a62744bb}{}\label{classnlohmann_1_1detail_1_1cached__input__stream__adapter_a81ed6a4a86aee8d2cdb21a84a62744bb}
+
+
+Definition at line 1322 of file json.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter}!get\+\_\+character@{get\+\_\+character}}
+\index{get\+\_\+character@{get\+\_\+character}!nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter}}
+\subsubsection[{\texorpdfstring{get\+\_\+character() override}{get_character() override}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t Buffer\+Size$>$ int {\bf nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter}$<$ Buffer\+Size $>$\+::get\+\_\+character (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classnlohmann_1_1detail_1_1cached__input__stream__adapter_a4a6fc864751cf727b134f1c2bf31b523}{}\label{classnlohmann_1_1detail_1_1cached__input__stream__adapter_a4a6fc864751cf727b134f1c2bf31b523}
+
+
+Implements \hyperlink{structnlohmann_1_1detail_1_1input__adapter__protocol_af4e0baade0a6b45a73d4e136875e7544}{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol}.
+
+
+
+Definition at line 1335 of file json.\+hpp.
+
+\index{nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter}!read@{read}}
+\index{read@{read}!nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter}}
+\subsubsection[{\texorpdfstring{read(std\+::size\+\_\+t offset, std\+::size\+\_\+t length) override}{read(std::size_t offset, std::size_t length) override}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t Buffer\+Size$>$ {\bf std\+::string} {\bf nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter}$<$ Buffer\+Size $>$\+::read (
+\begin{DoxyParamCaption}
+\item[{std\+::size\+\_\+t}]{offset, }
+\item[{std\+::size\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classnlohmann_1_1detail_1_1cached__input__stream__adapter_ab9531a66a29685ec87646e99b516c263}{}\label{classnlohmann_1_1detail_1_1cached__input__stream__adapter_ab9531a66a29685ec87646e99b516c263}
+
+
+Implements \hyperlink{structnlohmann_1_1detail_1_1input__adapter__protocol_a9ce6c8028229446d7014c0610fbd4599}{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol}.
+
+
+
+Definition at line 1358 of file json.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{json_8hpp}{json.\+hpp}\end{DoxyCompactItemize}

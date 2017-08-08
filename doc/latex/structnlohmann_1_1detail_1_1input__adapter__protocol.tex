@@ -1,0 +1,77 @@
+\hypertarget{structnlohmann_1_1detail_1_1input__adapter__protocol}{}\section{nlohmann\+:\+:detail\+:\+:input\+\_\+adapter\+\_\+protocol Struct Reference}
+\label{structnlohmann_1_1detail_1_1input__adapter__protocol}\index{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol@{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol}}
+
+
+abstract input adapter interface  
+
+
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+
+
+Inheritance diagram for nlohmann\+:\+:detail\+:\+:input\+\_\+adapter\+\_\+protocol\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structnlohmann_1_1detail_1_1input__adapter__protocol__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \hyperlink{structnlohmann_1_1detail_1_1input__adapter__protocol_af4e0baade0a6b45a73d4e136875e7544}{get\+\_\+character} ()=0
+\item 
+virtual \hyperlink{namespacenlohmann_1_1detail_a90aa5ef615aa8305e9ea20d8a947980fab45cffe084dd3d20d928bee85e7b0f21}{std\+::string} \hyperlink{structnlohmann_1_1detail_1_1input__adapter__protocol_a9ce6c8028229446d7014c0610fbd4599}{read} (std\+::size\+\_\+t offset, std\+::size\+\_\+t length)=0
+\item 
+virtual \hyperlink{structnlohmann_1_1detail_1_1input__adapter__protocol_a92dac74def4ac5adacd0684088bd4082}{$\sim$input\+\_\+adapter\+\_\+protocol} ()=default
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+abstract input adapter interface 
+
+Definition at line 1294 of file json.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol@{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol}!````~input\+\_\+adapter\+\_\+protocol@{$\sim$input\+\_\+adapter\+\_\+protocol}}
+\index{````~input\+\_\+adapter\+\_\+protocol@{$\sim$input\+\_\+adapter\+\_\+protocol}!nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol@{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol}}
+\subsubsection[{\texorpdfstring{$\sim$input\+\_\+adapter\+\_\+protocol()=default}{~input_adapter_protocol()=default}}]{\setlength{\rightskip}{0pt plus 5cm}virtual nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol\+::$\sim$input\+\_\+adapter\+\_\+protocol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}\hypertarget{structnlohmann_1_1detail_1_1input__adapter__protocol_a92dac74def4ac5adacd0684088bd4082}{}\label{structnlohmann_1_1detail_1_1input__adapter__protocol_a92dac74def4ac5adacd0684088bd4082}
+
+
+\subsection{Member Function Documentation}
+\index{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol@{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol}!get\+\_\+character@{get\+\_\+character}}
+\index{get\+\_\+character@{get\+\_\+character}!nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol@{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol}}
+\subsubsection[{\texorpdfstring{get\+\_\+character()=0}{get_character()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual int nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol\+::get\+\_\+character (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{structnlohmann_1_1detail_1_1input__adapter__protocol_af4e0baade0a6b45a73d4e136875e7544}{}\label{structnlohmann_1_1detail_1_1input__adapter__protocol_af4e0baade0a6b45a73d4e136875e7544}
+
+
+Implemented in \hyperlink{classnlohmann_1_1detail_1_1input__buffer__adapter_a3f03f910db299a9066923ddcccdb8a3c}{nlohmann\+::detail\+::input\+\_\+buffer\+\_\+adapter}, and \hyperlink{classnlohmann_1_1detail_1_1cached__input__stream__adapter_a4a6fc864751cf727b134f1c2bf31b523}{nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter$<$ Buffer\+Size $>$}.
+
+\index{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol@{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol}!read@{read}}
+\index{read@{read}!nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol@{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol}}
+\subsubsection[{\texorpdfstring{read(std\+::size\+\_\+t offset, std\+::size\+\_\+t length)=0}{read(std::size_t offset, std::size_t length)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf std\+::string} nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol\+::read (
+\begin{DoxyParamCaption}
+\item[{std\+::size\+\_\+t}]{offset, }
+\item[{std\+::size\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{structnlohmann_1_1detail_1_1input__adapter__protocol_a9ce6c8028229446d7014c0610fbd4599}{}\label{structnlohmann_1_1detail_1_1input__adapter__protocol_a9ce6c8028229446d7014c0610fbd4599}
+
+
+Implemented in \hyperlink{classnlohmann_1_1detail_1_1input__buffer__adapter_af124e55c96814ae3a272dd5f0cb5351b}{nlohmann\+::detail\+::input\+\_\+buffer\+\_\+adapter}, and \hyperlink{classnlohmann_1_1detail_1_1cached__input__stream__adapter_ab9531a66a29685ec87646e99b516c263}{nlohmann\+::detail\+::cached\+\_\+input\+\_\+stream\+\_\+adapter$<$ Buffer\+Size $>$}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{json_8hpp}{json.\+hpp}\end{DoxyCompactItemize}

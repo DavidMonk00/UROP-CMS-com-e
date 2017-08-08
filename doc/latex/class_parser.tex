@@ -1,0 +1,75 @@
+\hypertarget{class_parser}{}\section{Parser Class Reference}
+\label{class_parser}\index{Parser@{Parser}}
+
+
+{\ttfamily \#include $<$parser.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ double, int $>$ \hyperlink{class_parser_a92567197fdca620a817579607c9c36e4}{get\+Quantity\+Pair} (std\+::string input)
+\begin{DoxyCompactList}\small\item\em Parse string input into scaled double value and integer representation of unit. \end{DoxyCompactList}\item 
+\hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant} \hyperlink{class_parser_a10f97cbb77d243ff08c600f103f7ef8d}{get\+Quantity} (std\+::string input)
+\begin{DoxyCompactList}\small\item\em Parse string input into \hyperlink{namespaceboost_1_1units}{boost\+::units} quantity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 62 of file parser.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Parser@{Parser}!get\+Quantity@{get\+Quantity}}
+\index{get\+Quantity@{get\+Quantity}!Parser@{Parser}}
+\subsubsection[{\texorpdfstring{get\+Quantity(std\+::string input)}{getQuantity(std::string input)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf units\+\_\+variant} Parser\+::get\+Quantity (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{class_parser_a10f97cbb77d243ff08c600f103f7ef8d}{}\label{class_parser_a10f97cbb77d243ff08c600f103f7ef8d}
+
+
+Parse string input into \hyperlink{namespaceboost_1_1units}{boost\+::units} quantity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & -\/ String input. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value with associated unit. 
+\end{DoxyReturn}
+
+
+Definition at line 69 of file Parser.\+cpp.
+
+\index{Parser@{Parser}!get\+Quantity\+Pair@{get\+Quantity\+Pair}}
+\index{get\+Quantity\+Pair@{get\+Quantity\+Pair}!Parser@{Parser}}
+\subsubsection[{\texorpdfstring{get\+Quantity\+Pair(std\+::string input)}{getQuantityPair(std::string input)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$ double, int $>$ Parser\+::get\+Quantity\+Pair (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{class_parser_a92567197fdca620a817579607c9c36e4}{}\label{class_parser_a92567197fdca620a817579607c9c36e4}
+
+
+Parse string input into scaled double value and integer representation of unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & -\/ String input. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pair of double and integer. 
+\end{DoxyReturn}
+
+
+Definition at line 15 of file Parser.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{parser_8hpp}{parser.\+hpp}\item 
+src/\hyperlink{_parser_8cpp}{Parser.\+cpp}\end{DoxyCompactItemize}

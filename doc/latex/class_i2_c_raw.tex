@@ -1,0 +1,118 @@
+\hypertarget{class_i2_c_raw}{}\section{I2\+C\+Raw Class Reference}
+\label{class_i2_c_raw}\index{I2\+C\+Raw@{I2\+C\+Raw}}
+
+
+{\ttfamily \#include $<$I2\+C\+Raw.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i2_c_raw_a8df65f9a9dc54dbc75205594a2d9b9f7}{I2\+C\+Raw} (void)
+\begin{DoxyCompactList}\small\item\em Class constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_i2_c_raw_a9e5a7ede7b48487b67d7020d609a6ae6}{$\sim$\+I2\+C\+Raw} ()
+\begin{DoxyCompactList}\small\item\em Class destructor. \end{DoxyCompactList}\item 
+int \hyperlink{class_i2_c_raw_a35dd63654acfea8ddd46fddbcae8569b}{read} (uint32\+\_\+t address, uint32\+\_\+t start\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Read from register. \end{DoxyCompactList}\item 
+void \hyperlink{class_i2_c_raw_a0e7b8c5f728e0805bb31c20fdbd77a33}{write} (uint32\+\_\+t address, uint8\+\_\+t buffer, uint32\+\_\+t start\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Write to register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file I2\+C\+Raw.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{I2\+C\+Raw@{I2\+C\+Raw}!I2\+C\+Raw@{I2\+C\+Raw}}
+\index{I2\+C\+Raw@{I2\+C\+Raw}!I2\+C\+Raw@{I2\+C\+Raw}}
+\subsubsection[{\texorpdfstring{I2\+C\+Raw(void)}{I2CRaw(void)}}]{\setlength{\rightskip}{0pt plus 5cm}I2\+C\+Raw\+::\+I2\+C\+Raw (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_raw_a8df65f9a9dc54dbc75205594a2d9b9f7}{}\label{class_i2_c_raw_a8df65f9a9dc54dbc75205594a2d9b9f7}
+
+
+Class constructor. 
+
+
+
+Definition at line 13 of file I2\+C\+Raw.\+cpp.
+
+\index{I2\+C\+Raw@{I2\+C\+Raw}!````~I2\+C\+Raw@{$\sim$\+I2\+C\+Raw}}
+\index{````~I2\+C\+Raw@{$\sim$\+I2\+C\+Raw}!I2\+C\+Raw@{I2\+C\+Raw}}
+\subsubsection[{\texorpdfstring{$\sim$\+I2\+C\+Raw()}{~I2CRaw()}}]{\setlength{\rightskip}{0pt plus 5cm}I2\+C\+Raw\+::$\sim$\+I2\+C\+Raw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_raw_a9e5a7ede7b48487b67d7020d609a6ae6}{}\label{class_i2_c_raw_a9e5a7ede7b48487b67d7020d609a6ae6}
+
+
+Class destructor. 
+
+
+
+Definition at line 22 of file I2\+C\+Raw.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{I2\+C\+Raw@{I2\+C\+Raw}!read@{read}}
+\index{read@{read}!I2\+C\+Raw@{I2\+C\+Raw}}
+\subsubsection[{\texorpdfstring{read(uint32\+\_\+t address, uint32\+\_\+t start\+\_\+point)}{read(uint32_t address, uint32_t start_point)}}]{\setlength{\rightskip}{0pt plus 5cm}int I2\+C\+Raw\+::read (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{address, }
+\item[{uint32\+\_\+t}]{start\+\_\+point}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_raw_a35dd63654acfea8ddd46fddbcae8569b}{}\label{class_i2_c_raw_a35dd63654acfea8ddd46fddbcae8569b}
+
+
+Read from register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & -\/ Device address. \\
+\hline
+{\em start\+\_\+point} & -\/ Internal register address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer representation of hex output. 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file I2\+C\+Raw.\+cpp.
+
+\index{I2\+C\+Raw@{I2\+C\+Raw}!write@{write}}
+\index{write@{write}!I2\+C\+Raw@{I2\+C\+Raw}}
+\subsubsection[{\texorpdfstring{write(uint32\+\_\+t address, uint8\+\_\+t buffer, uint32\+\_\+t start\+\_\+point)}{write(uint32_t address, uint8_t buffer, uint32_t start_point)}}]{\setlength{\rightskip}{0pt plus 5cm}void I2\+C\+Raw\+::write (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{address, }
+\item[{uint8\+\_\+t}]{buffer, }
+\item[{uint32\+\_\+t}]{start\+\_\+point}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_raw_a0e7b8c5f728e0805bb31c20fdbd77a33}{}\label{class_i2_c_raw_a0e7b8c5f728e0805bb31c20fdbd77a33}
+
+
+Write to register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & -\/ Device address. \\
+\hline
+{\em buffer} & -\/ Data to be written to register. \\
+\hline
+{\em start\+\_\+point} & -\/ Internal register address \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 84 of file I2\+C\+Raw.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_i2_c_raw_8hpp}{I2\+C\+Raw.\+hpp}\item 
+src/\hyperlink{_i2_c_raw_8cpp}{I2\+C\+Raw.\+cpp}\end{DoxyCompactItemize}

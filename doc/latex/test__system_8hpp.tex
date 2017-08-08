@@ -1,0 +1,93 @@
+\hypertarget{test__system_8hpp}{}\section{test/test\+\_\+system.hpp File Reference}
+\label{test__system_8hpp}\index{test/test\+\_\+system.\+hpp@{test/test\+\_\+system.\+hpp}}
+{\ttfamily \#include $<$boost/mpl/list.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/mpl/vector.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/base\+\_\+dimension.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/derived\+\_\+dimension.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/io.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/quantity.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/static\+\_\+constant.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/unit.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/base\+\_\+unit.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/make\+\_\+system.\+hpp$>$}\\*
+Include dependency graph for test\+\_\+system.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__system_8hpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structboost_1_1units_1_1test_1_1meter__base__unit}{boost\+::units\+::test\+::meter\+\_\+base\+\_\+unit}
+\item 
+struct \hyperlink{structboost_1_1units_1_1test_1_1kilogram__base__unit}{boost\+::units\+::test\+::kilogram\+\_\+base\+\_\+unit}
+\item 
+struct \hyperlink{structboost_1_1units_1_1test_1_1second__base__unit}{boost\+::units\+::test\+::second\+\_\+base\+\_\+unit}
+\item 
+struct \hyperlink{structboost_1_1units_1_1base__unit__info_3_01test_1_1meter__base__unit_01_4}{boost\+::units\+::base\+\_\+unit\+\_\+info$<$ test\+::meter\+\_\+base\+\_\+unit $>$}
+\item 
+struct \hyperlink{structboost_1_1units_1_1base__unit__info_3_01test_1_1kilogram__base__unit_01_4}{boost\+::units\+::base\+\_\+unit\+\_\+info$<$ test\+::kilogram\+\_\+base\+\_\+unit $>$}
+\item 
+struct \hyperlink{structboost_1_1units_1_1base__unit__info_3_01test_1_1second__base__unit_01_4}{boost\+::units\+::base\+\_\+unit\+\_\+info$<$ test\+::second\+\_\+base\+\_\+unit $>$}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceboost}{boost}
+\item 
+ \hyperlink{namespaceboost_1_1units}{boost\+::units}
+\item 
+ \hyperlink{namespaceboost_1_1units_1_1test}{boost\+::units\+::test}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef length\+\_\+base\+\_\+dimension\+::dimension\+\_\+type \hyperlink{namespaceboost_1_1units_ae50eae7dfa312b039ce7aac232ac27c4}{boost\+::units\+::length\+\_\+dimension}
+\item 
+typedef mass\+\_\+base\+\_\+dimension\+::dimension\+\_\+type \hyperlink{namespaceboost_1_1units_a5baec398fcf78171420ff24e743f1faa}{boost\+::units\+::mass\+\_\+dimension}
+\item 
+typedef time\+\_\+base\+\_\+dimension\+::dimension\+\_\+type \hyperlink{namespaceboost_1_1units_a8fc0b5bca117a7c220c018021ebe821f}{boost\+::units\+::time\+\_\+dimension}
+\item 
+typedef derived\+\_\+dimension$<$ length\+\_\+base\+\_\+dimension, 2 $>$\+::type \hyperlink{namespaceboost_1_1units_aaa72083d461d56b8a6163423691c2c6a}{boost\+::units\+::area\+\_\+dimension}
+\item 
+typedef derived\+\_\+dimension$<$ mass\+\_\+base\+\_\+dimension, 1, length\+\_\+base\+\_\+dimension, 2, time\+\_\+base\+\_\+dimension,-\/2 $>$\+::type \hyperlink{namespaceboost_1_1units_a6925a7132e69383f3bcf68b27cdb9475}{boost\+::units\+::energy\+\_\+dimension}
+\item 
+typedef make\+\_\+system$<$ meter\+\_\+base\+\_\+unit, kilogram\+\_\+base\+\_\+unit, second\+\_\+base\+\_\+unit $>$\+::type \hyperlink{namespaceboost_1_1units_1_1test_a8e4ee21bbeef605222c8533bb4def1bb}{boost\+::units\+::test\+::mks\+\_\+system}
+\item 
+typedef unit$<$ dimensionless\+\_\+type, mks\+\_\+system $>$ \hyperlink{namespaceboost_1_1units_1_1test_a926174a372ce3b4577e6c06ccd8b291e}{boost\+::units\+::test\+::dimensionless}
+\begin{DoxyCompactList}\small\item\em unit typedefs \end{DoxyCompactList}\item 
+typedef unit$<$ length\+\_\+dimension, mks\+\_\+system $>$ \hyperlink{namespaceboost_1_1units_1_1test_abb80de321402f6f139e1a1b182ea4655}{boost\+::units\+::test\+::length}
+\item 
+typedef unit$<$ mass\+\_\+dimension, mks\+\_\+system $>$ \hyperlink{namespaceboost_1_1units_1_1test_ac20a8750e8cda0bf9f5ab0571dec9210}{boost\+::units\+::test\+::mass}
+\item 
+typedef unit$<$ time\+\_\+dimension, mks\+\_\+system $>$ \hyperlink{namespaceboost_1_1units_1_1test_aa6015c1af04d051a648ce2d7bb3a6876}{boost\+::units\+::test\+::time}
+\item 
+typedef unit$<$ area\+\_\+dimension, mks\+\_\+system $>$ \hyperlink{namespaceboost_1_1units_1_1test_aefe7b1b4d24a0c81afb2d61774143151}{boost\+::units\+::test\+::area}
+\item 
+typedef unit$<$ energy\+\_\+dimension, mks\+\_\+system $>$ \hyperlink{namespaceboost_1_1units_1_1test_a5a1d8a7c46b82b43a4f4cd4a0ddcec59}{boost\+::units\+::test\+::energy}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceboost_1_1units_1_1test_a631272090f5fe255e4eac046d72e07a2}{boost\+::units\+::test\+::\+B\+O\+O\+S\+T\+\_\+\+U\+N\+I\+T\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+O\+N\+S\+T\+A\+NT} (meter, length)
+\begin{DoxyCompactList}\small\item\em unit constants \end{DoxyCompactList}\item 
+\hyperlink{namespaceboost_1_1units_1_1test_a03223b7a477e1e69a9b529e36a1f3ce1}{boost\+::units\+::test\+::\+B\+O\+O\+S\+T\+\_\+\+U\+N\+I\+T\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+O\+N\+S\+T\+A\+NT} (meters, length)
+\item 
+\hyperlink{namespaceboost_1_1units_1_1test_a3abd42158a7ac9b010d7fc0350a802b3}{boost\+::units\+::test\+::\+B\+O\+O\+S\+T\+\_\+\+U\+N\+I\+T\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+O\+N\+S\+T\+A\+NT} (kilogram, mass)
+\item 
+\hyperlink{namespaceboost_1_1units_1_1test_ac238a8b4d4053f1a53849198e2aa76c2}{boost\+::units\+::test\+::\+B\+O\+O\+S\+T\+\_\+\+U\+N\+I\+T\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+O\+N\+S\+T\+A\+NT} (kilograms, mass)
+\item 
+\hyperlink{namespaceboost_1_1units_1_1test_aeac0aa2887fd0d7991a48b63df5b9cca}{boost\+::units\+::test\+::\+B\+O\+O\+S\+T\+\_\+\+U\+N\+I\+T\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+O\+N\+S\+T\+A\+NT} (second, time)
+\item 
+\hyperlink{namespaceboost_1_1units_1_1test_af3c7b9ae11e08cea93e185c8728d8edc}{boost\+::units\+::test\+::\+B\+O\+O\+S\+T\+\_\+\+U\+N\+I\+T\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+O\+N\+S\+T\+A\+NT} (seconds, time)
+\item 
+\hyperlink{namespaceboost_1_1units_1_1test_a8f158957e334f6ad3d2d27e41e507294}{boost\+::units\+::test\+::\+B\+O\+O\+S\+T\+\_\+\+U\+N\+I\+T\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+O\+N\+S\+T\+A\+NT} (square\+\_\+meter, area)
+\item 
+\hyperlink{namespaceboost_1_1units_1_1test_af1552f2608b1209cd9d25051112fb879}{boost\+::units\+::test\+::\+B\+O\+O\+S\+T\+\_\+\+U\+N\+I\+T\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+O\+N\+S\+T\+A\+NT} (square\+\_\+meters, area)
+\item 
+\hyperlink{namespaceboost_1_1units_1_1test_abeb88a3c30be2670cd039f5c2b895f5f}{boost\+::units\+::test\+::\+B\+O\+O\+S\+T\+\_\+\+U\+N\+I\+T\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+O\+N\+S\+T\+A\+NT} (joule, energy)
+\item 
+\hyperlink{namespaceboost_1_1units_1_1test_a46d5b207b8516eb3b82cdc8741f8c2e6}{boost\+::units\+::test\+::\+B\+O\+O\+S\+T\+\_\+\+U\+N\+I\+T\+S\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+C\+O\+N\+S\+T\+A\+NT} (joules, energy)
+\end{DoxyCompactItemize}

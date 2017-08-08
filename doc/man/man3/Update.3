@@ -14,53 +14,71 @@ Update \-
 .ti -1c
 .RI "\fBUpdate\fP (void)"
 .br
+.RI "\fIClass constructor\&. \fP"
 .ti -1c
 .RI "\fB~Update\fP (void)"
 .br
+.RI "\fIClass destructor\&. \fP"
 .ti -1c
 .RI "void \fBsaveActive\fP (void)"
 .br
+.RI "\fISave active registers to local cache and then push the database to an external server\&. \fP"
 .ti -1c
 .RI "void \fBsaveStatic\fP (void)"
 .br
+.RI "\fISave static registers to local cache and then push the database to an external server\&. \fP"
 .ti -1c
 .RI "void \fBpurgeDatabase\fP (void)"
 .br
+.RI "\fIPurge database of any entries over an hour old\&. \fP"
 .ti -1c
 .RI "void \fBgetConfig\fP (void)"
 .br
+.RI "\fICheck if config files have changed and update registers if true\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 12 of file update\&.hpp\&.
+Definition at line 19 of file update\&.hpp\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "Update::Update (void)"
 
 .PP
-Definition at line 3 of file update\&.cpp\&.
+Class constructor\&. 
+.PP
+Definition at line 13 of file update\&.cpp\&.
 .SS "Update::~Update (void)"
 
 .PP
-Definition at line 9 of file update\&.cpp\&.
+Class destructor\&. 
+.PP
+Definition at line 22 of file update\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void Update::getConfig (void)"
 
 .PP
-Definition at line 140 of file update\&.cpp\&.
+Check if config files have changed and update registers if true\&. 
+.PP
+Definition at line 174 of file update\&.cpp\&.
 .SS "void Update::purgeDatabase (void)"
 
 .PP
-Definition at line 101 of file update\&.cpp\&.
+Purge database of any entries over an hour old\&. 
+.PP
+Definition at line 129 of file update\&.cpp\&.
 .SS "void Update::saveActive (void)"
 
 .PP
-Definition at line 13 of file update\&.cpp\&.
+Save active registers to local cache and then push the database to an external server\&. 
+.PP
+Definition at line 29 of file update\&.cpp\&.
 .SS "void Update::saveStatic (void)"
 
 .PP
-Definition at line 44 of file update\&.cpp\&.
+Save static registers to local cache and then push the database to an external server\&. 
+.PP
+Definition at line 63 of file update\&.cpp\&.
 
 .SH "Author"
 .PP 

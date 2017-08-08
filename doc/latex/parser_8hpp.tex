@@ -1,0 +1,84 @@
+\hypertarget{parser_8hpp}{}\section{include/parser.hpp File Reference}
+\label{parser_8hpp}\index{include/parser.\+hpp@{include/parser.\+hpp}}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}units\+\_\+define.\+hpp\char`\"{}}\\*
+Include dependency graph for parser.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{parser_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{parser_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structunits__and__powers}{units\+\_\+and\+\_\+powers$<$ Iterator $>$}
+\item 
+class \hyperlink{class_parser}{Parser}
+\item 
+class \hyperlink{class_legacy_parser}{Legacy\+Parser}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::pair$<$ int, int $>$ \hyperlink{parser_8hpp_a6b16b1518344aff7cbf8aaa9ae9cdd39}{pair\+\_\+type}
+\item 
+typedef std\+::vector$<$ \hyperlink{parser_8hpp_a6b16b1518344aff7cbf8aaa9ae9cdd39}{pair\+\_\+type} $>$ \hyperlink{parser_8hpp_ab598806586272ab27a10406c3b8436fe}{pairs\+\_\+type}
+\item 
+typedef std\+::pair$<$ double, \hyperlink{parser_8hpp_ab598806586272ab27a10406c3b8436fe}{pairs\+\_\+type} $>$ \hyperlink{parser_8hpp_a76d816dc60daad0ab1c3c7b1dc7906d2}{phys\+\_\+quant}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename P , typename T $>$ }\\void \hyperlink{parser_8hpp_aa9805a68dfe7e5497265a50b1baec943}{test\+\_\+parser\+\_\+attr} (char const $\ast$input, P const \&p, T \&attr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{parser.\+hpp@{parser.\+hpp}!pair\+\_\+type@{pair\+\_\+type}}
+\index{pair\+\_\+type@{pair\+\_\+type}!parser.\+hpp@{parser.\+hpp}}
+\subsubsection[{\texorpdfstring{pair\+\_\+type}{pair_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::pair$<$int, int$>$ {\bf pair\+\_\+type}}\hypertarget{parser_8hpp_a6b16b1518344aff7cbf8aaa9ae9cdd39}{}\label{parser_8hpp_a6b16b1518344aff7cbf8aaa9ae9cdd39}
+
+
+Definition at line 21 of file parser.\+hpp.
+
+\index{parser.\+hpp@{parser.\+hpp}!pairs\+\_\+type@{pairs\+\_\+type}}
+\index{pairs\+\_\+type@{pairs\+\_\+type}!parser.\+hpp@{parser.\+hpp}}
+\subsubsection[{\texorpdfstring{pairs\+\_\+type}{pairs_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<${\bf pair\+\_\+type}$>$ {\bf pairs\+\_\+type}}\hypertarget{parser_8hpp_ab598806586272ab27a10406c3b8436fe}{}\label{parser_8hpp_ab598806586272ab27a10406c3b8436fe}
+
+
+Definition at line 22 of file parser.\+hpp.
+
+\index{parser.\+hpp@{parser.\+hpp}!phys\+\_\+quant@{phys\+\_\+quant}}
+\index{phys\+\_\+quant@{phys\+\_\+quant}!parser.\+hpp@{parser.\+hpp}}
+\subsubsection[{\texorpdfstring{phys\+\_\+quant}{phys_quant}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::pair$<$double , {\bf pairs\+\_\+type}$>$ {\bf phys\+\_\+quant}}\hypertarget{parser_8hpp_a76d816dc60daad0ab1c3c7b1dc7906d2}{}\label{parser_8hpp_a76d816dc60daad0ab1c3c7b1dc7906d2}
+
+
+Definition at line 23 of file parser.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\index{parser.\+hpp@{parser.\+hpp}!test\+\_\+parser\+\_\+attr@{test\+\_\+parser\+\_\+attr}}
+\index{test\+\_\+parser\+\_\+attr@{test\+\_\+parser\+\_\+attr}!parser.\+hpp@{parser.\+hpp}}
+\subsubsection[{\texorpdfstring{test\+\_\+parser\+\_\+attr(char const $\ast$input, P const \&p, T \&attr)}{test_parser_attr(char const *input, P const &p, T &attr)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename P , typename T $>$ void test\+\_\+parser\+\_\+attr (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{input, }
+\item[{P const \&}]{p, }
+\item[{T \&}]{attr}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8hpp_aa9805a68dfe7e5497265a50b1baec943}{}\label{parser_8hpp_aa9805a68dfe7e5497265a50b1baec943}
+\hyperlink{class_parser}{Parser} for symbol parsing. 
+
+Definition at line 29 of file parser.\+hpp.
+

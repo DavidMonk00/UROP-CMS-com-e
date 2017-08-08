@@ -46,7 +46,7 @@ var NAVTREEINDEX =
 "class_to_string.html#a8e940138e92a6dd242ced2c635d383f8",
 "classnlohmann_1_1detail_1_1binary__reader.html#aa147833e4d64ebb6a08e5f6a7b9a2842",
 "functions_func_m.html",
-"structnlohmann_1_1detail_1_1is__compatible__integer__type__impl_3_01true_00_01_real_integer_type78b0ba77f36a8c8169cdb79b01d1a4bf.html#a3bf8ee2f76e74f997258c9ba40c64bc4"
+"structnlohmann_1_1detail_1_1is__compatible__integer__type.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

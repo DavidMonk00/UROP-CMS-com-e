@@ -1,0 +1,67 @@
+\hypertarget{units__define_8hpp}{}\section{include/units\+\_\+define.hpp File Reference}
+\label{units__define_8hpp}\index{include/units\+\_\+define.\+hpp@{include/units\+\_\+define.\+hpp}}
+
+
+Type definitons for units\+\_\+variant.  
+
+
+{\ttfamily \#include $<$boost/config/warning\+\_\+disable.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/spirit/include/qi.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/fusion/include/std\+\_\+pair.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/spirit/include/support\+\_\+utree.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/assert.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/io.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/pow.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/systems/si/electric\+\_\+potential.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/systems/si/current.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/systems/si/io.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/variant.\+hpp$>$}\\*
+Include dependency graph for units\+\_\+define.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{units__define_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{units__define_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::variant$<$ double, quantity$<$ length $>$, quantity$<$ boost\+::units\+::si\+::time $>$, quantity$<$ temperature $>$ $>$ \hyperlink{units__define_8hpp_a20d91600733a4560ae25289d26f31155}{legacy\+\_\+units\+\_\+variant}
+\item 
+typedef boost\+::variant$<$ std\+::string, int, double, quantity$<$ electric\+\_\+potential $>$, quantity$<$ current $>$, quantity$<$ si\+::time $>$, quantity$<$ frequency $>$, quantity$<$ temperature $>$ $>$ \hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Type definitons for units\+\_\+variant. 
+
+\begin{DoxyAuthor}{Author}
+David Monk -\/ Imperial College London 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsection{Typedef Documentation}
+\index{units\+\_\+define.\+hpp@{units\+\_\+define.\+hpp}!legacy\+\_\+units\+\_\+variant@{legacy\+\_\+units\+\_\+variant}}
+\index{legacy\+\_\+units\+\_\+variant@{legacy\+\_\+units\+\_\+variant}!units\+\_\+define.\+hpp@{units\+\_\+define.\+hpp}}
+\subsubsection[{\texorpdfstring{legacy\+\_\+units\+\_\+variant}{legacy_units_variant}}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost\+::variant$<$double, quantity$<$length$>$, quantity$<$boost\+::units\+::si\+::time$>$, quantity$<$temperature$>$ $>$ {\bf legacy\+\_\+units\+\_\+variant}}\hypertarget{units__define_8hpp_a20d91600733a4560ae25289d26f31155}{}\label{units__define_8hpp_a20d91600733a4560ae25289d26f31155}
+
+
+Definition at line 28 of file units\+\_\+define.\+hpp.
+
+\index{units\+\_\+define.\+hpp@{units\+\_\+define.\+hpp}!units\+\_\+variant@{units\+\_\+variant}}
+\index{units\+\_\+variant@{units\+\_\+variant}!units\+\_\+define.\+hpp@{units\+\_\+define.\+hpp}}
+\subsubsection[{\texorpdfstring{units\+\_\+variant}{units_variant}}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost\+::variant$<$std\+::string, int, double, quantity$<$electric\+\_\+potential$>$, quantity$<$current$>$, quantity$<$si\+::time$>$, quantity$<$frequency$>$, quantity$<$temperature$>$ $>$ {\bf units\+\_\+variant}}\hypertarget{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{}\label{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}
+
+
+Definition at line 36 of file units\+\_\+define.\+hpp.
+

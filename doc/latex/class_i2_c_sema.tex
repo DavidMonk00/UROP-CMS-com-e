@@ -1,0 +1,234 @@
+\hypertarget{class_i2_c_sema}{}\section{I2\+C\+Sema Class Reference}
+\label{class_i2_c_sema}\index{I2\+C\+Sema@{I2\+C\+Sema}}
+
+
+{\ttfamily \#include $<$I2\+C.\+hpp$>$}
+
+
+
+Inheritance diagram for I2\+C\+Sema\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{class_i2_c_sema__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for I2\+C\+Sema\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{class_i2_c_sema__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i2_c_sema_ad9b53f523e31c4a24a73463591473358}{I2\+C\+Sema} (uint32\+\_\+t ID, uint32\+\_\+t address, bool diag)
+\begin{DoxyCompactList}\small\item\em Constructor function with additional diagnostics. \end{DoxyCompactList}\item 
+\hyperlink{class_i2_c_sema_a627eb561a9ca1bb08f39a4f58cae0b3c}{I2\+C\+Sema} (uint32\+\_\+t ID)
+\begin{DoxyCompactList}\small\item\em Constructor function. \end{DoxyCompactList}\item 
+\hyperlink{class_i2_c_sema_ade6cfd73c317f5339a5b02558b5f5a11}{$\sim$\+I2\+C\+Sema} (void)
+\begin{DoxyCompactList}\small\item\em Class destructor. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_i2_c_sema_ad4d4a853db59af3579b29dbc1b739406}{get\+Bus\+Cap} (void)
+\begin{DoxyCompactList}\small\item\em Get the maximum block length for given I2C bus ID. \end{DoxyCompactList}\item 
+void \hyperlink{class_i2_c_sema_a6a30231be086ddee8255b8c9863a75fe}{receive\+Data} (uint32\+\_\+t address, char $\ast$buffer, uint32\+\_\+t bytecnt, uint32\+\_\+t start\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Receive data data from addressed slave. \end{DoxyCompactList}\item 
+void \hyperlink{class_i2_c_sema_a291907b6f7eca62b0d3957a19f86c239}{send\+Data} (uint32\+\_\+t address, char $\ast$buffer, uint32\+\_\+t bytecnt, uint32\+\_\+t start\+\_\+point)
+\begin{DoxyCompactList}\small\item\em Send data data to addressed slave. \end{DoxyCompactList}\item 
+void \hyperlink{class_i2_c_sema_ac03b06a86f07af407a1dbdc26a9b04c7}{get\+Board\+Value} (uint32\+\_\+t value, uint32\+\_\+t $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Get value from board registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Derived class from I2C which implements S\+E\+MA A\+PI function calls to communicate with bus. 
+
+Definition at line 20 of file I2\+C.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{I2\+C\+Sema@{I2\+C\+Sema}!I2\+C\+Sema@{I2\+C\+Sema}}
+\index{I2\+C\+Sema@{I2\+C\+Sema}!I2\+C\+Sema@{I2\+C\+Sema}}
+\subsubsection[{\texorpdfstring{I2\+C\+Sema(uint32\+\_\+t I\+D, uint32\+\_\+t address, bool diag)}{I2CSema(uint32_t ID, uint32_t address, bool diag)}}]{\setlength{\rightskip}{0pt plus 5cm}I2\+C\+Sema\+::\+I2\+C\+Sema (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{ID, }
+\item[{uint32\+\_\+t}]{address, }
+\item[{bool}]{diag}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_sema_ad9b53f523e31c4a24a73463591473358}{}\label{class_i2_c_sema_ad9b53f523e31c4a24a73463591473358}
+
+
+Constructor function with additional diagnostics. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ID} & -\/ I2C bus ID. \\
+\hline
+{\em address} & -\/ Address of slave module. \\
+\hline
+{\em diag} & -\/ Set to true to display diagnostics. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file I2\+C.\+cpp.
+
+\index{I2\+C\+Sema@{I2\+C\+Sema}!I2\+C\+Sema@{I2\+C\+Sema}}
+\index{I2\+C\+Sema@{I2\+C\+Sema}!I2\+C\+Sema@{I2\+C\+Sema}}
+\subsubsection[{\texorpdfstring{I2\+C\+Sema(uint32\+\_\+t I\+D)}{I2CSema(uint32_t ID)}}]{\setlength{\rightskip}{0pt plus 5cm}I2\+C\+Sema\+::\+I2\+C\+Sema (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{ID}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_sema_a627eb561a9ca1bb08f39a4f58cae0b3c}{}\label{class_i2_c_sema_a627eb561a9ca1bb08f39a4f58cae0b3c}
+
+
+Constructor function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ID} & -\/ I2C bus ID. \\
+\hline
+{\em address} & -\/ Address of slave module. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file I2\+C.\+cpp.
+
+\index{I2\+C\+Sema@{I2\+C\+Sema}!````~I2\+C\+Sema@{$\sim$\+I2\+C\+Sema}}
+\index{````~I2\+C\+Sema@{$\sim$\+I2\+C\+Sema}!I2\+C\+Sema@{I2\+C\+Sema}}
+\subsubsection[{\texorpdfstring{$\sim$\+I2\+C\+Sema(void)}{~I2CSema(void)}}]{\setlength{\rightskip}{0pt plus 5cm}I2\+C\+Sema\+::$\sim$\+I2\+C\+Sema (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_sema_ade6cfd73c317f5339a5b02558b5f5a11}{}\label{class_i2_c_sema_ade6cfd73c317f5339a5b02558b5f5a11}
+
+
+Class destructor. 
+
+
+
+Definition at line 56 of file I2\+C.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{I2\+C\+Sema@{I2\+C\+Sema}!get\+Board\+Value@{get\+Board\+Value}}
+\index{get\+Board\+Value@{get\+Board\+Value}!I2\+C\+Sema@{I2\+C\+Sema}}
+\subsubsection[{\texorpdfstring{get\+Board\+Value(uint32\+\_\+t value, uint32\+\_\+t $\ast$buffer)}{getBoardValue(uint32_t value, uint32_t *buffer)}}]{\setlength{\rightskip}{0pt plus 5cm}void I2\+C\+Sema\+::get\+Board\+Value (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{value, }
+\item[{uint32\+\_\+t $\ast$}]{buffer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_i2_c_sema_ac03b06a86f07af407a1dbdc26a9b04c7}{}\label{class_i2_c_sema_ac03b06a86f07af407a1dbdc26a9b04c7}
+
+
+Get value from board registers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & -\/ ID of internal regiter to read. \\
+\hline
+{\em buffer} & -\/ Pointer to byte array where data will be sent from. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_i2_c__base_a91e938610d77e20ae14e98861eb555c2}{I2\+C\+\_\+base}.
+
+
+
+Definition at line 113 of file I2\+C.\+cpp.
+
+\index{I2\+C\+Sema@{I2\+C\+Sema}!get\+Bus\+Cap@{get\+Bus\+Cap}}
+\index{get\+Bus\+Cap@{get\+Bus\+Cap}!I2\+C\+Sema@{I2\+C\+Sema}}
+\subsubsection[{\texorpdfstring{get\+Bus\+Cap(void)}{getBusCap(void)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t I2\+C\+Sema\+::get\+Bus\+Cap (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_sema_ad4d4a853db59af3579b29dbc1b739406}{}\label{class_i2_c_sema_ad4d4a853db59af3579b29dbc1b739406}
+
+
+Get the maximum block length for given I2C bus ID. 
+
+\begin{DoxyReturn}{Returns}
+Block length as integer. 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file I2\+C.\+cpp.
+
+\index{I2\+C\+Sema@{I2\+C\+Sema}!receive\+Data@{receive\+Data}}
+\index{receive\+Data@{receive\+Data}!I2\+C\+Sema@{I2\+C\+Sema}}
+\subsubsection[{\texorpdfstring{receive\+Data(uint32\+\_\+t address, char $\ast$buffer, uint32\+\_\+t bytecnt, uint32\+\_\+t start\+\_\+point)}{receiveData(uint32_t address, char *buffer, uint32_t bytecnt, uint32_t start_point)}}]{\setlength{\rightskip}{0pt plus 5cm}void I2\+C\+Sema\+::receive\+Data (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{address, }
+\item[{char $\ast$}]{buffer, }
+\item[{uint32\+\_\+t}]{bytecnt, }
+\item[{uint32\+\_\+t}]{start\+\_\+point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_i2_c_sema_a6a30231be086ddee8255b8c9863a75fe}{}\label{class_i2_c_sema_a6a30231be086ddee8255b8c9863a75fe}
+
+
+Receive data data from addressed slave. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & -\/ Pointer to byte array where data will be written. \\
+\hline
+{\em bytecnt} & -\/ Length of buffer. \\
+\hline
+{\em start\+\_\+point} & -\/ Starting address within slave. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to array where data was written. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_i2_c__base_a6938c7e851ac11836d2c69253ecd853a}{I2\+C\+\_\+base}.
+
+
+
+Definition at line 83 of file I2\+C.\+cpp.
+
+\index{I2\+C\+Sema@{I2\+C\+Sema}!send\+Data@{send\+Data}}
+\index{send\+Data@{send\+Data}!I2\+C\+Sema@{I2\+C\+Sema}}
+\subsubsection[{\texorpdfstring{send\+Data(uint32\+\_\+t address, char $\ast$buffer, uint32\+\_\+t bytecnt, uint32\+\_\+t start\+\_\+point)}{sendData(uint32_t address, char *buffer, uint32_t bytecnt, uint32_t start_point)}}]{\setlength{\rightskip}{0pt plus 5cm}void I2\+C\+Sema\+::send\+Data (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{address, }
+\item[{char $\ast$}]{buffer, }
+\item[{uint32\+\_\+t}]{bytecnt, }
+\item[{uint32\+\_\+t}]{start\+\_\+point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_i2_c_sema_a291907b6f7eca62b0d3957a19f86c239}{}\label{class_i2_c_sema_a291907b6f7eca62b0d3957a19f86c239}
+
+
+Send data data to addressed slave. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & -\/ Pointer to byte array where data will be sent from. \\
+\hline
+{\em bytecnt} & -\/ Length of buffer. \\
+\hline
+{\em start\+\_\+point} & -\/ Starting address within slave. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_i2_c__base_af78604423196f5b54602b08425c25622}{I2\+C\+\_\+base}.
+
+
+
+Definition at line 99 of file I2\+C.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_i2_c_8hpp}{I2\+C.\+hpp}\item 
+src/\hyperlink{_i2_c_8cpp}{I2\+C.\+cpp}\end{DoxyCompactItemize}

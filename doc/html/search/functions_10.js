@@ -14,6 +14,7 @@ var searchData=
   ['printboardtemperatures',['printBoardTemperatures',['../class_diagnostics.html#a686255ad134138a830d0b917334cb264',1,'Diagnostics']]],
   ['printi2csupport',['printI2CSupport',['../class_diagnostics.html#af25cdb55c895228c3d312345e1782c55',1,'Diagnostics']]],
   ['purgedatabase',['purgeDatabase',['../class_update.html#a9303c4c10cdf05f46d023d15c3ccdf65',1,'Update']]],
+  ['purgeloop',['purgeLoop',['../src_2main_8cpp.html#a1ef89ed764412e8ccfda952575fadb2a',1,'main.cpp']]],
   ['push_5fback',['push_back',['../classnlohmann_1_1basic__json.html#ac8e523ddc8c2dd7e5d2daf0d49a9c0d7',1,'nlohmann::basic_json::push_back(basic_json &amp;&amp;val)'],['../classnlohmann_1_1basic__json.html#ab4384af330b79de0e5f279576803a2c7',1,'nlohmann::basic_json::push_back(const basic_json &amp;val)'],['../classnlohmann_1_1basic__json.html#ae11a3a51782c058fff2f6550cdfb9b3c',1,'nlohmann::basic_json::push_back(const typename object_t::value_type &amp;val)'],['../classnlohmann_1_1basic__json.html#a1be31ef2d2934d37a818083a4af44f99',1,'nlohmann::basic_json::push_back(initializer_list_t init)']]],
   ['pushchanges',['pushChanges',['../class_server.html#ae1da14c02221a3646f45d1964808fdfc',1,'Server']]],
   ['pushdatabase',['pushDatabase',['../class_client.html#a4983d1069b46cbb8926f9094853936c1',1,'Client::pushDatabase(void)'],['../class_client.html#a3ff5f11c6665c7b9c99476d158b02c01',1,'Client::pushDatabase(json params)'],['../class_server.html#a94472e91b4ade2a006ff607b85dfe8ad',1,'Server::pushDatabase()']]],

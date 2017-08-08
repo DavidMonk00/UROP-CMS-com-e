@@ -1,0 +1,40 @@
+\hypertarget{antenna__usb__rewrite__list_8py}{}\section{pdf-\/parsing/antenna\+\_\+usb\+\_\+rewrite\+\_\+list.py File Reference}
+\label{antenna__usb__rewrite__list_8py}\index{pdf-\/parsing/antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+py@{pdf-\/parsing/antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+py}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classantenna__usb__rewrite__list_1_1_cp2130}{antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+Cp2130}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceantenna__usb__rewrite__list}{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceantenna__usb__rewrite__list_a4dfe4beb7b1df6af753add339c06c311}{antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+get\+Range} (s)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceantenna__usb__rewrite__list_a3d824bc3a35be052f6e7107422536634}{antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+usb\+\_\+to\+\_\+spi} = Cp2130()
+\item 
+\hyperlink{namespaceantenna__usb__rewrite__list_aef54274de5ca40ecd5b8ce587a3b3814}{antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+book} = json.\+load(f\+\_\+json)
+\item 
+\hyperlink{namespaceantenna__usb__rewrite__list_aa1b615265707138d427863eb19fd9ecb}{antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+output} = open(\char`\"{}output.\+dat\char`\"{}, \char`\"{}w\char`\"{})
+\item 
+\hyperlink{namespaceantenna__usb__rewrite__list_a4f8d71b5c1ed3ecaf8af418184761254}{antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+reg} = usb\+\_\+to\+\_\+spi.\+read\+B\+C\+M53134M(page=int(page\mbox{[}\textquotesingle{}page\textquotesingle{}\mbox{]}), offset=int(address\mbox{[}\textquotesingle{}offset\textquotesingle{}\mbox{]}), length=int(address\mbox{[}\textquotesingle{}word-\/length\textquotesingle{}\mbox{]}))
+\item 
+\hyperlink{namespaceantenna__usb__rewrite__list_a57c3f351c2f378d8b32a5535ae505735}{antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+V\+A\+L\+UE} = bin(reg)\mbox{[}2\+:\mbox{]}\mbox{[}\+::-\/1\mbox{]}
+\item 
+list \hyperlink{namespaceantenna__usb__rewrite__list_a36457b8012d0008495e696b7677c286c}{antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+data} = \mbox{[}\char`\"{}Bits\char`\"{},\char`\"{}Name\char`\"{}, \char`\"{}Value\char`\"{}, \char`\"{}Default\char`\"{}\mbox{]}
+\item 
+\hyperlink{namespaceantenna__usb__rewrite__list_af12533542e50af5ea554054416933a61}{antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+index} = get\+Range(bit\mbox{[}\textquotesingle{}bit\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{namespaceantenna__usb__rewrite__list_a7db7584b8616ae6b6bbb5720a302001a}{antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+length} = math.\+ceil(float((index\mbox{[}1\mbox{]}+1-\/index\mbox{[}0\mbox{]}))/4)
+\item 
+string \hyperlink{namespaceantenna__usb__rewrite__list_ac051df5193c46e89320db8b4ac29eb97}{antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+val} = \char`\"{}0x\%0\{0\}\+X\char`\"{}
+\item 
+string \hyperlink{namespaceantenna__usb__rewrite__list_ab939ab5ad6fd12b022e0bc9ded4ccb7c}{antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+string} = u\char`\"{}\textbackslash{}t\%s\textbackslash{}n\char`\"{}
+\end{DoxyCompactItemize}

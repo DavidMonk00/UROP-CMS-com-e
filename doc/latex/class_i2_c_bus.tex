@@ -1,0 +1,226 @@
+\hypertarget{class_i2_c_bus}{}\section{I2\+C\+Bus Class Reference}
+\label{class_i2_c_bus}\index{I2\+C\+Bus@{I2\+C\+Bus}}
+
+
+{\ttfamily \#include $<$I2\+C\+Bus.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i2_c_bus_a53db5c5daff720905da00259e8ea5709}{I2\+C\+Bus} (std\+::unordered\+\_\+map$<$ std\+::string, \hyperlink{class_i2_c_device}{I2\+C\+Device} $\ast$ $>$ device\+\_\+map)
+\begin{DoxyCompactList}\small\item\em Class constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_i2_c_bus_acdaf1b4ec82f6de308cc9604ce5e5e42}{$\sim$\+I2\+C\+Bus} (void)
+\begin{DoxyCompactList}\small\item\em Class destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_i2_c_bus_aeade1580d9ec9bba9a3b81f869b30243}{set\+Device} (std\+::string device\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Set device. \end{DoxyCompactList}\item 
+void \hyperlink{class_i2_c_bus_a638333598e870191d42da15de6aeec0b}{set\+I2\+C\+Type} (\hyperlink{class_i2_c__base}{I2\+C\+\_\+base} $\ast$i2c\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Set I2C protocol to be used for communication. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_i2_c_bus_ab9cc5b3980240de9369ef6959881dd03}{get\+Properties} (void)
+\begin{DoxyCompactList}\small\item\em Get properties of selected device. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_i2_c_bus_abddd1534dc9b08a0ed227af07b10fcab}{get\+Properties} (std\+::string device\+\_\+\+ID)
+\begin{DoxyCompactList}\small\item\em Get properties of device. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_i2_c_bus_abff1e0e4b611c5a7d283c2e146b4281e}{get\+Devices} (void)
+\begin{DoxyCompactList}\small\item\em Get devices on bus. \end{DoxyCompactList}\item 
+\hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant} \hyperlink{class_i2_c_bus_a9d933cda3071969110fcd5318a16e5ef}{read} (std\+::string property)
+\begin{DoxyCompactList}\small\item\em Read property from device. \end{DoxyCompactList}\item 
+void \hyperlink{class_i2_c_bus_aa3b0ce715377ed393d07916a4e75c2a9}{write} (std\+::string property, \hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant} value)
+\begin{DoxyCompactList}\small\item\em Write property to device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file I2\+C\+Bus.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{I2\+C\+Bus@{I2\+C\+Bus}!I2\+C\+Bus@{I2\+C\+Bus}}
+\index{I2\+C\+Bus@{I2\+C\+Bus}!I2\+C\+Bus@{I2\+C\+Bus}}
+\subsubsection[{\texorpdfstring{I2\+C\+Bus(std\+::unordered\+\_\+map$<$ std\+::string, I2\+C\+Device $\ast$ $>$ device\+\_\+map)}{I2CBus(std::unordered_map< std::string, I2CDevice * > device_map)}}]{\setlength{\rightskip}{0pt plus 5cm}I2\+C\+Bus\+::\+I2\+C\+Bus (
+\begin{DoxyParamCaption}
+\item[{std\+::unordered\+\_\+map$<$ std\+::string, {\bf I2\+C\+Device} $\ast$ $>$}]{device\+\_\+map}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_bus_a53db5c5daff720905da00259e8ea5709}{}\label{class_i2_c_bus_a53db5c5daff720905da00259e8ea5709}
+
+
+Class constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+\_\+map} & -\/ Unordered map of string identifiers and \hyperlink{class_i2_c_device}{I2\+C\+Device} pointers. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file I2\+C\+Bus.\+cpp.
+
+\index{I2\+C\+Bus@{I2\+C\+Bus}!````~I2\+C\+Bus@{$\sim$\+I2\+C\+Bus}}
+\index{````~I2\+C\+Bus@{$\sim$\+I2\+C\+Bus}!I2\+C\+Bus@{I2\+C\+Bus}}
+\subsubsection[{\texorpdfstring{$\sim$\+I2\+C\+Bus(void)}{~I2CBus(void)}}]{\setlength{\rightskip}{0pt plus 5cm}I2\+C\+Bus\+::$\sim$\+I2\+C\+Bus (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_bus_acdaf1b4ec82f6de308cc9604ce5e5e42}{}\label{class_i2_c_bus_acdaf1b4ec82f6de308cc9604ce5e5e42}
+
+
+Class destructor. 
+
+
+
+Definition at line 21 of file I2\+C\+Bus.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{I2\+C\+Bus@{I2\+C\+Bus}!get\+Devices@{get\+Devices}}
+\index{get\+Devices@{get\+Devices}!I2\+C\+Bus@{I2\+C\+Bus}}
+\subsubsection[{\texorpdfstring{get\+Devices(void)}{getDevices(void)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::string $>$ I2\+C\+Bus\+::get\+Devices (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_bus_abff1e0e4b611c5a7d283c2e146b4281e}{}\label{class_i2_c_bus_abff1e0e4b611c5a7d283c2e146b4281e}
+
+
+Get devices on bus. 
+
+\begin{DoxyReturn}{Returns}
+Vector of strings of each device ID. 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file I2\+C\+Bus.\+cpp.
+
+\index{I2\+C\+Bus@{I2\+C\+Bus}!get\+Properties@{get\+Properties}}
+\index{get\+Properties@{get\+Properties}!I2\+C\+Bus@{I2\+C\+Bus}}
+\subsubsection[{\texorpdfstring{get\+Properties(void)}{getProperties(void)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::string $>$ I2\+C\+Bus\+::get\+Properties (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_bus_ab9cc5b3980240de9369ef6959881dd03}{}\label{class_i2_c_bus_ab9cc5b3980240de9369ef6959881dd03}
+
+
+Get properties of selected device. 
+
+\begin{DoxyReturn}{Returns}
+Vector of strings of each property for the selected device. 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file I2\+C\+Bus.\+cpp.
+
+\index{I2\+C\+Bus@{I2\+C\+Bus}!get\+Properties@{get\+Properties}}
+\index{get\+Properties@{get\+Properties}!I2\+C\+Bus@{I2\+C\+Bus}}
+\subsubsection[{\texorpdfstring{get\+Properties(std\+::string device\+\_\+\+I\+D)}{getProperties(std::string device_ID)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::string $>$ I2\+C\+Bus\+::get\+Properties (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{device\+\_\+\+ID}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_bus_abddd1534dc9b08a0ed227af07b10fcab}{}\label{class_i2_c_bus_abddd1534dc9b08a0ed227af07b10fcab}
+
+
+Get properties of device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & -\/ String identifier for device. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of strings of each property for the device. 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file I2\+C\+Bus.\+cpp.
+
+\index{I2\+C\+Bus@{I2\+C\+Bus}!read@{read}}
+\index{read@{read}!I2\+C\+Bus@{I2\+C\+Bus}}
+\subsubsection[{\texorpdfstring{read(std\+::string property)}{read(std::string property)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf units\+\_\+variant} I2\+C\+Bus\+::read (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{property}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_bus_a9d933cda3071969110fcd5318a16e5ef}{}\label{class_i2_c_bus_a9d933cda3071969110fcd5318a16e5ef}
+
+
+Read property from device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em property} & -\/ String identifier for register to be read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+units\+\_\+variant of value and associated unit. 
+\end{DoxyReturn}
+
+
+Definition at line 75 of file I2\+C\+Bus.\+cpp.
+
+\index{I2\+C\+Bus@{I2\+C\+Bus}!set\+Device@{set\+Device}}
+\index{set\+Device@{set\+Device}!I2\+C\+Bus@{I2\+C\+Bus}}
+\subsubsection[{\texorpdfstring{set\+Device(std\+::string device\+\_\+id)}{setDevice(std::string device_id)}}]{\setlength{\rightskip}{0pt plus 5cm}void I2\+C\+Bus\+::set\+Device (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{device\+\_\+id}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_bus_aeade1580d9ec9bba9a3b81f869b30243}{}\label{class_i2_c_bus_aeade1580d9ec9bba9a3b81f869b30243}
+
+
+Set device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+\_\+id} & -\/ String identifier of device. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file I2\+C\+Bus.\+cpp.
+
+\index{I2\+C\+Bus@{I2\+C\+Bus}!set\+I2\+C\+Type@{set\+I2\+C\+Type}}
+\index{set\+I2\+C\+Type@{set\+I2\+C\+Type}!I2\+C\+Bus@{I2\+C\+Bus}}
+\subsubsection[{\texorpdfstring{set\+I2\+C\+Type(\+I2\+C\+\_\+base $\ast$i2c\+\_\+type)}{setI2CType(I2C_base *i2c_type)}}]{\setlength{\rightskip}{0pt plus 5cm}void I2\+C\+Bus\+::set\+I2\+C\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf I2\+C\+\_\+base} $\ast$}]{i2c\+\_\+type}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_bus_a638333598e870191d42da15de6aeec0b}{}\label{class_i2_c_bus_a638333598e870191d42da15de6aeec0b}
+
+
+Set I2C protocol to be used for communication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+type} & -\/ \hyperlink{class_i2_c__base}{I2\+C\+\_\+base} pointer for transport object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file I2\+C\+Bus.\+cpp.
+
+\index{I2\+C\+Bus@{I2\+C\+Bus}!write@{write}}
+\index{write@{write}!I2\+C\+Bus@{I2\+C\+Bus}}
+\subsubsection[{\texorpdfstring{write(std\+::string property, units\+\_\+variant value)}{write(std::string property, units_variant value)}}]{\setlength{\rightskip}{0pt plus 5cm}void I2\+C\+Bus\+::write (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{property, }
+\item[{{\bf units\+\_\+variant}}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_bus_aa3b0ce715377ed393d07916a4e75c2a9}{}\label{class_i2_c_bus_aa3b0ce715377ed393d07916a4e75c2a9}
+
+
+Write property to device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em property} & -\/ String identifier for register to be written to. \\
+\hline
+{\em units\+\_\+variant} & of value and associated unit to be written. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 84 of file I2\+C\+Bus.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_i2_c_bus_8hpp}{I2\+C\+Bus.\+hpp}\item 
+src/\hyperlink{_i2_c_bus_8cpp}{I2\+C\+Bus.\+cpp}\end{DoxyCompactItemize}

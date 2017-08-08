@@ -1,0 +1,153 @@
+\hypertarget{class_time_i2_c_register}{}\section{Time\+I2\+C\+Register Class Reference}
+\label{class_time_i2_c_register}\index{Time\+I2\+C\+Register@{Time\+I2\+C\+Register}}
+
+
+{\ttfamily \#include $<$I2\+C\+Register.\+hpp$>$}
+
+
+
+Inheritance diagram for Time\+I2\+C\+Register\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_time_i2_c_register__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Time\+I2\+C\+Register\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_time_i2_c_register__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_time_i2_c_register_a0b88982b1be400cba6684ed53019413a}{Time\+I2\+C\+Register} (uint32\+\_\+t r, std\+::string rw, std\+::function$<$ \hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant}(double)$>$ read\+\_\+func, std\+::function$<$ uint8\+\_\+t(\hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant})$>$ write\+\_\+func)
+\begin{DoxyCompactList}\small\item\em Class constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_time_i2_c_register_a997bf1e5e4fafb70d9499ff0cca41581}{$\sim$\+Time\+I2\+C\+Register} (void)
+\begin{DoxyCompactList}\small\item\em Class destructor. \end{DoxyCompactList}\item 
+\hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant} \hyperlink{class_time_i2_c_register_a0b4f819644bed5adc645a089aec521da}{read} (\hyperlink{class_i2_c__base}{I2\+C\+\_\+base} $\ast$i2c\+\_\+ptr, uint32\+\_\+t address)
+\begin{DoxyCompactList}\small\item\em Read data from register. \end{DoxyCompactList}\item 
+void \hyperlink{class_time_i2_c_register_a49301d14f0d10afa0f0ad7edeb6b30a7}{write} (\hyperlink{class_i2_c__base}{I2\+C\+\_\+base} $\ast$i2c\+\_\+ptr, uint32\+\_\+t address, \hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant} value)
+\begin{DoxyCompactList}\small\item\em Write data to register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Derived \hyperlink{class_i2_c_base_register}{I2\+C\+Base\+Register} class for calls to timing registers. Formats the output correctly when it is given in pure hexadecimal 0-\/59. 
+
+Definition at line 48 of file I2\+C\+Register.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Time\+I2\+C\+Register@{Time\+I2\+C\+Register}!Time\+I2\+C\+Register@{Time\+I2\+C\+Register}}
+\index{Time\+I2\+C\+Register@{Time\+I2\+C\+Register}!Time\+I2\+C\+Register@{Time\+I2\+C\+Register}}
+\subsubsection[{\texorpdfstring{Time\+I2\+C\+Register(uint32\+\_\+t r, std\+::string rw, std\+::function$<$ units\+\_\+variant(double)$>$ read\+\_\+func, std\+::function$<$ uint8\+\_\+t(units\+\_\+variant)$>$ write\+\_\+func)}{TimeI2CRegister(uint32_t r, std::string rw, std::function< units_variant(double)> read_func, std::function< uint8_t(units_variant)> write_func)}}]{\setlength{\rightskip}{0pt plus 5cm}Time\+I2\+C\+Register\+::\+Time\+I2\+C\+Register (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{r, }
+\item[{std\+::string}]{rw, }
+\item[{std\+::function$<$ {\bf units\+\_\+variant}(double)$>$}]{read\+\_\+func, }
+\item[{std\+::function$<$ uint8\+\_\+t({\bf units\+\_\+variant})$>$}]{write\+\_\+func}
+\end{DoxyParamCaption}
+)}\hypertarget{class_time_i2_c_register_a0b88982b1be400cba6684ed53019413a}{}\label{class_time_i2_c_register_a0b88982b1be400cba6684ed53019413a}
+
+
+Class constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & -\/ Address of register within I2C device. \\
+\hline
+{\em read\+\_\+func} & -\/ Lambda function to convert hexadecimal value into correct units type \\
+\hline
+{\em write\+\_\+func} & -\/ Lambda function to convert units type into uint8\+\_\+t to be written. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 16 of file D\+S3232\+Registers.\+cpp.
+
+\index{Time\+I2\+C\+Register@{Time\+I2\+C\+Register}!````~Time\+I2\+C\+Register@{$\sim$\+Time\+I2\+C\+Register}}
+\index{````~Time\+I2\+C\+Register@{$\sim$\+Time\+I2\+C\+Register}!Time\+I2\+C\+Register@{Time\+I2\+C\+Register}}
+\subsubsection[{\texorpdfstring{$\sim$\+Time\+I2\+C\+Register(void)}{~TimeI2CRegister(void)}}]{\setlength{\rightskip}{0pt plus 5cm}Time\+I2\+C\+Register\+::$\sim$\+Time\+I2\+C\+Register (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_time_i2_c_register_a997bf1e5e4fafb70d9499ff0cca41581}{}\label{class_time_i2_c_register_a997bf1e5e4fafb70d9499ff0cca41581}
+
+
+Class destructor. 
+
+
+
+Definition at line 32 of file D\+S3232\+Registers.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Time\+I2\+C\+Register@{Time\+I2\+C\+Register}!read@{read}}
+\index{read@{read}!Time\+I2\+C\+Register@{Time\+I2\+C\+Register}}
+\subsubsection[{\texorpdfstring{read(\+I2\+C\+\_\+base $\ast$i2c\+\_\+ptr, uint32\+\_\+t address)}{read(I2C_base *i2c_ptr, uint32_t address)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf units\+\_\+variant} Time\+I2\+C\+Register\+::read (
+\begin{DoxyParamCaption}
+\item[{{\bf I2\+C\+\_\+base} $\ast$}]{i2c\+\_\+ptr, }
+\item[{uint32\+\_\+t}]{address}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_time_i2_c_register_a0b4f819644bed5adc645a089aec521da}{}\label{class_time_i2_c_register_a0b4f819644bed5adc645a089aec521da}
+
+
+Read data from register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+ptr} & -\/ Pointer to \hyperlink{class_i2_c__base}{I2\+C\+\_\+base} class used for transport. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+units\+\_\+variant containing quantity of correct type. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_i2_c_base_register_a947d834a745d3036c4cd8a2d5e19cd0d}{I2\+C\+Base\+Register}.
+
+
+
+Definition at line 39 of file D\+S3232\+Registers.\+cpp.
+
+\index{Time\+I2\+C\+Register@{Time\+I2\+C\+Register}!write@{write}}
+\index{write@{write}!Time\+I2\+C\+Register@{Time\+I2\+C\+Register}}
+\subsubsection[{\texorpdfstring{write(\+I2\+C\+\_\+base $\ast$i2c\+\_\+ptr, uint32\+\_\+t address, units\+\_\+variant value)}{write(I2C_base *i2c_ptr, uint32_t address, units_variant value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Time\+I2\+C\+Register\+::write (
+\begin{DoxyParamCaption}
+\item[{{\bf I2\+C\+\_\+base} $\ast$}]{i2c\+\_\+ptr, }
+\item[{uint32\+\_\+t}]{address, }
+\item[{{\bf units\+\_\+variant}}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_time_i2_c_register_a49301d14f0d10afa0f0ad7edeb6b30a7}{}\label{class_time_i2_c_register_a49301d14f0d10afa0f0ad7edeb6b30a7}
+
+
+Write data to register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+ptr} & -\/ pointer to \hyperlink{class_i2_c__base}{I2\+C\+\_\+base} class used for transport \\
+\hline
+{\em value} & -\/ Data to be written. Must be of correct type. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_i2_c_base_register_ad3f9f1404fe6af3e10e8f204b16d2066}{I2\+C\+Base\+Register}.
+
+
+
+Definition at line 56 of file D\+S3232\+Registers.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_i2_c_register_8hpp}{I2\+C\+Register.\+hpp}\item 
+src/\hyperlink{_d_s3232_registers_8cpp}{D\+S3232\+Registers.\+cpp}\end{DoxyCompactItemize}

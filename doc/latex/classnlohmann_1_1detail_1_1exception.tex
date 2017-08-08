@@ -1,0 +1,130 @@
+\hypertarget{classnlohmann_1_1detail_1_1exception}{}\section{nlohmann\+:\+:detail\+:\+:exception Class Reference}
+\label{classnlohmann_1_1detail_1_1exception}\index{nlohmann\+::detail\+::exception@{nlohmann\+::detail\+::exception}}
+
+
+general exception of the \hyperlink{classnlohmann_1_1basic__json}{basic\+\_\+json} class  
+
+
+
+
+{\ttfamily \#include $<$json.\+hpp$>$}
+
+
+
+Inheritance diagram for nlohmann\+:\+:detail\+:\+:exception\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classnlohmann_1_1detail_1_1exception__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for nlohmann\+:\+:detail\+:\+:exception\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classnlohmann_1_1detail_1_1exception__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{classnlohmann_1_1detail_1_1exception_a56e006c6ac214875115049ae5b9b569a}{what} () const noexceptoverride
+\begin{DoxyCompactList}\small\item\em returns the explanatory string \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{classnlohmann_1_1detail_1_1exception_a0d4589a3fb54e81646d986c05efa3b9a}{id}
+\begin{DoxyCompactList}\small\item\em the id of the exception \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classnlohmann_1_1detail_1_1exception_ae323ad0d53bc724414c2233164e65657}{exception} (int id\+\_\+, const char $\ast$what\+\_\+arg)
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{namespacenlohmann_1_1detail_a90aa5ef615aa8305e9ea20d8a947980fab45cffe084dd3d20d928bee85e7b0f21}{std\+::string} \hyperlink{classnlohmann_1_1detail_1_1exception_aac7455bbbaed7c01ecd5a2ead336b1ae}{name} (const \hyperlink{namespacenlohmann_1_1detail_a90aa5ef615aa8305e9ea20d8a947980fab45cffe084dd3d20d928bee85e7b0f21}{std\+::string} \&ename, int \hyperlink{classnlohmann_1_1detail_1_1exception_a0d4589a3fb54e81646d986c05efa3b9a}{id})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+general exception of the \hyperlink{classnlohmann_1_1basic__json}{basic\+\_\+json} class 
+
+Extension of std\+::exception objects with a member {\itshape id} for exception ids.
+
+\begin{DoxyNote}{Note}
+To have nothrow-\/copy-\/constructible exceptions, we internally use std\+::runtime\+\_\+error which can cope with arbitrary-\/length error messages. Intermediate strings are built with static functions and then passed to the actual constructor.
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+version 3.\+0.\+0 
+\end{DoxySince}
+
+
+Definition at line 177 of file json.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{nlohmann\+::detail\+::exception@{nlohmann\+::detail\+::exception}!exception@{exception}}
+\index{exception@{exception}!nlohmann\+::detail\+::exception@{nlohmann\+::detail\+::exception}}
+\subsubsection[{\texorpdfstring{exception(int id\+\_\+, const char $\ast$what\+\_\+arg)}{exception(int id_, const char *what_arg)}}]{\setlength{\rightskip}{0pt plus 5cm}nlohmann\+::detail\+::exception\+::exception (
+\begin{DoxyParamCaption}
+\item[{int}]{id\+\_\+, }
+\item[{const char $\ast$}]{what\+\_\+arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classnlohmann_1_1detail_1_1exception_ae323ad0d53bc724414c2233164e65657}{}\label{classnlohmann_1_1detail_1_1exception_ae323ad0d53bc724414c2233164e65657}
+
+
+Definition at line 190 of file json.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{nlohmann\+::detail\+::exception@{nlohmann\+::detail\+::exception}!name@{name}}
+\index{name@{name}!nlohmann\+::detail\+::exception@{nlohmann\+::detail\+::exception}}
+\subsubsection[{\texorpdfstring{name(const std\+::string \&ename, int id)}{name(const std::string &ename, int id)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf std\+::string} nlohmann\+::detail\+::exception\+::name (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\+::string} \&}]{ename, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classnlohmann_1_1detail_1_1exception_aac7455bbbaed7c01ecd5a2ead336b1ae}{}\label{classnlohmann_1_1detail_1_1exception_aac7455bbbaed7c01ecd5a2ead336b1ae}
+
+
+Definition at line 192 of file json.\+hpp.
+
+\index{nlohmann\+::detail\+::exception@{nlohmann\+::detail\+::exception}!what@{what}}
+\index{what@{what}!nlohmann\+::detail\+::exception@{nlohmann\+::detail\+::exception}}
+\subsubsection[{\texorpdfstring{what() const noexceptoverride}{what() const noexceptoverride}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ nlohmann\+::detail\+::exception\+::what (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [noexcept]}}\hypertarget{classnlohmann_1_1detail_1_1exception_a56e006c6ac214875115049ae5b9b569a}{}\label{classnlohmann_1_1detail_1_1exception_a56e006c6ac214875115049ae5b9b569a}
+
+
+returns the explanatory string 
+
+
+
+Definition at line 181 of file json.\+hpp.
+
+
+
+\subsection{Member Data Documentation}
+\index{nlohmann\+::detail\+::exception@{nlohmann\+::detail\+::exception}!id@{id}}
+\index{id@{id}!nlohmann\+::detail\+::exception@{nlohmann\+::detail\+::exception}}
+\subsubsection[{\texorpdfstring{id}{id}}]{\setlength{\rightskip}{0pt plus 5cm}const int nlohmann\+::detail\+::exception\+::id}\hypertarget{classnlohmann_1_1detail_1_1exception_a0d4589a3fb54e81646d986c05efa3b9a}{}\label{classnlohmann_1_1detail_1_1exception_a0d4589a3fb54e81646d986c05efa3b9a}
+
+
+the id of the exception 
+
+
+
+Definition at line 187 of file json.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{json_8hpp}{json.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,132 @@
+\hypertarget{class_c_o_m_e_test_board}{}\section{C\+O\+M\+E\+Test\+Board Class Reference}
+\label{class_c_o_m_e_test_board}\index{C\+O\+M\+E\+Test\+Board@{C\+O\+M\+E\+Test\+Board}}
+
+
+{\ttfamily \#include $<$C\+O\+M\+E\+Test\+Board.\+hpp$>$}
+
+
+
+Inheritance diagram for C\+O\+M\+E\+Test\+Board\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_c_o_m_e_test_board__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+O\+M\+E\+Test\+Board\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{class_c_o_m_e_test_board__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_o_m_e_test_board_a373116ab895fdabcec6c73b193b925e7}{C\+O\+M\+E\+Test\+Board} (\hyperlink{class_i2_c__base}{I2\+C\+\_\+base} $\ast$i2c\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Class constructor. Full bus/device/register map is defined here. \end{DoxyCompactList}\item 
+\hyperlink{class_c_o_m_e_test_board_ae4a09594e1ce42977dd71e48356e5136}{C\+O\+M\+E\+Test\+Board} (std\+::string i2c\+\_\+string)
+\begin{DoxyCompactList}\small\item\em Class constructor. Full bus/device/register map is defined here. Also requests downstream bus from arbiter. \end{DoxyCompactList}\item 
+\hyperlink{class_c_o_m_e_test_board_a6bacaca3d2bf5a32fa4881f9c06924db}{$\sim$\+C\+O\+M\+E\+Test\+Board} (void)
+\begin{DoxyCompactList}\small\item\em Class destructor. Gives up downstream bus to arbiter. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \hyperlink{class_i2_c_bus}{I2\+C\+Bus} $\ast$ $>$ \hyperlink{class_c_o_m_e_test_board_ac8eff50bf63fbc98650b17579c858d73}{get\+Map} (void)
+\begin{DoxyCompactList}\small\item\em Get the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file C\+O\+M\+E\+Test\+Board.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{C\+O\+M\+E\+Test\+Board@{C\+O\+M\+E\+Test\+Board}!C\+O\+M\+E\+Test\+Board@{C\+O\+M\+E\+Test\+Board}}
+\index{C\+O\+M\+E\+Test\+Board@{C\+O\+M\+E\+Test\+Board}!C\+O\+M\+E\+Test\+Board@{C\+O\+M\+E\+Test\+Board}}
+\subsubsection[{\texorpdfstring{C\+O\+M\+E\+Test\+Board(\+I2\+C\+\_\+base $\ast$i2c\+\_\+type)}{COMETestBoard(I2C_base *i2c_type)}}]{\setlength{\rightskip}{0pt plus 5cm}C\+O\+M\+E\+Test\+Board\+::\+C\+O\+M\+E\+Test\+Board (
+\begin{DoxyParamCaption}
+\item[{{\bf I2\+C\+\_\+base} $\ast$}]{i2c\+\_\+type}
+\end{DoxyParamCaption}
+)}\hypertarget{class_c_o_m_e_test_board_a373116ab895fdabcec6c73b193b925e7}{}\label{class_c_o_m_e_test_board_a373116ab895fdabcec6c73b193b925e7}
+
+
+Class constructor. Full bus/device/register map is defined here. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+type} & -\/ Pointer to I2C transport class to be used. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file C\+O\+M\+E\+Test\+Board.\+cpp.
+
+\index{C\+O\+M\+E\+Test\+Board@{C\+O\+M\+E\+Test\+Board}!C\+O\+M\+E\+Test\+Board@{C\+O\+M\+E\+Test\+Board}}
+\index{C\+O\+M\+E\+Test\+Board@{C\+O\+M\+E\+Test\+Board}!C\+O\+M\+E\+Test\+Board@{C\+O\+M\+E\+Test\+Board}}
+\subsubsection[{\texorpdfstring{C\+O\+M\+E\+Test\+Board(std\+::string i2c\+\_\+string)}{COMETestBoard(std::string i2c_string)}}]{\setlength{\rightskip}{0pt plus 5cm}C\+O\+M\+E\+Test\+Board\+::\+C\+O\+M\+E\+Test\+Board (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{i2c\+\_\+string}
+\end{DoxyParamCaption}
+)}\hypertarget{class_c_o_m_e_test_board_ae4a09594e1ce42977dd71e48356e5136}{}\label{class_c_o_m_e_test_board_ae4a09594e1ce42977dd71e48356e5136}
+
+
+Class constructor. Full bus/device/register map is defined here. Also requests downstream bus from arbiter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+type} & -\/ Pointer to \hyperlink{class_i2_c__base}{I2\+C\+\_\+base} transport object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 54 of file C\+O\+M\+E\+Test\+Board.\+cpp.
+
+\index{C\+O\+M\+E\+Test\+Board@{C\+O\+M\+E\+Test\+Board}!````~C\+O\+M\+E\+Test\+Board@{$\sim$\+C\+O\+M\+E\+Test\+Board}}
+\index{````~C\+O\+M\+E\+Test\+Board@{$\sim$\+C\+O\+M\+E\+Test\+Board}!C\+O\+M\+E\+Test\+Board@{C\+O\+M\+E\+Test\+Board}}
+\subsubsection[{\texorpdfstring{$\sim$\+C\+O\+M\+E\+Test\+Board(void)}{~COMETestBoard(void)}}]{\setlength{\rightskip}{0pt plus 5cm}C\+O\+M\+E\+Test\+Board\+::$\sim$\+C\+O\+M\+E\+Test\+Board (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_c_o_m_e_test_board_a6bacaca3d2bf5a32fa4881f9c06924db}{}\label{class_c_o_m_e_test_board_a6bacaca3d2bf5a32fa4881f9c06924db}
+
+
+Class destructor. Gives up downstream bus to arbiter. 
+
+
+
+Definition at line 97 of file C\+O\+M\+E\+Test\+Board.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{C\+O\+M\+E\+Test\+Board@{C\+O\+M\+E\+Test\+Board}!get\+Map@{get\+Map}}
+\index{get\+Map@{get\+Map}!C\+O\+M\+E\+Test\+Board@{C\+O\+M\+E\+Test\+Board}}
+\subsubsection[{\texorpdfstring{get\+Map(void)}{getMap(void)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unordered\+\_\+map$<$ std\+::string, {\bf I2\+C\+Bus} $\ast$ $>$ C\+O\+M\+E\+Test\+Board\+::get\+Map (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_c_o_m_e_test_board_ac8eff50bf63fbc98650b17579c858d73}{}\label{class_c_o_m_e_test_board_ac8eff50bf63fbc98650b17579c858d73}
+
+
+Get the map. 
+
+\begin{DoxyReturn}{Returns}
+Unordered map of string identifiers and \hyperlink{class_i2_c_bus}{I2\+C\+Bus} pointers. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_board_a7579517a69f81e2fcbe9e18857a11545}{Board}.
+
+
+
+Definition at line 105 of file C\+O\+M\+E\+Test\+Board.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_c_o_m_e_test_board_8hpp}{C\+O\+M\+E\+Test\+Board.\+hpp}\item 
+src/\hyperlink{_c_o_m_e_test_board_8cpp}{C\+O\+M\+E\+Test\+Board.\+cpp}\end{DoxyCompactItemize}

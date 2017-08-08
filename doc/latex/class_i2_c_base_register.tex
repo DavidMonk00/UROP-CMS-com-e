@@ -1,0 +1,130 @@
+\hypertarget{class_i2_c_base_register}{}\section{I2\+C\+Base\+Register Class Reference}
+\label{class_i2_c_base_register}\index{I2\+C\+Base\+Register@{I2\+C\+Base\+Register}}
+
+
+{\ttfamily \#include $<$I2\+C\+Register.\+hpp$>$}
+
+
+
+Inheritance diagram for I2\+C\+Base\+Register\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i2_c_base_register__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant} \hyperlink{class_i2_c_base_register_a947d834a745d3036c4cd8a2d5e19cd0d}{read} (\hyperlink{class_i2_c__base}{I2\+C\+\_\+base} $\ast$i2c\+\_\+ptr, uint32\+\_\+t address)=0
+\item 
+virtual void \hyperlink{class_i2_c_base_register_ad3f9f1404fe6af3e10e8f204b16d2066}{write} (\hyperlink{class_i2_c__base}{I2\+C\+\_\+base} $\ast$i2c\+\_\+ptr, uint32\+\_\+t address, \hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant} value)=0
+\item 
+virtual void \hyperlink{class_i2_c_base_register_af1f72d5762a6141699b6af08333c4fda}{read} (void $\ast$i2c\+\_\+ptr, uint32\+\_\+t addr)=0
+\item 
+virtual void \hyperlink{class_i2_c_base_register_aed4dc86915a116908c4b5d7e8ffbde17}{write} (void $\ast$i2c\+\_\+ptr, uint32\+\_\+t addr)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{class_i2_c_base_register_a5ec30e59be3ce0626848c665dbea8047}{reg}
+\item 
+bool \hyperlink{class_i2_c_base_register_a2e8f180fa393df31a1418d6f9cc55a1a}{b\+\_\+read}
+\item 
+bool \hyperlink{class_i2_c_base_register_ae0691af94ba363130da18520310a8c09}{b\+\_\+write}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+I2\+C\+Register.\+h Purpose\+: defines \hyperlink{class_i2_c_base_register}{I2\+C\+Base\+Register} class and its derivations. \begin{DoxyAuthor}{Author}
+David Monk 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 Base class for I2C register is pure virtual and thus should not be constructed. 
+\end{DoxyVersion}
+
+
+Definition at line 19 of file I2\+C\+Register.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{I2\+C\+Base\+Register@{I2\+C\+Base\+Register}!read@{read}}
+\index{read@{read}!I2\+C\+Base\+Register@{I2\+C\+Base\+Register}}
+\subsubsection[{\texorpdfstring{read(void $\ast$i2c\+\_\+ptr, uint32\+\_\+t addr)=0}{read(void *i2c_ptr, uint32_t addr)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I2\+C\+Base\+Register\+::read (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{i2c\+\_\+ptr, }
+\item[{uint32\+\_\+t}]{addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_i2_c_base_register_af1f72d5762a6141699b6af08333c4fda}{}\label{class_i2_c_base_register_af1f72d5762a6141699b6af08333c4fda}
+
+
+Implemented in \hyperlink{class_generic_i2_c_register_a61978f59fd6f303844bdba728b1f6866}{Generic\+I2\+C\+Register}.
+
+\index{I2\+C\+Base\+Register@{I2\+C\+Base\+Register}!read@{read}}
+\index{read@{read}!I2\+C\+Base\+Register@{I2\+C\+Base\+Register}}
+\subsubsection[{\texorpdfstring{read(\+I2\+C\+\_\+base $\ast$i2c\+\_\+ptr, uint32\+\_\+t address)=0}{read(I2C_base *i2c_ptr, uint32_t address)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf units\+\_\+variant} I2\+C\+Base\+Register\+::read (
+\begin{DoxyParamCaption}
+\item[{{\bf I2\+C\+\_\+base} $\ast$}]{i2c\+\_\+ptr, }
+\item[{uint32\+\_\+t}]{address}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_i2_c_base_register_a947d834a745d3036c4cd8a2d5e19cd0d}{}\label{class_i2_c_base_register_a947d834a745d3036c4cd8a2d5e19cd0d}
+
+
+Implemented in \hyperlink{class_internal_register_a7675a310cdb4866c256fef77d388b424}{Internal\+Register}, \hyperlink{class_p_c_i_clock_output_enable_register_a045c8a20c9ac76b937f7224aaba4a4ff}{P\+C\+I\+Clock\+Output\+Enable\+Register}, \hyperlink{class_p_c_i_clock_p_l_l_mode_register_afb680bb132c11af7c7f8ed5cba6a7150}{P\+C\+I\+Clock\+P\+L\+L\+Mode\+Register}, \hyperlink{class_d_s3232_temperature_i2_c_register_ab8733916ac8d733eb8d0e2b72df4efc2}{D\+S3232\+Temperature\+I2\+C\+Register}, \hyperlink{class_time_i2_c_register_a0b4f819644bed5adc645a089aec521da}{Time\+I2\+C\+Register}, and \hyperlink{class_generic_i2_c_register_a86c28b9c5eecacca106132e7718b2646}{Generic\+I2\+C\+Register}.
+
+\index{I2\+C\+Base\+Register@{I2\+C\+Base\+Register}!write@{write}}
+\index{write@{write}!I2\+C\+Base\+Register@{I2\+C\+Base\+Register}}
+\subsubsection[{\texorpdfstring{write(void $\ast$i2c\+\_\+ptr, uint32\+\_\+t addr)=0}{write(void *i2c_ptr, uint32_t addr)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I2\+C\+Base\+Register\+::write (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{i2c\+\_\+ptr, }
+\item[{uint32\+\_\+t}]{addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_i2_c_base_register_aed4dc86915a116908c4b5d7e8ffbde17}{}\label{class_i2_c_base_register_aed4dc86915a116908c4b5d7e8ffbde17}
+
+
+Implemented in \hyperlink{class_generic_i2_c_register_a77b68755fe06268a21402f1e3190bd95}{Generic\+I2\+C\+Register}.
+
+\index{I2\+C\+Base\+Register@{I2\+C\+Base\+Register}!write@{write}}
+\index{write@{write}!I2\+C\+Base\+Register@{I2\+C\+Base\+Register}}
+\subsubsection[{\texorpdfstring{write(\+I2\+C\+\_\+base $\ast$i2c\+\_\+ptr, uint32\+\_\+t address, units\+\_\+variant value)=0}{write(I2C_base *i2c_ptr, uint32_t address, units_variant value)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I2\+C\+Base\+Register\+::write (
+\begin{DoxyParamCaption}
+\item[{{\bf I2\+C\+\_\+base} $\ast$}]{i2c\+\_\+ptr, }
+\item[{uint32\+\_\+t}]{address, }
+\item[{{\bf units\+\_\+variant}}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_i2_c_base_register_ad3f9f1404fe6af3e10e8f204b16d2066}{}\label{class_i2_c_base_register_ad3f9f1404fe6af3e10e8f204b16d2066}
+
+
+Implemented in \hyperlink{class_internal_register_a8c1844d644fc81a118a6094f3a88feb8}{Internal\+Register}, \hyperlink{class_p_c_i_clock_output_enable_register_a85f345cbd4dac441680dbfebd20a15c0}{P\+C\+I\+Clock\+Output\+Enable\+Register}, \hyperlink{class_p_c_i_clock_p_l_l_mode_register_a19290b05f08da81c02cf34c9730f2b17}{P\+C\+I\+Clock\+P\+L\+L\+Mode\+Register}, \hyperlink{class_d_s3232_temperature_i2_c_register_a69c3e1c321d2161d8c69e984031d7fc8}{D\+S3232\+Temperature\+I2\+C\+Register}, \hyperlink{class_time_i2_c_register_a49301d14f0d10afa0f0ad7edeb6b30a7}{Time\+I2\+C\+Register}, and \hyperlink{class_generic_i2_c_register_ad6f38b7b54c95e3f8502de01f6122d60}{Generic\+I2\+C\+Register}.
+
+
+
+\subsection{Member Data Documentation}
+\index{I2\+C\+Base\+Register@{I2\+C\+Base\+Register}!b\+\_\+read@{b\+\_\+read}}
+\index{b\+\_\+read@{b\+\_\+read}!I2\+C\+Base\+Register@{I2\+C\+Base\+Register}}
+\subsubsection[{\texorpdfstring{b\+\_\+read}{b_read}}]{\setlength{\rightskip}{0pt plus 5cm}bool I2\+C\+Base\+Register\+::b\+\_\+read\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_i2_c_base_register_a2e8f180fa393df31a1418d6f9cc55a1a}{}\label{class_i2_c_base_register_a2e8f180fa393df31a1418d6f9cc55a1a}
+
+
+Definition at line 22 of file I2\+C\+Register.\+hpp.
+
+\index{I2\+C\+Base\+Register@{I2\+C\+Base\+Register}!b\+\_\+write@{b\+\_\+write}}
+\index{b\+\_\+write@{b\+\_\+write}!I2\+C\+Base\+Register@{I2\+C\+Base\+Register}}
+\subsubsection[{\texorpdfstring{b\+\_\+write}{b_write}}]{\setlength{\rightskip}{0pt plus 5cm}bool I2\+C\+Base\+Register\+::b\+\_\+write\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_i2_c_base_register_ae0691af94ba363130da18520310a8c09}{}\label{class_i2_c_base_register_ae0691af94ba363130da18520310a8c09}
+
+
+Definition at line 23 of file I2\+C\+Register.\+hpp.
+
+\index{I2\+C\+Base\+Register@{I2\+C\+Base\+Register}!reg@{reg}}
+\index{reg@{reg}!I2\+C\+Base\+Register@{I2\+C\+Base\+Register}}
+\subsubsection[{\texorpdfstring{reg}{reg}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t I2\+C\+Base\+Register\+::reg\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_i2_c_base_register_a5ec30e59be3ce0626848c665dbea8047}{}\label{class_i2_c_base_register_a5ec30e59be3ce0626848c665dbea8047}
+
+
+Definition at line 21 of file I2\+C\+Register.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_i2_c_register_8hpp}{I2\+C\+Register.\+hpp}\item 
+test/\hyperlink{structure_8cpp}{structure.\+cpp}\end{DoxyCompactItemize}

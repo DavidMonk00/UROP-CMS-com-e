@@ -1,0 +1,300 @@
+\hypertarget{classantenna__usb__rewrite_1_1_cp2130}{}\section{antenna\+\_\+usb\+\_\+rewrite.\+Cp2130 Class Reference}
+\label{classantenna__usb__rewrite_1_1_cp2130}\index{antenna\+\_\+usb\+\_\+rewrite.\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite.\+Cp2130}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_ad9b0f559ad3acf15619ead6a841b3819}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_aef000907558ea3f8a41eeefe44714b71}{find} (self)
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_a0392f11a0df0ea9765ebe864a1e54be5}{get\+G\+P\+I\+O\+Chip\+Select} (self)
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_a0710e28b89ee8f720546be8445b03dd4}{get\+S\+P\+I\+Delay} (self, channel)
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_a0903382e31257a0ee45510e3687f4d4f}{set\+S\+P\+I\+Delay} (self, channel, mask\+\_\+bitmap, inter\+\_\+byte\+\_\+delay, post\+\_\+assert\+\_\+delay, pre\+\_\+deassert\+\_\+delay)
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_a339cdd7e4a1073180be5c65eb9d0972b}{get\+S\+P\+I\+Word} (self)
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_a5eb2728116ba0685b7a182808bd2291f}{pin\+Set\+High} (self, chip\+\_\+number)
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_aace66727fc61d07305a9473122955cd9}{pin\+Reset\+Low} (self, chip\+\_\+number)
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_ae387b1b234ebd317645d61cee53b7f01}{set\+G\+P\+I\+O\+Chip\+Select} (self, chip\+\_\+number)
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_a3aea629f83cdbddc124da7e13cd1a148}{set\+S\+P\+I\+Word} (self, channel, channel\+\_\+word)
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_ab8f29d3cde366090a6cb64b487136005}{write\+S\+PI} (self, length, string\+\_\+data\+\_\+buffer, endpoint=0x01, command\+\_\+id=\textquotesingle{}\textbackslash{}x01\textquotesingle{}, reserved1=\textquotesingle{}\textbackslash{}x00\textbackslash{}x00\textquotesingle{}, reserved2=\textquotesingle{}\textbackslash{}x00\textquotesingle{}, timeout=500)
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_aa96193d3a9931aacb9f5061ab5ee792f}{read\+S\+PI} (self, length, endpoint=0x01, command\+\_\+id=\textquotesingle{}\textbackslash{}x00\textquotesingle{}, reserved1=\textquotesingle{}\textbackslash{}x00\textbackslash{}x00\textquotesingle{}, reserved2=\textquotesingle{}\textbackslash{}x00\textquotesingle{}, timeout=500)
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_a8237d344945d80984898042fe61828bd}{write\+Read\+S\+PI} (self, length, string\+\_\+data\+\_\+buffer, endpoint=0x01, command\+\_\+id=\textquotesingle{}\textbackslash{}x02\textquotesingle{}, reserved1=\textquotesingle{}\textbackslash{}x00\textbackslash{}x00\textquotesingle{}, reserved2=\textquotesingle{}\textbackslash{}x00\textquotesingle{}, timeout=500)
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_a44063c256f8a9e81ab4c3a1e638f9c79}{read\+U\+SB} (self, size, endpoint=0x82, timeout=500)
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_ad05ed18628162c64fc32dadd09cb4419}{configure\+S\+P\+I\+Channel} (self, analog\+\_\+switch\+\_\+cs)
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_aed58256031219fe4f9079616d168a6fb}{read\+B\+C\+M53134M} (self, page, offset, length)
+\item 
+def \hyperlink{classantenna__usb__rewrite_1_1_cp2130_a5d3c0c50d0e378c6feb1dbf61d914a47}{write\+B\+C\+M53134M} (self, page, offset, string\+\_\+buffer)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classantenna__usb__rewrite_1_1_cp2130_a1df7fb45632de5416e76230b2decab8c}{dev}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self)}{__init__(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_ad9b0f559ad3acf15619ead6a841b3819}{}\label{classantenna__usb__rewrite_1_1_cp2130_ad9b0f559ad3acf15619ead6a841b3819}
+
+
+Definition at line 10 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+
+
+\subsection{Member Function Documentation}
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!configure\+S\+P\+I\+Channel@{configure\+S\+P\+I\+Channel}}
+\index{configure\+S\+P\+I\+Channel@{configure\+S\+P\+I\+Channel}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{configure\+S\+P\+I\+Channel(self, analog\+\_\+switch\+\_\+cs)}{configureSPIChannel(self, analog_switch_cs)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+configure\+S\+P\+I\+Channel (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{analog\+\_\+switch\+\_\+cs}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_ad05ed18628162c64fc32dadd09cb4419}{}\label{classantenna__usb__rewrite_1_1_cp2130_ad05ed18628162c64fc32dadd09cb4419}
+
+
+Definition at line 87 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!find@{find}}
+\index{find@{find}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{find(self)}{find(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+find (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_aef000907558ea3f8a41eeefe44714b71}{}\label{classantenna__usb__rewrite_1_1_cp2130_aef000907558ea3f8a41eeefe44714b71}
+
+
+Definition at line 14 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!get\+G\+P\+I\+O\+Chip\+Select@{get\+G\+P\+I\+O\+Chip\+Select}}
+\index{get\+G\+P\+I\+O\+Chip\+Select@{get\+G\+P\+I\+O\+Chip\+Select}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{get\+G\+P\+I\+O\+Chip\+Select(self)}{getGPIOChipSelect(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+get\+G\+P\+I\+O\+Chip\+Select (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_a0392f11a0df0ea9765ebe864a1e54be5}{}\label{classantenna__usb__rewrite_1_1_cp2130_a0392f11a0df0ea9765ebe864a1e54be5}
+
+
+Definition at line 25 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!get\+S\+P\+I\+Delay@{get\+S\+P\+I\+Delay}}
+\index{get\+S\+P\+I\+Delay@{get\+S\+P\+I\+Delay}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{get\+S\+P\+I\+Delay(self, channel)}{getSPIDelay(self, channel)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+get\+S\+P\+I\+Delay (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{channel}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_a0710e28b89ee8f720546be8445b03dd4}{}\label{classantenna__usb__rewrite_1_1_cp2130_a0710e28b89ee8f720546be8445b03dd4}
+
+
+Definition at line 37 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!get\+S\+P\+I\+Word@{get\+S\+P\+I\+Word}}
+\index{get\+S\+P\+I\+Word@{get\+S\+P\+I\+Word}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{get\+S\+P\+I\+Word(self)}{getSPIWord(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+get\+S\+P\+I\+Word (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_a339cdd7e4a1073180be5c65eb9d0972b}{}\label{classantenna__usb__rewrite_1_1_cp2130_a339cdd7e4a1073180be5c65eb9d0972b}
+
+
+Definition at line 44 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!pin\+Reset\+Low@{pin\+Reset\+Low}}
+\index{pin\+Reset\+Low@{pin\+Reset\+Low}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{pin\+Reset\+Low(self, chip\+\_\+number)}{pinResetLow(self, chip_number)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+pin\+Reset\+Low (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{chip\+\_\+number}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_aace66727fc61d07305a9473122955cd9}{}\label{classantenna__usb__rewrite_1_1_cp2130_aace66727fc61d07305a9473122955cd9}
+
+
+Definition at line 51 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!pin\+Set\+High@{pin\+Set\+High}}
+\index{pin\+Set\+High@{pin\+Set\+High}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{pin\+Set\+High(self, chip\+\_\+number)}{pinSetHigh(self, chip_number)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+pin\+Set\+High (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{chip\+\_\+number}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_a5eb2728116ba0685b7a182808bd2291f}{}\label{classantenna__usb__rewrite_1_1_cp2130_a5eb2728116ba0685b7a182808bd2291f}
+
+
+Definition at line 47 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!read\+B\+C\+M53134M@{read\+B\+C\+M53134M}}
+\index{read\+B\+C\+M53134M@{read\+B\+C\+M53134M}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{read\+B\+C\+M53134\+M(self, page, offset, length)}{readBCM53134M(self, page, offset, length)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+read\+B\+C\+M53134M (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{page, }
+\item[{}]{offset, }
+\item[{}]{length}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_aed58256031219fe4f9079616d168a6fb}{}\label{classantenna__usb__rewrite_1_1_cp2130_aed58256031219fe4f9079616d168a6fb}
+
+
+Definition at line 111 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!read\+S\+PI@{read\+S\+PI}}
+\index{read\+S\+PI@{read\+S\+PI}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{read\+S\+P\+I(self, length, endpoint=0x01, command\+\_\+id=\textquotesingle{}\textbackslash{}x00\textquotesingle{}, reserved1=\textquotesingle{}\textbackslash{}x00\textbackslash{}x00\textquotesingle{}, reserved2=\textquotesingle{}\textbackslash{}x00\textquotesingle{}, timeout=500)}{readSPI(self, length, endpoint=0x01, command_id='\textbackslash{}x00', reserved1='\textbackslash{}x00\textbackslash{}x00', reserved2='\textbackslash{}x00', timeout=500)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+read\+S\+PI (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{length, }
+\item[{}]{endpoint = {\ttfamily 0x01}, }
+\item[{}]{command\+\_\+id = {\ttfamily \textquotesingle{}\textbackslash{}x00\textquotesingle{}}, }
+\item[{}]{reserved1 = {\ttfamily \textquotesingle{}\textbackslash{}x00\textbackslash{}x00\textquotesingle{}}, }
+\item[{}]{reserved2 = {\ttfamily \textquotesingle{}\textbackslash{}x00\textquotesingle{}}, }
+\item[{}]{timeout = {\ttfamily 500}}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_aa96193d3a9931aacb9f5061ab5ee792f}{}\label{classantenna__usb__rewrite_1_1_cp2130_aa96193d3a9931aacb9f5061ab5ee792f}
+
+
+Definition at line 72 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!read\+U\+SB@{read\+U\+SB}}
+\index{read\+U\+SB@{read\+U\+SB}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{read\+U\+S\+B(self, size, endpoint=0x82, timeout=500)}{readUSB(self, size, endpoint=0x82, timeout=500)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+read\+U\+SB (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{size, }
+\item[{}]{endpoint = {\ttfamily 0x82}, }
+\item[{}]{timeout = {\ttfamily 500}}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_a44063c256f8a9e81ab4c3a1e638f9c79}{}\label{classantenna__usb__rewrite_1_1_cp2130_a44063c256f8a9e81ab4c3a1e638f9c79}
+
+
+Definition at line 82 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!set\+G\+P\+I\+O\+Chip\+Select@{set\+G\+P\+I\+O\+Chip\+Select}}
+\index{set\+G\+P\+I\+O\+Chip\+Select@{set\+G\+P\+I\+O\+Chip\+Select}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{set\+G\+P\+I\+O\+Chip\+Select(self, chip\+\_\+number)}{setGPIOChipSelect(self, chip_number)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+set\+G\+P\+I\+O\+Chip\+Select (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{chip\+\_\+number}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_ae387b1b234ebd317645d61cee53b7f01}{}\label{classantenna__usb__rewrite_1_1_cp2130_ae387b1b234ebd317645d61cee53b7f01}
+
+
+Definition at line 55 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!set\+S\+P\+I\+Delay@{set\+S\+P\+I\+Delay}}
+\index{set\+S\+P\+I\+Delay@{set\+S\+P\+I\+Delay}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{set\+S\+P\+I\+Delay(self, channel, mask\+\_\+bitmap, inter\+\_\+byte\+\_\+delay, post\+\_\+assert\+\_\+delay, pre\+\_\+deassert\+\_\+delay)}{setSPIDelay(self, channel, mask_bitmap, inter_byte_delay, post_assert_delay, pre_deassert_delay)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+set\+S\+P\+I\+Delay (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{channel, }
+\item[{}]{mask\+\_\+bitmap, }
+\item[{}]{inter\+\_\+byte\+\_\+delay, }
+\item[{}]{post\+\_\+assert\+\_\+delay, }
+\item[{}]{pre\+\_\+deassert\+\_\+delay}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_a0903382e31257a0ee45510e3687f4d4f}{}\label{classantenna__usb__rewrite_1_1_cp2130_a0903382e31257a0ee45510e3687f4d4f}
+
+
+Definition at line 40 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!set\+S\+P\+I\+Word@{set\+S\+P\+I\+Word}}
+\index{set\+S\+P\+I\+Word@{set\+S\+P\+I\+Word}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{set\+S\+P\+I\+Word(self, channel, channel\+\_\+word)}{setSPIWord(self, channel, channel_word)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+set\+S\+P\+I\+Word (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{channel, }
+\item[{}]{channel\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_a3aea629f83cdbddc124da7e13cd1a148}{}\label{classantenna__usb__rewrite_1_1_cp2130_a3aea629f83cdbddc124da7e13cd1a148}
+
+
+Definition at line 61 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!write\+B\+C\+M53134M@{write\+B\+C\+M53134M}}
+\index{write\+B\+C\+M53134M@{write\+B\+C\+M53134M}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{write\+B\+C\+M53134\+M(self, page, offset, string\+\_\+buffer)}{writeBCM53134M(self, page, offset, string_buffer)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+write\+B\+C\+M53134M (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{page, }
+\item[{}]{offset, }
+\item[{}]{string\+\_\+buffer}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_a5d3c0c50d0e378c6feb1dbf61d914a47}{}\label{classantenna__usb__rewrite_1_1_cp2130_a5d3c0c50d0e378c6feb1dbf61d914a47}
+
+
+Definition at line 163 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!write\+Read\+S\+PI@{write\+Read\+S\+PI}}
+\index{write\+Read\+S\+PI@{write\+Read\+S\+PI}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{write\+Read\+S\+P\+I(self, length, string\+\_\+data\+\_\+buffer, endpoint=0x01, command\+\_\+id=\textquotesingle{}\textbackslash{}x02\textquotesingle{}, reserved1=\textquotesingle{}\textbackslash{}x00\textbackslash{}x00\textquotesingle{}, reserved2=\textquotesingle{}\textbackslash{}x00\textquotesingle{}, timeout=500)}{writeReadSPI(self, length, string_data_buffer, endpoint=0x01, command_id='\textbackslash{}x02', reserved1='\textbackslash{}x00\textbackslash{}x00', reserved2='\textbackslash{}x00', timeout=500)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+write\+Read\+S\+PI (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{length, }
+\item[{}]{string\+\_\+data\+\_\+buffer, }
+\item[{}]{endpoint = {\ttfamily 0x01}, }
+\item[{}]{command\+\_\+id = {\ttfamily \textquotesingle{}\textbackslash{}x02\textquotesingle{}}, }
+\item[{}]{reserved1 = {\ttfamily \textquotesingle{}\textbackslash{}x00\textbackslash{}x00\textquotesingle{}}, }
+\item[{}]{reserved2 = {\ttfamily \textquotesingle{}\textbackslash{}x00\textquotesingle{}}, }
+\item[{}]{timeout = {\ttfamily 500}}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_a8237d344945d80984898042fe61828bd}{}\label{classantenna__usb__rewrite_1_1_cp2130_a8237d344945d80984898042fe61828bd}
+
+
+Definition at line 77 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!write\+S\+PI@{write\+S\+PI}}
+\index{write\+S\+PI@{write\+S\+PI}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{write\+S\+P\+I(self, length, string\+\_\+data\+\_\+buffer, endpoint=0x01, command\+\_\+id=\textquotesingle{}\textbackslash{}x01\textquotesingle{}, reserved1=\textquotesingle{}\textbackslash{}x00\textbackslash{}x00\textquotesingle{}, reserved2=\textquotesingle{}\textbackslash{}x00\textquotesingle{}, timeout=500)}{writeSPI(self, length, string_data_buffer, endpoint=0x01, command_id='\textbackslash{}x01', reserved1='\textbackslash{}x00\textbackslash{}x00', reserved2='\textbackslash{}x00', timeout=500)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+write\+S\+PI (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{length, }
+\item[{}]{string\+\_\+data\+\_\+buffer, }
+\item[{}]{endpoint = {\ttfamily 0x01}, }
+\item[{}]{command\+\_\+id = {\ttfamily \textquotesingle{}\textbackslash{}x01\textquotesingle{}}, }
+\item[{}]{reserved1 = {\ttfamily \textquotesingle{}\textbackslash{}x00\textbackslash{}x00\textquotesingle{}}, }
+\item[{}]{reserved2 = {\ttfamily \textquotesingle{}\textbackslash{}x00\textquotesingle{}}, }
+\item[{}]{timeout = {\ttfamily 500}}
+\end{DoxyParamCaption}
+)}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_ab8f29d3cde366090a6cb64b487136005}{}\label{classantenna__usb__rewrite_1_1_cp2130_ab8f29d3cde366090a6cb64b487136005}
+
+
+Definition at line 67 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+
+
+\subsection{Member Data Documentation}
+\index{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}!dev@{dev}}
+\index{dev@{dev}!antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130@{antenna\+\_\+usb\+\_\+rewrite\+::\+Cp2130}}
+\subsubsection[{\texorpdfstring{dev}{dev}}]{\setlength{\rightskip}{0pt plus 5cm}antenna\+\_\+usb\+\_\+rewrite.\+Cp2130.\+dev}\hypertarget{classantenna__usb__rewrite_1_1_cp2130_a1df7fb45632de5416e76230b2decab8c}{}\label{classantenna__usb__rewrite_1_1_cp2130_a1df7fb45632de5416e76230b2decab8c}
+
+
+Definition at line 11 of file antenna\+\_\+usb\+\_\+rewrite.\+py.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+pdf-\/parsing/\hyperlink{antenna__usb__rewrite_8py}{antenna\+\_\+usb\+\_\+rewrite.\+py}\end{DoxyCompactItemize}

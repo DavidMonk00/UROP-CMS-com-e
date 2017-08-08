@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"structnlohmann_1_1detail_1_1is__compatible__integer__type.html":[3,0,6,0,29],
+"structnlohmann_1_1detail_1_1is__compatible__integer__type__impl.html":[3,0,6,0,30],
+"structnlohmann_1_1detail_1_1is__compatible__integer__type__impl_3_01true_00_01_real_integer_type78b0ba77f36a8c8169cdb79b01d1a4bf.html":[3,0,6,0,31],
+"structnlohmann_1_1detail_1_1is__compatible__integer__type__impl_3_01true_00_01_real_integer_type78b0ba77f36a8c8169cdb79b01d1a4bf.html#a1bad172320cd124997a3d68990f50a75":[3,0,6,0,31,1],
 "structnlohmann_1_1detail_1_1is__compatible__integer__type__impl_3_01true_00_01_real_integer_type78b0ba77f36a8c8169cdb79b01d1a4bf.html#a3bf8ee2f76e74f997258c9ba40c64bc4":[3,0,6,0,31,0],
 "structnlohmann_1_1detail_1_1is__compatible__object__type.html":[3,0,6,0,32],
 "structnlohmann_1_1detail_1_1is__compatible__object__type__impl.html":[3,0,6,0,33],

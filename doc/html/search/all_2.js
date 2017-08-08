@@ -1,6 +1,7 @@
 var searchData=
 [
   ['accept',['accept',['../classnlohmann_1_1detail_1_1parser.html#a20997b42262856935b60fc91bf05bf3f',1,'nlohmann::detail::parser::accept()'],['../classnlohmann_1_1basic__json.html#a776868dd5f9892564c1f6c786d1f80a3',1,'nlohmann::basic_json::accept(detail::input_adapter i)'],['../classnlohmann_1_1basic__json.html#a2c3a529fba80aa83557246b910181388',1,'nlohmann::basic_json::accept(detail::input_adapter &amp;i)'],['../classnlohmann_1_1basic__json.html#ae797958b922732bf5fc01053d0659c1f',1,'nlohmann::basic_json::accept(IteratorType first, IteratorType last)']]],
+  ['activeloop',['activeLoop',['../src_2main_8cpp.html#ae0b2e63532cc10a431ddc9b85121aa72',1,'main.cpp']]],
   ['addr',['addr',['../class_i2_c__base.html#a49e4339d64cc99fcec489dea55c09e48',1,'I2C_base']]],
   ['address',['Address',['../classbook_1_1_address.html',1,'book']]],
   ['address',['address',['../classdevices_1_1_device.html#a4d849fa1ec90eca6deb547d26e54112f',1,'devices::Device']]],

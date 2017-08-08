@@ -1,0 +1,339 @@
+\hypertarget{class_client}{}\section{Client Class Reference}
+\label{class_client}\index{Client@{Client}}
+
+
+{\ttfamily \#include $<$Couch\+D\+B.\+hpp$>$}
+
+
+
+Inheritance diagram for Client\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{class_client__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Client\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_client__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_client_adc081e1006b31b0e5ded80c71e3ada70}{Client} (void)
+\begin{DoxyCompactList}\small\item\em Class constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_client_a8e19879cb7c39c111b523ed216273203}{Client} (std\+::string url\+\_\+)
+\begin{DoxyCompactList}\small\item\em Class constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_client_a66e3074e5f09c5e9bb4ec36bdea01c91}{$\sim$\+Client} (void)
+\begin{DoxyCompactList}\small\item\em Class destructor. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_client_a19ad3503375f64a4b68e20dbc98703c4}{get\+Databases} (void)
+\begin{DoxyCompactList}\small\item\em Get list of databases on server. \end{DoxyCompactList}\item 
+void \hyperlink{class_client_a6481994d5e2711bf43bca04460cb2316}{set\+Database} (std\+::string db)
+\begin{DoxyCompactList}\small\item\em Set ID of database to work with. \end{DoxyCompactList}\item 
+void \hyperlink{class_client_ae9c82ded3834b156fb98e16bdac2a05f}{upload\+Document} (\hyperlink{_couch_d_b_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json} data)
+\begin{DoxyCompactList}\small\item\em Upload document to database. \end{DoxyCompactList}\item 
+void \hyperlink{class_client_ad6e6281bbd3cba141664bf2c0ac87227}{upload\+Document} (std\+::string url\+\_\+, \hyperlink{_couch_d_b_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json} data)
+\begin{DoxyCompactList}\small\item\em Upload document to database. \end{DoxyCompactList}\item 
+void \hyperlink{class_client_a4983d1069b46cbb8926f9094853936c1}{push\+Database} (void)
+\begin{DoxyCompactList}\small\item\em Replicate database to master server. \end{DoxyCompactList}\item 
+void \hyperlink{class_client_a3ff5f11c6665c7b9c99476d158b02c01}{push\+Database} (\hyperlink{_couch_d_b_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json} params)
+\begin{DoxyCompactList}\small\item\em Replicate database to master server with specific parameters. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_client_a8f8ca876b5bc3b75cf642e5de8c25b20}{get\+Document} (std\+::string doc)
+\begin{DoxyCompactList}\small\item\em Upload document to database. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ std\+::string, std\+::string $>$ $>$ \hyperlink{class_client_ad24ac9ee317e61cf04a565c4e849f31c}{get\+Document\+I\+Ds} (void)
+\begin{DoxyCompactList}\small\item\em Get document I\+Ds and revision I\+Ds for given database. \end{DoxyCompactList}\item 
+bool \hyperlink{class_client_ae504f5c93e2783a4ebb26ee94a002327}{check\+Online} (std\+::string url\+\_\+)
+\begin{DoxyCompactList}\small\item\em Check if server is online. \end{DoxyCompactList}\item 
+void \hyperlink{class_client_a45748961b6b8b534fa04e9a2bb40ed27}{delete\+Document} (std\+::string ID, std\+::string rev)
+\begin{DoxyCompactList}\small\item\em Delete document from database. \end{DoxyCompactList}\item 
+void \hyperlink{class_client_ab4703ff4ad0742e72c5416f33971cc2f}{compact\+Database} (void)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 32 of file Couch\+D\+B.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\subsubsection[{\texorpdfstring{Client(void)}{Client(void)}}]{\setlength{\rightskip}{0pt plus 5cm}Client\+::\+Client (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_client_adc081e1006b31b0e5ded80c71e3ada70}{}\label{class_client_adc081e1006b31b0e5ded80c71e3ada70}
+
+
+Class constructor. 
+
+
+
+Definition at line 117 of file Couch\+D\+B.\+cpp.
+
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\subsubsection[{\texorpdfstring{Client(std\+::string url\+\_\+)}{Client(std::string url_)}}]{\setlength{\rightskip}{0pt plus 5cm}Client\+::\+Client (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{url\+\_\+}
+\end{DoxyParamCaption}
+)}\hypertarget{class_client_a8e19879cb7c39c111b523ed216273203}{}\label{class_client_a8e19879cb7c39c111b523ed216273203}
+
+
+Class constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url\+\_\+} & -\/ U\+RL of \hyperlink{class_couch_d_b}{Couch\+DB} server. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 127 of file Couch\+D\+B.\+cpp.
+
+\index{Client@{Client}!````~Client@{$\sim$\+Client}}
+\index{````~Client@{$\sim$\+Client}!Client@{Client}}
+\subsubsection[{\texorpdfstring{$\sim$\+Client(void)}{~Client(void)}}]{\setlength{\rightskip}{0pt plus 5cm}Client\+::$\sim$\+Client (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_client_a66e3074e5f09c5e9bb4ec36bdea01c91}{}\label{class_client_a66e3074e5f09c5e9bb4ec36bdea01c91}
+
+
+Class destructor. 
+
+
+
+Definition at line 136 of file Couch\+D\+B.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Client@{Client}!check\+Online@{check\+Online}}
+\index{check\+Online@{check\+Online}!Client@{Client}}
+\subsubsection[{\texorpdfstring{check\+Online(std\+::string url\+\_\+)}{checkOnline(std::string url_)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Client\+::check\+Online (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{url\+\_\+}
+\end{DoxyParamCaption}
+)}\hypertarget{class_client_ae504f5c93e2783a4ebb26ee94a002327}{}\label{class_client_ae504f5c93e2783a4ebb26ee94a002327}
+
+
+Check if server is online. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url\+\_\+} & -\/ U\+RL of server to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if online, throws error if not. T\+O\+DO make this so that it does not throw error? This is legacy from Python/bash. 
+\end{DoxyReturn}
+
+
+Definition at line 240 of file Couch\+D\+B.\+cpp.
+
+\index{Client@{Client}!compact\+Database@{compact\+Database}}
+\index{compact\+Database@{compact\+Database}!Client@{Client}}
+\subsubsection[{\texorpdfstring{compact\+Database(void)}{compactDatabase(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Client\+::compact\+Database (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_client_ab4703ff4ad0742e72c5416f33971cc2f}{}\label{class_client_ab4703ff4ad0742e72c5416f33971cc2f}
+Compact database to save space on local machine. 
+
+Definition at line 259 of file Couch\+D\+B.\+cpp.
+
+\index{Client@{Client}!delete\+Document@{delete\+Document}}
+\index{delete\+Document@{delete\+Document}!Client@{Client}}
+\subsubsection[{\texorpdfstring{delete\+Document(std\+::string I\+D, std\+::string rev)}{deleteDocument(std::string ID, std::string rev)}}]{\setlength{\rightskip}{0pt plus 5cm}void Client\+::delete\+Document (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{ID, }
+\item[{std\+::string}]{rev}
+\end{DoxyParamCaption}
+)}\hypertarget{class_client_a45748961b6b8b534fa04e9a2bb40ed27}{}\label{class_client_a45748961b6b8b534fa04e9a2bb40ed27}
+
+
+Delete document from database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ID} & -\/ ID of document. \\
+\hline
+{\em rev} & -\/ revision of document. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 251 of file Couch\+D\+B.\+cpp.
+
+\index{Client@{Client}!get\+Databases@{get\+Databases}}
+\index{get\+Databases@{get\+Databases}!Client@{Client}}
+\subsubsection[{\texorpdfstring{get\+Databases(void)}{getDatabases(void)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::string $>$ Client\+::get\+Databases (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_client_a19ad3503375f64a4b68e20dbc98703c4}{}\label{class_client_a19ad3503375f64a4b68e20dbc98703c4}
+
+
+Get list of databases on server. 
+
+\begin{DoxyReturn}{Returns}
+Vector of strings of I\+Ds of each database. 
+\end{DoxyReturn}
+
+
+Definition at line 144 of file Couch\+D\+B.\+cpp.
+
+\index{Client@{Client}!get\+Document@{get\+Document}}
+\index{get\+Document@{get\+Document}!Client@{Client}}
+\subsubsection[{\texorpdfstring{get\+Document(std\+::string doc)}{getDocument(std::string doc)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Client\+::get\+Document (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{doc}
+\end{DoxyParamCaption}
+)}\hypertarget{class_client_a8f8ca876b5bc3b75cf642e5de8c25b20}{}\label{class_client_a8f8ca876b5bc3b75cf642e5de8c25b20}
+
+
+Upload document to database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em doc} & -\/ Document ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation of J\+S\+ON output. 
+\end{DoxyReturn}
+
+
+Definition at line 214 of file Couch\+D\+B.\+cpp.
+
+\index{Client@{Client}!get\+Document\+I\+Ds@{get\+Document\+I\+Ds}}
+\index{get\+Document\+I\+Ds@{get\+Document\+I\+Ds}!Client@{Client}}
+\subsubsection[{\texorpdfstring{get\+Document\+I\+Ds(void)}{getDocumentIDs(void)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::pair$<$ std\+::string, std\+::string $>$ $>$ Client\+::get\+Document\+I\+Ds (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_client_ad24ac9ee317e61cf04a565c4e849f31c}{}\label{class_client_ad24ac9ee317e61cf04a565c4e849f31c}
+
+
+Get document I\+Ds and revision I\+Ds for given database. 
+
+\begin{DoxyReturn}{Returns}
+Vector of string pairs for ID and revision. 
+\end{DoxyReturn}
+
+
+Definition at line 224 of file Couch\+D\+B.\+cpp.
+
+\index{Client@{Client}!push\+Database@{push\+Database}}
+\index{push\+Database@{push\+Database}!Client@{Client}}
+\subsubsection[{\texorpdfstring{push\+Database(void)}{pushDatabase(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Client\+::push\+Database (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_client_a4983d1069b46cbb8926f9094853936c1}{}\label{class_client_a4983d1069b46cbb8926f9094853936c1}
+
+
+Replicate database to master server. 
+
+
+
+Definition at line 190 of file Couch\+D\+B.\+cpp.
+
+\index{Client@{Client}!push\+Database@{push\+Database}}
+\index{push\+Database@{push\+Database}!Client@{Client}}
+\subsubsection[{\texorpdfstring{push\+Database(json params)}{pushDatabase(json params)}}]{\setlength{\rightskip}{0pt plus 5cm}void Client\+::push\+Database (
+\begin{DoxyParamCaption}
+\item[{{\bf json}}]{params}
+\end{DoxyParamCaption}
+)}\hypertarget{class_client_a3ff5f11c6665c7b9c99476d158b02c01}{}\label{class_client_a3ff5f11c6665c7b9c99476d158b02c01}
+
+
+Replicate database to master server with specific parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & -\/ J\+S\+ON key-\/value pairs for filter function. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 201 of file Couch\+D\+B.\+cpp.
+
+\index{Client@{Client}!set\+Database@{set\+Database}}
+\index{set\+Database@{set\+Database}!Client@{Client}}
+\subsubsection[{\texorpdfstring{set\+Database(std\+::string db)}{setDatabase(std::string db)}}]{\setlength{\rightskip}{0pt plus 5cm}void Client\+::set\+Database (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{db}
+\end{DoxyParamCaption}
+)}\hypertarget{class_client_a6481994d5e2711bf43bca04460cb2316}{}\label{class_client_a6481994d5e2711bf43bca04460cb2316}
+
+
+Set ID of database to work with. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & -\/ Database ID. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 158 of file Couch\+D\+B.\+cpp.
+
+\index{Client@{Client}!upload\+Document@{upload\+Document}}
+\index{upload\+Document@{upload\+Document}!Client@{Client}}
+\subsubsection[{\texorpdfstring{upload\+Document(json data)}{uploadDocument(json data)}}]{\setlength{\rightskip}{0pt plus 5cm}void Client\+::upload\+Document (
+\begin{DoxyParamCaption}
+\item[{{\bf json}}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{class_client_ae9c82ded3834b156fb98e16bdac2a05f}{}\label{class_client_ae9c82ded3834b156fb98e16bdac2a05f}
+
+
+Upload document to database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & -\/ J\+S\+ON table to upload. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 166 of file Couch\+D\+B.\+cpp.
+
+\index{Client@{Client}!upload\+Document@{upload\+Document}}
+\index{upload\+Document@{upload\+Document}!Client@{Client}}
+\subsubsection[{\texorpdfstring{upload\+Document(std\+::string url\+\_\+, json data)}{uploadDocument(std::string url_, json data)}}]{\setlength{\rightskip}{0pt plus 5cm}void Client\+::upload\+Document (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{url\+\_\+, }
+\item[{{\bf json}}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{class_client_ad6e6281bbd3cba141664bf2c0ac87227}{}\label{class_client_ad6e6281bbd3cba141664bf2c0ac87227}
+
+
+Upload document to database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url\+\_\+} & -\/ U\+RL of database to upload to. \\
+\hline
+{\em data} & -\/ J\+S\+ON table to upload. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 180 of file Couch\+D\+B.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_couch_d_b_8hpp}{Couch\+D\+B.\+hpp}\item 
+src/\hyperlink{_couch_d_b_8cpp}{Couch\+D\+B.\+cpp}\end{DoxyCompactItemize}

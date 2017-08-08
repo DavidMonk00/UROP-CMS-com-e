@@ -1,0 +1,122 @@
+\hypertarget{namespaceantenna__usb__rewrite__list}{}\section{antenna\+\_\+usb\+\_\+rewrite\+\_\+list Namespace Reference}
+\label{namespaceantenna__usb__rewrite__list}\index{antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classantenna__usb__rewrite__list_1_1_cp2130}{Cp2130}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceantenna__usb__rewrite__list_a4dfe4beb7b1df6af753add339c06c311}{get\+Range} (s)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceantenna__usb__rewrite__list_a3d824bc3a35be052f6e7107422536634}{usb\+\_\+to\+\_\+spi} = \hyperlink{classantenna__usb__rewrite__list_1_1_cp2130}{Cp2130}()
+\item 
+\hyperlink{namespaceantenna__usb__rewrite__list_aef54274de5ca40ecd5b8ce587a3b3814}{book} = json.\+load(f\+\_\+json)
+\item 
+\hyperlink{namespaceantenna__usb__rewrite__list_aa1b615265707138d427863eb19fd9ecb}{output} = open(\char`\"{}output.\+dat\char`\"{}, \char`\"{}w\char`\"{})
+\item 
+\hyperlink{namespaceantenna__usb__rewrite__list_a4f8d71b5c1ed3ecaf8af418184761254}{reg} = usb\+\_\+to\+\_\+spi.\+read\+B\+C\+M53134M(page=int(page\mbox{[}\textquotesingle{}page\textquotesingle{}\mbox{]}), offset=int(address\mbox{[}\textquotesingle{}offset\textquotesingle{}\mbox{]}), \hyperlink{namespaceantenna__usb__rewrite__list_a7db7584b8616ae6b6bbb5720a302001a}{length}=int(address\mbox{[}\textquotesingle{}word-\/\hyperlink{namespaceantenna__usb__rewrite__list_a7db7584b8616ae6b6bbb5720a302001a}{length}\textquotesingle{}\mbox{]}))
+\item 
+\hyperlink{namespaceantenna__usb__rewrite__list_a57c3f351c2f378d8b32a5535ae505735}{V\+A\+L\+UE} = bin(\hyperlink{namespaceantenna__usb__rewrite__list_a4f8d71b5c1ed3ecaf8af418184761254}{reg})\mbox{[}2\+:\mbox{]}\mbox{[}\+::-\/1\mbox{]}
+\item 
+list \hyperlink{namespaceantenna__usb__rewrite__list_a36457b8012d0008495e696b7677c286c}{data} = \mbox{[}\char`\"{}Bits\char`\"{},\char`\"{}Name\char`\"{}, \char`\"{}Value\char`\"{}, \char`\"{}Default\char`\"{}\mbox{]}
+\item 
+\hyperlink{namespaceantenna__usb__rewrite__list_af12533542e50af5ea554054416933a61}{index} = \hyperlink{namespaceantenna__usb__rewrite__list_a4dfe4beb7b1df6af753add339c06c311}{get\+Range}(bit\mbox{[}\textquotesingle{}bit\textquotesingle{}\mbox{]})
+\item 
+\hyperlink{namespaceantenna__usb__rewrite__list_a7db7584b8616ae6b6bbb5720a302001a}{length} = math.\+ceil(float((\hyperlink{namespaceantenna__usb__rewrite__list_af12533542e50af5ea554054416933a61}{index}\mbox{[}1\mbox{]}+1-\/\hyperlink{namespaceantenna__usb__rewrite__list_af12533542e50af5ea554054416933a61}{index}\mbox{[}0\mbox{]}))/4)
+\item 
+\hyperlink{namespaceantenna__usb__rewrite__list_ab939ab5ad6fd12b022e0bc9ded4ccb7c}{string} \hyperlink{namespaceantenna__usb__rewrite__list_ac051df5193c46e89320db8b4ac29eb97}{val} = \char`\"{}0x\%0\{0\}\+X\char`\"{}
+\item 
+string \hyperlink{namespaceantenna__usb__rewrite__list_ab939ab5ad6fd12b022e0bc9ded4ccb7c}{string} = u\char`\"{}\textbackslash{}t\%s\textbackslash{}n\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}!get\+Range@{get\+Range}}
+\index{get\+Range@{get\+Range}!antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}}
+\subsubsection[{\texorpdfstring{get\+Range(s)}{getRange(s)}}]{\setlength{\rightskip}{0pt plus 5cm}def antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+get\+Range (
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{namespaceantenna__usb__rewrite__list_a4dfe4beb7b1df6af753add339c06c311}{}\label{namespaceantenna__usb__rewrite__list_a4dfe4beb7b1df6af753add339c06c311}
+
+
+Definition at line 188 of file antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+py.
+
+
+
+\subsection{Variable Documentation}
+\index{antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}!book@{book}}
+\index{book@{book}!antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}}
+\subsubsection[{\texorpdfstring{book}{book}}]{\setlength{\rightskip}{0pt plus 5cm}antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+book = json.\+load(f\+\_\+json)}\hypertarget{namespaceantenna__usb__rewrite__list_aef54274de5ca40ecd5b8ce587a3b3814}{}\label{namespaceantenna__usb__rewrite__list_aef54274de5ca40ecd5b8ce587a3b3814}
+
+
+Definition at line 202 of file antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}!data@{data}}
+\index{data@{data}!antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}}
+\subsubsection[{\texorpdfstring{data}{data}}]{\setlength{\rightskip}{0pt plus 5cm}list antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+data = \mbox{[}\char`\"{}Bits\char`\"{},\char`\"{}Name\char`\"{}, \char`\"{}Value\char`\"{}, \char`\"{}Default\char`\"{}\mbox{]}}\hypertarget{namespaceantenna__usb__rewrite__list_a36457b8012d0008495e696b7677c286c}{}\label{namespaceantenna__usb__rewrite__list_a36457b8012d0008495e696b7677c286c}
+
+
+Definition at line 210 of file antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}!index@{index}}
+\index{index@{index}!antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}}
+\subsubsection[{\texorpdfstring{index}{index}}]{\setlength{\rightskip}{0pt plus 5cm}antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+index = {\bf get\+Range}(bit\mbox{[}\textquotesingle{}bit\textquotesingle{}\mbox{]})}\hypertarget{namespaceantenna__usb__rewrite__list_af12533542e50af5ea554054416933a61}{}\label{namespaceantenna__usb__rewrite__list_af12533542e50af5ea554054416933a61}
+
+
+Definition at line 213 of file antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}!length@{length}}
+\index{length@{length}!antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}}
+\subsubsection[{\texorpdfstring{length}{length}}]{\setlength{\rightskip}{0pt plus 5cm}antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+length = math.\+ceil(float(({\bf index}\mbox{[}1\mbox{]}+1-\/{\bf index}\mbox{[}0\mbox{]}))/4)}\hypertarget{namespaceantenna__usb__rewrite__list_a7db7584b8616ae6b6bbb5720a302001a}{}\label{namespaceantenna__usb__rewrite__list_a7db7584b8616ae6b6bbb5720a302001a}
+
+
+Definition at line 214 of file antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}!output@{output}}
+\index{output@{output}!antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}}
+\subsubsection[{\texorpdfstring{output}{output}}]{\setlength{\rightskip}{0pt plus 5cm}antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+output = open(\char`\"{}output.\+dat\char`\"{}, \char`\"{}w\char`\"{})}\hypertarget{namespaceantenna__usb__rewrite__list_aa1b615265707138d427863eb19fd9ecb}{}\label{namespaceantenna__usb__rewrite__list_aa1b615265707138d427863eb19fd9ecb}
+
+
+Definition at line 203 of file antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}!reg@{reg}}
+\index{reg@{reg}!antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}}
+\subsubsection[{\texorpdfstring{reg}{reg}}]{\setlength{\rightskip}{0pt plus 5cm}antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+reg = usb\+\_\+to\+\_\+spi.\+read\+B\+C\+M53134M(page=int(page\mbox{[}\textquotesingle{}page\textquotesingle{}\mbox{]}), offset=int(address\mbox{[}\textquotesingle{}offset\textquotesingle{}\mbox{]}), {\bf length}=int(address\mbox{[}\textquotesingle{}word-\/{\bf length}\textquotesingle{}\mbox{]}))}\hypertarget{namespaceantenna__usb__rewrite__list_a4f8d71b5c1ed3ecaf8af418184761254}{}\label{namespaceantenna__usb__rewrite__list_a4f8d71b5c1ed3ecaf8af418184761254}
+
+
+Definition at line 207 of file antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}!string@{string}}
+\index{string@{string}!antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}}
+\subsubsection[{\texorpdfstring{string}{string}}]{\setlength{\rightskip}{0pt plus 5cm}string antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+string = u\char`\"{}\textbackslash{}t\%s\textbackslash{}n\char`\"{}}\hypertarget{namespaceantenna__usb__rewrite__list_ab939ab5ad6fd12b022e0bc9ded4ccb7c}{}\label{namespaceantenna__usb__rewrite__list_ab939ab5ad6fd12b022e0bc9ded4ccb7c}
+
+
+Definition at line 218 of file antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}!usb\+\_\+to\+\_\+spi@{usb\+\_\+to\+\_\+spi}}
+\index{usb\+\_\+to\+\_\+spi@{usb\+\_\+to\+\_\+spi}!antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}}
+\subsubsection[{\texorpdfstring{usb\+\_\+to\+\_\+spi}{usb_to_spi}}]{\setlength{\rightskip}{0pt plus 5cm}antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+usb\+\_\+to\+\_\+spi = {\bf Cp2130}()}\hypertarget{namespaceantenna__usb__rewrite__list_a3d824bc3a35be052f6e7107422536634}{}\label{namespaceantenna__usb__rewrite__list_a3d824bc3a35be052f6e7107422536634}
+
+
+Definition at line 197 of file antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}!val@{val}}
+\index{val@{val}!antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}}
+\subsubsection[{\texorpdfstring{val}{val}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf string} antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+val = \char`\"{}0x\%0\{0\}\+X\char`\"{}}\hypertarget{namespaceantenna__usb__rewrite__list_ac051df5193c46e89320db8b4ac29eb97}{}\label{namespaceantenna__usb__rewrite__list_ac051df5193c46e89320db8b4ac29eb97}
+
+
+Definition at line 215 of file antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+py.
+
+\index{antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}!V\+A\+L\+UE@{V\+A\+L\+UE}}
+\index{V\+A\+L\+UE@{V\+A\+L\+UE}!antenna\+\_\+usb\+\_\+rewrite\+\_\+list@{antenna\+\_\+usb\+\_\+rewrite\+\_\+list}}
+\subsubsection[{\texorpdfstring{V\+A\+L\+UE}{VALUE}}]{\setlength{\rightskip}{0pt plus 5cm}antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+V\+A\+L\+UE = bin({\bf reg})\mbox{[}2\+:\mbox{]}\mbox{[}\+::-\/1\mbox{]}}\hypertarget{namespaceantenna__usb__rewrite__list_a57c3f351c2f378d8b32a5535ae505735}{}\label{namespaceantenna__usb__rewrite__list_a57c3f351c2f378d8b32a5535ae505735}
+
+
+Definition at line 208 of file antenna\+\_\+usb\+\_\+rewrite\+\_\+list.\+py.
+

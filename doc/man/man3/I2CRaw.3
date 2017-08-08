@@ -14,39 +14,76 @@ I2CRaw \-
 .ti -1c
 .RI "\fBI2CRaw\fP (void)"
 .br
+.RI "\fIClass constructor\&. \fP"
 .ti -1c
 .RI "\fB~I2CRaw\fP ()"
 .br
+.RI "\fIClass destructor\&. \fP"
 .ti -1c
 .RI "int \fBread\fP (uint32_t address, uint32_t start_point)"
 .br
+.RI "\fIRead from register\&. \fP"
 .ti -1c
 .RI "void \fBwrite\fP (uint32_t address, uint8_t buffer, uint32_t start_point)"
 .br
+.RI "\fIWrite to register\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 4 of file I2CRaw\&.hpp\&.
+Definition at line 11 of file I2CRaw\&.hpp\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "I2CRaw::I2CRaw (void)"
 
 .PP
-Definition at line 3 of file I2CRaw\&.cpp\&.
+Class constructor\&. 
+.PP
+Definition at line 13 of file I2CRaw\&.cpp\&.
 .SS "I2CRaw::~I2CRaw ()"
 
 .PP
-Definition at line 9 of file I2CRaw\&.cpp\&.
+Class destructor\&. 
+.PP
+Definition at line 22 of file I2CRaw\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "int I2CRaw::read (uint32_t address, uint32_t start_point)"
 
 .PP
-Definition at line 43 of file I2CRaw\&.cpp\&.
+Read from register\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIaddress\fP - Device address\&. 
+.br
+\fIstart_point\fP - Internal register address 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Integer representation of hex output\&. 
+.RE
+.PP
+
+.PP
+Definition at line 73 of file I2CRaw\&.cpp\&.
 .SS "void I2CRaw::write (uint32_t address, uint8_t buffer, uint32_t start_point)"
 
 .PP
-Definition at line 48 of file I2CRaw\&.cpp\&.
+Write to register\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIaddress\fP - Device address\&. 
+.br
+\fIbuffer\fP - Data to be written to register\&. 
+.br
+\fIstart_point\fP - Internal register address 
+.RE
+.PP
+
+.PP
+Definition at line 84 of file I2CRaw\&.cpp\&.
 
 .SH "Author"
 .PP 

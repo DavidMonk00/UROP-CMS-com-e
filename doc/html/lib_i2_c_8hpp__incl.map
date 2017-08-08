@@ -1,14 +1,14 @@
 <map id="include/libI2C.hpp" name="include/libI2C.hpp">
 <area shape="rect" id="node4" href="$_a_t_c_a_board_8hpp.html" title="Defines the derived ATCABoard class. " alt="" coords="1427,80,1545,107"/>
 <area shape="rect" id="node35" href="$_c_o_m_e_test_board_8hpp.html" title="COMETestBoard.hpp" alt="" coords="1257,80,1403,107"/>
-<area shape="rect" id="node36" href="$_i2_c_raw_8hpp.html" title="I2CRaw.hpp" alt="" coords="1867,155,1961,181"/>
+<area shape="rect" id="node36" href="$_i2_c_raw_8hpp.html" title="Defines the I2CRaw class. " alt="" coords="1867,155,1961,181"/>
 <area shape="rect" id="node5" href="$_board_8hpp.html" title="Defines the base Board class. " alt="" coords="1289,155,1371,181"/>
-<area shape="rect" id="node6" href="$_i2_c_bus_8hpp.html" title="I2CBus.hpp" alt="" coords="1285,229,1375,256"/>
+<area shape="rect" id="node6" href="$_i2_c_bus_8hpp.html" title="Defines the I2CBus class. " alt="" coords="1285,229,1375,256"/>
 <area shape="rect" id="node32" href="$parser_8hpp.html" title="parser.hpp" alt="" coords="131,379,214,405"/>
 <area shape="rect" id="node7" href="$_i2_c_device_8hpp.html" title="I2CDevice.hpp" alt="" coords="1275,304,1385,331"/>
 <area shape="rect" id="node8" href="$_i2_c_register_8hpp.html" title="I2CRegister.hpp" alt="" coords="1271,379,1389,405"/>
 <area shape="rect" id="node11" href="$_i2_c_8hpp.html" title="I2C.hpp" alt="" coords="2031,453,2099,480"/>
-<area shape="rect" id="node20" href="$units__define_8hpp.html" title="units_define.hpp" alt="" coords="1083,453,1201,480"/>
+<area shape="rect" id="node20" href="$units__define_8hpp.html" title="Type definitons for units_variant. " alt="" coords="1083,453,1201,480"/>
 <area shape="rect" id="node14" href="$diagnostics_8hpp.html" title="diagnostics.hpp" alt="" coords="2103,535,2216,562"/>
 <area shape="rect" id="node17" href="$_i2_c__base_8hpp.html" title="I2C_base.hpp" alt="" coords="2375,535,2477,562"/>
 <area shape="rect" id="node19" href="$_i2_c__define_8hpp.html" title="I2C_define.hpp" alt="" coords="2240,535,2351,562"/>

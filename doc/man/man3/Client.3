@@ -16,42 +16,55 @@ Inherits \fBCouchDB\fP\&.
 .ti -1c
 .RI "\fBClient\fP (void)"
 .br
+.RI "\fIClass constructor\&. \fP"
 .ti -1c
 .RI "\fBClient\fP (std::string url_)"
 .br
+.RI "\fIClass constructor\&. \fP"
 .ti -1c
 .RI "\fB~Client\fP (void)"
 .br
+.RI "\fIClass destructor\&. \fP"
 .ti -1c
 .RI "std::vector< std::string > \fBgetDatabases\fP (void)"
 .br
+.RI "\fIGet list of databases on server\&. \fP"
 .ti -1c
 .RI "void \fBsetDatabase\fP (std::string db)"
 .br
+.RI "\fISet ID of database to work with\&. \fP"
 .ti -1c
 .RI "void \fBuploadDocument\fP (\fBjson\fP data)"
 .br
+.RI "\fIUpload document to database\&. \fP"
 .ti -1c
 .RI "void \fBuploadDocument\fP (std::string url_, \fBjson\fP data)"
 .br
+.RI "\fIUpload document to database\&. \fP"
 .ti -1c
 .RI "void \fBpushDatabase\fP (void)"
 .br
+.RI "\fIReplicate database to master server\&. \fP"
 .ti -1c
 .RI "void \fBpushDatabase\fP (\fBjson\fP params)"
 .br
+.RI "\fIReplicate database to master server with specific parameters\&. \fP"
 .ti -1c
 .RI "std::string \fBgetDocument\fP (std::string doc)"
 .br
+.RI "\fIUpload document to database\&. \fP"
 .ti -1c
 .RI "std::vector< std::pair< std::string, std::string > > \fBgetDocumentIDs\fP (void)"
 .br
+.RI "\fIGet document IDs and revision IDs for given database\&. \fP"
 .ti -1c
 .RI "bool \fBcheckOnline\fP (std::string url_)"
 .br
+.RI "\fICheck if server is online\&. \fP"
 .ti -1c
 .RI "void \fBdeleteDocument\fP (std::string ID, std::string rev)"
 .br
+.RI "\fIDelete document from database\&. \fP"
 .ti -1c
 .RI "void \fBcompactDatabase\fP (void)"
 .br
@@ -59,67 +72,177 @@ Inherits \fBCouchDB\fP\&.
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-Definition at line 25 of file CouchDB\&.hpp\&.
+Definition at line 32 of file CouchDB\&.hpp\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "Client::Client (void)"
 
 .PP
-Definition at line 89 of file CouchDB\&.cpp\&.
+Class constructor\&. 
+.PP
+Definition at line 117 of file CouchDB\&.cpp\&.
 .SS "Client::Client (std::string url_)"
 
 .PP
-Definition at line 95 of file CouchDB\&.cpp\&.
+Class constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIurl_\fP - URL of \fBCouchDB\fP server\&. 
+.RE
+.PP
+
+.PP
+Definition at line 127 of file CouchDB\&.cpp\&.
 .SS "Client::~Client (void)"
 
 .PP
-Definition at line 101 of file CouchDB\&.cpp\&.
+Class destructor\&. 
+.PP
+Definition at line 136 of file CouchDB\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "bool Client::checkOnline (std::string url_)"
 
 .PP
-Definition at line 167 of file CouchDB\&.cpp\&.
-.SS "void Client::compactDatabase (void)"
+Check if server is online\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIurl_\fP - URL of server to check\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if online, throws error if not\&. TODO make this so that it does not throw error? This is legacy from Python/bash\&. 
+.RE
+.PP
 
 .PP
-Definition at line 178 of file CouchDB\&.cpp\&.
+Definition at line 240 of file CouchDB\&.cpp\&.
+.SS "void Client::compactDatabase (void)"
+Compact database to save space on local machine\&. 
+.PP
+Definition at line 259 of file CouchDB\&.cpp\&.
 .SS "void Client::deleteDocument (std::string ID, std::string rev)"
 
 .PP
-Definition at line 173 of file CouchDB\&.cpp\&.
+Delete document from database\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIID\fP - ID of document\&. 
+.br
+\fIrev\fP - revision of document\&. 
+.RE
+.PP
+
+.PP
+Definition at line 251 of file CouchDB\&.cpp\&.
 .SS "std::vector< std::string > Client::getDatabases (void)"
 
 .PP
-Definition at line 105 of file CouchDB\&.cpp\&.
+Get list of databases on server\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Vector of strings of IDs of each database\&. 
+.RE
+.PP
+
+.PP
+Definition at line 144 of file CouchDB\&.cpp\&.
 .SS "std::string Client::getDocument (std::string doc)"
 
 .PP
-Definition at line 150 of file CouchDB\&.cpp\&.
+Upload document to database\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdoc\fP - Document ID\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+String representation of JSON output\&. 
+.RE
+.PP
+
+.PP
+Definition at line 214 of file CouchDB\&.cpp\&.
 .SS "std::vector< std::pair< std::string, std::string > > Client::getDocumentIDs (void)"
 
 .PP
-Definition at line 156 of file CouchDB\&.cpp\&.
+Get document IDs and revision IDs for given database\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Vector of string pairs for ID and revision\&. 
+.RE
+.PP
+
+.PP
+Definition at line 224 of file CouchDB\&.cpp\&.
 .SS "void Client::pushDatabase (void)"
 
 .PP
-Definition at line 135 of file CouchDB\&.cpp\&.
+Replicate database to master server\&. 
+.PP
+Definition at line 190 of file CouchDB\&.cpp\&.
 .SS "void Client::pushDatabase (\fBjson\fP params)"
 
 .PP
-Definition at line 142 of file CouchDB\&.cpp\&.
+Replicate database to master server with specific parameters\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparams\fP - JSON key-value pairs for filter function\&. 
+.RE
+.PP
+
+.PP
+Definition at line 201 of file CouchDB\&.cpp\&.
 .SS "void Client::setDatabase (std::string db)"
 
 .PP
-Definition at line 115 of file CouchDB\&.cpp\&.
+Set ID of database to work with\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdb\fP - Database ID\&. 
+.RE
+.PP
+
+.PP
+Definition at line 158 of file CouchDB\&.cpp\&.
 .SS "void Client::uploadDocument (\fBjson\fP data)"
 
 .PP
-Definition at line 119 of file CouchDB\&.cpp\&.
+Upload document to database\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP - JSON table to upload\&. 
+.RE
+.PP
+
+.PP
+Definition at line 166 of file CouchDB\&.cpp\&.
 .SS "void Client::uploadDocument (std::string url_, \fBjson\fP data)"
 
 .PP
-Definition at line 128 of file CouchDB\&.cpp\&.
+Upload document to database\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIurl_\fP - URL of database to upload to\&. 
+.br
+\fIdata\fP - JSON table to upload\&. 
+.RE
+.PP
+
+.PP
+Definition at line 180 of file CouchDB\&.cpp\&.
 
 .SH "Author"
 .PP 

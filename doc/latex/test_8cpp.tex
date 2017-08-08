@@ -1,0 +1,146 @@
+\hypertarget{test_8cpp}{}\section{test/test.cpp File Reference}
+\label{test_8cpp}\index{test/test.\+cpp@{test/test.\+cpp}}
+{\ttfamily \#include $<$boost/config/warning\+\_\+disable.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/spirit/include/qi.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/fusion/include/std\+\_\+pair.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/spirit/include/support\+\_\+utree.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/spirit/include/phoenix\+\_\+core.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/spirit/include/phoenix\+\_\+operator.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/fusion/include/adapt\+\_\+struct.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/assert.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/typeof/std/complex.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/pow.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/systems/si/energy.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/systems/si/force.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/systems/si/length.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/systems/si/electric\+\_\+potential.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/systems/si/current.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/systems/si/resistance.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/units/systems/si/io.\+hpp$>$}\\*
+{\ttfamily \#include $<$boost/variant.\+hpp$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$complex$>$}\\*
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+Include dependency graph for test.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structunits__and__powers}{units\+\_\+and\+\_\+powers$<$ Iterator $>$}
+\item 
+class \hyperlink{classmultiply}{multiply}
+\item 
+class \hyperlink{class_test}{Test}
+\item 
+class \hyperlink{class_to_string}{To\+String}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::pair$<$ int, int $>$ \hyperlink{test_8cpp_a6b16b1518344aff7cbf8aaa9ae9cdd39}{pair\+\_\+type}
+\item 
+typedef std\+::vector$<$ \hyperlink{parser_8hpp_a6b16b1518344aff7cbf8aaa9ae9cdd39}{pair\+\_\+type} $>$ \hyperlink{test_8cpp_ab598806586272ab27a10406c3b8436fe}{pairs\+\_\+type}
+\item 
+typedef std\+::pair$<$ double, \hyperlink{parser_8hpp_ab598806586272ab27a10406c3b8436fe}{pairs\+\_\+type} $>$ \hyperlink{test_8cpp_a76d816dc60daad0ab1c3c7b1dc7906d2}{phys\+\_\+quant}
+\item 
+typedef make\+\_\+scaled\+\_\+unit$<$ si\+::time, scale$<$ 10, static\+\_\+rational$<$-\/9 $>$ $>$ $>$\+::type \hyperlink{test_8cpp_ae0bc7ab5733e359780e7c9a5c4ae787d}{nanosecond}
+\item 
+typedef boost\+::variant$<$ double, quantity$<$ length $>$, quantity$<$ mass $>$, quantity$<$ si\+::time $>$ $>$ \hyperlink{test_8cpp_a00dcb4bb14121b5f13d4ad9181cee7b4}{units\+\_\+variant}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename P , typename T $>$ }\\void \hyperlink{test_8cpp_a54808504711276078f8515eacce66376}{test\+\_\+parser\+\_\+attr} (char const $\ast$input, P const \&p, T \&attr, bool full\+\_\+match=true)
+\item 
+std\+::pair$<$ double, int $>$ \hyperlink{test_8cpp_a17549138667941b9fc6d0efdee095adf}{foo} (std\+::string input)
+\item 
+int \hyperlink{test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{test.\+cpp@{test.\+cpp}!nanosecond@{nanosecond}}
+\index{nanosecond@{nanosecond}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{nanosecond}{nanosecond}}]{\setlength{\rightskip}{0pt plus 5cm}typedef make\+\_\+scaled\+\_\+unit$<$si\+::time, scale$<$10, static\+\_\+rational$<$-\/9$>$ $>$ $>$\+::type {\bf nanosecond}}\hypertarget{test_8cpp_ae0bc7ab5733e359780e7c9a5c4ae787d}{}\label{test_8cpp_ae0bc7ab5733e359780e7c9a5c4ae787d}
+
+
+Definition at line 48 of file test.\+cpp.
+
+\index{test.\+cpp@{test.\+cpp}!pair\+\_\+type@{pair\+\_\+type}}
+\index{pair\+\_\+type@{pair\+\_\+type}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{pair\+\_\+type}{pair_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::pair$<$int, int$>$ {\bf pair\+\_\+type}}\hypertarget{test_8cpp_a6b16b1518344aff7cbf8aaa9ae9cdd39}{}\label{test_8cpp_a6b16b1518344aff7cbf8aaa9ae9cdd39}
+
+
+Definition at line 45 of file test.\+cpp.
+
+\index{test.\+cpp@{test.\+cpp}!pairs\+\_\+type@{pairs\+\_\+type}}
+\index{pairs\+\_\+type@{pairs\+\_\+type}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{pairs\+\_\+type}{pairs_type}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<${\bf pair\+\_\+type}$>$ {\bf pairs\+\_\+type}}\hypertarget{test_8cpp_ab598806586272ab27a10406c3b8436fe}{}\label{test_8cpp_ab598806586272ab27a10406c3b8436fe}
+
+
+Definition at line 46 of file test.\+cpp.
+
+\index{test.\+cpp@{test.\+cpp}!phys\+\_\+quant@{phys\+\_\+quant}}
+\index{phys\+\_\+quant@{phys\+\_\+quant}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{phys\+\_\+quant}{phys_quant}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::pair$<$double , {\bf pairs\+\_\+type}$>$ {\bf phys\+\_\+quant}}\hypertarget{test_8cpp_a76d816dc60daad0ab1c3c7b1dc7906d2}{}\label{test_8cpp_a76d816dc60daad0ab1c3c7b1dc7906d2}
+
+
+Definition at line 47 of file test.\+cpp.
+
+\index{test.\+cpp@{test.\+cpp}!units\+\_\+variant@{units\+\_\+variant}}
+\index{units\+\_\+variant@{units\+\_\+variant}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{units\+\_\+variant}{units_variant}}]{\setlength{\rightskip}{0pt plus 5cm}typedef boost\+::variant$<$ double, quantity$<$length$>$, quantity$<$mass$>$, quantity$<$si\+::time$>$ $>$ {\bf units\+\_\+variant}}\hypertarget{test_8cpp_a00dcb4bb14121b5f13d4ad9181cee7b4}{}\label{test_8cpp_a00dcb4bb14121b5f13d4ad9181cee7b4}
+
+
+Definition at line 73 of file test.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\index{test.\+cpp@{test.\+cpp}!foo@{foo}}
+\index{foo@{foo}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{foo(std\+::string input)}{foo(std::string input)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$double,int$>$ foo (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{test_8cpp_a17549138667941b9fc6d0efdee095adf}{}\label{test_8cpp_a17549138667941b9fc6d0efdee095adf}
+
+
+Definition at line 87 of file test.\+cpp.
+
+\index{test.\+cpp@{test.\+cpp}!main@{main}}
+\index{main@{main}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{main()}{main()}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\label{test_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+Definition at line 155 of file test.\+cpp.
+
+\index{test.\+cpp@{test.\+cpp}!test\+\_\+parser\+\_\+attr@{test\+\_\+parser\+\_\+attr}}
+\index{test\+\_\+parser\+\_\+attr@{test\+\_\+parser\+\_\+attr}!test.\+cpp@{test.\+cpp}}
+\subsubsection[{\texorpdfstring{test\+\_\+parser\+\_\+attr(char const $\ast$input, P const \&p, T \&attr, bool full\+\_\+match=true)}{test_parser_attr(char const *input, P const &p, T &attr, bool full_match=true)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename P , typename T $>$ void test\+\_\+parser\+\_\+attr (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{input, }
+\item[{P const \&}]{p, }
+\item[{T \&}]{attr, }
+\item[{bool}]{full\+\_\+match = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\hypertarget{test_8cpp_a54808504711276078f8515eacce66376}{}\label{test_8cpp_a54808504711276078f8515eacce66376}
+
+
+Definition at line 35 of file test.\+cpp.
+

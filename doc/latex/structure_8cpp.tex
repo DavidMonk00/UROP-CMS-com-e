@@ -1,0 +1,93 @@
+\hypertarget{structure_8cpp}{}\section{test/structure.cpp File Reference}
+\label{structure_8cpp}\index{test/structure.\+cpp@{test/structure.\+cpp}}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$functional$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+Include dependency graph for structure.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structure_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_i2_c_base_register}{I2\+C\+Base\+Register}
+\item 
+class \hyperlink{class_generic_i2_c_register}{Generic\+I2\+C\+Register}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structure_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+auto \hyperlink{structure_8cpp_af652d71c3b4dd30f2b988bd22c32c372}{lambda\+\_\+read}
+\item 
+auto \hyperlink{structure_8cpp_a3974ca6675500eb043415d534ee18419}{lambda\+\_\+write}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \hyperlink{class_i2_c_base_register}{I2\+C\+Base\+Register} $\ast$ $>$ \hyperlink{structure_8cpp_a4f4d739f21730689236a089b838bbb50}{registers}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{structure.\+cpp@{structure.\+cpp}!main@{main}}
+\index{main@{main}!structure.\+cpp@{structure.\+cpp}}
+\subsubsection[{\texorpdfstring{main(void)}{main(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{structure_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{}\label{structure_8cpp_a840291bc02cba5474a4cb46a9b9566fe}
+
+
+Definition at line 39 of file structure.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\index{structure.\+cpp@{structure.\+cpp}!lambda\+\_\+read@{lambda\+\_\+read}}
+\index{lambda\+\_\+read@{lambda\+\_\+read}!structure.\+cpp@{structure.\+cpp}}
+\subsubsection[{\texorpdfstring{lambda\+\_\+read}{lambda_read}}]{\setlength{\rightskip}{0pt plus 5cm}auto lambda\+\_\+read}\hypertarget{structure_8cpp_af652d71c3b4dd30f2b988bd22c32c372}{}\label{structure_8cpp_af652d71c3b4dd30f2b988bd22c32c372}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= [](\textcolor{keywordtype}{void}* i2c\_ptr, uint32\_t addr) \{
+   printf(\textcolor{stringliteral}{"Reading something to address: %d.\(\backslash\)n"}, addr);
+\}
+\end{DoxyCode}
+
+
+Definition at line 29 of file structure.\+cpp.
+
+\index{structure.\+cpp@{structure.\+cpp}!lambda\+\_\+write@{lambda\+\_\+write}}
+\index{lambda\+\_\+write@{lambda\+\_\+write}!structure.\+cpp@{structure.\+cpp}}
+\subsubsection[{\texorpdfstring{lambda\+\_\+write}{lambda_write}}]{\setlength{\rightskip}{0pt plus 5cm}auto lambda\+\_\+write}\hypertarget{structure_8cpp_a3974ca6675500eb043415d534ee18419}{}\label{structure_8cpp_a3974ca6675500eb043415d534ee18419}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= [](\textcolor{keywordtype}{void}* i2c\_ptr, uint32\_t addr) \{
+   printf(\textcolor{stringliteral}{"Writing something to address: %d.\(\backslash\)n"}, addr);
+\}
+\end{DoxyCode}
+
+
+Definition at line 32 of file structure.\+cpp.
+
+\index{structure.\+cpp@{structure.\+cpp}!registers@{registers}}
+\index{registers@{registers}!structure.\+cpp@{structure.\+cpp}}
+\subsubsection[{\texorpdfstring{registers}{registers}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unordered\+\_\+map$<$std\+::string, {\bf I2\+C\+Base\+Register}$\ast$$>$ registers}\hypertarget{structure_8cpp_a4f4d739f21730689236a089b838bbb50}{}\label{structure_8cpp_a4f4d739f21730689236a089b838bbb50}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{\{\textcolor{stringliteral}{"temperature"}, \textcolor{keyword}{new} \hyperlink{class_generic_i2_c_register}{GenericI2CRegister}(\hyperlink{structure_8cpp_af652d71c3b4dd30f2b988bd22c32c372}{lambda\_read},
+      \hyperlink{structure_8cpp_a3974ca6675500eb043415d534ee18419}{lambda\_write})\},
+                                                               \{\textcolor{stringliteral}{"humidity"},    \textcolor{keyword}{new} 
+      \hyperlink{class_generic_i2_c_register}{GenericI2CRegister}(\hyperlink{structure_8cpp_af652d71c3b4dd30f2b988bd22c32c372}{lambda\_read},\hyperlink{structure_8cpp_a3974ca6675500eb043415d534ee18419}{lambda\_write})\}\}
+\end{DoxyCode}
+
+
+Definition at line 36 of file structure.\+cpp.
+

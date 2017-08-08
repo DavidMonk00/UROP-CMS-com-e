@@ -1,0 +1,201 @@
+\hypertarget{class_a_t_c_a_board}{}\section{A\+T\+C\+A\+Board Class Reference}
+\label{class_a_t_c_a_board}\index{A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}}
+
+
+{\ttfamily \#include $<$A\+T\+C\+A\+Board.\+hpp$>$}
+
+
+
+Inheritance diagram for A\+T\+C\+A\+Board\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{class_a_t_c_a_board__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+T\+C\+A\+Board\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{class_a_t_c_a_board__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_a_t_c_a_board_a4046dcaa2d61102e91005f2845e06201}{A\+T\+C\+A\+Board} (\hyperlink{class_i2_c__base}{I2\+C\+\_\+base} $\ast$i2c\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Class constructor. Full bus/device/register map is defined here. Also requests downstream bus from arbiter. \end{DoxyCompactList}\item 
+\hyperlink{class_a_t_c_a_board_ac8d07dfe60a49f07a94a09868dc3637b}{A\+T\+C\+A\+Board} (std\+::string i2c\+\_\+string)
+\begin{DoxyCompactList}\small\item\em Class constructor. Full bus/device/register map is defined here. Also requests downstream bus from arbiter. \end{DoxyCompactList}\item 
+\hyperlink{class_a_t_c_a_board_a4f51f5462bd42562a1cdd20eb3a3bfeb}{$\sim$\+A\+T\+C\+A\+Board} (void)
+\begin{DoxyCompactList}\small\item\em Class destructor. Gives up downstream bus to arbiter. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \hyperlink{class_i2_c_bus}{I2\+C\+Bus} $\ast$ $>$ \hyperlink{class_a_t_c_a_board_a3926d4c4f9e4b98640b9b902b88ecb22}{get\+Map} (void)
+\begin{DoxyCompactList}\small\item\em Get the map. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_t_c_a_board_a7aeb3e3e9488e3e016bc844b3eb0f36b}{set\+Bus} (std\+::string bus)
+\begin{DoxyCompactList}\small\item\em Set bus to communicate over. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_t_c_a_board_ad0395aa7fe27ed6602ea55dfbe10b24d}{set\+Device} (std\+::string device)
+\begin{DoxyCompactList}\small\item\em Set device to communicate to. \end{DoxyCompactList}\item 
+void \hyperlink{class_a_t_c_a_board_ac7e7f32ba0c3583b67d8fa0c6a4703b7}{set\+Device} (std\+::string bus, std\+::string device)
+\begin{DoxyCompactList}\small\item\em Set device to communicate to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file A\+T\+C\+A\+Board.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}!A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}}
+\index{A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}!A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}}
+\subsubsection[{\texorpdfstring{A\+T\+C\+A\+Board(\+I2\+C\+\_\+base $\ast$i2c\+\_\+type)}{ATCABoard(I2C_base *i2c_type)}}]{\setlength{\rightskip}{0pt plus 5cm}A\+T\+C\+A\+Board\+::\+A\+T\+C\+A\+Board (
+\begin{DoxyParamCaption}
+\item[{{\bf I2\+C\+\_\+base} $\ast$}]{i2c\+\_\+type}
+\end{DoxyParamCaption}
+)}\hypertarget{class_a_t_c_a_board_a4046dcaa2d61102e91005f2845e06201}{}\label{class_a_t_c_a_board_a4046dcaa2d61102e91005f2845e06201}
+
+
+Class constructor. Full bus/device/register map is defined here. Also requests downstream bus from arbiter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+type} & -\/ Pointer to \hyperlink{class_i2_c__base}{I2\+C\+\_\+base} transport object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file A\+T\+C\+A\+Board.\+cpp.
+
+\index{A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}!A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}}
+\index{A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}!A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}}
+\subsubsection[{\texorpdfstring{A\+T\+C\+A\+Board(std\+::string i2c\+\_\+string)}{ATCABoard(std::string i2c_string)}}]{\setlength{\rightskip}{0pt plus 5cm}A\+T\+C\+A\+Board\+::\+A\+T\+C\+A\+Board (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{i2c\+\_\+string}
+\end{DoxyParamCaption}
+)}\hypertarget{class_a_t_c_a_board_ac8d07dfe60a49f07a94a09868dc3637b}{}\label{class_a_t_c_a_board_ac8d07dfe60a49f07a94a09868dc3637b}
+
+
+Class constructor. Full bus/device/register map is defined here. Also requests downstream bus from arbiter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+type} & -\/ Pointer to \hyperlink{class_i2_c__base}{I2\+C\+\_\+base} transport object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file A\+T\+C\+A\+Board.\+cpp.
+
+\index{A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}!````~A\+T\+C\+A\+Board@{$\sim$\+A\+T\+C\+A\+Board}}
+\index{````~A\+T\+C\+A\+Board@{$\sim$\+A\+T\+C\+A\+Board}!A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}}
+\subsubsection[{\texorpdfstring{$\sim$\+A\+T\+C\+A\+Board(void)}{~ATCABoard(void)}}]{\setlength{\rightskip}{0pt plus 5cm}A\+T\+C\+A\+Board\+::$\sim$\+A\+T\+C\+A\+Board (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_a_t_c_a_board_a4f51f5462bd42562a1cdd20eb3a3bfeb}{}\label{class_a_t_c_a_board_a4f51f5462bd42562a1cdd20eb3a3bfeb}
+
+
+Class destructor. Gives up downstream bus to arbiter. 
+
+
+
+Definition at line 91 of file A\+T\+C\+A\+Board.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}!get\+Map@{get\+Map}}
+\index{get\+Map@{get\+Map}!A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}}
+\subsubsection[{\texorpdfstring{get\+Map(void)}{getMap(void)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unordered\+\_\+map$<$ std\+::string, {\bf I2\+C\+Bus} $\ast$ $>$ A\+T\+C\+A\+Board\+::get\+Map (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_a_t_c_a_board_a3926d4c4f9e4b98640b9b902b88ecb22}{}\label{class_a_t_c_a_board_a3926d4c4f9e4b98640b9b902b88ecb22}
+
+
+Get the map. 
+
+\begin{DoxyReturn}{Returns}
+Unordered map of string identifiers and \hyperlink{class_i2_c_bus}{I2\+C\+Bus} pointers. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_board_a7579517a69f81e2fcbe9e18857a11545}{Board}.
+
+
+
+Definition at line 176 of file A\+T\+C\+A\+Board.\+cpp.
+
+\index{A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}!set\+Bus@{set\+Bus}}
+\index{set\+Bus@{set\+Bus}!A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}}
+\subsubsection[{\texorpdfstring{set\+Bus(std\+::string bus)}{setBus(std::string bus)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+T\+C\+A\+Board\+::set\+Bus (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{bus}
+\end{DoxyParamCaption}
+)}\hypertarget{class_a_t_c_a_board_a7aeb3e3e9488e3e016bc844b3eb0f36b}{}\label{class_a_t_c_a_board_a7aeb3e3e9488e3e016bc844b3eb0f36b}
+
+
+Set bus to communicate over. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bus} & -\/ String identifier for bus. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 142 of file A\+T\+C\+A\+Board.\+cpp.
+
+\index{A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}!set\+Device@{set\+Device}}
+\index{set\+Device@{set\+Device}!A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}}
+\subsubsection[{\texorpdfstring{set\+Device(std\+::string device)}{setDevice(std::string device)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+T\+C\+A\+Board\+::set\+Device (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{device}
+\end{DoxyParamCaption}
+)}\hypertarget{class_a_t_c_a_board_ad0395aa7fe27ed6602ea55dfbe10b24d}{}\label{class_a_t_c_a_board_ad0395aa7fe27ed6602ea55dfbe10b24d}
+
+
+Set device to communicate to. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & -\/ String identifier for device. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 152 of file A\+T\+C\+A\+Board.\+cpp.
+
+\index{A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}!set\+Device@{set\+Device}}
+\index{set\+Device@{set\+Device}!A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}}
+\subsubsection[{\texorpdfstring{set\+Device(std\+::string bus, std\+::string device)}{setDevice(std::string bus, std::string device)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+T\+C\+A\+Board\+::set\+Device (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{bus, }
+\item[{std\+::string}]{device}
+\end{DoxyParamCaption}
+)}\hypertarget{class_a_t_c_a_board_ac7e7f32ba0c3583b67d8fa0c6a4703b7}{}\label{class_a_t_c_a_board_ac7e7f32ba0c3583b67d8fa0c6a4703b7}
+
+
+Set device to communicate to. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bus} & -\/ String identifier for bus. \\
+\hline
+{\em device} & -\/ String identifier for device. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 164 of file A\+T\+C\+A\+Board.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_a_t_c_a_board_8hpp}{A\+T\+C\+A\+Board.\+hpp}\item 
+src/\hyperlink{_a_t_c_a_board_8cpp}{A\+T\+C\+A\+Board.\+cpp}\end{DoxyCompactItemize}

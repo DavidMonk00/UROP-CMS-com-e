@@ -1,11 +1,11 @@
 <map id="include/update.hpp" name="include/update.hpp">
-<area shape="rect" id="node2" href="$_couch_d_b_8hpp.html" title="CouchDB.hpp" alt="" coords="1271,155,1375,181"/>
+<area shape="rect" id="node2" href="$_couch_d_b_8hpp.html" title="Defines the CouchDB base class and Server and Client derived classes. " alt="" coords="1271,155,1375,181"/>
 <area shape="rect" id="node33" href="$_a_t_c_a_board_8hpp.html" title="Defines the derived ATCABoard class. " alt="" coords="1844,80,1961,107"/>
 <area shape="rect" id="node9" href="$json_8hpp.html" title="json.hpp" alt="" coords="1250,229,1321,256"/>
 <area shape="rect" id="node34" href="$_board_8hpp.html" title="Defines the base Board class. " alt="" coords="2187,155,2269,181"/>
-<area shape="rect" id="node35" href="$_i2_c_bus_8hpp.html" title="I2CBus.hpp" alt="" coords="2361,229,2452,256"/>
+<area shape="rect" id="node35" href="$_i2_c_bus_8hpp.html" title="Defines the I2CBus class. " alt="" coords="2361,229,2452,256"/>
 <area shape="rect" id="node47" href="$parser_8hpp.html" title="parser.hpp" alt="" coords="2187,229,2269,256"/>
 <area shape="rect" id="node36" href="$_i2_c_device_8hpp.html" title="I2CDevice.hpp" alt="" coords="2420,304,2529,331"/>
 <area shape="rect" id="node37" href="$_i2_c_register_8hpp.html" title="I2CRegister.hpp" alt="" coords="2416,379,2533,405"/>
-<area shape="rect" id="node39" href="$units__define_8hpp.html" title="units_define.hpp" alt="" coords="2347,453,2464,480"/>
+<area shape="rect" id="node39" href="$units__define_8hpp.html" title="Type definitons for units_variant. " alt="" coords="2347,453,2464,480"/>
 </map>

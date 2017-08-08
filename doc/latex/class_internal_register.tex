@@ -1,0 +1,150 @@
+\hypertarget{class_internal_register}{}\section{Internal\+Register Class Reference}
+\label{class_internal_register}\index{Internal\+Register@{Internal\+Register}}
+
+
+{\ttfamily \#include $<$I2\+C\+Register.\+hpp$>$}
+
+
+
+Inheritance diagram for Internal\+Register\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_internal_register__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Internal\+Register\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_internal_register__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_internal_register_a09cee9a73ce992860d9ea3353c9e9e9c}{Internal\+Register} (uint32\+\_\+t r, std\+::string rw, std\+::function$<$ \hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant}(double value)$>$ read\+\_\+func)
+\begin{DoxyCompactList}\small\item\em Class constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_internal_register_adee7135b7fb2f55576b07c6440c1a2d9}{$\sim$\+Internal\+Register} (void)
+\begin{DoxyCompactList}\small\item\em Class destructor. \end{DoxyCompactList}\item 
+\hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant} \hyperlink{class_internal_register_a7675a310cdb4866c256fef77d388b424}{read} (\hyperlink{class_i2_c__base}{I2\+C\+\_\+base} $\ast$i2c\+\_\+ptr, uint32\+\_\+t address)
+\begin{DoxyCompactList}\small\item\em Read data from register. \end{DoxyCompactList}\item 
+void \hyperlink{class_internal_register_a8c1844d644fc81a118a6094f3a88feb8}{write} (\hyperlink{class_i2_c__base}{I2\+C\+\_\+base} $\ast$i2c\+\_\+ptr, uint32\+\_\+t address, \hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant} value)
+\begin{DoxyCompactList}\small\item\em V\+A\+L\+U\+ES C\+A\+N\+N\+OT BE W\+R\+I\+T\+T\+EN TO. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 89 of file I2\+C\+Register.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Internal\+Register@{Internal\+Register}!Internal\+Register@{Internal\+Register}}
+\index{Internal\+Register@{Internal\+Register}!Internal\+Register@{Internal\+Register}}
+\subsubsection[{\texorpdfstring{Internal\+Register(uint32\+\_\+t r, std\+::string rw, std\+::function$<$ units\+\_\+variant(double value)$>$ read\+\_\+func)}{InternalRegister(uint32_t r, std::string rw, std::function< units_variant(double value)> read_func)}}]{\setlength{\rightskip}{0pt plus 5cm}Internal\+Register\+::\+Internal\+Register (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{r, }
+\item[{std\+::string}]{rw, }
+\item[{std\+::function$<$ {\bf units\+\_\+variant}(double value)$>$}]{read\+\_\+func}
+\end{DoxyParamCaption}
+)}\hypertarget{class_internal_register_a09cee9a73ce992860d9ea3353c9e9e9c}{}\label{class_internal_register_a09cee9a73ce992860d9ea3353c9e9e9c}
+
+
+Class constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em read\+\_\+func} & -\/ Lambda function to convert hexadecimal value into correct units type. \\
+\hline
+{\em write\+\_\+func} & -\/ Lambda function to convert units type into uint8\+\_\+t to be written. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 70 of file I2\+C\+Register.\+cpp.
+
+\index{Internal\+Register@{Internal\+Register}!````~Internal\+Register@{$\sim$\+Internal\+Register}}
+\index{````~Internal\+Register@{$\sim$\+Internal\+Register}!Internal\+Register@{Internal\+Register}}
+\subsubsection[{\texorpdfstring{$\sim$\+Internal\+Register(void)}{~InternalRegister(void)}}]{\setlength{\rightskip}{0pt plus 5cm}Internal\+Register\+::$\sim$\+Internal\+Register (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_internal_register_adee7135b7fb2f55576b07c6440c1a2d9}{}\label{class_internal_register_adee7135b7fb2f55576b07c6440c1a2d9}
+
+
+Class destructor. 
+
+
+
+Definition at line 84 of file I2\+C\+Register.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Internal\+Register@{Internal\+Register}!read@{read}}
+\index{read@{read}!Internal\+Register@{Internal\+Register}}
+\subsubsection[{\texorpdfstring{read(\+I2\+C\+\_\+base $\ast$i2c\+\_\+ptr, uint32\+\_\+t address)}{read(I2C_base *i2c_ptr, uint32_t address)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf units\+\_\+variant} Internal\+Register\+::read (
+\begin{DoxyParamCaption}
+\item[{{\bf I2\+C\+\_\+base} $\ast$}]{i2c\+\_\+ptr, }
+\item[{uint32\+\_\+t}]{address}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_internal_register_a7675a310cdb4866c256fef77d388b424}{}\label{class_internal_register_a7675a310cdb4866c256fef77d388b424}
+
+
+Read data from register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+ptr} & -\/ Pointer to \hyperlink{class_i2_c__base}{I2\+C\+\_\+base} class used for transport. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+units\+\_\+variant containing quantity of correct type. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_i2_c_base_register_a947d834a745d3036c4cd8a2d5e19cd0d}{I2\+C\+Base\+Register}.
+
+
+
+Definition at line 91 of file I2\+C\+Register.\+cpp.
+
+\index{Internal\+Register@{Internal\+Register}!write@{write}}
+\index{write@{write}!Internal\+Register@{Internal\+Register}}
+\subsubsection[{\texorpdfstring{write(\+I2\+C\+\_\+base $\ast$i2c\+\_\+ptr, uint32\+\_\+t address, units\+\_\+variant value)}{write(I2C_base *i2c_ptr, uint32_t address, units_variant value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Internal\+Register\+::write (
+\begin{DoxyParamCaption}
+\item[{{\bf I2\+C\+\_\+base} $\ast$}]{i2c\+\_\+ptr, }
+\item[{uint32\+\_\+t}]{address, }
+\item[{{\bf units\+\_\+variant}}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_internal_register_a8c1844d644fc81a118a6094f3a88feb8}{}\label{class_internal_register_a8c1844d644fc81a118a6094f3a88feb8}
+
+
+V\+A\+L\+U\+ES C\+A\+N\+N\+OT BE W\+R\+I\+T\+T\+EN TO. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+ptr} & -\/ Pointer to \hyperlink{class_i2_c__base}{I2\+C\+\_\+base} class used for transport. \\
+\hline
+{\em value} & -\/ Data to be written. Must be of correct type. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_i2_c_base_register_ad3f9f1404fe6af3e10e8f204b16d2066}{I2\+C\+Base\+Register}.
+
+
+
+Definition at line 107 of file I2\+C\+Register.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_i2_c_register_8hpp}{I2\+C\+Register.\+hpp}\item 
+src/\hyperlink{_i2_c_register_8cpp}{I2\+C\+Register.\+cpp}\end{DoxyCompactItemize}

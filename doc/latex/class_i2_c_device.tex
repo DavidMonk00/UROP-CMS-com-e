@@ -1,0 +1,199 @@
+\hypertarget{class_i2_c_device}{}\section{I2\+C\+Device Class Reference}
+\label{class_i2_c_device}\index{I2\+C\+Device@{I2\+C\+Device}}
+
+
+{\ttfamily \#include $<$I2\+C\+Device.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_i2_c_device_a275eefb9eb7dfd1ee0470a8bd0a73086}{t\+I2\+Ctype} \{ \hyperlink{class_i2_c_device_a275eefb9eb7dfd1ee0470a8bd0a73086a6a7b9aebb5e9f27970de13799ad47f6e}{t\+I2\+Ctype\+::\+S\+E\+MA}, 
+\hyperlink{class_i2_c_device_a275eefb9eb7dfd1ee0470a8bd0a73086a9a342381cd5923d1a59fdc8c22e286b7}{t\+I2\+Ctype\+::\+F\+T\+DI}, 
+\hyperlink{class_i2_c_device_a275eefb9eb7dfd1ee0470a8bd0a73086a1fec00cf102e7c421f6662b56bd61fb7}{t\+I2\+Ctype\+::\+P\+C\+Ie}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i2_c_device_a2e69a2e93dd5c82309f9e4983b3a9e74}{I2\+C\+Device} (uint32\+\_\+t addr, std\+::unordered\+\_\+map$<$ std\+::string, \hyperlink{class_i2_c_base_register}{I2\+C\+Base\+Register} $\ast$ $>$ reg\+\_\+map)
+\begin{DoxyCompactList}\small\item\em Class constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_i2_c_device_a2edfce0d3f4d430f118fd6cc01483791}{I2\+C\+Device} (void)
+\begin{DoxyCompactList}\small\item\em Default class constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_i2_c_device_a6d3bfa5e15112985958df9366589cdc5}{$\sim$\+I2\+C\+Device} (void)
+\begin{DoxyCompactList}\small\item\em Class destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_i2_c_device_aa12a7448f16100f8ed5d9a9903e94014}{set\+I2\+C\+Type} (\hyperlink{class_i2_c__base}{I2\+C\+\_\+base} $\ast$i2c\+\_\+type)
+\item 
+\hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant} \hyperlink{class_i2_c_device_a402c8a5ecfc405e9a30d509118c19e7b}{read} (std\+::string reg)
+\begin{DoxyCompactList}\small\item\em Read data from register. \end{DoxyCompactList}\item 
+void \hyperlink{class_i2_c_device_a916d9450534684ea0260cacf94a0b79b}{write} (std\+::string reg, \hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant} value)
+\begin{DoxyCompactList}\small\item\em Write data to register. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_i2_c_device_a33e7d15ba04e33f8d61c23659037cb57}{get\+Properties} (void)
+\begin{DoxyCompactList}\small\item\em Get all possible registers for given device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class represents a single I2C device with a number of registers. Read/\+Write functions take a string-\/based ID for a given register. 
+
+Definition at line 21 of file I2\+C\+Device.\+hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\index{I2\+C\+Device@{I2\+C\+Device}!t\+I2\+Ctype@{t\+I2\+Ctype}}
+\index{t\+I2\+Ctype@{t\+I2\+Ctype}!I2\+C\+Device@{I2\+C\+Device}}
+\subsubsection[{\texorpdfstring{t\+I2\+Ctype}{tI2Ctype}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf I2\+C\+Device\+::t\+I2\+Ctype}\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{class_i2_c_device_a275eefb9eb7dfd1ee0470a8bd0a73086}{}\label{class_i2_c_device_a275eefb9eb7dfd1ee0470a8bd0a73086}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{S\+E\+MA@{S\+E\+MA}!I2\+C\+Device@{I2\+C\+Device}}\index{I2\+C\+Device@{I2\+C\+Device}!S\+E\+MA@{S\+E\+MA}}\item[{\em 
+S\+E\+MA\hypertarget{class_i2_c_device_a275eefb9eb7dfd1ee0470a8bd0a73086a6a7b9aebb5e9f27970de13799ad47f6e}{}\label{class_i2_c_device_a275eefb9eb7dfd1ee0470a8bd0a73086a6a7b9aebb5e9f27970de13799ad47f6e}
+}]\index{F\+T\+DI@{F\+T\+DI}!I2\+C\+Device@{I2\+C\+Device}}\index{I2\+C\+Device@{I2\+C\+Device}!F\+T\+DI@{F\+T\+DI}}\item[{\em 
+F\+T\+DI\hypertarget{class_i2_c_device_a275eefb9eb7dfd1ee0470a8bd0a73086a9a342381cd5923d1a59fdc8c22e286b7}{}\label{class_i2_c_device_a275eefb9eb7dfd1ee0470a8bd0a73086a9a342381cd5923d1a59fdc8c22e286b7}
+}]\index{P\+C\+Ie@{P\+C\+Ie}!I2\+C\+Device@{I2\+C\+Device}}\index{I2\+C\+Device@{I2\+C\+Device}!P\+C\+Ie@{P\+C\+Ie}}\item[{\em 
+P\+C\+Ie\hypertarget{class_i2_c_device_a275eefb9eb7dfd1ee0470a8bd0a73086a1fec00cf102e7c421f6662b56bd61fb7}{}\label{class_i2_c_device_a275eefb9eb7dfd1ee0470a8bd0a73086a1fec00cf102e7c421f6662b56bd61fb7}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 28 of file I2\+C\+Device.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{I2\+C\+Device@{I2\+C\+Device}!I2\+C\+Device@{I2\+C\+Device}}
+\index{I2\+C\+Device@{I2\+C\+Device}!I2\+C\+Device@{I2\+C\+Device}}
+\subsubsection[{\texorpdfstring{I2\+C\+Device(uint32\+\_\+t addr, std\+::unordered\+\_\+map$<$ std\+::string, I2\+C\+Base\+Register $\ast$ $>$ reg\+\_\+map)}{I2CDevice(uint32_t addr, std::unordered_map< std::string, I2CBaseRegister * > reg_map)}}]{\setlength{\rightskip}{0pt plus 5cm}I2\+C\+Device\+::\+I2\+C\+Device (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{addr, }
+\item[{std\+::unordered\+\_\+map$<$ std\+::string, {\bf I2\+C\+Base\+Register} $\ast$ $>$}]{reg\+\_\+map}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_device_a2e69a2e93dd5c82309f9e4983b3a9e74}{}\label{class_i2_c_device_a2e69a2e93dd5c82309f9e4983b3a9e74}
+
+
+Class constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & -\/ Address of device. \\
+\hline
+{\em reg\+\_\+map} & -\/ Unordered map of registers available on device. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file I2\+C\+Device.\+cpp.
+
+\index{I2\+C\+Device@{I2\+C\+Device}!I2\+C\+Device@{I2\+C\+Device}}
+\index{I2\+C\+Device@{I2\+C\+Device}!I2\+C\+Device@{I2\+C\+Device}}
+\subsubsection[{\texorpdfstring{I2\+C\+Device(void)}{I2CDevice(void)}}]{\setlength{\rightskip}{0pt plus 5cm}I2\+C\+Device\+::\+I2\+C\+Device (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_device_a2edfce0d3f4d430f118fd6cc01483791}{}\label{class_i2_c_device_a2edfce0d3f4d430f118fd6cc01483791}
+
+
+Default class constructor. 
+
+
+
+Definition at line 23 of file I2\+C\+Device.\+cpp.
+
+\index{I2\+C\+Device@{I2\+C\+Device}!````~I2\+C\+Device@{$\sim$\+I2\+C\+Device}}
+\index{````~I2\+C\+Device@{$\sim$\+I2\+C\+Device}!I2\+C\+Device@{I2\+C\+Device}}
+\subsubsection[{\texorpdfstring{$\sim$\+I2\+C\+Device(void)}{~I2CDevice(void)}}]{\setlength{\rightskip}{0pt plus 5cm}I2\+C\+Device\+::$\sim$\+I2\+C\+Device (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_device_a6d3bfa5e15112985958df9366589cdc5}{}\label{class_i2_c_device_a6d3bfa5e15112985958df9366589cdc5}
+
+
+Class destructor. 
+
+
+
+Definition at line 32 of file I2\+C\+Device.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{I2\+C\+Device@{I2\+C\+Device}!get\+Properties@{get\+Properties}}
+\index{get\+Properties@{get\+Properties}!I2\+C\+Device@{I2\+C\+Device}}
+\subsubsection[{\texorpdfstring{get\+Properties(void)}{getProperties(void)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::string $>$ I2\+C\+Device\+::get\+Properties (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_device_a33e7d15ba04e33f8d61c23659037cb57}{}\label{class_i2_c_device_a33e7d15ba04e33f8d61c23659037cb57}
+
+
+Get all possible registers for given device. 
+
+\begin{DoxyReturn}{Returns}
+Vector of strings assosciated with the properties. 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file I2\+C\+Device.\+cpp.
+
+\index{I2\+C\+Device@{I2\+C\+Device}!read@{read}}
+\index{read@{read}!I2\+C\+Device@{I2\+C\+Device}}
+\subsubsection[{\texorpdfstring{read(std\+::string reg)}{read(std::string reg)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf units\+\_\+variant} I2\+C\+Device\+::read (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{reg}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_device_a402c8a5ecfc405e9a30d509118c19e7b}{}\label{class_i2_c_device_a402c8a5ecfc405e9a30d509118c19e7b}
+
+
+Read data from register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & -\/ Property to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+units\+\_\+variant containing quantity of correct type. 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file I2\+C\+Device.\+cpp.
+
+\index{I2\+C\+Device@{I2\+C\+Device}!set\+I2\+C\+Type@{set\+I2\+C\+Type}}
+\index{set\+I2\+C\+Type@{set\+I2\+C\+Type}!I2\+C\+Device@{I2\+C\+Device}}
+\subsubsection[{\texorpdfstring{set\+I2\+C\+Type(\+I2\+C\+\_\+base $\ast$i2c\+\_\+type)}{setI2CType(I2C_base *i2c_type)}}]{\setlength{\rightskip}{0pt plus 5cm}void I2\+C\+Device\+::set\+I2\+C\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf I2\+C\+\_\+base} $\ast$}]{i2c\+\_\+type}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_device_aa12a7448f16100f8ed5d9a9903e94014}{}\label{class_i2_c_device_aa12a7448f16100f8ed5d9a9903e94014}
+
+
+Definition at line 25 of file I2\+C\+Device.\+cpp.
+
+\index{I2\+C\+Device@{I2\+C\+Device}!write@{write}}
+\index{write@{write}!I2\+C\+Device@{I2\+C\+Device}}
+\subsubsection[{\texorpdfstring{write(std\+::string reg, units\+\_\+variant value)}{write(std::string reg, units_variant value)}}]{\setlength{\rightskip}{0pt plus 5cm}void I2\+C\+Device\+::write (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{reg, }
+\item[{{\bf units\+\_\+variant}}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{class_i2_c_device_a916d9450534684ea0260cacf94a0b79b}{}\label{class_i2_c_device_a916d9450534684ea0260cacf94a0b79b}
+
+
+Write data to register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & -\/ Property to write to. \\
+\hline
+{\em value} & -\/ Data to write to register. Must be of the correct type. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file I2\+C\+Device.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_i2_c_device_8hpp}{I2\+C\+Device.\+hpp}\item 
+src/\hyperlink{_i2_c_device_8cpp}{I2\+C\+Device.\+cpp}\end{DoxyCompactItemize}
