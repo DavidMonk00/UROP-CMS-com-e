@@ -13,77 +13,26 @@
 #include <unistd.h>
 #include "update.hpp"
 
-void sleep5(void) {
-   sleep(5);
-}
-
-void activeLoop(Update* update) {
-   while (true) {
-      std::cout << "Running active..." << '\n';
-      std::thread t_sleep(sleep5);
-      update->saveActive();
-      t_sleep.join();
-   }
-}
-
-void configLoop(Update* update) {
-   while (true) {
-      std::cout << "Running config..." << '\n';
-      std::thread t_sleep(sleep5);
-      update->getConfig();
-      t_sleep.join();
-   }
-}
-
-void staticLoop(Update* update) {
-   while (true) {
-      auto t = std::time(nullptr);
-      auto tm = *std::localtime(&t);
-      std::ostringstream oss;
-      oss << std::put_time(&tm, "%M");
-      int mins = atoi(oss.str().c_str());
-      if (mins == 32) {
-         std::cout << "Running static..." << '\n';
-         update->saveStatic();
-         sleep(65);
-      } else {
-         sleep(30);
+void setGlobalConfigs(Server* server) {
+   json global;
+   std::ifstream global_file("/home/david/Python/urop/bin/global.json");
+   global_file >> global;
+   for (json::iterator bus_it = global.begin(); bus_it != global.end(); ++bus_it) {
+      std::string bus = bus_it.key();
+      for (json::iterator device_it = bus_it.value().begin(); device_it != bus_it.value().end(); ++device_it) {
+         std::string device = device_it.key();
+         for (json::iterator property_it = device_it.value().begin(); property_it != device_it.value().end(); ++property_it) {
+            std::string property = property_it.key();
+            server->editConfig(bus,device,property,property_it.value().get<std::string>());
+         }
       }
    }
-}
-
-void purgeLoop(Update* update) {
-   while (true) {
-      auto t = std::time(nullptr);
-      auto tm = *std::localtime(&t);
-      std::ostringstream oss;
-      oss << std::put_time(&tm, "%M");
-      int mins = atoi(oss.str().c_str());
-      if (!(mins % 5)) {
-         std::cout << "Purging database..." << '\n';
-         update->purgeDatabase();
-         sleep(65);
-      } else {
-         sleep(30);
-      }
-   }
+   server->pushChanges();
 }
 
 int main(int argc, char* argv[]) {
    curl_global_init(CURL_GLOBAL_DEFAULT);
-   std::cout << "Creating object..." << '\n';
-   Update* update = new Update();
-   std::cout << "Creating threads..." << '\n';
-   std::thread t_active(activeLoop, update);
-   sleep(1);
-   std::thread t_config(configLoop, update);
-   sleep(1);
-   std::thread t_static(staticLoop, update);
-   sleep(1);
-   std::thread t_purge(purgeLoop, update);
-   t_active.join();
-   t_config.join();
-   t_static.join();
-   t_purge.join();
-   delete update;
+   Server* server = new Server();
+   setGlobalConfigs(server);
+   delete server;
 }
