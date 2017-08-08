@@ -67,7 +67,6 @@ void purgeLoop(Update* update) {
          sleep(30);
       }
    }
-   server->pushChanges();
 }
 
 int main(int argc, char* argv[]) {

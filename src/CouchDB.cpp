@@ -5,7 +5,7 @@
   @version 1.0
 */
 
-include "CouchDB.hpp"
+#include "CouchDB.hpp"
 
 /**
    @brief Callback function for curl HTTP calls. Sends output into string. SHould not be called outside of CURLOPT_WRITEFUNCTION.
