@@ -7,6 +7,9 @@
 
 include "CouchDB.hpp"
 
+/**
+   @brief Callback function for curl HTTP calls. Sends output into string. SHould not be called outside of CURLOPT_WRITEFUNCTION.
+*/
 size_t CouchDB::CallbackFunc(void *contents, size_t size, size_t nmemb, std::string* s) {
     size_t newLength = size*nmemb;
     size_t oldLength = s->size();
@@ -20,6 +23,11 @@ size_t CouchDB::CallbackFunc(void *contents, size_t size, size_t nmemb, std::str
     return size*nmemb;
 }
 
+/**
+   @brief HTTP GET function.
+   @param URL to get from.
+   @return String of output from call.
+*/
 std::string CouchDB::HTTPGET(std::string url_) {
    curl = curl_easy_init();
    CURLcode res;
