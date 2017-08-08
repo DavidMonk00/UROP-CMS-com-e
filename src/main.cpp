@@ -43,16 +43,29 @@ void staticLoop(Update* update) {
       std::ostringstream oss;
       oss << std::put_time(&tm, "%M");
       int mins = atoi(oss.str().c_str());
-      if (!mins) {
+      if (mins == 32) {
          std::cout << "Running static..." << '\n';
          update->saveStatic();
-         sleep(70);
-      } else if (mins == 30) {
+         sleep(65);
+      } else {
+         sleep(30);
+      }
+   }
+}
+
+void purgeLoop(Update* update) {
+   while (true) {
+      auto t = std::time(nullptr);
+      auto tm = *std::localtime(&t);
+      std::ostringstream oss;
+      oss << std::put_time(&tm, "%M");
+      int mins = atoi(oss.str().c_str());
+      if (!(mins % 5)) {
          std::cout << "Purging database..." << '\n';
          update->purgeDatabase();
-         sleep(70);
+         sleep(65);
       } else {
-         sleep(60);
+         sleep(30);
       }
    }
 }
@@ -71,8 +84,11 @@ int main(int argc, char* argv[]) {
    std::thread t_config(configLoop, update);
    sleep(1);
    std::thread t_static(staticLoop, update);
+   sleep(1);
+   std::thread t_purge(purgeLoop, update);
    t_active.join();
    t_config.join();
    t_static.join();
+   t_purge.join();
    delete update;
 }

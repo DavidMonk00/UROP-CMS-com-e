@@ -39,8 +39,7 @@ std::string Client::HTTPGET(std::string url_) {
       curl_easy_setopt(curl, CURLOPT_WRITEDATA, &s);
       res = curl_easy_perform(curl);
       if (res != CURLE_OK) {
-           fprintf(stderr, "curl_easy_perform() failed: %s\n",
-                   curl_easy_strerror(res));
+           fprintf(stderr, "curl_easy_perform() in function HTTPGET failed: %s\n", curl_easy_strerror(res));
       }
    }
    return s;
@@ -58,8 +57,7 @@ void Client::HTTPPUT(std::string url_, std::string data) {
       curl_easy_setopt(curl, CURLOPT_WRITEDATA, &s);
       res = curl_easy_perform(curl);
       if (res != CURLE_OK) {
-           fprintf(stderr, "curl_easy_perform() failed: %s\n",
-                   curl_easy_strerror(res));
+           fprintf(stderr, "curl_easy_perform() in function HTTPPUT failed: %s\n", curl_easy_strerror(res));
       }
    }
 }
@@ -79,8 +77,7 @@ void Client::HTTPPOST(std::string url_, std::string data) {
       curl_easy_setopt(curl, CURLOPT_WRITEDATA, &s);
       res = curl_easy_perform(curl);
       if (res != CURLE_OK) {
-           fprintf(stderr, "curl_easy_perform() failed: %s\n",
-                   curl_easy_strerror(res));
+           fprintf(stderr, "curl_easy_perform() in function HTTPPOST failed: %s\n", curl_easy_strerror(res));
       }
    }
 }
@@ -96,8 +93,7 @@ void Client::HTTPDELETE(std::string url_) {
       curl_easy_setopt(curl, CURLOPT_WRITEDATA, &s);
       res = curl_easy_perform(curl);
       if (res != CURLE_OK) {
-           fprintf(stderr, "curl_easy_perform() failed: %s\n",
-                   curl_easy_strerror(res));
+           fprintf(stderr, "curl_easy_perform() in function HTTPDELETE failed: %s\n", curl_easy_strerror(res));
       }
    }
 }
