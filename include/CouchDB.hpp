@@ -23,10 +23,10 @@ protected:
    json config;
    CURL* curl;
    static size_t CallbackFunc(void *contents, size_t size, size_t nmemb, std::string* s);
-   std::string HTTPGET(std::string hostname);
-   void HTTPPUT(std::string url_, std::string data);
-   void HTTPPOST(std::string url_, std::string data);
-   void HTTPDELETE(std::string url_);
+   bool HTTPGET(std::string url_, std::string* ret);
+   bool HTTPPUT(std::string url_, std::string data);
+   bool HTTPPOST(std::string url_, std::string data);
+   bool HTTPDELETE(std::string url_);
 };
 
 class Client : public CouchDB {

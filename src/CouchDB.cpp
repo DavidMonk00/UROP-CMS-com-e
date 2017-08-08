@@ -28,20 +28,20 @@ size_t CouchDB::CallbackFunc(void *contents, size_t size, size_t nmemb, std::str
    @param url_ - URL to get from.
    @return String of output from call.
 */
-std::string CouchDB::HTTPGET(std::string url_) {
+bool CouchDB::HTTPGET(std::string url_, std::string* ret) {
    curl = curl_easy_init();
    CURLcode res;
-   std::string s;
    if (curl) {
       curl_easy_setopt(curl, CURLOPT_URL, url_.c_str());
       curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, CallbackFunc);
-      curl_easy_setopt(curl, CURLOPT_WRITEDATA, &s);
+      curl_easy_setopt(curl, CURLOPT_WRITEDATA, ret);
       res = curl_easy_perform(curl);
       if (res != CURLE_OK) {
            fprintf(stderr, "curl_easy_perform() in function HTTPGET failed: %s\n", curl_easy_strerror(res));
+           return false;
       }
    }
-   return s;
+   return true;
 }
 
 /**
@@ -49,7 +49,7 @@ std::string CouchDB::HTTPGET(std::string url_) {
    @param url_ - URL to put data.
    @param data - Data to be put into file.
 */
-void CouchDB::HTTPPUT(std::string url_, std::string data) {
+bool CouchDB::HTTPPUT(std::string url_, std::string data) {
    curl = curl_easy_init();
    CURLcode res;
    std::string s;
@@ -62,8 +62,10 @@ void CouchDB::HTTPPUT(std::string url_, std::string data) {
       res = curl_easy_perform(curl);
       if (res != CURLE_OK) {
            fprintf(stderr, "curl_easy_perform() in function HTTPPUT failed: %s\n", curl_easy_strerror(res));
+           return false;
       }
    }
+   return true;
 }
 
 /**
@@ -71,7 +73,7 @@ void CouchDB::HTTPPUT(std::string url_, std::string data) {
    @param url_ - URL to post data.
    @param data - Data to be posted into file.
 */
-void CouchDB::HTTPPOST(std::string url_, std::string data) {
+bool CouchDB::HTTPPOST(std::string url_, std::string data) {
    curl = curl_easy_init();
    CURLcode res;
    std::string s;
@@ -87,15 +89,17 @@ void CouchDB::HTTPPOST(std::string url_, std::string data) {
       res = curl_easy_perform(curl);
       if (res != CURLE_OK) {
            fprintf(stderr, "curl_easy_perform() in function HTTPPOST failed: %s\n", curl_easy_strerror(res));
+           return false;
       }
    }
+   return true;
 }
 
 /**
    @brief HTTP DELETE function.
    @param url_ - URL of file to delete.
 */
-void CouchDB::HTTPDELETE(std::string url_) {
+bool CouchDB::HTTPDELETE(std::string url_) {
    curl = curl_easy_init();
    CURLcode res;
    std::string s;
@@ -107,8 +111,10 @@ void CouchDB::HTTPDELETE(std::string url_) {
       res = curl_easy_perform(curl);
       if (res != CURLE_OK) {
            fprintf(stderr, "curl_easy_perform() in function HTTPDELETE failed: %s\n", curl_easy_strerror(res));
+           return false;
       }
    }
+   return true;
 }
 
 /**
@@ -143,7 +149,8 @@ Client::~Client(void) {
 */
 std::vector<std::string> Client::getDatabases(void) {
    std::vector<std::string> v;
-   std::string s = HTTPGET(url+"/_all_dbs");
+   std::string s;
+   HTTPGET(url+"/_all_dbs", &s);
    auto j = json::parse(s);
    for (auto& element : j) {
       v.push_back(element);
@@ -213,7 +220,8 @@ void Client::pushDatabase(json params) {
 */
 std::string Client::getDocument(std::string doc) {
    std::string url_ = url + "/"  + database + "/" + doc;
-   std::string data = HTTPGET(url_);
+   std::string data;
+   HTTPGET(url_, &data);
    return data;
 }
 
@@ -223,7 +231,8 @@ std::string Client::getDocument(std::string doc) {
 */
 std::vector<std::pair<std::string,std::string> > Client::getDocumentIDs(void) {
    std::vector<std::pair<std::string,std::string> > v;
-   std::string s = HTTPGET(url+"/"+database+"/_design/"+database+"/_view/listAllActive");
+   std::string s;
+   HTTPGET(url+"/"+database+"/_design/"+database+"/_view/listAllActive", &s);
    auto j = json::parse(s);
    for (auto& element : j["rows"]) {
       std::pair<std::string,std::string> p(element["key"].get<std::string>(), element["value"].get<std::string>());
@@ -238,9 +247,8 @@ std::vector<std::pair<std::string,std::string> > Client::getDocumentIDs(void) {
    @return True if online, throws error if not. TODO make this so that it does not throw error? This is legacy from Python/bash.
 */
 bool Client::checkOnline(std::string url_) {
-   std::string ret = HTTPGET(url_);
-   json j = json::parse(ret);
-   return true;
+   std::string ret;
+   return HTTPGET(url_, &ret);
 }
 
 /**
@@ -266,7 +274,9 @@ void Client::compactDatabase(void) {
 */
 Server::Server(void) {
    url = "http://127.0.0.1:5984";
-   slaves = json::parse(HTTPGET(url+"/slaves/_all_docs"))["rows"];
+   std::string ret;
+   HTTPGET(url+"/slaves/_all_docs", &ret);
+   slaves = json::parse(ret)["rows"];
 }
 
 /**
@@ -285,7 +295,9 @@ Server::~Server(void) {
 */
 void Server::editConfig(std::string bus, std::string device, std::string property, std::string value) {
    for (auto database : slaves) {
-      json doc = json::parse(HTTPGET(url+"/config/"+database["id"].get<std::string>()));
+      std::string ret;
+      HTTPGET(url+"/config/"+database["id"].get<std::string>(), &ret);
+      json doc = json::parse(ret);
       doc[bus][device][property] = value;
       std::string url_ = url + "/config/" + database["id"].get<std::string>();
       HTTPPUT(url_,doc.dump());
@@ -300,7 +312,9 @@ void Server::editConfig(std::string bus, std::string device, std::string propert
    @param value - Value to be written.
 */
 void Server::editConfig(std::string board, std::string bus, std::string device, std::string property, std::string value) {
-   json doc = json::parse(HTTPGET(url + "/config/" + board));
+   std::string ret;
+   HTTPGET(url + "/config/" + board, &ret);
+   json doc = json::parse(ret);
    doc[bus][device][property] = value;
    std::string url_ = url + "/config/" + board;
    HTTPPUT(url_, doc.dump());
@@ -311,7 +325,9 @@ void Server::editConfig(std::string board, std::string bus, std::string device, 
    @param database - JSON of metadat for database to psush to.
 */
 void Server::pushDatabase(json database) {
-   json slave = json::parse(HTTPGET(url + "/slaves/" + database["id"].get<std::string>()));
+   std::string ret;
+   HTTPGET(url + "/slaves/" + database["id"].get<std::string>(), &ret);
+   json slave = json::parse(ret);
    json data = {{"source","config"},
                 {"target", slave["address"].get<std::string>() + "/config"},
                 {"doc_ids",{database["id"].get<std::string>()}}};
