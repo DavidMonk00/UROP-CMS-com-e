@@ -1,4 +1,11 @@
-#include "CouchDB.hpp"
+/**
+  @file CouchDB.cpp
+  @brief Defines functions for the base CouchDB class and its derived children.
+  @author David Monk - Imperial College London
+  @version 1.0
+*/
+
+include "CouchDB.hpp"
 
 size_t CouchDB::CallbackFunc(void *contents, size_t size, size_t nmemb, std::string* s) {
     size_t newLength = size*nmemb;
@@ -189,16 +196,32 @@ Server::~Server(void) {
    curl_easy_cleanup(curl);
 }
 
-void Server::editConfig(std::string property, std::string value) {
-
+void Server::editConfig(std::string bus, std::string device, std::string property, std::string value) {
+   for (auto database : slaves) {
+      json doc = json::parse(HTTPGET(url+"/config/"+database["id"].get<std::string>()));
+      doc[bus][device][property] = value;
+      std::string url_ = url + "/config/" + database["id"].get<std::string>();
+      HTTPPUT(url_,doc.dump());
+   }
 }
 
-void Server::editConfig(std::string device, std::string property, std::string value) {
-
+void Server::editConfig(std::string board, std::string bus, std::string device, std::string property, std::string value) {
+   json doc = json::parse(HTTPGET(url + "/config/" + board));
+   doc[bus][device][property] = value;
+   std::string url_ = url + "/config/" + board;
+   HTTPPUT(url_, doc.dump());
 }
 
-void pushChanges(void) {
-   for (auto i : slaves) {
-      std::cout << i["_id"] << '\n';
+void Server::pushDatabase(json database) {
+   json slave = json::parse(HTTPGET(url + "/slaves/" + database["id"].get<std::string>()));
+   json data = {{"source","config"},
+                {"target", slave["address"].get<std::string>() + "/config"},
+                {"doc_ids",{database["id"].get<std::string>()}}};
+   HTTPPOST(url+"/_replicate", data.dump());
+}
+
+void Server::pushChanges(void) {
+   for (auto database : slaves) {
+      pushDatabase(database);
    }
 }

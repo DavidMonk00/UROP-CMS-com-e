@@ -1,3 +1,10 @@
+/**
+  @file CouchDB.hpp
+  @brief Defines the CouchDB base class and Server and Client derived classes.
+  @author David Monk - Imperial College London
+  @version 1.0
+*/
+
 #pragma once
 #include <curl/curl.h>
 #include <string>
@@ -46,7 +53,8 @@ private:
 public:
    Server(void);
    ~Server(void);
-   void editConfig(std::string property, std::string value);
-   void editConfig(std::string device, std::string property, std::string value);
+   void editConfig(std::string bus, std::string device, std::string property, std::string value);
+   void editConfig(std::string board, std::string bus, std::string device, std::string property, std::string value);
+   void pushDatabase(json database);
    void pushChanges(void);
 };

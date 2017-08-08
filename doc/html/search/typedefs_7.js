@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['register_5fmap',['register_map',['../_i2_c_device_8h.html#aee5b6dd8a4ffe5b2844017ad95a7634d',1,'I2CDevice.h']]]
+  ['legacy_5funits_5fvariant',['legacy_units_variant',['../units__define_8hpp.html#a20d91600733a4560ae25289d26f31155',1,'units_define.hpp']]],
+  ['length',['length',['../namespaceboost_1_1units_1_1test.html#abb80de321402f6f139e1a1b182ea4655',1,'boost::units::test']]],
+  ['length_5fdimension',['length_dimension',['../namespaceboost_1_1units.html#ae50eae7dfa312b039ce7aac232ac27c4',1,'boost::units']]]
 ];

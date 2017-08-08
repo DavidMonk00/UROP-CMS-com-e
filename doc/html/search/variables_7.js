@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['query',['query',['../structunits__and__powers.html#a9a88ef937627d35522c4017b9efd59ba',1,'units_and_powers::query()'],['../structunits__and__powers.html#a1c6b2c6fb390a9c092143ba650add70d',1,'units_and_powers::query()']]]
+  ['name',['name',['../classbook_1_1_bit.html#a37f0afda871e4a61488aee20da6c9a50',1,'book::Bit']]],
+  ['number',['number',['../classbook_1_1_page.html#aa05434b758c1957bbf56d2a8dbcf90c3',1,'book::Page']]]
 ];

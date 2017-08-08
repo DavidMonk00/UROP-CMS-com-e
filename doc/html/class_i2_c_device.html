@@ -48,6 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -116,7 +117,7 @@ $(document).ready(function(){initNavTree('class_i2_c_device.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="_i2_c_device_8h_source.html">I2CDevice.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_i2_c_device_8hpp_source.html">I2CDevice.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -139,10 +140,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6d3bfa5e15112985958df9366589cdc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa12a7448f16100f8ed5d9a9903e94014"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i2_c_device.html#aa12a7448f16100f8ed5d9a9903e94014">setI2CType</a> (<a class="el" href="class_i2_c__base.html">I2C_base</a> *i2c_type)</td></tr>
 <tr class="separator:aa12a7448f16100f8ed5d9a9903e94014"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a402c8a5ecfc405e9a30d509118c19e7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="units__define_8h.html#a95d46867fa79633565c288a0b4bd5408">units_variant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i2_c_device.html#a402c8a5ecfc405e9a30d509118c19e7b">read</a> (std::string reg)</td></tr>
+<tr class="memitem:a402c8a5ecfc405e9a30d509118c19e7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="units__define_8hpp.html#a95d46867fa79633565c288a0b4bd5408">units_variant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i2_c_device.html#a402c8a5ecfc405e9a30d509118c19e7b">read</a> (std::string reg)</td></tr>
 <tr class="memdesc:a402c8a5ecfc405e9a30d509118c19e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read data from register.  <a href="#a402c8a5ecfc405e9a30d509118c19e7b">More...</a><br /></td></tr>
 <tr class="separator:a402c8a5ecfc405e9a30d509118c19e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a916d9450534684ea0260cacf94a0b79b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i2_c_device.html#a916d9450534684ea0260cacf94a0b79b">write</a> (std::string reg, <a class="el" href="units__define_8h.html#a95d46867fa79633565c288a0b4bd5408">units_variant</a> value)</td></tr>
+<tr class="memitem:a916d9450534684ea0260cacf94a0b79b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i2_c_device.html#a916d9450534684ea0260cacf94a0b79b">write</a> (std::string reg, <a class="el" href="units__define_8hpp.html#a95d46867fa79633565c288a0b4bd5408">units_variant</a> value)</td></tr>
 <tr class="memdesc:a916d9450534684ea0260cacf94a0b79b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write data to register.  <a href="#a916d9450534684ea0260cacf94a0b79b">More...</a><br /></td></tr>
 <tr class="separator:a916d9450534684ea0260cacf94a0b79b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33e7d15ba04e33f8d61c23659037cb57"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i2_c_device.html#a33e7d15ba04e33f8d61c23659037cb57">getProperties</a> (void)</td></tr>
@@ -152,7 +153,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class represents a single I2C device with a number of registers. Read/Write functions take a string-based ID for a given register. </p>
 
-<p>Definition at line <a class="el" href="_i2_c_device_8h_source.html#l00030">30</a> of file <a class="el" href="_i2_c_device_8h_source.html">I2CDevice.h</a>.</p>
+<p>Definition at line <a class="el" href="_i2_c_device_8hpp_source.html#l00021">21</a> of file <a class="el" href="_i2_c_device_8hpp_source.html">I2CDevice.hpp</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a class="anchor" id="a275eefb9eb7dfd1ee0470a8bd0a73086"></a>
 <div class="memitem">
@@ -180,7 +181,7 @@ Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="_i2_c_device_8h_source.html#l00037">37</a> of file <a class="el" href="_i2_c_device_8h_source.html">I2CDevice.h</a>.</p>
+<p>Definition at line <a class="el" href="_i2_c_device_8hpp_source.html#l00028">28</a> of file <a class="el" href="_i2_c_device_8hpp_source.html">I2CDevice.hpp</a>.</p>
 
 </div>
 </div>
@@ -289,7 +290,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="units__define_8h.html#a95d46867fa79633565c288a0b4bd5408">units_variant</a> I2CDevice::read </td>
+          <td class="memname"><a class="el" href="units__define_8hpp.html#a95d46867fa79633565c288a0b4bd5408">units_variant</a> I2CDevice::read </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>reg</em></td><td>)</td>
@@ -342,7 +343,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="units__define_8h.html#a95d46867fa79633565c288a0b4bd5408">units_variant</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="units__define_8hpp.html#a95d46867fa79633565c288a0b4bd5408">units_variant</a>&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
@@ -367,7 +368,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="_i2_c_device_8h_source.html">I2CDevice.h</a></li>
+<li>include/<a class="el" href="_i2_c_device_8hpp_source.html">I2CDevice.hpp</a></li>
 <li>src/<a class="el" href="_i2_c_device_8cpp_source.html">I2CDevice.cpp</a></li>
 </ul>
 </div><!-- contents -->

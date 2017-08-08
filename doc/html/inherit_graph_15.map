@@ -1,3 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_test.html" title="Test" alt="" coords="5,5,53,32"/>
+<area shape="rect" id="node1" href="$class_i2_c_base_register.html" title="I2CBaseRegister" alt="" coords="5,132,128,159"/>
+<area shape="rect" id="node2" href="$class_d_s3232_temperature_i2_c_register.html" title="DS3232TemperatureI2CRegister" alt="" coords="176,5,388,32"/>
+<area shape="rect" id="node3" href="$class_generic_i2_c_register.html" title="GenericI2CRegister" alt="" coords="213,56,351,83"/>
+<area shape="rect" id="node4" href="$class_internal_register.html" title="InternalRegister" alt="" coords="225,107,339,133"/>
+<area shape="rect" id="node5" href="$class_p_c_i_clock_output_enable_register.html" title="PCIClockOutputEnableRegister" alt="" coords="179,157,385,184"/>
+<area shape="rect" id="node6" href="$class_p_c_i_clock_p_l_l_mode_register.html" title="PCIClockPLLModeRegister" alt="" coords="191,208,373,235"/>
+<area shape="rect" id="node7" href="$class_time_i2_c_register.html" title="TimeI2CRegister" alt="" coords="221,259,343,285"/>
 </map>

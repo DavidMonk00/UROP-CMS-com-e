@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_i2_c_bus.html" title="I2CBus" alt="" coords="5,5,72,32"/>
+<area shape="rect" id="node2" href="$structboost_1_1units_1_1test_1_1kilogram__base__unit.html" title="boost::units::test\l::kilogram_base_unit" alt="" coords="132,5,275,47"/>
+<area shape="rect" id="node3" href="$structboost_1_1units_1_1test_1_1meter__base__unit.html" title="boost::units::test\l::meter_base_unit" alt="" coords="140,71,267,112"/>
+<area shape="rect" id="node4" href="$structboost_1_1units_1_1test_1_1second__base__unit.html" title="boost::units::test\l::second_base_unit" alt="" coords="136,136,271,177"/>
 </map>

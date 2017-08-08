@@ -48,6 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -115,7 +116,7 @@ $(document).ready(function(){initNavTree('class_i2_c_sema.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="_i2_c_8h_source.html">I2C.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_i2_c_8hpp_source.html">I2C.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for I2CSema:</div>
 <div class="dyncontent">
@@ -153,6 +154,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a291907b6f7eca62b0d3957a19f86c239"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i2_c_sema.html#a291907b6f7eca62b0d3957a19f86c239">sendData</a> (uint32_t address, char *buffer, uint32_t bytecnt, uint32_t start_point)</td></tr>
 <tr class="memdesc:a291907b6f7eca62b0d3957a19f86c239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send data data to addressed slave.  <a href="#a291907b6f7eca62b0d3957a19f86c239">More...</a><br /></td></tr>
 <tr class="separator:a291907b6f7eca62b0d3957a19f86c239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac03b06a86f07af407a1dbdc26a9b04c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i2_c_sema.html#ac03b06a86f07af407a1dbdc26a9b04c7">getBoardValue</a> (uint32_t value, uint32_t *buffer)</td></tr>
+<tr class="memdesc:ac03b06a86f07af407a1dbdc26a9b04c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get value from board registers.  <a href="#ac03b06a86f07af407a1dbdc26a9b04c7">More...</a><br /></td></tr>
+<tr class="separator:ac03b06a86f07af407a1dbdc26a9b04c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -163,7 +167,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Derived class from I2C which implements SEMA API function calls to communicate with bus. </p>
 
-<p>Definition at line <a class="el" href="_i2_c_8h_source.html#l00021">21</a> of file <a class="el" href="_i2_c_8h_source.html">I2C.h</a>.</p>
+<p>Definition at line <a class="el" href="_i2_c_8hpp_source.html#l00020">20</a> of file <a class="el" href="_i2_c_8hpp_source.html">I2C.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ad9b53f523e31c4a24a73463591473358"></a>
 <div class="memitem">
@@ -257,6 +261,53 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ac03b06a86f07af407a1dbdc26a9b04c7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void I2CSema::getBoardValue </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get value from board registers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>- ID of internal regiter to read. </td></tr>
+    <tr><td class="paramname">buffer</td><td>- Pointer to byte array where data will be sent from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_i2_c__base.html#a91e938610d77e20ae14e98861eb555c2">I2C_base</a>.</p>
+
+<p>Definition at line <a class="el" href="_i2_c_8cpp_source.html#l00113">113</a> of file <a class="el" href="_i2_c_8cpp_source.html">I2C.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ad4d4a853db59af3579b29dbc1b739406"></a>
 <div class="memitem">
 <div class="memproto">
@@ -400,7 +451,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/<a class="el" href="_i2_c_8h_source.html">I2C.h</a></li>
+<li>include/<a class="el" href="_i2_c_8hpp_source.html">I2C.hpp</a></li>
 <li>src/<a class="el" href="_i2_c_8cpp_source.html">I2C.cpp</a></li>
 </ul>
 </div><!-- contents -->

@@ -1,5 +1,5 @@
 /**
-  @file COMETestBoard.cpp
+  @file DS3232Registers.cpp
   @brief Defines functions for the derived classes specific to the DS3232 component.
   @author David Monk - Imperial College London
   @version 1.0

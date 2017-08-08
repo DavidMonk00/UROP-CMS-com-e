@@ -1,5 +1,5 @@
 /**
-  @file COMETestBoard.cpp
+  @file Si53106Registers.cpp
   @brief Defines functions for the derived classes specific to the Si53106 component.
   @author David Monk - Imperial College London
   @version 1.0

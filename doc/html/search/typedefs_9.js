@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['units_5fvariant',['units_variant',['../units__define_8h.html#a95d46867fa79633565c288a0b4bd5408',1,'units_variant():&#160;units_define.h'],['../test_8cpp.html#a00dcb4bb14121b5f13d4ad9181cee7b4',1,'units_variant():&#160;test.cpp']]]
+  ['nanosecond',['nanosecond',['../test_8cpp.html#ae0bc7ab5733e359780e7c9a5c4ae787d',1,'test.cpp']]],
+  ['number_5ffloat_5ft',['number_float_t',['../classnlohmann_1_1basic__json.html#a88d6103cb3620410b35200ee8e313d97',1,'nlohmann::basic_json']]],
+  ['number_5finteger_5ft',['number_integer_t',['../classnlohmann_1_1basic__json.html#a98e611d67b7bd75307de99c9358ab2dc',1,'nlohmann::basic_json']]],
+  ['number_5funsigned_5ft',['number_unsigned_t',['../classnlohmann_1_1basic__json.html#ab906e29b5d83ac162e823ada2156b989',1,'nlohmann::basic_json']]]
 ];

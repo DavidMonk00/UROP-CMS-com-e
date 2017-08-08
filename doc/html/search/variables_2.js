@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['devices',['devices',['../namespacedevices.html#a7ad239def5188808ed97f20de8018429',1,'devices']]],
-  ['ds3232',['DS3232',['../namespacedevices.html#af42f15b4c5bc8d5f499fb47dacc49e68',1,'devices']]]
+  ['config',['config',['../class_couch_d_b.html#ada3dd3c5112ccf493eafe278ce4a521c',1,'CouchDB']]],
+  ['curl',['curl',['../class_couch_d_b.html#a85772e6420ce3521793da3427e573706',1,'CouchDB']]]
 ];

@@ -1,5 +1,27 @@
 var searchData=
 [
-  ['foo',['foo',['../test_8cpp.html#a17549138667941b9fc6d0efdee095adf',1,'test.cpp']]],
-  ['ftdi',['FTDI',['../class_i2_c_device.html#a275eefb9eb7dfd1ee0470a8bd0a73086a9a342381cd5923d1a59fdc8c22e286b7',1,'I2CDevice']]]
+  ['editconfig',['editConfig',['../class_server.html#af8c102697196f181155b760124f47802',1,'Server::editConfig(std::string bus, std::string device, std::string property, std::string value)'],['../class_server.html#adc88ca669caaadbd384ad43fb7d27fdc',1,'Server::editConfig(std::string board, std::string bus, std::string device, std::string property, std::string value)']]],
+  ['emplace',['emplace',['../classnlohmann_1_1basic__json.html#ab515108f8219ac33256a48066bbc7354',1,'nlohmann::basic_json']]],
+  ['emplace_5fback',['emplace_back',['../classnlohmann_1_1basic__json.html#ade45be7a74af7aa2d447e555d48e39ea',1,'nlohmann::basic_json']]],
+  ['empty',['empty',['../classnlohmann_1_1basic__json.html#a1a86d444bfeaa9518d2421aedd74444a',1,'nlohmann::basic_json']]],
+  ['enable_5fif_5ft',['enable_if_t',['../namespacenlohmann_1_1detail.html#a02bcbc878bee413f25b985ada771aa9c',1,'nlohmann::detail']]],
+  ['enableoutput',['enableOutput',['../class_p_c_i_gen.html#a8c626e3645b3b8eb3f6e0b8a7f0b4960',1,'PCIGen']]],
+  ['end',['end',['../classnlohmann_1_1detail_1_1iteration__proxy.html#a41303419d073f32fcf1956978410d816',1,'nlohmann::detail::iteration_proxy::end()'],['../classnlohmann_1_1basic__json.html#a13e032a02a7fd8a93fdddc2fcbc4763c',1,'nlohmann::basic_json::end() noexcept'],['../classnlohmann_1_1basic__json.html#a1c15707055088cd5436ae91db72cbe67',1,'nlohmann::basic_json::end() const noexcept']]],
+  ['end_5farray',['end_array',['../classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098a2f3e68e7f111a1e5c7728742b3ca2b7f',1,'nlohmann::detail::lexer']]],
+  ['end_5fobject',['end_object',['../classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098a7d5b4427866814de4d8f132721d59c87',1,'nlohmann::detail::lexer']]],
+  ['end_5fof_5finput',['end_of_input',['../classnlohmann_1_1detail_1_1lexer.html#a3f313cdbe187cababfc5e06f0b69b098aca11f56dd477c09e06583dbdcda0985f',1,'nlohmann::detail::lexer']]],
+  ['energy',['energy',['../namespaceboost_1_1units_1_1test.html#a5a1d8a7c46b82b43a4f4cd4a0ddcec59',1,'boost::units::test']]],
+  ['energy_5fdimension',['energy_dimension',['../namespaceboost_1_1units.html#a6925a7132e69383f3bcf68b27cdb9475',1,'boost::units']]],
+  ['erase',['erase',['../classnlohmann_1_1basic__json.html#a068a16e76be178e83da6a192916923ed',1,'nlohmann::basic_json::erase(IteratorType pos)'],['../classnlohmann_1_1basic__json.html#a4b3f7eb2d4625d95a51fbbdceb7c5f39',1,'nlohmann::basic_json::erase(IteratorType first, IteratorType last)'],['../classnlohmann_1_1basic__json.html#a2f8484d69c55d8f2a9697a7bec29362a',1,'nlohmann::basic_json::erase(const typename object_t::key_type &amp;key)'],['../classnlohmann_1_1basic__json.html#a88cbcefe9a3f4d294bed0653550a5cb9',1,'nlohmann::basic_json::erase(const size_type idx)']]],
+  ['example_2ecpp',['example.cpp',['../example_8cpp.html',1,'']]],
+  ['exception',['exception',['../classnlohmann_1_1detail_1_1exception.html',1,'nlohmann::detail']]],
+  ['exception',['exception',['../classnlohmann_1_1basic__json.html#a9a0aced019cb1d65bb49703406c84970',1,'nlohmann::basic_json::exception()'],['../classnlohmann_1_1detail_1_1exception.html#ae323ad0d53bc724414c2233164e65657',1,'nlohmann::detail::exception::exception()']]],
+  ['external_5fconstructor',['external_constructor',['../structnlohmann_1_1detail_1_1external__constructor.html',1,'nlohmann::detail']]],
+  ['external_5fconstructor_3c_20value_5ft_3a_3aarray_20_3e',['external_constructor&lt; value_t::array &gt;',['../structnlohmann_1_1detail_1_1external__constructor_3_01value__t_1_1array_01_4.html',1,'nlohmann::detail']]],
+  ['external_5fconstructor_3c_20value_5ft_3a_3aboolean_20_3e',['external_constructor&lt; value_t::boolean &gt;',['../structnlohmann_1_1detail_1_1external__constructor_3_01value__t_1_1boolean_01_4.html',1,'nlohmann::detail']]],
+  ['external_5fconstructor_3c_20value_5ft_3a_3anumber_5ffloat_20_3e',['external_constructor&lt; value_t::number_float &gt;',['../structnlohmann_1_1detail_1_1external__constructor_3_01value__t_1_1number__float_01_4.html',1,'nlohmann::detail']]],
+  ['external_5fconstructor_3c_20value_5ft_3a_3anumber_5finteger_20_3e',['external_constructor&lt; value_t::number_integer &gt;',['../structnlohmann_1_1detail_1_1external__constructor_3_01value__t_1_1number__integer_01_4.html',1,'nlohmann::detail']]],
+  ['external_5fconstructor_3c_20value_5ft_3a_3anumber_5funsigned_20_3e',['external_constructor&lt; value_t::number_unsigned &gt;',['../structnlohmann_1_1detail_1_1external__constructor_3_01value__t_1_1number__unsigned_01_4.html',1,'nlohmann::detail']]],
+  ['external_5fconstructor_3c_20value_5ft_3a_3aobject_20_3e',['external_constructor&lt; value_t::object &gt;',['../structnlohmann_1_1detail_1_1external__constructor_3_01value__t_1_1object_01_4.html',1,'nlohmann::detail']]],
+  ['external_5fconstructor_3c_20value_5ft_3a_3astring_20_3e',['external_constructor&lt; value_t::string &gt;',['../structnlohmann_1_1detail_1_1external__constructor_3_01value__t_1_1string_01_4.html',1,'nlohmann::detail']]]
 ];

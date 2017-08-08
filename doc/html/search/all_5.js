@@ -1,6 +1,29 @@
 var searchData=
 [
-  ['enableoutput',['enableOutput',['../class_p_c_i_gen.html#a8c626e3645b3b8eb3f6e0b8a7f0b4960',1,'PCIGen']]],
-  ['energy',['energy',['../namespaceboost_1_1units_1_1test.html#a5a1d8a7c46b82b43a4f4cd4a0ddcec59',1,'boost::units::test']]],
-  ['energy_5fdimension',['energy_dimension',['../namespaceboost_1_1units.html#a6925a7132e69383f3bcf68b27cdb9475',1,'boost::units']]]
+  ['data',['data',['../namespaceantenna__usb__rewrite__list.html#a36457b8012d0008495e696b7677c286c',1,'antenna_usb_rewrite_list']]],
+  ['database',['database',['../class_couch_d_b.html#a5951cb721e50d0b8d24c8fea625909ff',1,'CouchDB']]],
+  ['default',['default',['../classbook_1_1_bit.html#a0edd6ba5cc0dcee4a282b5afda00cf28',1,'book::Bit']]],
+  ['deletedocument',['deleteDocument',['../class_client.html#a45748961b6b8b534fa04e9a2bb40ed27',1,'Client']]],
+  ['demo',['demo',['../namespacedemo.html',1,'']]],
+  ['demo_2epy',['demo.py',['../demo_8py.html',1,'']]],
+  ['deprecated_20list',['Deprecated List',['../deprecated.html',1,'']]],
+  ['description',['description',['../classbook_1_1_bit.html#ab61abe9a7a3607b1c91b23258b839919',1,'book.Bit.description()'],['../classbook_1_1_address.html#aca6b57c6a0681dfb787ae74d70cf3373',1,'book.Address.description()'],['../classbook_1_1_page.html#a3215c3f1b982bf514ff90da13051596a',1,'book.Page.description()']]],
+  ['dev',['dev',['../classantenna__usb__rewrite_1_1_cp2130.html#a1df7fb45632de5416e76230b2decab8c',1,'antenna_usb_rewrite.Cp2130.dev()'],['../classantenna__usb__rewrite__list_1_1_cp2130.html#ac5782dd8db2e069beb2a9946c30daebf',1,'antenna_usb_rewrite_list.Cp2130.dev()']]],
+  ['device',['Device',['../classdevices_1_1_device.html',1,'devices']]],
+  ['devices',['devices',['../namespacedevices.html',1,'devices'],['../namespacedevices.html#a7ad239def5188808ed97f20de8018429',1,'devices.devices()']]],
+  ['devices_2epy',['devices.py',['../devices_8py.html',1,'']]],
+  ['diagnostics',['Diagnostics',['../class_diagnostics.html',1,'Diagnostics'],['../class_diagnostics.html#a84423ad40c376ce8d8a4f02dc0b7f44c',1,'Diagnostics::Diagnostics(void)'],['../class_diagnostics.html#ab4cf66446bf7d4af44315629de9a910b',1,'Diagnostics::Diagnostics(uint32_t h)']]],
+  ['diagnostics_2ecpp',['diagnostics.cpp',['../diagnostics_8cpp.html',1,'']]],
+  ['diagnostics_2ehpp',['diagnostics.hpp',['../diagnostics_8hpp.html',1,'']]],
+  ['dialog',['Dialog',['../namespacedemo.html#a8f7be6e690a527383cb1b696ba6bcb2e',1,'demo']]],
+  ['diff',['diff',['../classnlohmann_1_1basic__json.html#a543bd5f7490de54c875b2c0912dc9a49',1,'nlohmann::basic_json']]],
+  ['difference_5ftype',['difference_type',['../classnlohmann_1_1detail_1_1primitive__iterator__t.html#af3db0d5c90de427d51645fe73a015553',1,'nlohmann::detail::primitive_iterator_t::difference_type()'],['../classnlohmann_1_1detail_1_1iter__impl.html#a2f7ea9f7022850809c60fc3263775840',1,'nlohmann::detail::iter_impl::difference_type()'],['../classnlohmann_1_1detail_1_1json__reverse__iterator.html#a9ab55987c05ec6427ad36082e351cc45',1,'nlohmann::detail::json_reverse_iterator::difference_type()'],['../classnlohmann_1_1basic__json.html#afe7c1303357e19cea9527af4e9a31d8f',1,'nlohmann::basic_json::difference_type()']]],
+  ['dimensionless',['dimensionless',['../namespaceboost_1_1units_1_1test.html#a926174a372ce3b4577e6c06ccd8b291e',1,'boost::units::test']]],
+  ['discarded',['discarded',['../namespacenlohmann_1_1detail.html#a90aa5ef615aa8305e9ea20d8a947980fa94708897ec9db8647dfe695714c98e46',1,'nlohmann::detail']]],
+  ['ds3232',['DS3232',['../namespacedevices.html#af42f15b4c5bc8d5f499fb47dacc49e68',1,'devices']]],
+  ['ds3232_5faddr',['DS3232_ADDR',['../_i2_c__define_8hpp.html#afac0317346e41d536bbb83a7ca03d5c7',1,'I2C_define.hpp']]],
+  ['ds3232registers_2ecpp',['DS3232Registers.cpp',['../_d_s3232_registers_8cpp.html',1,'']]],
+  ['ds3232temperaturei2cregister',['DS3232TemperatureI2CRegister',['../class_d_s3232_temperature_i2_c_register.html',1,'DS3232TemperatureI2CRegister'],['../class_d_s3232_temperature_i2_c_register.html#a45e6afc23e8218b5b340d89c901441c4',1,'DS3232TemperatureI2CRegister::DS3232TemperatureI2CRegister()']]],
+  ['dump',['dump',['../classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b',1,'nlohmann::detail::serializer::dump()'],['../classnlohmann_1_1basic__json.html#ae5bfe31e51a06f32c273a3e79a4ea872',1,'nlohmann::basic_json::dump()']]],
+  ['external_5fconstructor',['external_constructor',['../classnlohmann_1_1basic__json.html#a6275ed57bae6866cdf5db5370a7ad47c',1,'nlohmann::basic_json']]]
 ];

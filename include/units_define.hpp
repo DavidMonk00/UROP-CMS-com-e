@@ -1,3 +1,10 @@
+/**
+  @file units_define.hpp
+  @brief Type definitons for units_variant.
+  @author David Monk - Imperial College London
+  @version 1.0
+*/
+
 #pragma once
 
 #include <boost/config/warning_disable.hpp>

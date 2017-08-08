@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['dimensionless',['dimensionless',['../namespaceboost_1_1units_1_1test.html#a926174a372ce3b4577e6c06ccd8b291e',1,'boost::units::test']]]
+  ['base_5fiterator',['base_iterator',['../classnlohmann_1_1detail_1_1json__reverse__iterator.html#a6b2ef1d632fe49bfcc22fbd1abd62395',1,'nlohmann::detail::json_reverse_iterator']]],
+  ['boolean_5ft',['boolean_t',['../classnlohmann_1_1basic__json.html#a4c919102a9b4fe0d588af64801436082',1,'nlohmann::basic_json']]]
 ];

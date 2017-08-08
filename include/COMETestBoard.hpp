@@ -1,5 +1,5 @@
 /**
-  @file Board.h
+  @file COMETestBoard.h
   @brief Defines the derived COMETestBoard class.
   @author David Monk - Imperial College London
   @version 1.0

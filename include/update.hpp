@@ -1,5 +1,12 @@
+/**
+  @file Update.hpp
+  @brief Defines the Update class.
+  @author David Monk - Imperial College London
+  @version 1.0
+*/
+
 #pragma once
-#include "couchdb.hpp"
+#include "CouchDB.hpp"
 #include "ATCABoard.hpp"
 #include <iostream>
 #include <iomanip>

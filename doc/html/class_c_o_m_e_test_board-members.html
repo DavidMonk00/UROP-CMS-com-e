@@ -48,6 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -114,23 +115,29 @@ $(document).ready(function(){initNavTree('class_c_o_m_e_test_board.html','');});
 
 <p>This is the complete list of members for <a class="el" href="class_c_o_m_e_test_board.html">COMETestBoard</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_board.html#ac5fa25970ad12aa7d2c710bbcdd05339">bus_map</a></td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_o_m_e_test_board.html#abd1d32e78d5c885e6982421c9af3ca84">COMETestBoard</a>(void)</td><td class="entry"><a class="el" href="class_c_o_m_e_test_board.html">COMETestBoard</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_board.html#af90e83a4779ac782ff5cf22957bfae05">Board</a>(int id)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_board.html#ac5fa25970ad12aa7d2c710bbcdd05339">bus_map</a></td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_c_o_m_e_test_board.html#a373116ab895fdabcec6c73b193b925e7">COMETestBoard</a>(I2C_base *i2c_type)</td><td class="entry"><a class="el" href="class_c_o_m_e_test_board.html">COMETestBoard</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_c_o_m_e_test_board.html#ae4a09594e1ce42977dd71e48356e5136">COMETestBoard</a>(std::string i2c_string)</td><td class="entry"><a class="el" href="class_c_o_m_e_test_board.html">COMETestBoard</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_board.html#aa386db986f8d8865c3def1a941c79e2c">getBuses</a>(void)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_board.html#a0be69177a3d368f3d02286d7114684cf">getDevices</a>(void)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_board.html#ab137346e2910c2e18b5bfb31b958c43b">getDevices</a>(std::string bus)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_c_o_m_e_test_board.html#ac8eff50bf63fbc98650b17579c858d73">getMap</a>(void)</td><td class="entry"><a class="el" href="class_c_o_m_e_test_board.html">COMETestBoard</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_board.html#a6f3cc9b5301912690da4e0eb939b3081">getProperties</a>(void)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_board.html#a1fab797a0fbec9d42b3462cb24488e8a">getProperties</a>(std::string device)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_board.html#a6ddcad5c21427323e5062bd22feba405">getProperties</a>(std::string bus, std::string device)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_board.html#aec7b3a540a138062fc54587e1040d917">i2c</a></td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_board.html#a4458164bae62e6ba213a08a767242f9f">i2c_bus</a></td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_board.html#ab55397409307355c61edca9cb4c5236c">getID</a>(void) const </td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_o_m_e_test_board.html#ac8eff50bf63fbc98650b17579c858d73">getMap</a>(void)</td><td class="entry"><a class="el" href="class_c_o_m_e_test_board.html">COMETestBoard</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_board.html#a6f3cc9b5301912690da4e0eb939b3081">getProperties</a>(void)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_board.html#a1fab797a0fbec9d42b3462cb24488e8a">getProperties</a>(std::string device)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_board.html#a6ddcad5c21427323e5062bd22feba405">getProperties</a>(std::string bus, std::string device)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_board.html#aec7b3a540a138062fc54587e1040d917">i2c</a></td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_board.html#a4458164bae62e6ba213a08a767242f9f">i2c_bus</a></td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_board.html#ac537a3646d93996bcf1c0ead77cf4ab5">ID</a></td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_board.html#a0b500bd590d15f797d1a36ecfeb0f5d4">read</a>(std::string property)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_board.html#ad01549e4fcb3d0dc2b7cab87b5d9be25">setBus</a>(std::string bus)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_board.html#aaa814c65e74c34a23deca4957b9c3e1c">setDevice</a>(std::string device)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_board.html#ad6a4e4dec1a4be94b2eeb901e70fe710">setDevice</a>(std::string bus, std::string device)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_board.html#ad8b29f72cded4b6a994b1999e91d7062">setI2CType</a>(I2C_base *i2c_type)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_board.html#ab99bb344ee68485ab89e1ed5b9d79d4e">write</a>(std::string property, std::string value)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_board.html#a737c0ecdabeccd0460bcbae2f8ac6c44">~Board</a>(void)</td><td class="entry"><a class="el" href="class_board.html">Board</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_c_o_m_e_test_board.html#a6bacaca3d2bf5a32fa4881f9c06924db">~COMETestBoard</a>(void)</td><td class="entry"><a class="el" href="class_c_o_m_e_test_board.html">COMETestBoard</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

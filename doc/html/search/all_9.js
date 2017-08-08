@@ -1,20 +1,16 @@
 var searchData=
 [
-  ['i2c',['i2c',['../class_board.html#aec7b3a540a138062fc54587e1040d917',1,'Board']]],
-  ['i2c_2ecpp',['I2C.cpp',['../_i2_c_8cpp.html',1,'']]],
-  ['i2c_2eh',['I2C.h',['../_i2_c_8h.html',1,'']]],
-  ['i2c_5fbase',['I2C_base',['../class_i2_c__base.html',1,'']]],
-  ['i2c_5fbase_2eh',['I2C_base.h',['../_i2_c__base_8h.html',1,'']]],
-  ['i2c_5fbus',['i2c_bus',['../class_board.html#a4458164bae62e6ba213a08a767242f9f',1,'Board']]],
-  ['i2c_5fdefine_2eh',['I2C_define.h',['../_i2_c__define_8h.html',1,'']]],
-  ['i2cbaseregister',['I2CBaseRegister',['../class_i2_c_base_register.html',1,'']]],
-  ['i2cbus',['I2CBus',['../class_i2_c_bus.html',1,'I2CBus'],['../class_i2_c_bus.html#a53db5c5daff720905da00259e8ea5709',1,'I2CBus::I2CBus()']]],
-  ['i2cbus_2ecpp',['I2CBus.cpp',['../_i2_c_bus_8cpp.html',1,'']]],
-  ['i2cbus_2eh',['I2CBus.h',['../_i2_c_bus_8h.html',1,'']]],
-  ['i2cdevice',['I2CDevice',['../class_i2_c_device.html',1,'I2CDevice'],['../class_i2_c_device.html#a2e69a2e93dd5c82309f9e4983b3a9e74',1,'I2CDevice::I2CDevice(uint32_t addr, std::unordered_map&lt; std::string, I2CBaseRegister * &gt; reg_map)'],['../class_i2_c_device.html#a2edfce0d3f4d430f118fd6cc01483791',1,'I2CDevice::I2CDevice(void)']]],
-  ['i2cdevice_2ecpp',['I2CDevice.cpp',['../_i2_c_device_8cpp.html',1,'']]],
-  ['i2cdevice_2eh',['I2CDevice.h',['../_i2_c_device_8h.html',1,'']]],
-  ['i2cregister_2ecpp',['I2CRegister.cpp',['../_i2_c_register_8cpp.html',1,'']]],
-  ['i2cregister_2eh',['I2CRegister.h',['../_i2_c_register_8h.html',1,'']]],
-  ['i2csema',['I2CSema',['../class_i2_c_sema.html',1,'I2CSema'],['../class_i2_c_sema.html#ad9b53f523e31c4a24a73463591473358',1,'I2CSema::I2CSema(uint32_t ID, uint32_t address, bool diag)'],['../class_i2_c_sema.html#a627eb561a9ca1bb08f39a4f58cae0b3c',1,'I2CSema::I2CSema(uint32_t ID)']]]
+  ['has_5ffrom_5fjson',['has_from_json',['../structnlohmann_1_1detail_1_1has__from__json.html',1,'nlohmann::detail']]],
+  ['has_5fnon_5fdefault_5ffrom_5fjson',['has_non_default_from_json',['../structnlohmann_1_1detail_1_1has__non__default__from__json.html',1,'nlohmann::detail']]],
+  ['has_5fto_5fjson',['has_to_json',['../structnlohmann_1_1detail_1_1has__to__json.html',1,'nlohmann::detail']]],
+  ['hash_3c_20nlohmann_3a_3ajson_20_3e',['hash&lt; nlohmann::json &gt;',['../structstd_1_1hash_3_01nlohmann_1_1json_01_4.html',1,'std']]],
+  ['high',['HIGH',['../class_p_c_i_gen.html#a120a33b67985d3ea5183e63a5ed483cda8d14f46e08d6be841b697e3fccc85cbf',1,'PCIGen']]],
+  ['htmlparser',['htmlparser',['../namespacehtmlparser.html',1,'']]],
+  ['htmlparser_2epy',['htmlparser.py',['../htmlparser_8py.html',1,'']]],
+  ['htmlparser_5flists',['htmlparser_lists',['../namespacehtmlparser__lists.html',1,'']]],
+  ['htmlparser_5flists_2epy',['htmlparser_lists.py',['../htmlparser__lists_8py.html',1,'']]],
+  ['httpdelete',['HTTPDELETE',['../class_couch_d_b.html#af1b891b40a933acf4895d026abb48800',1,'CouchDB']]],
+  ['httpget',['HTTPGET',['../class_couch_d_b.html#a461de7a03b4bd193d3aed9091ce3d4f4',1,'CouchDB']]],
+  ['httppost',['HTTPPOST',['../class_couch_d_b.html#a1706c29bced912993c3bf969d03362f6',1,'CouchDB']]],
+  ['httpput',['HTTPPUT',['../class_couch_d_b.html#ad91ed8572390817ab76f0eb8b775cc1e',1,'CouchDB']]]
 ];

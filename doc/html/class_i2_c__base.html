@@ -48,6 +48,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -116,7 +117,7 @@ $(document).ready(function(){initNavTree('class_i2_c__base.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="_i2_c__base_8h_source.html">I2C_base.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_i2_c__base_8hpp_source.html">I2C_base.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for I2C_base:</div>
 <div class="dyncontent">
@@ -132,6 +133,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6938c7e851ac11836d2c69253ecd853a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af78604423196f5b54602b08425c25622"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i2_c__base.html#af78604423196f5b54602b08425c25622">sendData</a> (uint32_t address, char *buffer, uint32_t bytecnt, uint32_t start_point)=0</td></tr>
 <tr class="separator:af78604423196f5b54602b08425c25622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91e938610d77e20ae14e98861eb555c2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i2_c__base.html#a91e938610d77e20ae14e98861eb555c2">getBoardValue</a> (uint32_t value, uint32_t *buffer)=0</td></tr>
+<tr class="separator:a91e938610d77e20ae14e98861eb555c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -141,8 +144,44 @@ Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base I2C class. Has no functionality in current state but acts as a basis for derived I2C classes </p>
 
-<p>Definition at line <a class="el" href="_i2_c__base_8h_source.html#l00018">18</a> of file <a class="el" href="_i2_c__base_8h_source.html">I2C_base.h</a>.</p>
+<p>Definition at line <a class="el" href="_i2_c__base_8hpp_source.html#l00018">18</a> of file <a class="el" href="_i2_c__base_8hpp_source.html">I2C_base.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a91e938610d77e20ae14e98861eb555c2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void I2C_base::getBoardValue </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_i2_c_sema.html#ac03b06a86f07af407a1dbdc26a9b04c7">I2CSema</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a6938c7e851ac11836d2c69253ecd853a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -258,12 +297,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i2_c__base_8h_source.html#l00020">20</a> of file <a class="el" href="_i2_c__base_8h_source.html">I2C_base.h</a>.</p>
+<p>Definition at line <a class="el" href="_i2_c__base_8hpp_source.html#l00020">20</a> of file <a class="el" href="_i2_c__base_8hpp_source.html">I2C_base.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>include/<a class="el" href="_i2_c__base_8h_source.html">I2C_base.h</a></li>
+<li>include/<a class="el" href="_i2_c__base_8hpp_source.html">I2C_base.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

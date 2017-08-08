@@ -1,7 +1,11 @@
 var class_board =
 [
+    [ "Board", "class_board.html#af90e83a4779ac782ff5cf22957bfae05", null ],
+    [ "~Board", "class_board.html#a737c0ecdabeccd0460bcbae2f8ac6c44", null ],
+    [ "getBuses", "class_board.html#aa386db986f8d8865c3def1a941c79e2c", null ],
     [ "getDevices", "class_board.html#a0be69177a3d368f3d02286d7114684cf", null ],
     [ "getDevices", "class_board.html#ab137346e2910c2e18b5bfb31b958c43b", null ],
+    [ "getID", "class_board.html#ab55397409307355c61edca9cb4c5236c", null ],
     [ "getMap", "class_board.html#a7579517a69f81e2fcbe9e18857a11545", null ],
     [ "getProperties", "class_board.html#a6f3cc9b5301912690da4e0eb939b3081", null ],
     [ "getProperties", "class_board.html#a1fab797a0fbec9d42b3462cb24488e8a", null ],
@@ -14,5 +18,6 @@ var class_board =
     [ "write", "class_board.html#ab99bb344ee68485ab89e1ed5b9d79d4e", null ],
     [ "bus_map", "class_board.html#ac5fa25970ad12aa7d2c710bbcdd05339", null ],
     [ "i2c", "class_board.html#aec7b3a540a138062fc54587e1040d917", null ],
-    [ "i2c_bus", "class_board.html#a4458164bae62e6ba213a08a767242f9f", null ]
+    [ "i2c_bus", "class_board.html#a4458164bae62e6ba213a08a767242f9f", null ],
+    [ "ID", "class_board.html#ac537a3646d93996bcf1c0ead77cf4ab5", null ]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pair_5ftype',['pair_type',['../parser_8h.html#a6b16b1518344aff7cbf8aaa9ae9cdd39',1,'pair_type():&#160;parser.h'],['../test_8cpp.html#a6b16b1518344aff7cbf8aaa9ae9cdd39',1,'pair_type():&#160;test.cpp']]],
-  ['pairs_5ftype',['pairs_type',['../parser_8h.html#ab598806586272ab27a10406c3b8436fe',1,'pairs_type():&#160;parser.h'],['../test_8cpp.html#ab598806586272ab27a10406c3b8436fe',1,'pairs_type():&#160;test.cpp']]],
-  ['phys_5fquant',['phys_quant',['../parser_8h.html#a76d816dc60daad0ab1c3c7b1dc7906d2',1,'phys_quant():&#160;parser.h'],['../test_8cpp.html#a76d816dc60daad0ab1c3c7b1dc7906d2',1,'phys_quant():&#160;test.cpp']]]
+  ['json',['json',['../_couch_d_b_8hpp.html#ab701e3ac61a85b337ec5c1abaad6742d',1,'json():&#160;CouchDB.hpp'],['../namespacenlohmann.html#a2bfd99e845a2e5cd90aeaf1b1431f474',1,'nlohmann::json()']]],
+  ['json_5fpointer',['json_pointer',['../classnlohmann_1_1basic__json.html#a32d3ee58bf01b28d11366f307518bf34',1,'nlohmann::basic_json']]],
+  ['json_5fserializer',['json_serializer',['../classnlohmann_1_1basic__json.html#a7768841baaaa7a21098a401c932efaff',1,'nlohmann::basic_json']]]
 ];

@@ -1,3 +1,10 @@
+/**
+  @file I2CRaw.hpp
+  @brief Defines the I2CRaw class.
+  @author David Monk - Imperial College London
+  @version 1.0
+*/
+
 #pragma once
 #include "I2C.hpp"
 

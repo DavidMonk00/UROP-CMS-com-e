@@ -1,3 +1,10 @@
+/**
+  @file I2CRaw.cpp
+  @brief Defines functions for the I2CRaw class.
+  @author David Monk - Imperial College London
+  @version 1.0
+*/
+
 #include "I2CRaw.hpp"
 
 I2CRaw::I2CRaw() {

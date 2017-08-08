@@ -1,3 +1,10 @@
+/**
+  @file I2CBus.hpp
+  @brief Defines the I2CBus class.
+  @author David Monk - Imperial College London
+  @version 1.0
+*/
+
 #pragma once
 #include "I2CDevice.hpp"
 

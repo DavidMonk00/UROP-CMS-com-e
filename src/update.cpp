@@ -1,3 +1,10 @@
+/**
+  @file update.cpp
+  @brief Defines functions for the Update class.
+  @author David Monk - Imperial College London
+  @version 1.0
+*/
+
 #include "update.hpp"
 
 Update::Update(void) {
