@@ -243,25 +243,46 @@ bool Client::checkOnline(std::string url_) {
    return true;
 }
 
+/**
+   @brief Delete document from database.
+   @param ID - ID of document.
+   @param rev - revision of document.
+*/
 void Client::deleteDocument(std::string ID, std::string rev) {
    std::string url_ = url + "/" + database + "/" + ID + "?rev=" + rev;
    HTTPDELETE(url_);
 }
 
+/**
+   Compact database to save space on local machine.
+*/
 void Client::compactDatabase(void) {
    std::string url_ = url + "/" + database + "/_compact";
    HTTPPOST(url_, "");
 }
 
+/**
+   @brief Class constructor.
+*/
 Server::Server(void) {
    url = "http://127.0.0.1:5984";
    slaves = json::parse(HTTPGET(url+"/slaves/_all_docs"))["rows"];
 }
 
+/**
+   @brief Class destructor.
+*/
 Server::~Server(void) {
    curl_easy_cleanup(curl);
 }
 
+/**
+   @brief Edit config entry for all slaves.
+   @param bus - Bus of property.
+   @param device - Device of property.
+   @param property - Property ID.
+   @param value - Value to be written.
+*/
 void Server::editConfig(std::string bus, std::string device, std::string property, std::string value) {
    for (auto database : slaves) {
       json doc = json::parse(HTTPGET(url+"/config/"+database["id"].get<std::string>()));
@@ -271,6 +292,13 @@ void Server::editConfig(std::string bus, std::string device, std::string propert
    }
 }
 
+/**
+   @brief Edit config entry for specific board.
+   @param bus - Bus of property.
+   @param device - Device of property.
+   @param property - Property ID.
+   @param value - Value to be written.
+*/
 void Server::editConfig(std::string board, std::string bus, std::string device, std::string property, std::string value) {
    json doc = json::parse(HTTPGET(url + "/config/" + board));
    doc[bus][device][property] = value;
@@ -278,6 +306,10 @@ void Server::editConfig(std::string board, std::string bus, std::string device, 
    HTTPPUT(url_, doc.dump());
 }
 
+/**
+   @brief Push config database to slave.
+   @param database - JSON of metadat for database to psush to.
+*/
 void Server::pushDatabase(json database) {
    json slave = json::parse(HTTPGET(url + "/slaves/" + database["id"].get<std::string>()));
    json data = {{"source","config"},
@@ -286,6 +318,9 @@ void Server::pushDatabase(json database) {
    HTTPPOST(url+"/_replicate", data.dump());
 }
 
+/**
+   @brief Push config databases to slaves.
+*/
 void Server::pushChanges(void) {
    for (auto database : slaves) {
       pushDatabase(database);
