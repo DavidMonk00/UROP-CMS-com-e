@@ -25,7 +25,7 @@ size_t CouchDB::CallbackFunc(void *contents, size_t size, size_t nmemb, std::str
 
 /**
    @brief HTTP GET function.
-   @param URL to get from.
+   @param url_ - URL to get from.
    @return String of output from call.
 */
 std::string CouchDB::HTTPGET(std::string url_) {
@@ -44,6 +44,11 @@ std::string CouchDB::HTTPGET(std::string url_) {
    return s;
 }
 
+/**
+   @brief HTTP PUT function.
+   @param url_ - URL to put data.
+   @param data - Data to be put into file.
+*/
 void CouchDB::HTTPPUT(std::string url_, std::string data) {
    curl = curl_easy_init();
    CURLcode res;
@@ -61,6 +66,11 @@ void CouchDB::HTTPPUT(std::string url_, std::string data) {
    }
 }
 
+/**
+   @brief HTTP POST function.
+   @param url_ - URL to post data.
+   @param data - Data to be posted into file.
+*/
 void CouchDB::HTTPPOST(std::string url_, std::string data) {
    curl = curl_easy_init();
    CURLcode res;
@@ -81,6 +91,10 @@ void CouchDB::HTTPPOST(std::string url_, std::string data) {
    }
 }
 
+/**
+   @brief HTTP DELETE function.
+   @param url_ - URL of file to delete.
+*/
 void CouchDB::HTTPDELETE(std::string url_) {
    curl = curl_easy_init();
    CURLcode res;
@@ -97,22 +111,36 @@ void CouchDB::HTTPDELETE(std::string url_) {
    }
 }
 
+/**
+   @brief Class constructor.
+*/
 Client::Client(void) {
    url = "http://127.0.0.1:5984";
    std::ifstream config_file("/root/I2C/bin/config.json");
    config_file >> config;
 }
 
+/**
+   @brief Class constructor.
+   @param url_ - URL of CouchDB server.
+*/
 Client::Client(std::string url_) {
    url = url_;
    std::ifstream config_file("/root/I2C/bin/config.json");
    config_file >> config;
 }
 
+/**
+   @brief Class destructor.
+*/
 Client::~Client(void) {
    curl_easy_cleanup(curl);
 }
 
+/**
+   @brief Get list of databases on server.
+   @return Vector of strings of IDs of each database.
+*/
 std::vector<std::string> Client::getDatabases(void) {
    std::vector<std::string> v;
    std::string s = HTTPGET(url+"/_all_dbs");
@@ -123,10 +151,18 @@ std::vector<std::string> Client::getDatabases(void) {
    return v;
 }
 
+/**
+   @brief Set ID of database to work with.
+   @param db - Database ID.
+*/
 void Client::setDatabase(std::string db) {
    database = db;
 }
 
+/**
+   @brief Upload document to database.
+   @param data - JSON table to upload.
+*/
 void Client::uploadDocument(json data) {
    if (!database.empty()) {
       std::string doc_id = data["_id"];
@@ -136,6 +172,11 @@ void Client::uploadDocument(json data) {
    }
 }
 
+/**
+   @brief Upload document to database.
+   @param url_ - URL of database to upload to.
+   @param data - JSON table to upload.
+*/
 void Client::uploadDocument(std::string url_, json data) {
    std::string doc_id = data["_id"];
    std::string url__ = url_ + "/" + doc_id;
@@ -143,6 +184,9 @@ void Client::uploadDocument(std::string url_, json data) {
    HTTPPUT(url__,jsn);
 }
 
+/**
+   @brief Replicate database to master server.
+*/
 void Client::pushDatabase(void) {
    json data = {{"source",database},
                 {"target",config["target"]["url"].get<std::string>() + "/" + config["target"]["dbname"].get<std::string>()},
@@ -150,6 +194,10 @@ void Client::pushDatabase(void) {
    HTTPPOST(url+"/_replicate", data.dump());
 }
 
+/**
+   @brief Replicate database to master server with specific parameters.
+   @param params - JSON key-value pairs for filter function.
+*/
 void Client::pushDatabase(json params) {
    json data = {{"source",database},
                 {"target",config["target"]["url"].get<std::string>() + "/" + config["target"]["dbname"].get<std::string>()},
@@ -158,12 +206,21 @@ void Client::pushDatabase(json params) {
    HTTPPOST(url+"/_replicate", data.dump());
 }
 
+/**
+   @brief Upload document to database.
+   @param doc - Document ID.
+   @return String representation of JSON output.
+*/
 std::string Client::getDocument(std::string doc) {
    std::string url_ = url + "/"  + database + "/" + doc;
    std::string data = HTTPGET(url_);
    return data;
 }
 
+/**
+   @brief Get document IDs and revision IDs for given database.
+   @return Vector of string pairs for ID and revision.
+*/
 std::vector<std::pair<std::string,std::string> > Client::getDocumentIDs(void) {
    std::vector<std::pair<std::string,std::string> > v;
    std::string s = HTTPGET(url+"/"+database+"/_design/"+database+"/_view/listAllActive");
@@ -175,6 +232,11 @@ std::vector<std::pair<std::string,std::string> > Client::getDocumentIDs(void) {
    return v;
 }
 
+/**
+   @brief Check if server is online.
+   @param url_ - URL of server to check.
+   @return True if online, throws error if not. TODO make this so that it does not throw error? This is legacy from Python/bash.
+*/
 bool Client::checkOnline(std::string url_) {
    std::string ret = HTTPGET(url_);
    json j = json::parse(ret);
