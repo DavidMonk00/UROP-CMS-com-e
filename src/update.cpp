@@ -7,16 +7,25 @@
 
 #include "update.hpp"
 
+/**
+   @brief Class constructor.
+*/
 Update::Update(void) {
    board = new ATCABoard("SEMA");
    std::ifstream config_file("/root/I2C/bin/config.json");
    config_file >> config;
 }
 
+/**
+   @brief Class destructor.
+*/
 Update::~Update(void) {
    delete board;
 }
 
+/**
+   @brief Save active registers to local cache and then push the database to an external server.
+*/
 void Update::saveActive(void) {
    auto t = std::time(nullptr);
    auto tm = *std::localtime(&t);
@@ -48,6 +57,9 @@ void Update::saveActive(void) {
    delete client;
 }
 
+/**
+   @brief Save static registers to local cache and then push the database to an external server.
+*/
 void Update::saveStatic(void) {
    Client* client = new Client();
    client->setDatabase("data");
@@ -91,6 +103,12 @@ void Update::saveStatic(void) {
    delete client;
 }
 
+/**
+   @brief Send flag to external server if static register is changed.
+   @param data - register data dump at time of change.
+   @param metadata - JSON of metadata for flag.
+   @param client - CouchDB Client class to send data to server.
+*/
 void Update::sendFlag(json data, json metadata, Client* client) {
    auto t = std::time(nullptr);
    auto tm = *std::localtime(&t);
@@ -105,6 +123,9 @@ void Update::sendFlag(json data, json metadata, Client* client) {
    client->uploadDocument(config["target"]["url"].get<std::string>()+"/flags",flag_dict);
 }
 
+/**
+   @brief Purge database of any entries over an hour old.
+*/
 void Update::purgeDatabase(void) {
    Client* client = new Client();
    client->setDatabase("data");
@@ -126,6 +147,9 @@ void Update::purgeDatabase(void) {
    delete client;
 }
 
+/**
+   @brief Write config database to registers on card.
+*/
 void Update::writeConfig(void) {
    Client* client = new Client();
    client->setDatabase("config");
@@ -144,6 +168,9 @@ void Update::writeConfig(void) {
    }
 }
 
+/**
+   @brief Check if config files have changed and update registers if true.
+*/
 void Update::getConfig(void) {
    std::string filename = config["config_db"]["path"].get<std::string>();
    int rev = (int)boost::filesystem::last_write_time(filename.c_str());
