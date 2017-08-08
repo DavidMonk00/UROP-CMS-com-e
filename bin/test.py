@@ -1,17 +1,15 @@
 from libI2C import *
 
 def main():
-    I = I2CRaw()
-    print "Retimer 1"
-    for i in range(0x100):
-        x = int(I.read(0x4e, i))
-        if (x):
-            print hex(i),hex(x)
-    print "Retimer 2"
-    for i in range(0x100):
-        x = int(I.read(0x30, i))
-        if (x):
-            print hex(i),hex(x)
+    string = "1.33e+08 Hz"
+    string_list = string.split(" ")
+    index = string_list[0].find("e")
+    if (index != -1):
+        exponent = string_list[0][index+1:]
+        if (exponent[0] == "+"):
+            exponent = exponent[1:]
+        value = string_list[0][:index]
+        print float(value), int(exponent)/3
 
 if (__name__ == '__main__'):
     main()

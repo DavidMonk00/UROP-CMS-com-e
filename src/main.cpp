@@ -17,7 +17,7 @@ void setGlobalConfigs(Server* server) {
    json global;
    std::ifstream global_file("/home/david/Python/urop/bin/global.json");
    global_file >> global;
-   for (json::iterator bus_it = global.begin(); bus_it != global.end(); ++bus_it) {
+   for (json::iterator bus_it = global["global"].begin(); bus_it != global["global"].end(); ++bus_it) {
       std::string bus = bus_it.key();
       for (json::iterator device_it = bus_it.value().begin(); device_it != bus_it.value().end(); ++device_it) {
          std::string device = device_it.key();
