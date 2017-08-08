@@ -1,0 +1,46 @@
+.TH "std" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+std \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBhash< nlohmann::json >\fP"
+.br
+.RI "\fIhash value for JSON objects \fP"
+.ti -1c
+.RI "struct \fBless<::nlohmann::detail::value_t >\fP"
+.br
+.RI "\fIspecialization for std::less<value_t> \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<> void \fBswap\fP (\fBnlohmann::json\fP &j1, \fBnlohmann::json\fP &j2) noexcept(is_nothrow_move_constructible< \fBnlohmann::json\fP >::value andis_nothrow_move_assignable< \fBnlohmann::json\fP >::value)"
+.br
+.RI "\fIexchanges the values of two JSON objects \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "template<> void std::swap (\fBnlohmann::json\fP & j1, \fBnlohmann::json\fP & j2)\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+exchanges the values of two JSON objects 
+.PP
+\fBSince:\fP
+.RS 4
+version 1\&.0\&.0 
+.RE
+.PP
+
+.PP
+Definition at line 14467 of file json\&.hpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

@@ -1,0 +1,11 @@
+<map id="include/Board.hpp" name="include/Board.hpp">
+<area shape="rect" id="node2" href="$_i2_c_bus_8hpp.html" title="I2CBus.hpp" alt="" coords="727,80,818,107"/>
+<area shape="rect" id="node28" href="$parser_8hpp.html" title="parser.hpp" alt="" coords="2085,229,2167,256"/>
+<area shape="rect" id="node3" href="$_i2_c_device_8hpp.html" title="I2CDevice.hpp" alt="" coords="714,155,823,181"/>
+<area shape="rect" id="node4" href="$_i2_c_register_8hpp.html" title="I2CRegister.hpp" alt="" coords="435,229,553,256"/>
+<area shape="rect" id="node7" href="$_i2_c_8hpp.html" title="I2C.hpp" alt="" coords="460,304,528,331"/>
+<area shape="rect" id="node16" href="$units__define_8hpp.html" title="units_define.hpp" alt="" coords="1627,304,1745,331"/>
+<area shape="rect" id="node10" href="$diagnostics_8hpp.html" title="diagnostics.hpp" alt="" coords="532,386,645,413"/>
+<area shape="rect" id="node13" href="$_i2_c__base_8hpp.html" title="I2C_base.hpp" alt="" coords="669,386,772,413"/>
+<area shape="rect" id="node15" href="$_i2_c__define_8hpp.html" title="I2C_define.hpp" alt="" coords="345,386,456,413"/>
+</map>

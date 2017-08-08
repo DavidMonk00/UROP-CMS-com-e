@@ -1,0 +1,66 @@
+.TH "nlohmann::detail::cached_input_stream_adapter< BufferSize >" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::cached_input_stream_adapter< BufferSize > \- input adapter for cached stream input  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.PP
+Inherits \fBnlohmann::detail::input_adapter_protocol\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBcached_input_stream_adapter\fP (std::istream &i)"
+.br
+.ti -1c
+.RI "\fB~cached_input_stream_adapter\fP () override"
+.br
+.ti -1c
+.RI "int \fBget_character\fP () override"
+.br
+.ti -1c
+.RI "\fBstd::string\fP \fBread\fP (std::size_t offset, std::size_t length) override"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<std::size_t BufferSize>
+.br
+class nlohmann::detail::cached_input_stream_adapter< BufferSize >"
+input adapter for cached stream input 
+.PP
+Definition at line 1306 of file json\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<std::size_t BufferSize> \fBnlohmann::detail::cached_input_stream_adapter\fP< BufferSize >::\fBcached_input_stream_adapter\fP (std::istream & i)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line 1309 of file json\&.hpp\&.
+.SS "template<std::size_t BufferSize> \fBnlohmann::detail::cached_input_stream_adapter\fP< BufferSize >::~\fBcached_input_stream_adapter\fP ()\fC [inline]\fP, \fC [override]\fP"
+
+.PP
+Definition at line 1322 of file json\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<std::size_t BufferSize> int \fBnlohmann::detail::cached_input_stream_adapter\fP< BufferSize >::get_character ()\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBnlohmann::detail::input_adapter_protocol\fP\&.
+.PP
+Definition at line 1335 of file json\&.hpp\&.
+.SS "template<std::size_t BufferSize> \fBstd::string\fP \fBnlohmann::detail::cached_input_stream_adapter\fP< BufferSize >::read (std::size_t offset, std::size_t length)\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBnlohmann::detail::input_adapter_protocol\fP\&.
+.PP
+Definition at line 1358 of file json\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

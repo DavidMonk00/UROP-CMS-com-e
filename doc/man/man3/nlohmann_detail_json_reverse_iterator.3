@@ -1,0 +1,219 @@
+.TH "nlohmann::detail::json_reverse_iterator< Base >" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::json_reverse_iterator< Base > \- a template for a reverse iterator class  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.PP
+Inherits reverse_iterator< Base >\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "using \fBdifference_type\fP = std::ptrdiff_t"
+.br
+.ti -1c
+.RI "using \fBbase_iterator\fP = std::reverse_iterator< Base >"
+.br
+.RI "\fIshortcut to the reverse iterator adaptor \fP"
+.ti -1c
+.RI "using \fBreference\fP = typename Base::reference"
+.br
+.RI "\fIthe reference type for the pointed-to element \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBjson_reverse_iterator\fP (const typename base_iterator::iterator_type &it) noexcept"
+.br
+.RI "\fIcreate reverse iterator from iterator \fP"
+.ti -1c
+.RI "\fBjson_reverse_iterator\fP (const \fBbase_iterator\fP &it) noexcept"
+.br
+.RI "\fIcreate reverse iterator from base class \fP"
+.ti -1c
+.RI "\fBjson_reverse_iterator\fP \fBoperator++\fP (int)"
+.br
+.RI "\fIpost-increment (it++) \fP"
+.ti -1c
+.RI "\fBjson_reverse_iterator\fP & \fBoperator++\fP ()"
+.br
+.RI "\fIpre-increment (++it) \fP"
+.ti -1c
+.RI "\fBjson_reverse_iterator\fP \fBoperator\-\-\fP (int)"
+.br
+.RI "\fIpost-decrement (it--) \fP"
+.ti -1c
+.RI "\fBjson_reverse_iterator\fP & \fBoperator\-\-\fP ()"
+.br
+.RI "\fIpre-decrement (--it) \fP"
+.ti -1c
+.RI "\fBjson_reverse_iterator\fP & \fBoperator+=\fP (\fBdifference_type\fP i)"
+.br
+.RI "\fIadd to iterator \fP"
+.ti -1c
+.RI "\fBjson_reverse_iterator\fP \fBoperator+\fP (\fBdifference_type\fP i) const "
+.br
+.RI "\fIadd to iterator \fP"
+.ti -1c
+.RI "\fBjson_reverse_iterator\fP \fBoperator\-\fP (\fBdifference_type\fP i) const "
+.br
+.RI "\fIsubtract from iterator \fP"
+.ti -1c
+.RI "\fBdifference_type\fP \fBoperator\-\fP (const \fBjson_reverse_iterator\fP &other) const "
+.br
+.RI "\fIreturn difference \fP"
+.ti -1c
+.RI "\fBreference\fP \fBoperator[]\fP (\fBdifference_type\fP n) const "
+.br
+.RI "\fIaccess to successor \fP"
+.ti -1c
+.RI "auto \fBkey\fP () const \-> decltype(std::declval< Base >()\&.key())"
+.br
+.RI "\fIreturn the key of an object iterator \fP"
+.ti -1c
+.RI "\fBreference\fP \fBvalue\fP () const "
+.br
+.RI "\fIreturn the value of an iterator \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename Base>
+.br
+class nlohmann::detail::json_reverse_iterator< Base >"
+a template for a reverse iterator class 
+
+
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fIBase\fP the base iterator type to reverse\&. Valid types are \fBiterator\fP (to create \fBreverse_iterator\fP) and \fBconst_iterator\fP (to create \fBconst_reverse_iterator\fP)\&.
+.RE
+.PP
+The class satisfies the following concept requirements:
+.IP "\(bu" 2
+\fCRandomAccessIterator\fP: The iterator that can be moved to point (forward and backward) to any element in constant time\&.
+.IP "\(bu" 2
+\fCOutputIterator\fP: It is possible to write to the pointed-to element (only if \fIBase\fP is \fBiterator\fP)\&.
+.PP
+.PP
+\fBSince:\fP
+.RS 4
+version 1\&.0\&.0 
+.RE
+.PP
+
+.PP
+Definition at line 4261 of file json\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<typename Base > using \fBnlohmann::detail::json_reverse_iterator\fP< Base >::\fBbase_iterator\fP =  std::reverse_iterator<Base>"
+
+.PP
+shortcut to the reverse iterator adaptor 
+.PP
+Definition at line 4266 of file json\&.hpp\&.
+.SS "template<typename Base > using \fBnlohmann::detail::json_reverse_iterator\fP< Base >::\fBdifference_type\fP =  std::ptrdiff_t"
+
+.PP
+Definition at line 4264 of file json\&.hpp\&.
+.SS "template<typename Base > using \fBnlohmann::detail::json_reverse_iterator\fP< Base >::\fBreference\fP =  typename Base::reference"
+
+.PP
+the reference type for the pointed-to element 
+.PP
+Definition at line 4268 of file json\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename Base > \fBnlohmann::detail::json_reverse_iterator\fP< Base >::\fBjson_reverse_iterator\fP (const typename base_iterator::iterator_type & it)\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+create reverse iterator from iterator 
+.PP
+Definition at line 4271 of file json\&.hpp\&.
+.SS "template<typename Base > \fBnlohmann::detail::json_reverse_iterator\fP< Base >::\fBjson_reverse_iterator\fP (const \fBbase_iterator\fP & it)\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+create reverse iterator from base class 
+.PP
+Definition at line 4275 of file json\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename Base > auto \fBnlohmann::detail::json_reverse_iterator\fP< Base >::key () const \-> decltype(std::declval<Base>()\&.key())
+    \fC [inline]\fP"
+
+.PP
+return the key of an object iterator 
+.PP
+Definition at line 4332 of file json\&.hpp\&.
+.SS "template<typename Base > \fBjson_reverse_iterator\fP \fBnlohmann::detail::json_reverse_iterator\fP< Base >::operator+ (\fBdifference_type\fP i) const\fC [inline]\fP"
+
+.PP
+add to iterator 
+.PP
+Definition at line 4308 of file json\&.hpp\&.
+.SS "template<typename Base > \fBjson_reverse_iterator\fP \fBnlohmann::detail::json_reverse_iterator\fP< Base >::operator++ (int)\fC [inline]\fP"
+
+.PP
+post-increment (it++) 
+.PP
+Definition at line 4278 of file json\&.hpp\&.
+.SS "template<typename Base > \fBjson_reverse_iterator\fP& \fBnlohmann::detail::json_reverse_iterator\fP< Base >::operator++ ()\fC [inline]\fP"
+
+.PP
+pre-increment (++it) 
+.PP
+Definition at line 4284 of file json\&.hpp\&.
+.SS "template<typename Base > \fBjson_reverse_iterator\fP& \fBnlohmann::detail::json_reverse_iterator\fP< Base >::operator+= (\fBdifference_type\fP i)\fC [inline]\fP"
+
+.PP
+add to iterator 
+.PP
+Definition at line 4302 of file json\&.hpp\&.
+.SS "template<typename Base > \fBjson_reverse_iterator\fP \fBnlohmann::detail::json_reverse_iterator\fP< Base >::operator\- (\fBdifference_type\fP i) const\fC [inline]\fP"
+
+.PP
+subtract from iterator 
+.PP
+Definition at line 4314 of file json\&.hpp\&.
+.SS "template<typename Base > \fBdifference_type\fP \fBnlohmann::detail::json_reverse_iterator\fP< Base >::operator\- (const \fBjson_reverse_iterator\fP< Base > & other) const\fC [inline]\fP"
+
+.PP
+return difference 
+.PP
+Definition at line 4320 of file json\&.hpp\&.
+.SS "template<typename Base > \fBjson_reverse_iterator\fP \fBnlohmann::detail::json_reverse_iterator\fP< Base >::operator\-\- (int)\fC [inline]\fP"
+
+.PP
+post-decrement (it--) 
+.PP
+Definition at line 4290 of file json\&.hpp\&.
+.SS "template<typename Base > \fBjson_reverse_iterator\fP& \fBnlohmann::detail::json_reverse_iterator\fP< Base >::operator\-\- ()\fC [inline]\fP"
+
+.PP
+pre-decrement (--it) 
+.PP
+Definition at line 4296 of file json\&.hpp\&.
+.SS "template<typename Base > \fBreference\fP \fBnlohmann::detail::json_reverse_iterator\fP< Base >::operator[] (\fBdifference_type\fP n) const\fC [inline]\fP"
+
+.PP
+access to successor 
+.PP
+Definition at line 4326 of file json\&.hpp\&.
+.SS "template<typename Base > \fBreference\fP \fBnlohmann::detail::json_reverse_iterator\fP< Base >::value () const\fC [inline]\fP"
+
+.PP
+return the value of an iterator 
+.PP
+Definition at line 4339 of file json\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

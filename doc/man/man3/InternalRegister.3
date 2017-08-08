@@ -1,0 +1,102 @@
+.TH "InternalRegister" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InternalRegister \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <I2CRegister\&.hpp>\fP
+.PP
+Inherits \fBI2CBaseRegister\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInternalRegister\fP (uint32_t r, std::string rw, std::function< \fBunits_variant\fP(double value)> read_func)"
+.br
+.RI "\fIClass constructor\&. \fP"
+.ti -1c
+.RI "\fB~InternalRegister\fP (void)"
+.br
+.RI "\fIClass destructor\&. \fP"
+.ti -1c
+.RI "\fBunits_variant\fP \fBread\fP (\fBI2C_base\fP *i2c_ptr, uint32_t address)"
+.br
+.RI "\fIRead data from register\&. \fP"
+.ti -1c
+.RI "void \fBwrite\fP (\fBI2C_base\fP *i2c_ptr, uint32_t address, \fBunits_variant\fP value)"
+.br
+.RI "\fIVALUES CANNOT BE WRITTEN TO\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 89 of file I2CRegister\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "InternalRegister::InternalRegister (uint32_t r, std::string rw, std::function< \fBunits_variant\fP(double value)> read_func)"
+
+.PP
+Class constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIread_func\fP - Lambda function to convert hexadecimal value into correct units type\&. 
+.br
+\fIwrite_func\fP - Lambda function to convert units type into uint8_t to be written\&. 
+.RE
+.PP
+
+.PP
+Definition at line 70 of file I2CRegister\&.cpp\&.
+.SS "InternalRegister::~InternalRegister (void)"
+
+.PP
+Class destructor\&. 
+.PP
+Definition at line 84 of file I2CRegister\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBunits_variant\fP InternalRegister::read (\fBI2C_base\fP * i2c_ptr, uint32_t address)\fC [virtual]\fP"
+
+.PP
+Read data from register\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi2c_ptr\fP - Pointer to \fBI2C_base\fP class used for transport\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+units_variant containing quantity of correct type\&. 
+.RE
+.PP
+
+.PP
+Implements \fBI2CBaseRegister\fP\&.
+.PP
+Definition at line 91 of file I2CRegister\&.cpp\&.
+.SS "void InternalRegister::write (\fBI2C_base\fP * i2c_ptr, uint32_t address, \fBunits_variant\fP value)\fC [virtual]\fP"
+
+.PP
+VALUES CANNOT BE WRITTEN TO\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi2c_ptr\fP - Pointer to \fBI2C_base\fP class used for transport\&. 
+.br
+\fIvalue\fP - Data to be written\&. Must be of correct type\&. 
+.RE
+.PP
+
+.PP
+Implements \fBI2CBaseRegister\fP\&.
+.PP
+Definition at line 107 of file I2CRegister\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

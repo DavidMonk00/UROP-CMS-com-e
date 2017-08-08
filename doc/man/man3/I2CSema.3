@@ -1,0 +1,169 @@
+.TH "I2CSema" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2CSema \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <I2C\&.hpp>\fP
+.PP
+Inherits \fBI2C_base\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBI2CSema\fP (uint32_t ID, uint32_t address, bool diag)"
+.br
+.RI "\fIConstructor function with additional diagnostics\&. \fP"
+.ti -1c
+.RI "\fBI2CSema\fP (uint32_t ID)"
+.br
+.RI "\fIConstructor function\&. \fP"
+.ti -1c
+.RI "\fB~I2CSema\fP (void)"
+.br
+.RI "\fIClass destructor\&. \fP"
+.ti -1c
+.RI "uint32_t \fBgetBusCap\fP (void)"
+.br
+.RI "\fIGet the maximum block length for given I2C bus ID\&. \fP"
+.ti -1c
+.RI "void \fBreceiveData\fP (uint32_t address, char *buffer, uint32_t bytecnt, uint32_t start_point)"
+.br
+.RI "\fIReceive data data from addressed slave\&. \fP"
+.ti -1c
+.RI "void \fBsendData\fP (uint32_t address, char *buffer, uint32_t bytecnt, uint32_t start_point)"
+.br
+.RI "\fISend data data to addressed slave\&. \fP"
+.ti -1c
+.RI "void \fBgetBoardValue\fP (uint32_t value, uint32_t *buffer)"
+.br
+.RI "\fIGet value from board registers\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Derived class from I2C which implements SEMA API function calls to communicate with bus\&. 
+.PP
+Definition at line 20 of file I2C\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "I2CSema::I2CSema (uint32_t ID, uint32_t address, bool diag)"
+
+.PP
+Constructor function with additional diagnostics\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIID\fP - I2C bus ID\&. 
+.br
+\fIaddress\fP - Address of slave module\&. 
+.br
+\fIdiag\fP - Set to true to display diagnostics\&. 
+.RE
+.PP
+
+.PP
+Definition at line 33 of file I2C\&.cpp\&.
+.SS "I2CSema::I2CSema (uint32_t ID)"
+
+.PP
+Constructor function\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIID\fP - I2C bus ID\&. 
+.br
+\fIaddress\fP - Address of slave module\&. 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file I2C\&.cpp\&.
+.SS "I2CSema::~I2CSema (void)"
+
+.PP
+Class destructor\&. 
+.PP
+Definition at line 56 of file I2C\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void I2CSema::getBoardValue (uint32_t value, uint32_t * buffer)\fC [virtual]\fP"
+
+.PP
+Get value from board registers\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP - ID of internal regiter to read\&. 
+.br
+\fIbuffer\fP - Pointer to byte array where data will be sent from\&. 
+.RE
+.PP
+
+.PP
+Implements \fBI2C_base\fP\&.
+.PP
+Definition at line 113 of file I2C\&.cpp\&.
+.SS "uint32_t I2CSema::getBusCap (void)"
+
+.PP
+Get the maximum block length for given I2C bus ID\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Block length as integer\&. 
+.RE
+.PP
+
+.PP
+Definition at line 64 of file I2C\&.cpp\&.
+.SS "void I2CSema::receiveData (uint32_t address, char * buffer, uint32_t bytecnt, uint32_t start_point)\fC [virtual]\fP"
+
+.PP
+Receive data data from addressed slave\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuffer\fP - Pointer to byte array where data will be written\&. 
+.br
+\fIbytecnt\fP - Length of buffer\&. 
+.br
+\fIstart_point\fP - Starting address within slave\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Pointer to array where data was written\&. 
+.RE
+.PP
+
+.PP
+Implements \fBI2C_base\fP\&.
+.PP
+Definition at line 83 of file I2C\&.cpp\&.
+.SS "void I2CSema::sendData (uint32_t address, char * buffer, uint32_t bytecnt, uint32_t start_point)\fC [virtual]\fP"
+
+.PP
+Send data data to addressed slave\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuffer\fP - Pointer to byte array where data will be sent from\&. 
+.br
+\fIbytecnt\fP - Length of buffer\&. 
+.br
+\fIstart_point\fP - Starting address within slave\&. 
+.RE
+.PP
+
+.PP
+Implements \fBI2C_base\fP\&.
+.PP
+Definition at line 99 of file I2C\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

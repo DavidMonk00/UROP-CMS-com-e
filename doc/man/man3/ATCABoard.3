@@ -1,0 +1,144 @@
+.TH "ATCABoard" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ATCABoard \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ATCABoard\&.hpp>\fP
+.PP
+Inherits \fBBoard\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBATCABoard\fP (\fBI2C_base\fP *i2c_type)"
+.br
+.RI "\fIClass constructor\&. Full bus/device/register map is defined here\&. Also requests downstream bus from arbiter\&. \fP"
+.ti -1c
+.RI "\fBATCABoard\fP (std::string i2c_string)"
+.br
+.RI "\fIClass constructor\&. Full bus/device/register map is defined here\&. Also requests downstream bus from arbiter\&. \fP"
+.ti -1c
+.RI "\fB~ATCABoard\fP (void)"
+.br
+.RI "\fIClass destructor\&. Gives up downstream bus to arbiter\&. \fP"
+.ti -1c
+.RI "std::unordered_map< std::string, \fBI2CBus\fP * > \fBgetMap\fP (void)"
+.br
+.RI "\fIGet the map\&. \fP"
+.ti -1c
+.RI "void \fBsetBus\fP (std::string bus)"
+.br
+.RI "\fISet bus to communicate over\&. \fP"
+.ti -1c
+.RI "void \fBsetDevice\fP (std::string device)"
+.br
+.RI "\fISet device to communicate to\&. \fP"
+.ti -1c
+.RI "void \fBsetDevice\fP (std::string bus, std::string device)"
+.br
+.RI "\fISet device to communicate to\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 11 of file ATCABoard\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ATCABoard::ATCABoard (\fBI2C_base\fP * i2c_type)"
+
+.PP
+Class constructor\&. Full bus/device/register map is defined here\&. Also requests downstream bus from arbiter\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi2c_type\fP - Pointer to \fBI2C_base\fP transport object\&. 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file ATCABoard\&.cpp\&.
+.SS "ATCABoard::ATCABoard (std::string i2c_string)"
+
+.PP
+Class constructor\&. Full bus/device/register map is defined here\&. Also requests downstream bus from arbiter\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi2c_type\fP - Pointer to \fBI2C_base\fP transport object\&. 
+.RE
+.PP
+
+.PP
+Definition at line 48 of file ATCABoard\&.cpp\&.
+.SS "ATCABoard::~ATCABoard (void)"
+
+.PP
+Class destructor\&. Gives up downstream bus to arbiter\&. 
+.PP
+Definition at line 91 of file ATCABoard\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::unordered_map< std::string, \fBI2CBus\fP * > ATCABoard::getMap (void)\fC [virtual]\fP"
+
+.PP
+Get the map\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Unordered map of string identifiers and \fBI2CBus\fP pointers\&. 
+.RE
+.PP
+
+.PP
+Implements \fBBoard\fP\&.
+.PP
+Definition at line 176 of file ATCABoard\&.cpp\&.
+.SS "void ATCABoard::setBus (std::string bus)"
+
+.PP
+Set bus to communicate over\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbus\fP - String identifier for bus\&. 
+.RE
+.PP
+
+.PP
+Definition at line 142 of file ATCABoard\&.cpp\&.
+.SS "void ATCABoard::setDevice (std::string device)"
+
+.PP
+Set device to communicate to\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdevice\fP - String identifier for device\&. 
+.RE
+.PP
+
+.PP
+Definition at line 152 of file ATCABoard\&.cpp\&.
+.SS "void ATCABoard::setDevice (std::string bus, std::string device)"
+
+.PP
+Set device to communicate to\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbus\fP - String identifier for bus\&. 
+.br
+\fIdevice\fP - String identifier for device\&. 
+.RE
+.PP
+
+.PP
+Definition at line 164 of file ATCABoard\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

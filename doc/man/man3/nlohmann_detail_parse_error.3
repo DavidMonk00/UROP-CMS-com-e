@@ -1,0 +1,98 @@
+.TH "nlohmann::detail::parse_error" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::parse_error \- exception indicating a parse error  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.PP
+Inherits \fBnlohmann::detail::exception\fP\&.
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBparse_error\fP \fBcreate\fP (int \fBid\fP, std::size_t byte_, const \fBstd::string\fP &what_arg)"
+.br
+.RI "\fIcreate a parse error exception \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const std::size_t \fBbyte\fP"
+.br
+.RI "\fIbyte index of the parse error \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+exception indicating a parse error 
+
+This excpetion is thrown by the library when a parse error occurs\&. Parse errors can occur during the deserialization of JSON text as well as when using JSON Patch\&.
+.PP
+Member \fIbyte\fP holds the byte index of the last read character in the input file\&.
+.PP
+\fBNote:\fP
+.RS 4
+For an input with n bytes, 1 is the index of the first character and n+1 is the index of the terminating null byte or the end of file\&. This also holds true when reading a byte vector (CBOR or MessagePack)\&.
+.RE
+.PP
+Exceptions have ids 1xx\&.
+.PP
+name / id example massage description  json\&.exception\&.parse_error\&.101 parse error at 2: unexpected end of input; expected string literal This error indicates a syntax error while deserializing a JSON text\&. The error message describes that an unexpected token (character) was encountered, and the member \fIbyte\fP indicates the error position\&. json\&.exception\&.parse_error\&.102 parse error at 14: missing or wrong low surrogate JSON uses the \fC\\uxxxx\fP format to describe Unicode characters\&. Code points above above 0xFFFF are split into two \fC\\uxxxx\fP entries ('surrogate pairs')\&. This error indicates that the surrogate pair is incomplete or contains an invalid code point\&. json\&.exception\&.parse_error\&.103 parse error: code points above 0x10FFFF are invalid Unicode supports code points up to 0x10FFFF\&. Code points above 0x10FFFF are invalid\&. json\&.exception\&.parse_error\&.104 parse error: JSON patch must be an array of objects \fCRFC 6902\fP requires a JSON Patch document to be a JSON document that represents an array of objects\&. json\&.exception\&.parse_error\&.105 parse error: operation must have string member 'op' An operation of a JSON Patch document must contain exactly one 'op' member, whose value indicates the operation to perform\&. Its value must be one of 'add', 'remove', 'replace', 'move', 'copy', or 'test'; other values are errors\&. json\&.exception\&.parse_error\&.106 parse error: array index '01' must not begin with '0' An array index in a JSON Pointer (\fCRFC 6901\fP) may be \fC0\fP or any number wihtout a leading \fC0\fP\&. json\&.exception\&.parse_error\&.107 parse error: JSON pointer must be empty or begin with '/' - was: 'foo' A JSON Pointer must be a Unicode string containing a sequence of zero or more reference tokens, each prefixed by a \fC/\fP character\&. json\&.exception\&.parse_error\&.108 parse error: escape character '~' must be followed with '0' or '1' In a JSON Pointer, only \fC~0\fP and \fC~1\fP are valid escape sequences\&. json\&.exception\&.parse_error\&.109 parse error: array index 'one' is not a number A JSON Pointer array index must be a number\&. json\&.exception\&.parse_error\&.110 parse error at 1: cannot read 2 bytes from vector When parsing CBOR or MessagePack, the byte vector ends before the complete value has been read\&. json\&.exception\&.parse_error\&.112 parse error at 1: error reading CBOR; last byte: 0xf8 Not all types of CBOR or MessagePack are supported\&. This exception occurs if an unsupported byte was read\&. json\&.exception\&.parse_error\&.113 parse error at 2: expected a CBOR string; last byte: 0x98 While parsing a map key, a value that is not a string has been read\&. 
+.PP
+\fBSince:\fP
+.RS 4
+version 3\&.0\&.0 
+.RE
+.PP
+
+.PP
+Definition at line 235 of file json\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static \fBparse_error\fP nlohmann::detail::parse_error::create (int id, std::size_t byte_, const \fBstd::string\fP & what_arg)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+create a parse error exception 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIid\fP the id of the exception 
+.br
+\fIbyte_\fP the byte index where the error occurred (or 0 if the position cannot be determined) 
+.br
+\fIwhat_arg\fP the explanatory string 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBparse_error\fP object 
+.RE
+.PP
+
+.PP
+Definition at line 246 of file json\&.hpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const std::size_t nlohmann::detail::parse_error::byte"
+
+.PP
+byte index of the parse error The byte index of the last read character in the input file\&.
+.PP
+\fBNote:\fP
+.RS 4
+For an input with n bytes, 1 is the index of the first character and n+1 is the index of the terminating null byte or the end of file\&. This also holds true when reading a byte vector (CBOR or MessagePack)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 263 of file json\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

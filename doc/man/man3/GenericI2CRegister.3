@@ -1,0 +1,115 @@
+.TH "GenericI2CRegister" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GenericI2CRegister \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <I2CRegister\&.hpp>\fP
+.PP
+Inherits \fBI2CBaseRegister\fP, and \fBI2CBaseRegister\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGenericI2CRegister\fP (uint32_t r, std::string rw, std::function< \fBunits_variant\fP(double value)> read_func, std::function< uint8_t(\fBunits_variant\fP)> write_func)"
+.br
+.ti -1c
+.RI "\fB~GenericI2CRegister\fP (void)"
+.br
+.RI "\fIClass destructor\&. \fP"
+.ti -1c
+.RI "\fBunits_variant\fP \fBread\fP (\fBI2C_base\fP *i2c_ptr, uint32_t address)"
+.br
+.RI "\fIRead data from register\&. \fP"
+.ti -1c
+.RI "void \fBwrite\fP (\fBI2C_base\fP *i2c_ptr, uint32_t address, \fBunits_variant\fP value)"
+.br
+.RI "\fIWrite data to register\&. \fP"
+.ti -1c
+.RI "\fBGenericI2CRegister\fP (std::function< void(void *, uint32_t)> read_func, std::function< void(void *, uint32_t)> write_func)"
+.br
+.ti -1c
+.RI "void \fBread\fP (void *i2c_ptr, uint32_t addr)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (void *i2c_ptr, uint32_t addr)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Derived \fBI2CBaseRegister\fP class for generic calls through lambda functions\&. Used when the interface is simple\&. 
+.PP
+Definition at line 33 of file I2CRegister\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GenericI2CRegister::GenericI2CRegister (uint32_t r, std::string rw, std::function< \fBunits_variant\fP(double value)> read_func, std::function< uint8_t(\fBunits_variant\fP)> write_func)"
+
+.SS "GenericI2CRegister::~GenericI2CRegister (void)"
+
+.PP
+Class destructor\&. 
+.PP
+Definition at line 32 of file I2CRegister\&.cpp\&.
+.SS "GenericI2CRegister::GenericI2CRegister (std::function< void(void *, uint32_t)> read_func, std::function< void(void *, uint32_t)> write_func)\fC [inline]\fP"
+
+.PP
+Definition at line 17 of file structure\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void GenericI2CRegister::read (void * i2c_ptr, uint32_t addr)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBI2CBaseRegister\fP\&.
+.PP
+Definition at line 21 of file structure\&.cpp\&.
+.SS "\fBunits_variant\fP GenericI2CRegister::read (\fBI2C_base\fP * i2c_ptr, uint32_t address)\fC [virtual]\fP"
+
+.PP
+Read data from register\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi2c_ptr\fP - Pointer to \fBI2C_base\fP class used for transport\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+units_variant containing quantity of correct type\&. 
+.RE
+.PP
+
+.PP
+Implements \fBI2CBaseRegister\fP\&.
+.PP
+Definition at line 39 of file I2CRegister\&.cpp\&.
+.SS "void GenericI2CRegister::write (void * i2c_ptr, uint32_t addr)\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBI2CBaseRegister\fP\&.
+.PP
+Definition at line 24 of file structure\&.cpp\&.
+.SS "void GenericI2CRegister::write (\fBI2C_base\fP * i2c_ptr, uint32_t address, \fBunits_variant\fP value)\fC [virtual]\fP"
+
+.PP
+Write data to register\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi2c_ptr\fP - Pointer to \fBI2C_base\fP class used for transport\&. 
+.br
+\fIvalue\fP - Data to be written\&. Must be of correct type\&. 
+.RE
+.PP
+
+.PP
+Implements \fBI2CBaseRegister\fP\&.
+.PP
+Definition at line 55 of file I2CRegister\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

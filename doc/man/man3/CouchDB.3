@@ -1,0 +1,98 @@
+.TH "CouchDB" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CouchDB \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CouchDB\&.hpp>\fP
+.PP
+Inherited by \fBClient\fP, and \fBServer\fP\&.
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBHTTPGET\fP (std::string hostname)"
+.br
+.ti -1c
+.RI "void \fBHTTPPUT\fP (std::string url_, std::string data)"
+.br
+.ti -1c
+.RI "void \fBHTTPPOST\fP (std::string url_, std::string data)"
+.br
+.ti -1c
+.RI "void \fBHTTPDELETE\fP (std::string url_)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static size_t \fBCallbackFunc\fP (void *contents, size_t size, size_t nmemb, std::string *s)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBurl\fP"
+.br
+.ti -1c
+.RI "std::string \fBdatabase\fP"
+.br
+.ti -1c
+.RI "\fBjson\fP \fBconfig\fP"
+.br
+.ti -1c
+.RI "CURL * \fBcurl\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 12 of file CouchDB\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "size_t CouchDB::CallbackFunc (void * contents, size_t size, size_t nmemb, std::string * s)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 3 of file CouchDB\&.cpp\&.
+.SS "void CouchDB::HTTPDELETE (std::string url_)\fC [protected]\fP"
+
+.PP
+Definition at line 72 of file CouchDB\&.cpp\&.
+.SS "std::string CouchDB::HTTPGET (std::string hostname)\fC [protected]\fP"
+
+.PP
+Definition at line 16 of file CouchDB\&.cpp\&.
+.SS "void CouchDB::HTTPPOST (std::string url_, std::string data)\fC [protected]\fP"
+
+.PP
+Definition at line 51 of file CouchDB\&.cpp\&.
+.SS "void CouchDB::HTTPPUT (std::string url_, std::string data)\fC [protected]\fP"
+
+.PP
+Definition at line 33 of file CouchDB\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBjson\fP CouchDB::config\fC [protected]\fP"
+
+.PP
+Definition at line 16 of file CouchDB\&.hpp\&.
+.SS "CURL* CouchDB::curl\fC [protected]\fP"
+
+.PP
+Definition at line 17 of file CouchDB\&.hpp\&.
+.SS "std::string CouchDB::database\fC [protected]\fP"
+
+.PP
+Definition at line 15 of file CouchDB\&.hpp\&.
+.SS "std::string CouchDB::url\fC [protected]\fP"
+
+.PP
+Definition at line 14 of file CouchDB\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

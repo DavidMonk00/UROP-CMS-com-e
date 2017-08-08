@@ -1,0 +1,47 @@
+.TH "nlohmann::detail::type_error" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::type_error \- exception indicating executing a member function with a wrong type  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.PP
+Inherits \fBnlohmann::detail::exception\fP\&.
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBtype_error\fP \fBcreate\fP (int \fBid\fP, const \fBstd::string\fP &what_arg)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+exception indicating executing a member function with a wrong type 
+
+Exceptions have ids 3xx\&.
+.PP
+name / id example message description  json\&.exception\&.type_error\&.301 cannot create object from initializer list To create an object from an initializer list, the initializer list must consist only of a list of pairs whose first element is a string\&. When this constraint is violated, an array is created instead\&. json\&.exception\&.type_error\&.302 type must be object, but is array During implicit or explicit value conversion, the JSON type must be compatible to the target type\&. For instance, a JSON string can only be converted into string types, but not into numbers or boolean types\&. json\&.exception\&.type_error\&.303 incompatible ReferenceType for get_ref, actual type is object To retrieve a reference to a value stored in a \fBbasic_json\fP object with \fBget_ref\fP, the type of the reference must match the value type\&. For instance, for a JSON array, the \fIReferenceType\fP must be \fBarray_t\fP&\&. json\&.exception\&.type_error\&.304 cannot use at() with string The \fBat()\fP member functions can only be executed for certain JSON types\&. json\&.exception\&.type_error\&.305 cannot use operator[] with string The \fBoperator[]\fP member functions can only be executed for certain JSON types\&. json\&.exception\&.type_error\&.306 cannot use value() with string The \fBvalue()\fP member functions can only be executed for certain JSON types\&. json\&.exception\&.type_error\&.307 cannot use erase() with string The \fBerase()\fP member functions can only be executed for certain JSON types\&. json\&.exception\&.type_error\&.308 cannot use push_back() with string The \fBpush_back()\fP and \fBoperator+=\fP member functions can only be executed for certain JSON types\&. json\&.exception\&.type_error\&.309 cannot use insert() with The \fBinsert()\fP member functions can only be executed for certain JSON types\&. json\&.exception\&.type_error\&.310 cannot use \fBswap()\fP with number The \fBswap()\fP member functions can only be executed for certain JSON types\&. json\&.exception\&.type_error\&.311 cannot use emplace_back() with string The \fBemplace_back()\fP member function can only be executed for certain JSON types\&. json\&.exception\&.type_error\&.313 invalid value to unflatten The \fBunflatten\fP function converts an object whose keys are JSON Pointers back into an arbitrary nested JSON value\&. The JSON Pointers must not overlap, because then the resulting value would not be well defined\&. json\&.exception\&.type_error\&.314 only objects can be unflattened The \fBunflatten\fP function only works for an object whose keys are JSON Pointers\&. json\&.exception\&.type_error\&.315 values in object must be primitive The \fBunflatten\fP function only works for an object whose keys are JSON Pointers and whose values are primitive\&. 
+.PP
+\fBSince:\fP
+.RS 4
+version 3\&.0\&.0 
+.RE
+.PP
+
+.PP
+Definition at line 332 of file json\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static \fBtype_error\fP nlohmann::detail::type_error::create (int id, const \fBstd::string\fP & what_arg)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 335 of file json\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

@@ -1,0 +1,54 @@
+.TH "include/units_define.hpp" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/units_define.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <boost/config/warning_disable\&.hpp>\fP
+.br
+\fC#include <boost/spirit/include/qi\&.hpp>\fP
+.br
+\fC#include <boost/fusion/include/std_pair\&.hpp>\fP
+.br
+\fC#include <boost/spirit/include/support_utree\&.hpp>\fP
+.br
+\fC#include <boost/assert\&.hpp>\fP
+.br
+\fC#include <boost/units/io\&.hpp>\fP
+.br
+\fC#include <boost/units/pow\&.hpp>\fP
+.br
+\fC#include <boost/units/systems/si/electric_potential\&.hpp>\fP
+.br
+\fC#include <boost/units/systems/si/current\&.hpp>\fP
+.br
+\fC#include <boost/units/systems/si/io\&.hpp>\fP
+.br
+\fC#include <boost/variant\&.hpp>\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef boost::variant< double, quantity< length >, quantity< boost::units::si::time >, quantity< temperature > > \fBlegacy_units_variant\fP"
+.br
+.ti -1c
+.RI "typedef boost::variant< std::string, int, double, quantity< electric_potential >, quantity< current >, quantity< si::time >, quantity< frequency >, quantity< temperature > > \fBunits_variant\fP"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef boost::variant<double, quantity<length>, quantity<boost::units::si::time>, quantity<temperature> > \fBlegacy_units_variant\fP"
+
+.PP
+Definition at line 21 of file units_define\&.hpp\&.
+.SS "typedef boost::variant<std::string, int, double, quantity<electric_potential>, quantity<current>, quantity<si::time>, quantity<frequency>, quantity<temperature> > \fBunits_variant\fP"
+
+.PP
+Definition at line 29 of file units_define\&.hpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

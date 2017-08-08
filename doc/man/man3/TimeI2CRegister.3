@@ -1,0 +1,106 @@
+.TH "TimeI2CRegister" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TimeI2CRegister \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <I2CRegister\&.hpp>\fP
+.PP
+Inherits \fBI2CBaseRegister\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTimeI2CRegister\fP (uint32_t r, std::string rw, std::function< \fBunits_variant\fP(double)> read_func, std::function< uint8_t(\fBunits_variant\fP)> write_func)"
+.br
+.RI "\fIClass constructor\&. \fP"
+.ti -1c
+.RI "\fB~TimeI2CRegister\fP (void)"
+.br
+.RI "\fIClass destructor\&. \fP"
+.ti -1c
+.RI "\fBunits_variant\fP \fBread\fP (\fBI2C_base\fP *i2c_ptr, uint32_t address)"
+.br
+.RI "\fIRead data from register\&. \fP"
+.ti -1c
+.RI "void \fBwrite\fP (\fBI2C_base\fP *i2c_ptr, uint32_t address, \fBunits_variant\fP value)"
+.br
+.RI "\fIWrite data to register\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Derived \fBI2CBaseRegister\fP class for calls to timing registers\&. Formats the output correctly when it is given in pure hexadecimal 0-59\&. 
+.PP
+Definition at line 48 of file I2CRegister\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TimeI2CRegister::TimeI2CRegister (uint32_t r, std::string rw, std::function< \fBunits_variant\fP(double)> read_func, std::function< uint8_t(\fBunits_variant\fP)> write_func)"
+
+.PP
+Class constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIr\fP - Address of register within I2C device\&. 
+.br
+\fIread_func\fP - Lambda function to convert hexadecimal value into correct units type 
+.br
+\fIwrite_func\fP - Lambda function to convert units type into uint8_t to be written\&. 
+.RE
+.PP
+
+.PP
+Definition at line 16 of file DS3232Registers\&.cpp\&.
+.SS "TimeI2CRegister::~TimeI2CRegister (void)"
+
+.PP
+Class destructor\&. 
+.PP
+Definition at line 32 of file DS3232Registers\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBunits_variant\fP TimeI2CRegister::read (\fBI2C_base\fP * i2c_ptr, uint32_t address)\fC [virtual]\fP"
+
+.PP
+Read data from register\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi2c_ptr\fP - Pointer to \fBI2C_base\fP class used for transport\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+units_variant containing quantity of correct type\&. 
+.RE
+.PP
+
+.PP
+Implements \fBI2CBaseRegister\fP\&.
+.PP
+Definition at line 39 of file DS3232Registers\&.cpp\&.
+.SS "void TimeI2CRegister::write (\fBI2C_base\fP * i2c_ptr, uint32_t address, \fBunits_variant\fP value)\fC [virtual]\fP"
+
+.PP
+Write data to register\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi2c_ptr\fP - pointer to \fBI2C_base\fP class used for transport 
+.br
+\fIvalue\fP - Data to be written\&. Must be of correct type\&. 
+.RE
+.PP
+
+.PP
+Implements \fBI2CBaseRegister\fP\&.
+.PP
+Definition at line 56 of file DS3232Registers\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

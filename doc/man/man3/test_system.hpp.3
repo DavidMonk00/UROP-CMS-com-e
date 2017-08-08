@@ -1,0 +1,143 @@
+.TH "test/test_system.hpp" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+test/test_system.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <boost/mpl/list\&.hpp>\fP
+.br
+\fC#include <boost/mpl/vector\&.hpp>\fP
+.br
+\fC#include <boost/units/base_dimension\&.hpp>\fP
+.br
+\fC#include <boost/units/derived_dimension\&.hpp>\fP
+.br
+\fC#include <boost/units/io\&.hpp>\fP
+.br
+\fC#include <boost/units/quantity\&.hpp>\fP
+.br
+\fC#include <boost/units/static_constant\&.hpp>\fP
+.br
+\fC#include <boost/units/unit\&.hpp>\fP
+.br
+\fC#include <boost/units/base_unit\&.hpp>\fP
+.br
+\fC#include <boost/units/make_system\&.hpp>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBboost::units::test::meter_base_unit\fP"
+.br
+.ti -1c
+.RI "struct \fBboost::units::test::kilogram_base_unit\fP"
+.br
+.ti -1c
+.RI "struct \fBboost::units::test::second_base_unit\fP"
+.br
+.ti -1c
+.RI "struct \fBboost::units::base_unit_info< test::meter_base_unit >\fP"
+.br
+.ti -1c
+.RI "struct \fBboost::units::base_unit_info< test::kilogram_base_unit >\fP"
+.br
+.ti -1c
+.RI "struct \fBboost::units::base_unit_info< test::second_base_unit >\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBboost\fP"
+.br
+.ti -1c
+.RI " \fBboost::units\fP"
+.br
+.ti -1c
+.RI " \fBboost::units::test\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef length_base_dimension::dimension_type \fBboost::units::length_dimension\fP"
+.br
+.ti -1c
+.RI "typedef mass_base_dimension::dimension_type \fBboost::units::mass_dimension\fP"
+.br
+.ti -1c
+.RI "typedef time_base_dimension::dimension_type \fBboost::units::time_dimension\fP"
+.br
+.ti -1c
+.RI "typedef derived_dimension< length_base_dimension, 2 >::type \fBboost::units::area_dimension\fP"
+.br
+.ti -1c
+.RI "typedef derived_dimension< mass_base_dimension, 1, length_base_dimension, 2, time_base_dimension,\-2 >::type \fBboost::units::energy_dimension\fP"
+.br
+.ti -1c
+.RI "typedef make_system< meter_base_unit, kilogram_base_unit, second_base_unit >::type \fBboost::units::test::mks_system\fP"
+.br
+.ti -1c
+.RI "typedef unit< dimensionless_type, mks_system > \fBboost::units::test::dimensionless\fP"
+.br
+.RI "\fIunit typedefs \fP"
+.ti -1c
+.RI "typedef unit< length_dimension, mks_system > \fBboost::units::test::length\fP"
+.br
+.ti -1c
+.RI "typedef unit< mass_dimension, mks_system > \fBboost::units::test::mass\fP"
+.br
+.ti -1c
+.RI "typedef unit< time_dimension, mks_system > \fBboost::units::test::time\fP"
+.br
+.ti -1c
+.RI "typedef unit< area_dimension, mks_system > \fBboost::units::test::area\fP"
+.br
+.ti -1c
+.RI "typedef unit< energy_dimension, mks_system > \fBboost::units::test::energy\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBboost::units::test::BOOST_UNITS_STATIC_CONSTANT\fP (meter, length)"
+.br
+.RI "\fIunit constants \fP"
+.ti -1c
+.RI "\fBboost::units::test::BOOST_UNITS_STATIC_CONSTANT\fP (meters, length)"
+.br
+.ti -1c
+.RI "\fBboost::units::test::BOOST_UNITS_STATIC_CONSTANT\fP (kilogram, mass)"
+.br
+.ti -1c
+.RI "\fBboost::units::test::BOOST_UNITS_STATIC_CONSTANT\fP (kilograms, mass)"
+.br
+.ti -1c
+.RI "\fBboost::units::test::BOOST_UNITS_STATIC_CONSTANT\fP (second, time)"
+.br
+.ti -1c
+.RI "\fBboost::units::test::BOOST_UNITS_STATIC_CONSTANT\fP (seconds, time)"
+.br
+.ti -1c
+.RI "\fBboost::units::test::BOOST_UNITS_STATIC_CONSTANT\fP (square_meter, area)"
+.br
+.ti -1c
+.RI "\fBboost::units::test::BOOST_UNITS_STATIC_CONSTANT\fP (square_meters, area)"
+.br
+.ti -1c
+.RI "\fBboost::units::test::BOOST_UNITS_STATIC_CONSTANT\fP (joule, energy)"
+.br
+.ti -1c
+.RI "\fBboost::units::test::BOOST_UNITS_STATIC_CONSTANT\fP (joules, energy)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

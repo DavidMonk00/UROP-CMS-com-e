@@ -1,0 +1,183 @@
+.TH "I2CBus" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2CBus \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <I2CBus\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBI2CBus\fP (std::unordered_map< std::string, \fBI2CDevice\fP * > device_map)"
+.br
+.RI "\fIClass constructor\&. \fP"
+.ti -1c
+.RI "\fB~I2CBus\fP (void)"
+.br
+.RI "\fIClass destructor\&. \fP"
+.ti -1c
+.RI "void \fBsetDevice\fP (std::string device_id)"
+.br
+.RI "\fISet device\&. \fP"
+.ti -1c
+.RI "void \fBsetI2CType\fP (\fBI2C_base\fP *i2c_type)"
+.br
+.RI "\fISet I2C protocol to be used for communication\&. \fP"
+.ti -1c
+.RI "std::vector< std::string > \fBgetProperties\fP (void)"
+.br
+.RI "\fIGet properties of selected device\&. \fP"
+.ti -1c
+.RI "std::vector< std::string > \fBgetProperties\fP (std::string device_ID)"
+.br
+.RI "\fIGet properties of device\&. \fP"
+.ti -1c
+.RI "std::vector< std::string > \fBgetDevices\fP (void)"
+.br
+.RI "\fIGet devices on bus\&. \fP"
+.ti -1c
+.RI "\fBunits_variant\fP \fBread\fP (std::string property)"
+.br
+.RI "\fIRead property from device\&. \fP"
+.ti -1c
+.RI "void \fBwrite\fP (std::string property, \fBunits_variant\fP value)"
+.br
+.RI "\fIWrite property to device\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 4 of file I2CBus\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "I2CBus::I2CBus (std::unordered_map< std::string, \fBI2CDevice\fP * > device_map)"
+
+.PP
+Class constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdevice_map\fP - Unordered map of string identifiers and \fBI2CDevice\fP pointers\&. 
+.RE
+.PP
+
+.PP
+Definition at line 14 of file I2CBus\&.cpp\&.
+.SS "I2CBus::~I2CBus (void)"
+
+.PP
+Class destructor\&. 
+.PP
+Definition at line 21 of file I2CBus\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< std::string > I2CBus::getDevices (void)"
+
+.PP
+Get devices on bus\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Vector of strings of each device ID\&. 
+.RE
+.PP
+
+.PP
+Definition at line 61 of file I2CBus\&.cpp\&.
+.SS "std::vector< std::string > I2CBus::getProperties (void)"
+
+.PP
+Get properties of selected device\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Vector of strings of each property for the selected device\&. 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file I2CBus\&.cpp\&.
+.SS "std::vector< std::string > I2CBus::getProperties (std::string device_ID)"
+
+.PP
+Get properties of device\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdevice\fP - String identifier for device\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Vector of strings of each property for the device\&. 
+.RE
+.PP
+
+.PP
+Definition at line 52 of file I2CBus\&.cpp\&.
+.SS "\fBunits_variant\fP I2CBus::read (std::string property)"
+
+.PP
+Read property from device\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIproperty\fP - String identifier for register to be read\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+units_variant of value and associated unit\&. 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file I2CBus\&.cpp\&.
+.SS "void I2CBus::setDevice (std::string device_id)"
+
+.PP
+Set device\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdevice_id\fP - String identifier of device\&. 
+.RE
+.PP
+
+.PP
+Definition at line 27 of file I2CBus\&.cpp\&.
+.SS "void I2CBus::setI2CType (\fBI2C_base\fP * i2c_type)"
+
+.PP
+Set I2C protocol to be used for communication\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi2c_type\fP - \fBI2C_base\fP pointer for transport object\&. 
+.RE
+.PP
+
+.PP
+Definition at line 35 of file I2CBus\&.cpp\&.
+.SS "void I2CBus::write (std::string property, \fBunits_variant\fP value)"
+
+.PP
+Write property to device\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIproperty\fP - String identifier for register to be written to\&. 
+.br
+\fIunits_variant\fP of value and associated unit to be written\&. 
+.RE
+.PP
+
+.PP
+Definition at line 84 of file I2CBus\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

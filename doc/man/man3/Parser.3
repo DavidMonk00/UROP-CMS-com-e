@@ -1,0 +1,67 @@
+.TH "Parser" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Parser \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <parser\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::pair< double, int > \fBgetQuantityPair\fP (std::string input)"
+.br
+.RI "\fIParse string input into scaled double value and integer representation of unit\&. \fP"
+.ti -1c
+.RI "\fBunits_variant\fP \fBgetQuantity\fP (std::string input)"
+.br
+.RI "\fIParse string input into \fBboost::units\fP quantity\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 62 of file parser\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBunits_variant\fP Parser::getQuantity (std::string input)"
+
+.PP
+Parse string input into \fBboost::units\fP quantity\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinput\fP - String input\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Value with associated unit\&. 
+.RE
+.PP
+
+.PP
+Definition at line 69 of file Parser\&.cpp\&.
+.SS "std::pair< double, int > Parser::getQuantityPair (std::string input)"
+
+.PP
+Parse string input into scaled double value and integer representation of unit\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinput\fP - String input\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Pair of double and integer\&. 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file Parser\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

@@ -1,0 +1,199 @@
+.TH "nlohmann::detail::primitive_iterator_t" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::primitive_iterator_t \- an iterator for primitive JSON types  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "using \fBdifference_type\fP = std::ptrdiff_t"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "constexpr \fBdifference_type\fP \fBget_value\fP () const noexcept"
+.br
+.ti -1c
+.RI "void \fBset_begin\fP () noexcept"
+.br
+.RI "\fIset iterator to a defined beginning \fP"
+.ti -1c
+.RI "void \fBset_end\fP () noexcept"
+.br
+.RI "\fIset iterator to a defined past the end \fP"
+.ti -1c
+.RI "constexpr bool \fBis_begin\fP () const noexcept"
+.br
+.RI "\fIreturn whether the iterator can be dereferenced \fP"
+.ti -1c
+.RI "constexpr bool \fBis_end\fP () const noexcept"
+.br
+.RI "\fIreturn whether the iterator is at end \fP"
+.ti -1c
+.RI "\fBprimitive_iterator_t\fP \fBoperator+\fP (\fBdifference_type\fP i)"
+.br
+.ti -1c
+.RI "\fBprimitive_iterator_t\fP & \fBoperator++\fP ()"
+.br
+.ti -1c
+.RI "\fBprimitive_iterator_t\fP \fBoperator++\fP (int)"
+.br
+.ti -1c
+.RI "\fBprimitive_iterator_t\fP & \fBoperator\-\-\fP ()"
+.br
+.ti -1c
+.RI "\fBprimitive_iterator_t\fP \fBoperator\-\-\fP (int)"
+.br
+.ti -1c
+.RI "\fBprimitive_iterator_t\fP & \fBoperator+=\fP (\fBdifference_type\fP n)"
+.br
+.ti -1c
+.RI "\fBprimitive_iterator_t\fP & \fBoperator\-=\fP (\fBdifference_type\fP n)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "constexpr bool \fBoperator==\fP (\fBprimitive_iterator_t\fP lhs, \fBprimitive_iterator_t\fP rhs) noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBoperator!=\fP (\fBprimitive_iterator_t\fP lhs, \fBprimitive_iterator_t\fP rhs) noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBoperator<\fP (\fBprimitive_iterator_t\fP lhs, \fBprimitive_iterator_t\fP rhs) noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBoperator<=\fP (\fBprimitive_iterator_t\fP lhs, \fBprimitive_iterator_t\fP rhs) noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBoperator>\fP (\fBprimitive_iterator_t\fP lhs, \fBprimitive_iterator_t\fP rhs) noexcept"
+.br
+.ti -1c
+.RI "constexpr bool \fBoperator>=\fP (\fBprimitive_iterator_t\fP lhs, \fBprimitive_iterator_t\fP rhs) noexcept"
+.br
+.ti -1c
+.RI "constexpr \fBdifference_type\fP \fBoperator\-\fP (\fBprimitive_iterator_t\fP lhs, \fBprimitive_iterator_t\fP rhs) noexcept"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &os, \fBprimitive_iterator_t\fP it)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+an iterator for primitive JSON types 
+
+This class models an iterator for primitive JSON types (boolean, number, string)\&. It's only purpose is to allow the iterator/const_iterator classes to 'iterate' over primitive values\&. Internally, the iterator is modeled by a \fCdifference_type\fP variable\&. Value begin_value (\fC0\fP) models the begin, end_value (\fC1\fP) models past the end\&. 
+.PP
+Definition at line 3391 of file json\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "using \fBnlohmann::detail::primitive_iterator_t::difference_type\fP =  std::ptrdiff_t"
+
+.PP
+Definition at line 3394 of file json\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "constexpr \fBdifference_type\fP nlohmann::detail::primitive_iterator_t::get_value () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+Definition at line 3396 of file json\&.hpp\&.
+.SS "constexpr bool nlohmann::detail::primitive_iterator_t::is_begin () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+return whether the iterator can be dereferenced 
+.PP
+Definition at line 3414 of file json\&.hpp\&.
+.SS "constexpr bool nlohmann::detail::primitive_iterator_t::is_end () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+return whether the iterator is at end 
+.PP
+Definition at line 3420 of file json\&.hpp\&.
+.SS "\fBprimitive_iterator_t\fP nlohmann::detail::primitive_iterator_t::operator+ (\fBdifference_type\fP i)\fC [inline]\fP"
+
+.PP
+Definition at line 3455 of file json\&.hpp\&.
+.SS "\fBprimitive_iterator_t\fP& nlohmann::detail::primitive_iterator_t::operator++ ()\fC [inline]\fP"
+
+.PP
+Definition at line 3472 of file json\&.hpp\&.
+.SS "\fBprimitive_iterator_t\fP nlohmann::detail::primitive_iterator_t::operator++ (int)\fC [inline]\fP"
+
+.PP
+Definition at line 3478 of file json\&.hpp\&.
+.SS "\fBprimitive_iterator_t\fP& nlohmann::detail::primitive_iterator_t::operator+= (\fBdifference_type\fP n)\fC [inline]\fP"
+
+.PP
+Definition at line 3498 of file json\&.hpp\&.
+.SS "\fBprimitive_iterator_t\fP& nlohmann::detail::primitive_iterator_t::operator\-\- ()\fC [inline]\fP"
+
+.PP
+Definition at line 3485 of file json\&.hpp\&.
+.SS "\fBprimitive_iterator_t\fP nlohmann::detail::primitive_iterator_t::operator\-\- (int)\fC [inline]\fP"
+
+.PP
+Definition at line 3491 of file json\&.hpp\&.
+.SS "\fBprimitive_iterator_t\fP& nlohmann::detail::primitive_iterator_t::operator\-= (\fBdifference_type\fP n)\fC [inline]\fP"
+
+.PP
+Definition at line 3504 of file json\&.hpp\&.
+.SS "void nlohmann::detail::primitive_iterator_t::set_begin ()\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+set iterator to a defined beginning 
+.PP
+Definition at line 3402 of file json\&.hpp\&.
+.SS "void nlohmann::detail::primitive_iterator_t::set_end ()\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+set iterator to a defined past the end 
+.PP
+Definition at line 3408 of file json\&.hpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "constexpr bool operator!= (\fBprimitive_iterator_t\fP lhs, \fBprimitive_iterator_t\fP rhs)\fC [friend]\fP"
+
+.PP
+Definition at line 3430 of file json\&.hpp\&.
+.SS "constexpr \fBdifference_type\fP operator\- (\fBprimitive_iterator_t\fP lhs, \fBprimitive_iterator_t\fP rhs)\fC [friend]\fP"
+
+.PP
+Definition at line 3462 of file json\&.hpp\&.
+.SS "constexpr bool operator< (\fBprimitive_iterator_t\fP lhs, \fBprimitive_iterator_t\fP rhs)\fC [friend]\fP"
+
+.PP
+Definition at line 3435 of file json\&.hpp\&.
+.SS "std::ostream& operator<< (std::ostream & os, \fBprimitive_iterator_t\fP it)\fC [friend]\fP"
+
+.PP
+Definition at line 3467 of file json\&.hpp\&.
+.SS "constexpr bool operator<= (\fBprimitive_iterator_t\fP lhs, \fBprimitive_iterator_t\fP rhs)\fC [friend]\fP"
+
+.PP
+Definition at line 3440 of file json\&.hpp\&.
+.SS "constexpr bool operator== (\fBprimitive_iterator_t\fP lhs, \fBprimitive_iterator_t\fP rhs)\fC [friend]\fP"
+
+.PP
+Definition at line 3425 of file json\&.hpp\&.
+.SS "constexpr bool operator> (\fBprimitive_iterator_t\fP lhs, \fBprimitive_iterator_t\fP rhs)\fC [friend]\fP"
+
+.PP
+Definition at line 3445 of file json\&.hpp\&.
+.SS "constexpr bool operator>= (\fBprimitive_iterator_t\fP lhs, \fBprimitive_iterator_t\fP rhs)\fC [friend]\fP"
+
+.PP
+Definition at line 3450 of file json\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

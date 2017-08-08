@@ -1,0 +1,78 @@
+.TH "Diagnostics" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Diagnostics \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <diagnostics\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDiagnostics\fP (void)"
+.br
+.RI "\fIConstructor function if library has yet to initialised\&. \fP"
+.ti -1c
+.RI "\fBDiagnostics\fP (uint32_t h)"
+.br
+.RI "\fIConstructor function if library has already been initialised but diagnostics need to be performed\&. \fP"
+.ti -1c
+.RI "\fB~Diagnostics\fP ()"
+.br
+.RI "\fIClass destructor\&. \fP"
+.ti -1c
+.RI "void \fBprintBoardInfo\fP (void)"
+.br
+.ti -1c
+.RI "void \fBprintBoardTemperatures\fP (void)"
+.br
+.ti -1c
+.RI "void \fBprintI2CSupport\fP (void)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+SEMA diagnostics class\&. Displays useful information about the board\&. 
+.PP
+Definition at line 18 of file diagnostics\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Diagnostics::Diagnostics (void)"
+
+.PP
+Constructor function if library has yet to initialised\&. 
+.PP
+Definition at line 13 of file diagnostics\&.cpp\&.
+.SS "Diagnostics::Diagnostics (uint32_t h)"
+
+.PP
+Constructor function if library has already been initialised but diagnostics need to be performed\&. 
+.PP
+Definition at line 27 of file diagnostics\&.cpp\&.
+.SS "Diagnostics::~Diagnostics (void)"
+
+.PP
+Class destructor\&. 
+.PP
+Definition at line 35 of file diagnostics\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Diagnostics::printBoardInfo (void)"
+Print selcted information about the COM-e board\&. Current information printed: \fBBoard\fP Manufacturer and \fBBoard\fP Name\&. 
+.PP
+Definition at line 45 of file diagnostics\&.cpp\&.
+.SS "void Diagnostics::printBoardTemperatures (void)"
+Print current board and CPU temperatures\&. 
+.PP
+Definition at line 54 of file diagnostics\&.cpp\&.
+.SS "void Diagnostics::printI2CSupport (void)"
+Print available I2C buses\&. 
+.PP
+Definition at line 63 of file diagnostics\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

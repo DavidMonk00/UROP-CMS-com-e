@@ -1,0 +1,75 @@
+.TH "PCIGen" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PCIGen \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <pcigen\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBtPllBandwidth\fP { \fBHIGH\fP = 0xE, \fBMEDIUM\fP = 0xA, \fBLOW\fP = 0x8 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPCIGen\fP (uint32_t addr)"
+.br
+.ti -1c
+.RI "\fB~PCIGen\fP (void)"
+.br
+.ti -1c
+.RI "void \fBsetPLLMode\fP (\fBtPllBandwidth\fP mode)"
+.br
+.ti -1c
+.RI "void \fBenableOutput\fP (void)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file pcigen\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPCIGen::tPllBandwidth\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIHIGH \fP\fP
+.TP
+\fB\fIMEDIUM \fP\fP
+.TP
+\fB\fILOW \fP\fP
+.PP
+Definition at line 8 of file pcigen\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PCIGen::PCIGen (uint32_t addr)"
+
+.PP
+Definition at line 3 of file pcigen\&.cpp\&.
+.SS "PCIGen::~PCIGen (void)"
+
+.PP
+Definition at line 7 of file pcigen\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void PCIGen::enableOutput (void)"
+
+.PP
+Definition at line 17 of file pcigen\&.cpp\&.
+.SS "void PCIGen::setPLLMode (\fBtPllBandwidth\fP mode)"
+
+.PP
+Definition at line 9 of file pcigen\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

@@ -1,0 +1,47 @@
+.TH "nlohmann::detail::other_error" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::other_error \- exception indicating other errors  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.PP
+Inherits \fBnlohmann::detail::exception\fP\&.
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBother_error\fP \fBcreate\fP (int \fBid\fP, const \fBstd::string\fP &what_arg)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+exception indicating other errors 
+
+Exceptions have ids 5xx\&.
+.PP
+name / id example message description  json\&.exception\&.other_error\&.501 unsuccessful: {'op':'test','path':'/baz', 'value':'bar'} A JSON Patch operation 'test' failed\&. The unsuccessful operation is also printed\&. json\&.exception\&.other_error\&.502 invalid object size for conversion Some conversions to user-defined types impose constraints on the object size (e\&.g\&. std::pair) 
+.PP
+\fBSince:\fP
+.RS 4
+version 3\&.0\&.0 
+.RE
+.PP
+
+.PP
+Definition at line 386 of file json\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static \fBother_error\fP nlohmann::detail::other_error::create (int id, const \fBstd::string\fP & what_arg)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 389 of file json\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

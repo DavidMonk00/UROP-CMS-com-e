@@ -1,0 +1,66 @@
+.TH "pdf-parsing/antenna_usb_rewrite_list.py" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pdf-parsing/antenna_usb_rewrite_list.py \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBantenna_usb_rewrite_list\&.Cp2130\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBantenna_usb_rewrite_list\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBantenna_usb_rewrite_list\&.getRange\fP (s)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBantenna_usb_rewrite_list\&.usb_to_spi\fP = Cp2130()"
+.br
+.ti -1c
+.RI "\fBantenna_usb_rewrite_list\&.book\fP = json\&.load(f_json)"
+.br
+.ti -1c
+.RI "\fBantenna_usb_rewrite_list\&.output\fP = open('output\&.dat', 'w')"
+.br
+.ti -1c
+.RI "\fBantenna_usb_rewrite_list\&.reg\fP = usb_to_spi\&.readBCM53134M(page=int(page['page']), offset=int(address['offset']), length=int(address['word\-length']))"
+.br
+.ti -1c
+.RI "\fBantenna_usb_rewrite_list\&.VALUE\fP = bin(reg)[2:][::\-1]"
+.br
+.ti -1c
+.RI "list \fBantenna_usb_rewrite_list\&.data\fP = ['Bits','Name', 'Value', 'Default']"
+.br
+.ti -1c
+.RI "\fBantenna_usb_rewrite_list\&.index\fP = getRange(bit['bit'])"
+.br
+.ti -1c
+.RI "\fBantenna_usb_rewrite_list\&.length\fP = math\&.ceil(float((index[1]+1\-index[0]))/4)"
+.br
+.ti -1c
+.RI "string \fBantenna_usb_rewrite_list\&.val\fP = '0x%0{0}X'"
+.br
+.ti -1c
+.RI "string \fBantenna_usb_rewrite_list\&.string\fP = u'\\t%s\\n'"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

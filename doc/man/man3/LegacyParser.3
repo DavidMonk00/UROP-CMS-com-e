@@ -1,0 +1,47 @@
+.TH "LegacyParser" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LegacyParser \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <parser\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBphys_quant\fP \fBgetQuantity\fP (std::string input)"
+.br
+.RI "\fIGet number as value and vector of pairs of strings\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+DEPRECATED - Simple class to call boost::spirit parser to convert string to value and units\&. Kept because of neat parser template\&. 
+.PP
+Definition at line 72 of file parser\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBphys_quant\fP LegacyParser::getQuantity (std::string input)"
+
+.PP
+Get number as value and vector of pairs of strings\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinput\fP - String of value and units\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+phys_quant type containing value and units\&. 
+.RE
+.PP
+
+.PP
+Definition at line 105 of file Parser\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

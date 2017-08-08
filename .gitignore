@@ -1,10 +1,8 @@
 # Ignore the build and lib dirs
 build
 lib
-doc
 
 # Ignore any executables
 bin
 
 # Ignore main.cpp
-src/main.cpp

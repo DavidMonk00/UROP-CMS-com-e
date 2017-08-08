@@ -1,0 +1,212 @@
+.TH "nlohmann::detail::lexer< BasicJsonType >" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::lexer< BasicJsonType > \- lexical analysis  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBtoken_type\fP { \fBtoken_type::uninitialized\fP, \fBtoken_type::literal_true\fP, \fBtoken_type::literal_false\fP, \fBtoken_type::literal_null\fP, \fBtoken_type::value_string\fP, \fBtoken_type::value_unsigned\fP, \fBtoken_type::value_integer\fP, \fBtoken_type::value_float\fP, \fBtoken_type::begin_array\fP, \fBtoken_type::begin_object\fP, \fBtoken_type::end_array\fP, \fBtoken_type::end_object\fP, \fBtoken_type::name_separator\fP, \fBtoken_type::value_separator\fP, \fBtoken_type::parse_error\fP, \fBtoken_type::end_of_input\fP, \fBtoken_type::literal_or_value\fP }
+.RI "\fItoken types for the parser \fP""
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlexer\fP (\fBdetail::input_adapter_t\fP adapter)"
+.br
+.ti -1c
+.RI "\fBlexer\fP (const \fBlexer\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBlexer\fP & \fBoperator=\fP (\fBlexer\fP &)=delete"
+.br
+.ti -1c
+.RI "constexpr number_integer_t \fBget_number_integer\fP () const noexcept"
+.br
+.RI "\fIreturn integer value \fP"
+.ti -1c
+.RI "constexpr number_unsigned_t \fBget_number_unsigned\fP () const noexcept"
+.br
+.RI "\fIreturn unsigned integer value \fP"
+.ti -1c
+.RI "constexpr number_float_t \fBget_number_float\fP () const noexcept"
+.br
+.RI "\fIreturn floating-point value \fP"
+.ti -1c
+.RI "const \fBstd::string\fP \fBget_string\fP ()"
+.br
+.RI "\fIreturn string value \fP"
+.ti -1c
+.RI "constexpr std::size_t \fBget_position\fP () const noexcept"
+.br
+.RI "\fIreturn position of last read token \fP"
+.ti -1c
+.RI "\fBstd::string\fP \fBget_token_string\fP () const "
+.br
+.RI "\fIreturn the last read token (for errors only) \fP"
+.ti -1c
+.RI "constexpr const char * \fBget_error_message\fP () const noexcept"
+.br
+.RI "\fIreturn syntax error message \fP"
+.ti -1c
+.RI "\fBtoken_type\fP \fBscan\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static const char * \fBtoken_type_name\fP (const \fBtoken_type\fP t) noexcept"
+.br
+.RI "\fIreturn name of values of type token_type (only used for errors) \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename BasicJsonType>
+.br
+class nlohmann::detail::lexer< BasicJsonType >"
+lexical analysis 
+
+This class organizes the lexical analysis during JSON deserialization\&. 
+.PP
+Definition at line 1566 of file json\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "template<typename BasicJsonType > enum \fBnlohmann::detail::lexer::token_type\fP\fC [strong]\fP"
+
+.PP
+token types for the parser 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIuninitialized \fP\fP
+indicating the scanner is uninitialized 
+.TP
+\fB\fIliteral_true \fP\fP
+the \fCtrue\fP literal 
+.TP
+\fB\fIliteral_false \fP\fP
+the \fCfalse\fP literal 
+.TP
+\fB\fIliteral_null \fP\fP
+the \fCnull\fP literal 
+.TP
+\fB\fIvalue_string \fP\fP
+a string -- use \fBget_string()\fP for actual value 
+.TP
+\fB\fIvalue_unsigned \fP\fP
+an unsigned integer -- use \fBget_number_unsigned()\fP for actual value 
+.TP
+\fB\fIvalue_integer \fP\fP
+a signed integer -- use \fBget_number_integer()\fP for actual value 
+.TP
+\fB\fIvalue_float \fP\fP
+an floating point number -- use \fBget_number_float()\fP for actual value 
+.TP
+\fB\fIbegin_array \fP\fP
+the character for array begin \fC[\fP 
+.TP
+\fB\fIbegin_object \fP\fP
+the character for object begin \fC{\fP 
+.TP
+\fB\fIend_array \fP\fP
+the character for array end \fC]\fP 
+.TP
+\fB\fIend_object \fP\fP
+the character for object end \fC}\fP 
+.TP
+\fB\fIname_separator \fP\fP
+the name separator \fC:\fP 
+.TP
+\fB\fIvalue_separator \fP\fP
+the value separator \fC,\fP 
+.TP
+\fB\fIparse_error \fP\fP
+indicating a parse error 
+.TP
+\fB\fIend_of_input \fP\fP
+indicating the end of the input buffer 
+.TP
+\fB\fIliteral_or_value \fP\fP
+a literal or the begin of a value (only for diagnostics) 
+.PP
+Definition at line 1574 of file json\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename BasicJsonType > \fBnlohmann::detail::lexer\fP< BasicJsonType >::\fBlexer\fP (\fBdetail::input_adapter_t\fP adapter)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line 1640 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType > \fBnlohmann::detail::lexer\fP< BasicJsonType >::\fBlexer\fP (const \fBlexer\fP< BasicJsonType > &)\fC [delete]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename BasicJsonType > constexpr const char* \fBnlohmann::detail::lexer\fP< BasicJsonType >::get_error_message () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+return syntax error message 
+.PP
+Definition at line 2711 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType > constexpr number_float_t \fBnlohmann::detail::lexer\fP< BasicJsonType >::get_number_float () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+return floating-point value 
+.PP
+Definition at line 2654 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType > constexpr number_integer_t \fBnlohmann::detail::lexer\fP< BasicJsonType >::get_number_integer () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+return integer value 
+.PP
+Definition at line 2642 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType > constexpr number_unsigned_t \fBnlohmann::detail::lexer\fP< BasicJsonType >::get_number_unsigned () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+return unsigned integer value 
+.PP
+Definition at line 2648 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType > constexpr std::size_t \fBnlohmann::detail::lexer\fP< BasicJsonType >::get_position () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+return position of last read token 
+.PP
+Definition at line 2672 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType > const \fBstd::string\fP \fBnlohmann::detail::lexer\fP< BasicJsonType >::get_string ()\fC [inline]\fP"
+
+.PP
+return string value 
+.PP
+Definition at line 2660 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType > \fBstd::string\fP \fBnlohmann::detail::lexer\fP< BasicJsonType >::get_token_string () const\fC [inline]\fP"
+
+.PP
+return the last read token (for errors only) 
+.PP
+Definition at line 2678 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType > \fBlexer\fP& \fBnlohmann::detail::lexer\fP< BasicJsonType >::operator= (\fBlexer\fP< BasicJsonType > &)\fC [delete]\fP"
+
+.SS "template<typename BasicJsonType > \fBtoken_type\fP \fBnlohmann::detail::lexer\fP< BasicJsonType >::scan ()\fC [inline]\fP"
+
+.PP
+Definition at line 2720 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType > static const char* \fBnlohmann::detail::lexer\fP< BasicJsonType >::token_type_name (const \fBtoken_type\fP t)\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+return name of values of type token_type (only used for errors) 
+.PP
+Definition at line 1596 of file json\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

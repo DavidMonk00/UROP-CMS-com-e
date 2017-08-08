@@ -1,0 +1,173 @@
+.TH "nlohmann::json_pointer" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::json_pointer \- JSON Pointer\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBjson_pointer\fP (const std::string &s='')"
+.br
+.RI "\fIcreate JSON pointer \fP"
+.ti -1c
+.RI "std::string \fBto_string\fP () const noexcept"
+.br
+.RI "\fIreturn a string representation of the JSON pointer \fP"
+.ti -1c
+.RI "\fBoperator std::string\fP () const "
+.br
+.RI "\fIreturn a string representation of the JSON pointer \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBbasic_json\fP"
+.br
+.RI "\fIallow \fBbasic_json\fP to access private members \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (\fBjson_pointer\fP const &lhs, \fBjson_pointer\fP const &rhs) noexcept"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (\fBjson_pointer\fP const &lhs, \fBjson_pointer\fP const &rhs) noexcept"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+JSON Pointer\&. 
+
+A JSON pointer defines a string syntax for identifying a specific value within a JSON document\&. It can be used with functions \fCat\fP and \fCoperator[]\fP\&. Furthermore, JSON pointers are the base for JSON patches\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fCRFC 6901\fP
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+version 2\&.0\&.0 
+.RE
+.PP
+
+.PP
+Definition at line 6972 of file json\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "nlohmann::json_pointer::json_pointer (const std::string & s = \fC''\fP)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+create JSON pointer Create a JSON pointer according to the syntax described in \fCSection 3 of RFC6901\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP string representing the JSON pointer; if omitted, the empty string is assumed which references the whole JSON value
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIparse_error\&.107\fP if the given JSON pointer \fIs\fP is nonempty and does not begin with a slash (\fC/\fP); see example below
+.br
+\fIparse_error\&.108\fP if a tilde (\fC~\fP) in the given JSON pointer \fIs\fP is not followed by \fC0\fP (representing \fC~\fP) or \fC1\fP (representing \fC/\fP); see example below
+.RE
+.PP
+{The example shows the construction several valid JSON pointers as well as the exceptional behavior\&.,\fBjson_pointer\fP}
+.PP
+\fBSince:\fP
+.RS 4
+version 2\&.0\&.0 
+.RE
+.PP
+
+.PP
+Definition at line 7000 of file json\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "nlohmann::json_pointer::operator std::string () const\fC [inline]\fP"
+
+.PP
+return a string representation of the JSON pointer 
+.PP
+\fBInvariant:\fP
+.RS 4
+For each JSON pointer \fCptr\fP, it holds: 
+.PP
+.nf
+ptr == json_pointer(ptr\&.to_string());
+
+.fi
+.PP
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a string representation of the JSON pointer
+.RE
+.PP
+{The example shows the result of \fCto_string\fP\&., json_pointer__to_string}
+.PP
+\fBSince:\fP
+.RS 4
+version 2\&.0\&.0 
+.RE
+.PP
+
+.PP
+Definition at line 7028 of file json\&.hpp\&.
+.SS "std::string nlohmann::json_pointer::to_string () const\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+return a string representation of the JSON pointer 
+.PP
+\fBInvariant:\fP
+.RS 4
+For each JSON pointer \fCptr\fP, it holds: 
+.PP
+.nf
+ptr == json_pointer(ptr\&.to_string());
+
+.fi
+.PP
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a string representation of the JSON pointer
+.RE
+.PP
+{The example shows the result of \fCto_string\fP\&., json_pointer__to_string}
+.PP
+\fBSince:\fP
+.RS 4
+version 2\&.0\&.0 
+.RE
+.PP
+
+.PP
+Definition at line 7017 of file json\&.hpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBbasic_json\fP\fC [friend]\fP"
+
+.PP
+allow \fBbasic_json\fP to access private members 
+.PP
+Definition at line 6976 of file json\&.hpp\&.
+.SS "bool operator!= (\fBjson_pointer\fP const & lhs, \fBjson_pointer\fP const & rhs)\fC [friend]\fP"
+
+.PP
+Definition at line 14447 of file json\&.hpp\&.
+.SS "bool operator== (\fBjson_pointer\fP const & lhs, \fBjson_pointer\fP const & rhs)\fC [friend]\fP"
+
+.PP
+Definition at line 14442 of file json\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

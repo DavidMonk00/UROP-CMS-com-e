@@ -1,0 +1,59 @@
+.TH "nlohmann::detail::output_vector_adapter< CharType >" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::output_vector_adapter< CharType > \- output adapter for byte vectors  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.PP
+Inherits \fBnlohmann::detail::output_adapter_protocol< CharType >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBoutput_vector_adapter\fP (std::vector< CharType > &vec)"
+.br
+.ti -1c
+.RI "void \fBwrite_character\fP (CharType c) override"
+.br
+.ti -1c
+.RI "void \fBwrite_characters\fP (const CharType *s, std::size_t length) override"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename CharType>
+.br
+class nlohmann::detail::output_vector_adapter< CharType >"
+output adapter for byte vectors 
+.PP
+Definition at line 4364 of file json\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename CharType > \fBnlohmann::detail::output_vector_adapter\fP< CharType >::\fBoutput_vector_adapter\fP (std::vector< CharType > & vec)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+Definition at line 4367 of file json\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename CharType > void \fBnlohmann::detail::output_vector_adapter\fP< CharType >::write_character (CharType c)\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBnlohmann::detail::output_adapter_protocol< CharType >\fP\&.
+.PP
+Definition at line 4369 of file json\&.hpp\&.
+.SS "template<typename CharType > void \fBnlohmann::detail::output_vector_adapter\fP< CharType >::write_characters (const CharType * s, std::size_t length)\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implements \fBnlohmann::detail::output_adapter_protocol< CharType >\fP\&.
+.PP
+Definition at line 4374 of file json\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

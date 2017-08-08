@@ -1,0 +1,53 @@
+.TH "nlohmann::detail::output_adapter_protocol< CharType >" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::output_adapter_protocol< CharType > \- abstract output adapter interface  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.PP
+Inherited by \fBnlohmann::detail::output_stream_adapter< CharType >\fP, \fBnlohmann::detail::output_string_adapter< CharType >\fP, and \fBnlohmann::detail::output_vector_adapter< CharType >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBwrite_character\fP (CharType c)=0"
+.br
+.ti -1c
+.RI "virtual void \fBwrite_characters\fP (const CharType *s, std::size_t length)=0"
+.br
+.ti -1c
+.RI "virtual \fB~output_adapter_protocol\fP ()=default"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename CharType>
+.br
+struct nlohmann::detail::output_adapter_protocol< CharType >"
+abstract output adapter interface 
+.PP
+Definition at line 4351 of file json\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename CharType > virtual \fBnlohmann::detail::output_adapter_protocol\fP< CharType >::~\fBoutput_adapter_protocol\fP ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename CharType > virtual void \fBnlohmann::detail::output_adapter_protocol\fP< CharType >::write_character (CharType c)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBnlohmann::detail::output_string_adapter< CharType >\fP, \fBnlohmann::detail::output_stream_adapter< CharType >\fP, and \fBnlohmann::detail::output_vector_adapter< CharType >\fP\&.
+.SS "template<typename CharType > virtual void \fBnlohmann::detail::output_adapter_protocol\fP< CharType >::write_characters (const CharType * s, std::size_t length)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBnlohmann::detail::output_string_adapter< CharType >\fP, \fBnlohmann::detail::output_stream_adapter< CharType >\fP, and \fBnlohmann::detail::output_vector_adapter< CharType >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

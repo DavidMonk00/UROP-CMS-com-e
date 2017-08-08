@@ -1,0 +1,153 @@
+.TH "I2CDevice" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2CDevice \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <I2CDevice\&.hpp>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBtI2Ctype\fP { \fBtI2Ctype::SEMA\fP, \fBtI2Ctype::FTDI\fP, \fBtI2Ctype::PCIe\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBI2CDevice\fP (uint32_t addr, std::unordered_map< std::string, \fBI2CBaseRegister\fP * > reg_map)"
+.br
+.RI "\fIClass constructor\&. \fP"
+.ti -1c
+.RI "\fBI2CDevice\fP (void)"
+.br
+.RI "\fIDefault class constructor\&. \fP"
+.ti -1c
+.RI "\fB~I2CDevice\fP (void)"
+.br
+.RI "\fIClass destructor\&. \fP"
+.ti -1c
+.RI "void \fBsetI2CType\fP (\fBI2C_base\fP *i2c_type)"
+.br
+.ti -1c
+.RI "\fBunits_variant\fP \fBread\fP (std::string reg)"
+.br
+.RI "\fIRead data from register\&. \fP"
+.ti -1c
+.RI "void \fBwrite\fP (std::string reg, \fBunits_variant\fP value)"
+.br
+.RI "\fIWrite data to register\&. \fP"
+.ti -1c
+.RI "std::vector< std::string > \fBgetProperties\fP (void)"
+.br
+.RI "\fIGet all possible registers for given device\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class represents a single I2C device with a number of registers\&. Read/Write functions take a string-based ID for a given register\&. 
+.PP
+Definition at line 21 of file I2CDevice\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBI2CDevice::tI2Ctype\fP\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISEMA \fP\fP
+.TP
+\fB\fIFTDI \fP\fP
+.TP
+\fB\fIPCIe \fP\fP
+.PP
+Definition at line 28 of file I2CDevice\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "I2CDevice::I2CDevice (uint32_t addr, std::unordered_map< std::string, \fBI2CBaseRegister\fP * > reg_map)"
+
+.PP
+Class constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIaddr\fP - Address of device\&. 
+.br
+\fIreg_map\fP - Unordered map of registers available on device\&. 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file I2CDevice\&.cpp\&.
+.SS "I2CDevice::I2CDevice (void)"
+
+.PP
+Default class constructor\&. 
+.PP
+Definition at line 23 of file I2CDevice\&.cpp\&.
+.SS "I2CDevice::~I2CDevice (void)"
+
+.PP
+Class destructor\&. 
+.PP
+Definition at line 32 of file I2CDevice\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< std::string > I2CDevice::getProperties (void)"
+
+.PP
+Get all possible registers for given device\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Vector of strings assosciated with the properties\&. 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file I2CDevice\&.cpp\&.
+.SS "\fBunits_variant\fP I2CDevice::read (std::string reg)"
+
+.PP
+Read data from register\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreg\fP - Property to read\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+units_variant containing quantity of correct type\&. 
+.RE
+.PP
+
+.PP
+Definition at line 39 of file I2CDevice\&.cpp\&.
+.SS "void I2CDevice::setI2CType (\fBI2C_base\fP * i2c_type)"
+
+.PP
+Definition at line 25 of file I2CDevice\&.cpp\&.
+.SS "void I2CDevice::write (std::string reg, \fBunits_variant\fP value)"
+
+.PP
+Write data to register\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIreg\fP - Property to write to\&. 
+.br
+\fIvalue\fP - Data to write to register\&. Must be of the correct type\&. 
+.RE
+.PP
+
+.PP
+Definition at line 49 of file I2CDevice\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

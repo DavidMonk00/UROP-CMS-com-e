@@ -1,0 +1,70 @@
+.TH "Server" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Server \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CouchDB\&.hpp>\fP
+.PP
+Inherits \fBCouchDB\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBServer\fP (void)"
+.br
+.ti -1c
+.RI "\fB~Server\fP (void)"
+.br
+.ti -1c
+.RI "void \fBeditConfig\fP (std::string bus, std::string device, std::string property, std::string value)"
+.br
+.ti -1c
+.RI "void \fBeditConfig\fP (std::string board, std::string bus, std::string device, std::string property, std::string value)"
+.br
+.ti -1c
+.RI "void \fBpushDatabase\fP (\fBjson\fP \fBdatabase\fP)"
+.br
+.ti -1c
+.RI "void \fBpushChanges\fP (void)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 43 of file CouchDB\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Server::Server (void)"
+
+.PP
+Definition at line 183 of file CouchDB\&.cpp\&.
+.SS "Server::~Server (void)"
+
+.PP
+Definition at line 188 of file CouchDB\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Server::editConfig (std::string bus, std::string device, std::string property, std::string value)"
+
+.PP
+Definition at line 192 of file CouchDB\&.cpp\&.
+.SS "void Server::editConfig (std::string board, std::string bus, std::string device, std::string property, std::string value)"
+
+.PP
+Definition at line 201 of file CouchDB\&.cpp\&.
+.SS "void Server::pushChanges (void)"
+
+.PP
+Definition at line 216 of file CouchDB\&.cpp\&.
+.SS "void Server::pushDatabase (\fBjson\fP database)"
+
+.PP
+Definition at line 208 of file CouchDB\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

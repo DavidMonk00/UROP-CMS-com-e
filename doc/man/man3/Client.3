@@ -1,0 +1,126 @@
+.TH "Client" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Client \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CouchDB\&.hpp>\fP
+.PP
+Inherits \fBCouchDB\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBClient\fP (void)"
+.br
+.ti -1c
+.RI "\fBClient\fP (std::string url_)"
+.br
+.ti -1c
+.RI "\fB~Client\fP (void)"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBgetDatabases\fP (void)"
+.br
+.ti -1c
+.RI "void \fBsetDatabase\fP (std::string db)"
+.br
+.ti -1c
+.RI "void \fBuploadDocument\fP (\fBjson\fP data)"
+.br
+.ti -1c
+.RI "void \fBuploadDocument\fP (std::string url_, \fBjson\fP data)"
+.br
+.ti -1c
+.RI "void \fBpushDatabase\fP (void)"
+.br
+.ti -1c
+.RI "void \fBpushDatabase\fP (\fBjson\fP params)"
+.br
+.ti -1c
+.RI "std::string \fBgetDocument\fP (std::string doc)"
+.br
+.ti -1c
+.RI "std::vector< std::pair< std::string, std::string > > \fBgetDocumentIDs\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBcheckOnline\fP (std::string url_)"
+.br
+.ti -1c
+.RI "void \fBdeleteDocument\fP (std::string ID, std::string rev)"
+.br
+.ti -1c
+.RI "void \fBcompactDatabase\fP (void)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 25 of file CouchDB\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Client::Client (void)"
+
+.PP
+Definition at line 89 of file CouchDB\&.cpp\&.
+.SS "Client::Client (std::string url_)"
+
+.PP
+Definition at line 95 of file CouchDB\&.cpp\&.
+.SS "Client::~Client (void)"
+
+.PP
+Definition at line 101 of file CouchDB\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Client::checkOnline (std::string url_)"
+
+.PP
+Definition at line 167 of file CouchDB\&.cpp\&.
+.SS "void Client::compactDatabase (void)"
+
+.PP
+Definition at line 178 of file CouchDB\&.cpp\&.
+.SS "void Client::deleteDocument (std::string ID, std::string rev)"
+
+.PP
+Definition at line 173 of file CouchDB\&.cpp\&.
+.SS "std::vector< std::string > Client::getDatabases (void)"
+
+.PP
+Definition at line 105 of file CouchDB\&.cpp\&.
+.SS "std::string Client::getDocument (std::string doc)"
+
+.PP
+Definition at line 150 of file CouchDB\&.cpp\&.
+.SS "std::vector< std::pair< std::string, std::string > > Client::getDocumentIDs (void)"
+
+.PP
+Definition at line 156 of file CouchDB\&.cpp\&.
+.SS "void Client::pushDatabase (void)"
+
+.PP
+Definition at line 135 of file CouchDB\&.cpp\&.
+.SS "void Client::pushDatabase (\fBjson\fP params)"
+
+.PP
+Definition at line 142 of file CouchDB\&.cpp\&.
+.SS "void Client::setDatabase (std::string db)"
+
+.PP
+Definition at line 115 of file CouchDB\&.cpp\&.
+.SS "void Client::uploadDocument (\fBjson\fP data)"
+
+.PP
+Definition at line 119 of file CouchDB\&.cpp\&.
+.SS "void Client::uploadDocument (std::string url_, \fBjson\fP data)"
+
+.PP
+Definition at line 128 of file CouchDB\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

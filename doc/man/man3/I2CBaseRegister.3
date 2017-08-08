@@ -1,0 +1,94 @@
+.TH "I2CBaseRegister" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2CBaseRegister \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <I2CRegister\&.hpp>\fP
+.PP
+Inherited by \fBDS3232TemperatureI2CRegister\fP, \fBGenericI2CRegister\fP, \fBGenericI2CRegister\fP, \fBInternalRegister\fP, \fBPCIClockOutputEnableRegister\fP, \fBPCIClockPLLModeRegister\fP, and \fBTimeI2CRegister\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBunits_variant\fP \fBread\fP (\fBI2C_base\fP *i2c_ptr, uint32_t address)=0"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBI2C_base\fP *i2c_ptr, uint32_t address, \fBunits_variant\fP value)=0"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (void *i2c_ptr, uint32_t addr)=0"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (void *i2c_ptr, uint32_t addr)=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBreg\fP"
+.br
+.ti -1c
+.RI "bool \fBb_read\fP"
+.br
+.ti -1c
+.RI "bool \fBb_write\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+I2CRegister\&.h Purpose: defines \fBI2CBaseRegister\fP class and its derivations\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+David Monk 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.0 Base class for I2C register is pure virtual and thus should not be constructed\&. 
+.RE
+.PP
+
+.PP
+Definition at line 19 of file I2CRegister\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void I2CBaseRegister::read (void * i2c_ptr, uint32_t addr)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBGenericI2CRegister\fP\&.
+.SS "virtual \fBunits_variant\fP I2CBaseRegister::read (\fBI2C_base\fP * i2c_ptr, uint32_t address)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBInternalRegister\fP, \fBPCIClockOutputEnableRegister\fP, \fBPCIClockPLLModeRegister\fP, \fBDS3232TemperatureI2CRegister\fP, \fBTimeI2CRegister\fP, and \fBGenericI2CRegister\fP\&.
+.SS "virtual void I2CBaseRegister::write (void * i2c_ptr, uint32_t addr)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBGenericI2CRegister\fP\&.
+.SS "virtual void I2CBaseRegister::write (\fBI2C_base\fP * i2c_ptr, uint32_t address, \fBunits_variant\fP value)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBInternalRegister\fP, \fBPCIClockOutputEnableRegister\fP, \fBPCIClockPLLModeRegister\fP, \fBDS3232TemperatureI2CRegister\fP, \fBTimeI2CRegister\fP, and \fBGenericI2CRegister\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool I2CBaseRegister::b_read\fC [protected]\fP"
+
+.PP
+Definition at line 22 of file I2CRegister\&.hpp\&.
+.SS "bool I2CBaseRegister::b_write\fC [protected]\fP"
+
+.PP
+Definition at line 23 of file I2CRegister\&.hpp\&.
+.SS "uint32_t I2CBaseRegister::reg\fC [protected]\fP"
+
+.PP
+Definition at line 21 of file I2CRegister\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

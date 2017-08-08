@@ -1,0 +1,63 @@
+.TH "md__r_e_a_d_m_e" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__r_e_a_d_m_e \- I2C Monitoring 
+
+.SS "Installation Notes"
+.PP
+.SS "Prerequisites:"
+.PP
+.IP "\(bu" 2
+Boost libraries: \fCyum install boost-devel\fP
+.IP "\(bu" 2
+C++14 compatible compiler (GCC 5\&.3\&.1): 
+.PP
+.nf
+1 sudo yum install centos-release-scl
+2 sudo yum install devtoolset-4-gcc*
+3 scl enable devtoolset-4 bash
+
+.fi
+.PP
+
+.IP "\(bu" 2
+SEMA libraries:
+.IP "  1." 6
+Download from http://www.adlinktech.com/PD/web/PD_Driver.php?cp=Driver&PDNo=1274&kind=UT
+.IP "  2." 6
+Run \fC/archive-directory/binaries/linux64/SEMA_x64\fP as root
+.IP "  3." 6
+Copy header files to \fC/opt/Sema/include\fP
+.IP "  4." 6
+Link binaries from \fC/usr/local/SEMA/lib\fP -> \fC/opt/Sema/lib\fP
+.IP "  5." 6
+Create header file 'Sema\&.h' to collect includes
+.PP
+
+.IP "\(bu" 2
+pybind11 libraries:
+.IP "  1." 6
+Install developer extensions for python: ``` pip install pytest yum install python-devel ``\fC\fP
+.IP "  2." 6
+\fCClone repository\fPgit clone https://github.com/pybind/pybind11.git` into /opt
+.IP "  3." 6
+Check installation: ``` cd /opt/pybind11 mkdir build cd build cmake \&.\&. make check -j 4 ``` 
+.SS "Clone repository"
+
+.PP
+.PP
+\fCgit clone https://github.com/DavidMonk00/UROP-CMS-com-e.git\fP 
+.SS "Crontab:"
+.PP
+\fCcrontab -e\fP: 
+.PP
+.nf
+1 * * * * * /path-to-folder/bin/main\&.py
+2 0 * * * * /path-to-folder/bin/purge\&.py
+
+.fi
+.PP
+ 
+.PP
+

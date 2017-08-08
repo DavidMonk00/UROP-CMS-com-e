@@ -1,0 +1,323 @@
+.TH "Board" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Board \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Board\&.hpp>\fP
+.PP
+Inherited by \fBATCABoard\fP, and \fBCOMETestBoard\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual std::unordered_map< std::string, \fBI2CBus\fP * > \fBgetMap\fP (void)=0"
+.br
+.ti -1c
+.RI "void \fBsetBus\fP (std::string bus)"
+.br
+.RI "\fISet bus to communicate over\&. \fP"
+.ti -1c
+.RI "void \fBsetDevice\fP (std::string device)"
+.br
+.RI "\fISet device to communicate to\&. \fP"
+.ti -1c
+.RI "void \fBsetDevice\fP (std::string bus, std::string device)"
+.br
+.RI "\fISet device to communicate to\&. \fP"
+.ti -1c
+.RI "void \fBsetI2CType\fP (\fBI2C_base\fP *i2c_type)"
+.br
+.RI "\fISet I2C protocol\&. \fP"
+.ti -1c
+.RI "std::vector< std::string > \fBgetBuses\fP (void)"
+.br
+.RI "\fIGet available buses on board\&. \fP"
+.ti -1c
+.RI "std::vector< std::string > \fBgetDevices\fP (void)"
+.br
+.RI "\fIGet available devices on selected bus\&. \fP"
+.ti -1c
+.RI "std::vector< std::string > \fBgetDevices\fP (std::string bus)"
+.br
+.RI "\fIGet available devices on bus\&. \fP"
+.ti -1c
+.RI "std::vector< std::string > \fBgetProperties\fP (void)"
+.br
+.RI "\fIGet available properties for selected device\&. \fP"
+.ti -1c
+.RI "std::vector< std::string > \fBgetProperties\fP (std::string device)"
+.br
+.RI "\fIGet available properties for device\&. \fP"
+.ti -1c
+.RI "std::vector< std::string > \fBgetProperties\fP (std::string bus, std::string device)"
+.br
+.RI "\fIGet available properties for selected device\&. \fP"
+.ti -1c
+.RI "std::string \fBread\fP (std::string property)"
+.br
+.RI "\fIRead value of property\&. \fP"
+.ti -1c
+.RI "void \fBwrite\fP (std::string property, std::string value)"
+.br
+.RI "\fIWrite value to property\&. \fP"
+.ti -1c
+.RI "\fBBoard\fP (int id)"
+.br
+.ti -1c
+.RI "\fB~Board\fP (void)"
+.br
+.ti -1c
+.RI "const int \fBgetID\fP (void) const "
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBID\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::unordered_map< std::string, \fBI2CBus\fP * > \fBbus_map\fP"
+.br
+.ti -1c
+.RI "\fBI2CBus\fP * \fBi2c_bus\fP"
+.br
+.ti -1c
+.RI "\fBI2C_base\fP * \fBi2c\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 34 of file Board\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Board::Board (int id)\fC [inline]\fP"
+
+.PP
+Definition at line 6 of file example\&.cpp\&.
+.SS "Board::~Board (void)\fC [inline]\fP"
+
+.PP
+Definition at line 9 of file example\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< std::string > Board::getBuses (void)"
+
+.PP
+Get available buses on board\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Vector of string IDs for available buses\&. 
+.RE
+.PP
+
+.PP
+Definition at line 48 of file Board\&.cpp\&.
+.SS "std::vector< std::string > Board::getDevices (void)"
+
+.PP
+Get available devices on selected bus\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Vector of string IDs for available devices\&. 
+.RE
+.PP
+
+.PP
+Definition at line 61 of file Board\&.cpp\&.
+.SS "std::vector< std::string > Board::getDevices (std::string bus)"
+
+.PP
+Get available devices on bus\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbus\fP - String identifier for bus\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Vector of string IDs for available devices\&. 
+.RE
+.PP
+
+.PP
+Definition at line 70 of file Board\&.cpp\&.
+.SS "const int Board::getID (void) const\fC [inline]\fP"
+
+.PP
+Definition at line 10 of file example\&.cpp\&.
+.SS "virtual std::unordered_map<std::string, \fBI2CBus\fP*> Board::getMap (void)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBATCABoard\fP, and \fBCOMETestBoard\fP\&.
+.SS "std::vector< std::string > Board::getProperties (void)"
+
+.PP
+Get available properties for selected device\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Vector of strings for each available property\&. 
+.RE
+.PP
+
+.PP
+Definition at line 79 of file Board\&.cpp\&.
+.SS "std::vector< std::string > Board::getProperties (std::string device)"
+
+.PP
+Get available properties for device\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdevice\fP - String identifier for device\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Vector of strings for each available property\&. 
+.RE
+.PP
+
+.PP
+Definition at line 88 of file Board\&.cpp\&.
+.SS "std::vector< std::string > Board::getProperties (std::string bus, std::string device)"
+
+.PP
+Get available properties for selected device\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbus\fP - String identifier for bus\&. 
+.br
+\fIdevice\fP - String identifier for device\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Vector of strings for each available property\&. 
+.RE
+.PP
+
+.PP
+Definition at line 98 of file Board\&.cpp\&.
+.SS "std::string Board::read (std::string property)"
+
+.PP
+Read value of property\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIproperty\fP - String identifier for property\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+String of value and assosciated unit\&. 
+.RE
+.PP
+
+.PP
+Definition at line 108 of file Board\&.cpp\&.
+.SS "void Board::setBus (std::string bus)"
+
+.PP
+Set bus to communicate over\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbus\fP - String identifier for bus\&. 
+.RE
+.PP
+
+.PP
+Definition at line 14 of file Board\&.cpp\&.
+.SS "void Board::setDevice (std::string device)"
+
+.PP
+Set device to communicate to\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdevice\fP - String identifier for device\&. 
+.RE
+.PP
+
+.PP
+Definition at line 22 of file Board\&.cpp\&.
+.SS "void Board::setDevice (std::string bus, std::string device)"
+
+.PP
+Set device to communicate to\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbus\fP - String identifier for bus\&. 
+.br
+\fIdevice\fP - String identifier for device\&. 
+.RE
+.PP
+
+.PP
+Definition at line 31 of file Board\&.cpp\&.
+.SS "void Board::setI2CType (\fBI2C_base\fP * i2c_type)"
+
+.PP
+Set I2C protocol\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi2c_type\fP - Pointer to \fBI2C_base\fP object to be used for I2C communication\&. 
+.RE
+.PP
+
+.PP
+Definition at line 40 of file Board\&.cpp\&.
+.SS "void Board::write (std::string property, std::string value)"
+
+.PP
+Write value to property\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIproperty\fP - String identifier for property\&. 
+.br
+\fIvalue\fP - String of value and assosciated unit\&. 
+.RE
+.PP
+
+.PP
+Definition at line 120 of file Board\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::unordered_map<std::string, \fBI2CBus\fP*> Board::bus_map\fC [protected]\fP"
+
+.PP
+Definition at line 36 of file Board\&.hpp\&.
+.SS "\fBI2C_base\fP* Board::i2c\fC [protected]\fP"
+
+.PP
+Definition at line 38 of file Board\&.hpp\&.
+.SS "\fBI2CBus\fP* Board::i2c_bus\fC [protected]\fP"
+
+.PP
+Definition at line 37 of file Board\&.hpp\&.
+.SS "int Board::ID"
+
+.PP
+Definition at line 5 of file example\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

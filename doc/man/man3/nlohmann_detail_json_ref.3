@@ -1,0 +1,108 @@
+.TH "nlohmann::detail::json_ref< BasicJsonType >" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::json_ref< BasicJsonType > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "using \fBvalue_type\fP = BasicJsonType"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBjson_ref\fP (\fBvalue_type\fP &&value)"
+.br
+.ti -1c
+.RI "\fBjson_ref\fP (const \fBvalue_type\fP &value)"
+.br
+.ti -1c
+.RI "\fBjson_ref\fP (std::initializer_list< \fBjson_ref\fP > init)"
+.br
+.ti -1c
+.RI "template<class\&.\&.\&. Args> \fBjson_ref\fP (Args\&.\&.\&.args)"
+.br
+.ti -1c
+.RI "\fBjson_ref\fP (\fBjson_ref\fP &&)=default"
+.br
+.ti -1c
+.RI "\fBjson_ref\fP (const \fBjson_ref\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBjson_ref\fP & \fBoperator=\fP (const \fBjson_ref\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBvalue_type\fP \fBmoved_or_copied\fP () const "
+.br
+.ti -1c
+.RI "\fBvalue_type\fP const & \fBoperator*\fP () const "
+.br
+.ti -1c
+.RI "\fBvalue_type\fP const * \fBoperator\->\fP () const "
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename BasicJsonType>
+.br
+class nlohmann::detail::json_ref< BasicJsonType >"
+
+.PP
+Definition at line 6846 of file json\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<typename BasicJsonType> using \fBnlohmann::detail::json_ref\fP< BasicJsonType >::\fBvalue_type\fP =  BasicJsonType"
+
+.PP
+Definition at line 6849 of file json\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename BasicJsonType> \fBnlohmann::detail::json_ref\fP< BasicJsonType >::\fBjson_ref\fP (\fBvalue_type\fP && value)\fC [inline]\fP"
+
+.PP
+Definition at line 6851 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBnlohmann::detail::json_ref\fP< BasicJsonType >::\fBjson_ref\fP (const \fBvalue_type\fP & value)\fC [inline]\fP"
+
+.PP
+Definition at line 6857 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBnlohmann::detail::json_ref\fP< BasicJsonType >::\fBjson_ref\fP (std::initializer_list< \fBjson_ref\fP< BasicJsonType > > init)\fC [inline]\fP"
+
+.PP
+Definition at line 6862 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> template<class\&.\&.\&. Args> \fBnlohmann::detail::json_ref\fP< BasicJsonType >::\fBjson_ref\fP (Args\&.\&.\&. args)\fC [inline]\fP"
+
+.PP
+Definition at line 6869 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBnlohmann::detail::json_ref\fP< BasicJsonType >::\fBjson_ref\fP (\fBjson_ref\fP< BasicJsonType > &&)\fC [default]\fP"
+
+.SS "template<typename BasicJsonType> \fBnlohmann::detail::json_ref\fP< BasicJsonType >::\fBjson_ref\fP (const \fBjson_ref\fP< BasicJsonType > &)\fC [delete]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename BasicJsonType> \fBvalue_type\fP \fBnlohmann::detail::json_ref\fP< BasicJsonType >::moved_or_copied () const\fC [inline]\fP"
+
+.PP
+Definition at line 6880 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBvalue_type\fP const& \fBnlohmann::detail::json_ref\fP< BasicJsonType >::operator* () const\fC [inline]\fP"
+
+.PP
+Definition at line 6892 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBvalue_type\fP const* \fBnlohmann::detail::json_ref\fP< BasicJsonType >::operator\-> () const\fC [inline]\fP"
+
+.PP
+Definition at line 6897 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBjson_ref\fP& \fBnlohmann::detail::json_ref\fP< BasicJsonType >::operator= (const \fBjson_ref\fP< BasicJsonType > &)\fC [delete]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

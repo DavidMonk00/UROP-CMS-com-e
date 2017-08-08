@@ -1,0 +1,563 @@
+.TH "nlohmann::detail::iter_impl< BasicJsonType >" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::iter_impl< BasicJsonType > \- a template for a random access iterator for the \fBbasic_json\fP class  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.PP
+Inherits iterator< std::random_access_iterator_tag, BasicJsonType >\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "using \fBvalue_type\fP = typename BasicJsonType::value_type"
+.br
+.RI "\fIthe type of the values when the iterator is dereferenced \fP"
+.ti -1c
+.RI "using \fBdifference_type\fP = typename BasicJsonType::difference_type"
+.br
+.RI "\fIa type to represent differences between iterators \fP"
+.ti -1c
+.RI "using \fBpointer\fP = typename std::conditional< std::is_const< BasicJsonType >::\fBvalue\fP, typename BasicJsonType::const_pointer, typename BasicJsonType::pointer >::type"
+.br
+.RI "\fIdefines a pointer to the type iterated over (value_type) \fP"
+.ti -1c
+.RI "using \fBreference\fP = typename std::conditional< std::is_const< BasicJsonType >::\fBvalue\fP, typename BasicJsonType::const_reference, typename BasicJsonType::reference >::type"
+.br
+.RI "\fIdefines a reference to the type iterated over (value_type) \fP"
+.ti -1c
+.RI "using \fBiterator_category\fP = std::bidirectional_iterator_tag"
+.br
+.RI "\fIthe category of the iterator \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBiter_impl\fP ()=default"
+.br
+.RI "\fIdefault constructor \fP"
+.ti -1c
+.RI "\fBiter_impl\fP (\fBpointer\fP \fBobject\fP) noexcept"
+.br
+.RI "\fIconstructor for a given JSON instance \fP"
+.ti -1c
+.RI "\fBiter_impl\fP (const \fBiter_impl\fP< typename std::remove_const< BasicJsonType >::type > &other) noexcept"
+.br
+.RI "\fIconverting constructor \fP"
+.ti -1c
+.RI "\fBiter_impl\fP & \fBoperator=\fP (const \fBiter_impl\fP< typename std::remove_const< BasicJsonType >::type > &other) noexcept"
+.br
+.RI "\fIconverting assignment \fP"
+.ti -1c
+.RI "\fBreference\fP \fBoperator*\fP () const "
+.br
+.RI "\fIreturn a reference to the value pointed to by the iterator \fP"
+.ti -1c
+.RI "\fBpointer\fP \fBoperator\->\fP () const "
+.br
+.RI "\fIdereference the iterator \fP"
+.ti -1c
+.RI "\fBiter_impl\fP \fBoperator++\fP (int)"
+.br
+.RI "\fIpost-increment (it++) \fP"
+.ti -1c
+.RI "\fBiter_impl\fP & \fBoperator++\fP ()"
+.br
+.RI "\fIpre-increment (++it) \fP"
+.ti -1c
+.RI "\fBiter_impl\fP \fBoperator\-\-\fP (int)"
+.br
+.RI "\fIpost-decrement (it--) \fP"
+.ti -1c
+.RI "\fBiter_impl\fP & \fBoperator\-\-\fP ()"
+.br
+.RI "\fIpre-decrement (--it) \fP"
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBiter_impl\fP &other) const "
+.br
+.RI "\fIcomparison: equal \fP"
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBiter_impl\fP &other) const "
+.br
+.RI "\fIcomparison: not equal \fP"
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBiter_impl\fP &other) const "
+.br
+.RI "\fIcomparison: smaller \fP"
+.ti -1c
+.RI "bool \fBoperator<=\fP (const \fBiter_impl\fP &other) const "
+.br
+.RI "\fIcomparison: less than or equal \fP"
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBiter_impl\fP &other) const "
+.br
+.RI "\fIcomparison: greater than \fP"
+.ti -1c
+.RI "bool \fBoperator>=\fP (const \fBiter_impl\fP &other) const "
+.br
+.RI "\fIcomparison: greater than or equal \fP"
+.ti -1c
+.RI "\fBiter_impl\fP & \fBoperator+=\fP (\fBdifference_type\fP i)"
+.br
+.RI "\fIadd to iterator \fP"
+.ti -1c
+.RI "\fBiter_impl\fP & \fBoperator\-=\fP (\fBdifference_type\fP i)"
+.br
+.RI "\fIsubtract from iterator \fP"
+.ti -1c
+.RI "\fBiter_impl\fP \fBoperator+\fP (\fBdifference_type\fP i) const "
+.br
+.RI "\fIadd to iterator \fP"
+.ti -1c
+.RI "\fBiter_impl\fP \fBoperator\-\fP (\fBdifference_type\fP i) const "
+.br
+.RI "\fIsubtract from iterator \fP"
+.ti -1c
+.RI "\fBdifference_type\fP \fBoperator\-\fP (const \fBiter_impl\fP &other) const "
+.br
+.RI "\fIreturn difference \fP"
+.ti -1c
+.RI "\fBreference\fP \fBoperator[]\fP (\fBdifference_type\fP n) const "
+.br
+.RI "\fIaccess to successor \fP"
+.ti -1c
+.RI "object_t::key_type \fBkey\fP () const "
+.br
+.RI "\fIreturn the key of an object iterator \fP"
+.ti -1c
+.RI "\fBreference\fP \fBvalue\fP () const "
+.br
+.RI "\fIreturn the value of an iterator \fP"
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "\fBiter_impl\fP \fBoperator+\fP (\fBdifference_type\fP i, const \fBiter_impl\fP &it)"
+.br
+.RI "\fIaddition of distance and iterator \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename BasicJsonType>
+.br
+class nlohmann::detail::iter_impl< BasicJsonType >"
+a template for a random access iterator for the \fBbasic_json\fP class 
+
+This class implements a both iterators (iterator and const_iterator) for the \fBbasic_json\fP class\&.
+.PP
+\fBNote:\fP
+.RS 4
+An iterator is called \fIinitialized\fP when a pointer to a JSON value has been set (e\&.g\&., by a constructor or a copy assignment)\&. If the iterator is default-constructed, it is \fIuninitialized\fP and most methods are undefined\&. The library uses assertions to detect calls on uninitialized iterators\&.**
+.RE
+.PP
+The class satisfies the following concept requirements:
+.IP "\(bu" 2
+\fCRandomAccessIterator\fP: The iterator that can be moved to point (forward and backward) to any element in constant time\&.
+.PP
+.PP
+\fBSince:\fP
+.RS 4
+version 1\&.0\&.0, simplified in version 2\&.0\&.9 
+.RE
+.PP
+
+.PP
+Definition at line 3556 of file json\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<typename BasicJsonType> using \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::\fBdifference_type\fP =  typename BasicJsonType::difference_type"
+
+.PP
+a type to represent differences between iterators 
+.PP
+Definition at line 3573 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> using \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::\fBiterator_category\fP =  std::bidirectional_iterator_tag"
+
+.PP
+the category of the iterator 
+.PP
+Definition at line 3584 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> using \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::\fBpointer\fP =  typename std::conditional<std::is_const<BasicJsonType>::\fBvalue\fP, typename BasicJsonType::const_pointer, typename BasicJsonType::pointer>::type"
+
+.PP
+defines a pointer to the type iterated over (value_type) 
+.PP
+Definition at line 3577 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> using \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::\fBreference\fP =  typename std::conditional<std::is_const<BasicJsonType>::\fBvalue\fP, typename BasicJsonType::const_reference, typename BasicJsonType::reference>::type"
+
+.PP
+defines a reference to the type iterated over (value_type) 
+.PP
+Definition at line 3582 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> using \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::\fBvalue_type\fP =  typename BasicJsonType::value_type"
+
+.PP
+the type of the values when the iterator is dereferenced 
+.PP
+Definition at line 3571 of file json\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename BasicJsonType> \fBiter_impl\fP< typename std::conditional< std::is_const< BasicJsonType >::\fBvalue\fP, typename std::remove_const< BasicJsonType >::type, const BasicJsonType >::type > ()\fC [default]\fP"
+
+.PP
+default constructor allow \fBbasic_json\fP to access private members 
+.PP
+Definition at line 3559 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::\fBiter_impl\fP (\fBpointer\fP object)\fC [inline]\fP, \fC [explicit]\fP, \fC [noexcept]\fP"
+
+.PP
+constructor for a given JSON instance 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobject\fP pointer to a JSON object for this iterator 
+.RE
+.PP
+\fBPrecondition:\fP
+.RS 4
+object != nullptr 
+.RE
+.PP
+\fBPostcondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3595 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::\fBiter_impl\fP (const \fBiter_impl\fP< typename std::remove_const< BasicJsonType >::type > & other)\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+converting constructor 
+.PP
+\fBNote:\fP
+.RS 4
+The conventional copy constructor and copy assignment are implicitly defined\&. Combined with the following converting constructor and assignment, they support: (1) copy from iterator to iterator, (2) copy from const iterator to const iterator, and (3) conversion from iterator to const iterator\&. However conversion from const iterator to iterator is not defined\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP non-const iterator to copy from 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+It is not checked whether \fIother\fP is initialized\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3635 of file json\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename BasicJsonType> object_t::key_type \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::key () const\fC [inline]\fP"
+
+.PP
+return the key of an object iterator 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 4122 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> bool \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator!= (const \fBiter_impl\fP< BasicJsonType > & other) const\fC [inline]\fP"
+
+.PP
+comparison: not equal 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3916 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBreference\fP \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator* () const\fC [inline]\fP"
+
+.PP
+return a reference to the value pointed to by the iterator 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3724 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBiter_impl\fP \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator+ (\fBdifference_type\fP i) const\fC [inline]\fP"
+
+.PP
+add to iterator 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 4025 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBiter_impl\fP \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator++ (int)\fC [inline]\fP"
+
+.PP
+post-increment (it++) 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3797 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBiter_impl\fP& \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator++ ()\fC [inline]\fP"
+
+.PP
+pre-increment (++it) 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3808 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBiter_impl\fP& \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator+= (\fBdifference_type\fP i)\fC [inline]\fP"
+
+.PP
+add to iterator 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3985 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBiter_impl\fP \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator\- (\fBdifference_type\fP i) const\fC [inline]\fP"
+
+.PP
+subtract from iterator 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 4047 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBdifference_type\fP \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator\- (const \fBiter_impl\fP< BasicJsonType > & other) const\fC [inline]\fP"
+
+.PP
+return difference 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 4058 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBiter_impl\fP \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator\-\- (int)\fC [inline]\fP"
+
+.PP
+post-decrement (it--) 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3840 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBiter_impl\fP& \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator\-\- ()\fC [inline]\fP"
+
+.PP
+pre-decrement (--it) 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3851 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBiter_impl\fP& \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator\-= (\fBdifference_type\fP i)\fC [inline]\fP"
+
+.PP
+subtract from iterator 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 4016 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBpointer\fP \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator\-> () const\fC [inline]\fP"
+
+.PP
+dereference the iterator 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3763 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> bool \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator< (const \fBiter_impl\fP< BasicJsonType > & other) const\fC [inline]\fP"
+
+.PP
+comparison: smaller 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3925 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> bool \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator<= (const \fBiter_impl\fP< BasicJsonType > & other) const\fC [inline]\fP"
+
+.PP
+comparison: less than or equal 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3958 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBiter_impl\fP& \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator= (const \fBiter_impl\fP< typename std::remove_const< BasicJsonType >::type > & other)\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+converting assignment 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIother\fP non-const iterator to copy from 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+const/non-const iterator 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+It is not checked whether \fIother\fP is initialized\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3644 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> bool \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator== (const \fBiter_impl\fP< BasicJsonType > & other) const\fC [inline]\fP"
+
+.PP
+comparison: equal 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3883 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> bool \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator> (const \fBiter_impl\fP< BasicJsonType > & other) const\fC [inline]\fP"
+
+.PP
+comparison: greater than 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3967 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> bool \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator>= (const \fBiter_impl\fP< BasicJsonType > & other) const\fC [inline]\fP"
+
+.PP
+comparison: greater than or equal 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 3976 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBreference\fP \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::operator[] (\fBdifference_type\fP n) const\fC [inline]\fP"
+
+.PP
+access to successor 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 4085 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType> \fBreference\fP \fBnlohmann::detail::iter_impl\fP< BasicJsonType >::value () const\fC [inline]\fP"
+
+.PP
+return the value of an iterator 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 4138 of file json\&.hpp\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "template<typename BasicJsonType> \fBiter_impl\fP operator+ (\fBdifference_type\fP i, const \fBiter_impl\fP< BasicJsonType > & it)\fC [friend]\fP"
+
+.PP
+addition of distance and iterator 
+.PP
+\fBPrecondition:\fP
+.RS 4
+The iterator is initialized; i\&.e\&. \fCm_object != nullptr\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 4036 of file json\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

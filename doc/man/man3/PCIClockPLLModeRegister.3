@@ -1,0 +1,100 @@
+.TH "PCIClockPLLModeRegister" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PCIClockPLLModeRegister \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <I2CRegister\&.hpp>\fP
+.PP
+Inherits \fBI2CBaseRegister\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPCIClockPLLModeRegister\fP (uint32_t addr, std::string rw)"
+.br
+.RI "\fIClass constructor\&. \fP"
+.ti -1c
+.RI "\fB~PCIClockPLLModeRegister\fP (void)"
+.br
+.RI "\fIClass destructor\&. \fP"
+.ti -1c
+.RI "\fBunits_variant\fP \fBread\fP (\fBI2C_base\fP *i2c_ptr, uint32_t address)"
+.br
+.RI "\fIRead data from register\&. \fP"
+.ti -1c
+.RI "void \fBwrite\fP (\fBI2C_base\fP *i2c_ptr, uint32_t address, \fBunits_variant\fP value)"
+.br
+.RI "\fIWrite data to register\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 73 of file I2CRegister\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PCIClockPLLModeRegister::PCIClockPLLModeRegister (uint32_t addr, std::string rw)"
+
+.PP
+Class constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIr\fP - Address of register within I2C device\&. 
+.RE
+.PP
+
+.PP
+Definition at line 14 of file Si53106Registers\&.cpp\&.
+.SS "PCIClockPLLModeRegister::~PCIClockPLLModeRegister (void)"
+
+.PP
+Class destructor\&. 
+.PP
+Definition at line 27 of file Si53106Registers\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBunits_variant\fP PCIClockPLLModeRegister::read (\fBI2C_base\fP * i2c_ptr, uint32_t address)\fC [virtual]\fP"
+
+.PP
+Read data from register\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi2c_ptr\fP - Pointer to \fBI2C_base\fP class used for transport\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+units_variant containing quantity of correct type\&. 
+.RE
+.PP
+
+.PP
+Implements \fBI2CBaseRegister\fP\&.
+.PP
+Definition at line 34 of file Si53106Registers\&.cpp\&.
+.SS "void PCIClockPLLModeRegister::write (\fBI2C_base\fP * i2c_ptr, uint32_t address, \fBunits_variant\fP value)\fC [virtual]\fP"
+
+.PP
+Write data to register\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi2c_ptr\fP - pointer to \fBI2C_base\fP class used for transport 
+.br
+\fIvalue\fP - Data to be written\&. Must be of correct type\&. 
+.RE
+.PP
+
+.PP
+Implements \fBI2CBaseRegister\fP\&.
+.PP
+Definition at line 64 of file Si53106Registers\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

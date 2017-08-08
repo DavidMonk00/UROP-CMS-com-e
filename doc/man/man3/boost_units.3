@@ -1,0 +1,72 @@
+.TH "boost::units" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+boost::units \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBtest\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBbase_unit_info< test::kilogram_base_unit >\fP"
+.br
+.ti -1c
+.RI "struct \fBbase_unit_info< test::meter_base_unit >\fP"
+.br
+.ti -1c
+.RI "struct \fBbase_unit_info< test::second_base_unit >\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef length_base_dimension::dimension_type \fBlength_dimension\fP"
+.br
+.ti -1c
+.RI "typedef mass_base_dimension::dimension_type \fBmass_dimension\fP"
+.br
+.ti -1c
+.RI "typedef time_base_dimension::dimension_type \fBtime_dimension\fP"
+.br
+.ti -1c
+.RI "typedef derived_dimension< length_base_dimension, 2 >::type \fBarea_dimension\fP"
+.br
+.ti -1c
+.RI "typedef derived_dimension< mass_base_dimension, 1, length_base_dimension, 2, time_base_dimension,\-2 >::type \fBenergy_dimension\fP"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef derived_dimension<length_base_dimension,2>::type \fBboost::units::area_dimension\fP"
+
+.PP
+Definition at line 36 of file test_system\&.hpp\&.
+.SS "typedef derived_dimension<mass_base_dimension,1, length_base_dimension,2, time_base_dimension,\-2>::type \fBboost::units::energy_dimension\fP"
+
+.PP
+Definition at line 39 of file test_system\&.hpp\&.
+.SS "typedef length_base_dimension::dimension_type \fBboost::units::length_dimension\fP"
+
+.PP
+Definition at line 30 of file test_system\&.hpp\&.
+.SS "typedef mass_base_dimension::dimension_type \fBboost::units::mass_dimension\fP"
+
+.PP
+Definition at line 31 of file test_system\&.hpp\&.
+.SS "typedef time_base_dimension::dimension_type \fBboost::units::time_dimension\fP"
+
+.PP
+Definition at line 32 of file test_system\&.hpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

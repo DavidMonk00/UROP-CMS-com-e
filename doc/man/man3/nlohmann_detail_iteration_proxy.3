@@ -1,0 +1,62 @@
+.TH "nlohmann::detail::iteration_proxy< IteratorType >" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::iteration_proxy< IteratorType > \- proxy class for the iterator_wrapper functions  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBiteration_proxy\fP (typename IteratorType::reference cont)"
+.br
+.RI "\fIconstruct iteration proxy from a container \fP"
+.ti -1c
+.RI "iteration_proxy_internal \fBbegin\fP () noexcept"
+.br
+.RI "\fIreturn iterator begin (needed for range-based for) \fP"
+.ti -1c
+.RI "iteration_proxy_internal \fBend\fP () noexcept"
+.br
+.RI "\fIreturn iterator end (needed for range-based for) \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename IteratorType>
+.br
+class nlohmann::detail::iteration_proxy< IteratorType >"
+proxy class for the iterator_wrapper functions 
+.PP
+Definition at line 3534 of file json\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename IteratorType > \fBnlohmann::detail::iteration_proxy\fP< IteratorType >::\fBiteration_proxy\fP (typename IteratorType::reference cont)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+construct iteration proxy from a container 
+.PP
+Definition at line 4226 of file json\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename IteratorType > iteration_proxy_internal \fBnlohmann::detail::iteration_proxy\fP< IteratorType >::begin ()\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+return iterator begin (needed for range-based for) 
+.PP
+Definition at line 4230 of file json\&.hpp\&.
+.SS "template<typename IteratorType > iteration_proxy_internal \fBnlohmann::detail::iteration_proxy\fP< IteratorType >::end ()\fC [inline]\fP, \fC [noexcept]\fP"
+
+.PP
+return iterator end (needed for range-based for) 
+.PP
+Definition at line 4236 of file json\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

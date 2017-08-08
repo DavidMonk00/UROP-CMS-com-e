@@ -1,0 +1,75 @@
+.TH "include/parser.hpp" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/parser.hpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include 'units_define\&.hpp'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBunits_and_powers< Iterator >\fP"
+.br
+.ti -1c
+.RI "class \fBParser\fP"
+.br
+.ti -1c
+.RI "class \fBLegacyParser\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef std::pair< int, int > \fBpair_type\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBpair_type\fP > \fBpairs_type\fP"
+.br
+.ti -1c
+.RI "typedef std::pair< double, \fBpairs_type\fP > \fBphys_quant\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename P , typename T > void \fBtest_parser_attr\fP (char const *input, P const &p, T &attr)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef std::pair<int, int> \fBpair_type\fP"
+
+.PP
+Definition at line 21 of file parser\&.hpp\&.
+.SS "typedef std::vector<\fBpair_type\fP> \fBpairs_type\fP"
+
+.PP
+Definition at line 22 of file parser\&.hpp\&.
+.SS "typedef std::pair<double , \fBpairs_type\fP> \fBphys_quant\fP"
+
+.PP
+Definition at line 23 of file parser\&.hpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "template<typename P , typename T > void test_parser_attr (char const * input, P const & p, T & attr)"
+\fBParser\fP for symbol parsing\&. 
+.PP
+Definition at line 29 of file parser\&.hpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

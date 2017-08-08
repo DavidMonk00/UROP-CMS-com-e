@@ -1,0 +1,91 @@
+.TH "COMETestBoard" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+COMETestBoard \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <COMETestBoard\&.hpp>\fP
+.PP
+Inherits \fBBoard\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCOMETestBoard\fP (\fBI2C_base\fP *i2c_type)"
+.br
+.RI "\fIClass constructor\&. Full bus/device/register map is defined here\&. \fP"
+.ti -1c
+.RI "\fBCOMETestBoard\fP (std::string i2c_string)"
+.br
+.RI "\fIClass constructor\&. Full bus/device/register map is defined here\&. Also requests downstream bus from arbiter\&. \fP"
+.ti -1c
+.RI "\fB~COMETestBoard\fP (void)"
+.br
+.RI "\fIClass destructor\&. Gives up downstream bus to arbiter\&. \fP"
+.ti -1c
+.RI "std::unordered_map< std::string, \fBI2CBus\fP * > \fBgetMap\fP (void)"
+.br
+.RI "\fIGet the map\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 12 of file COMETestBoard\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "COMETestBoard::COMETestBoard (\fBI2C_base\fP * i2c_type)"
+
+.PP
+Class constructor\&. Full bus/device/register map is defined here\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi2c_type\fP - Pointer to I2C transport class to be used\&. 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file COMETestBoard\&.cpp\&.
+.SS "COMETestBoard::COMETestBoard (std::string i2c_string)"
+
+.PP
+Class constructor\&. Full bus/device/register map is defined here\&. Also requests downstream bus from arbiter\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi2c_type\fP - Pointer to \fBI2C_base\fP transport object\&. 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file COMETestBoard\&.cpp\&.
+.SS "COMETestBoard::~COMETestBoard (void)"
+
+.PP
+Class destructor\&. Gives up downstream bus to arbiter\&. 
+.PP
+Definition at line 97 of file COMETestBoard\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::unordered_map< std::string, \fBI2CBus\fP * > COMETestBoard::getMap (void)\fC [virtual]\fP"
+
+.PP
+Get the map\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Unordered map of string identifiers and \fBI2CBus\fP pointers\&. 
+.RE
+.PP
+
+.PP
+Implements \fBBoard\fP\&.
+.PP
+Definition at line 105 of file COMETestBoard\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

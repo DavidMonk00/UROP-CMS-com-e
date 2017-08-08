@@ -1,0 +1,49 @@
+.TH "nlohmann::detail::input_adapter_protocol" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::input_adapter_protocol \- abstract input adapter interface  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.PP
+Inherited by \fBnlohmann::detail::cached_input_stream_adapter< BufferSize >\fP, and \fBnlohmann::detail::input_buffer_adapter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual int \fBget_character\fP ()=0"
+.br
+.ti -1c
+.RI "virtual \fBstd::string\fP \fBread\fP (std::size_t offset, std::size_t length)=0"
+.br
+.ti -1c
+.RI "virtual \fB~input_adapter_protocol\fP ()=default"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+abstract input adapter interface 
+.PP
+Definition at line 1294 of file json\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual nlohmann::detail::input_adapter_protocol::~input_adapter_protocol ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual int nlohmann::detail::input_adapter_protocol::get_character ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBnlohmann::detail::input_buffer_adapter\fP, and \fBnlohmann::detail::cached_input_stream_adapter< BufferSize >\fP\&.
+.SS "virtual \fBstd::string\fP nlohmann::detail::input_adapter_protocol::read (std::size_t offset, std::size_t length)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBnlohmann::detail::input_buffer_adapter\fP, and \fBnlohmann::detail::cached_input_stream_adapter< BufferSize >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

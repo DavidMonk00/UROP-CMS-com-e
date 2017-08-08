@@ -1,0 +1,137 @@
+.TH "nlohmann::detail::parser< BasicJsonType >" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::parser< BasicJsonType > \- syntax analysis  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBparse_event_t\fP : uint8_t { \fBparse_event_t::object_start\fP, \fBparse_event_t::object_end\fP, \fBparse_event_t::array_start\fP, \fBparse_event_t::array_end\fP, \fBparse_event_t::key\fP, \fBparse_event_t::value\fP }"
+.br
+.ti -1c
+.RI "using \fBparser_callback_t\fP = std::function< bool(int depth, \fBparse_event_t\fP event, BasicJsonType &parsed)>"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBparser\fP (\fBdetail::input_adapter_t\fP adapter, const \fBparser_callback_t\fP cb=nullptr, const bool allow_exceptions_=true)"
+.br
+.RI "\fIa parser reading from an input adapter \fP"
+.ti -1c
+.RI "void \fBparse\fP (const bool strict, BasicJsonType &result)"
+.br
+.RI "\fIpublic parser interface \fP"
+.ti -1c
+.RI "bool \fBaccept\fP (const bool strict=true)"
+.br
+.RI "\fIpublic accept interface \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename BasicJsonType>
+.br
+class nlohmann::detail::parser< BasicJsonType >"
+syntax analysis 
+
+This class implements a recursive decent parser\&. 
+.PP
+Definition at line 2822 of file json\&.hpp\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "template<typename BasicJsonType > using \fBnlohmann::detail::parser\fP< BasicJsonType >::\fBparser_callback_t\fP =  std::function<bool(int depth, \fBparse_event_t\fP event, BasicJsonType& parsed)>"
+
+.PP
+Definition at line 2848 of file json\&.hpp\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "template<typename BasicJsonType > enum \fBnlohmann::detail::parser::parse_event_t\fP : uint8_t\fC [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIobject_start \fP\fP
+the parser read \fC{\fP and started to process a JSON object 
+.TP
+\fB\fIobject_end \fP\fP
+the parser read \fC}\fP and finished processing a JSON object 
+.TP
+\fB\fIarray_start \fP\fP
+the parser read \fC[\fP and started to process a JSON array 
+.TP
+\fB\fIarray_end \fP\fP
+the parser read \fC]\fP and finished processing a JSON array 
+.TP
+\fB\fIkey \fP\fP
+the parser read a key of a value in an object 
+.TP
+\fB\fIvalue \fP\fP
+the parser finished reading a JSON value 
+.PP
+Definition at line 2831 of file json\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename BasicJsonType > \fBnlohmann::detail::parser\fP< BasicJsonType >::\fBparser\fP (\fBdetail::input_adapter_t\fP adapter, const \fBparser_callback_t\fP cb = \fCnullptr\fP, const bool allow_exceptions_ = \fCtrue\fP)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+a parser reading from an input adapter 
+.PP
+Definition at line 2851 of file json\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename BasicJsonType > bool \fBnlohmann::detail::parser\fP< BasicJsonType >::accept (const bool strict = \fCtrue\fP)\fC [inline]\fP"
+
+.PP
+public accept interface 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrict\fP whether to expect the last token to be EOF 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+whether the input is a proper JSON text 
+.RE
+.PP
+
+.PP
+Definition at line 2904 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType > void \fBnlohmann::detail::parser\fP< BasicJsonType >::parse (const bool strict, BasicJsonType & result)\fC [inline]\fP"
+
+.PP
+public parser interface 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstrict\fP whether to expect the last token to be EOF 
+.br
+\fIresult\fP parsed JSON value
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIparse_error\&.101\fP in case of an unexpected token 
+.br
+\fIparse_error\&.102\fP if to_unicode fails or surrogate error 
+.br
+\fIparse_error\&.103\fP if to_unicode fails 
+.RE
+.PP
+
+.PP
+Definition at line 2868 of file json\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

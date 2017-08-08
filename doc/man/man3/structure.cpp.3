@@ -1,0 +1,91 @@
+.TH "test/structure.cpp" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+test/structure.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <unordered_map>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <functional>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBI2CBaseRegister\fP"
+.br
+.ti -1c
+.RI "class \fBGenericI2CRegister\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (void)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "auto \fBlambda_read\fP"
+.br
+.ti -1c
+.RI "auto \fBlambda_write\fP"
+.br
+.ti -1c
+.RI "std::unordered_map< std::string, \fBI2CBaseRegister\fP * > \fBregisters\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int main (void)"
+
+.PP
+Definition at line 39 of file structure\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "auto lambda_read"
+\fBInitial value:\fP
+.PP
+.nf
+= [](void* i2c_ptr, uint32_t addr) {
+   printf("Reading something to address: %d\&.\n", addr);
+}
+.fi
+.PP
+Definition at line 29 of file structure\&.cpp\&.
+.SS "auto lambda_write"
+\fBInitial value:\fP
+.PP
+.nf
+= [](void* i2c_ptr, uint32_t addr) {
+   printf("Writing something to address: %d\&.\n", addr);
+}
+.fi
+.PP
+Definition at line 32 of file structure\&.cpp\&.
+.SS "std::unordered_map<std::string, \fBI2CBaseRegister\fP*> registers"
+\fBInitial value:\fP
+.PP
+.nf
+= {{"temperature", new GenericI2CRegister(lambda_read,lambda_write)},
+                                                               {"humidity",    new GenericI2CRegister(lambda_read,lambda_write)}}
+.fi
+.PP
+Definition at line 36 of file structure\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

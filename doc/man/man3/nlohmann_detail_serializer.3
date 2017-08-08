@@ -1,0 +1,88 @@
+.TH "nlohmann::detail::serializer< BasicJsonType >" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::serializer< BasicJsonType > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBserializer\fP (\fBoutput_adapter_t\fP< char > s, const char ichar)"
+.br
+.ti -1c
+.RI "\fBserializer\fP (const \fBserializer\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBserializer\fP & \fBoperator=\fP (const \fBserializer\fP &)=delete"
+.br
+.ti -1c
+.RI "void \fBdump\fP (const BasicJsonType &val, const bool pretty_print, const bool ensure_ascii, const unsigned int indent_step, const unsigned int current_indent=0)"
+.br
+.RI "\fIinternal implementation of the serialization function \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename BasicJsonType>
+.br
+class nlohmann::detail::serializer< BasicJsonType >"
+
+.PP
+Definition at line 6137 of file json\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename BasicJsonType > \fBnlohmann::detail::serializer\fP< BasicJsonType >::\fBserializer\fP (\fBoutput_adapter_t\fP< char > s, const char ichar)\fC [inline]\fP"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIs\fP output stream to serialize to 
+.br
+\fIichar\fP indentation character to use 
+.RE
+.PP
+
+.PP
+Definition at line 6148 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType > \fBnlohmann::detail::serializer\fP< BasicJsonType >::\fBserializer\fP (const \fBserializer\fP< BasicJsonType > &)\fC [delete]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename BasicJsonType > void \fBnlohmann::detail::serializer\fP< BasicJsonType >::dump (const BasicJsonType & val, const bool pretty_print, const bool ensure_ascii, const unsigned int indent_step, const unsigned int current_indent = \fC0\fP)\fC [inline]\fP"
+
+.PP
+internal implementation of the serialization function This function is called by the public member function dump and organizes the serialization internally\&. The indentation level is propagated as additional parameter\&. In case of arrays and objects, the function is called recursively\&.
+.PP
+.IP "\(bu" 2
+strings and object keys are escaped using \fCescape_string()\fP
+.IP "\(bu" 2
+integer numbers are converted implicitly via \fCoperator<<\fP
+.IP "\(bu" 2
+floating-point numbers are converted to a string using \fC'%g'\fP format
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP value to serialize 
+.br
+\fIpretty_print\fP whether the output shall be pretty-printed 
+.br
+\fIindent_step\fP the indent level 
+.br
+\fIcurrent_indent\fP the current indent level (only used internally) 
+.RE
+.PP
+
+.PP
+Definition at line 6175 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType > \fBserializer\fP& \fBnlohmann::detail::serializer\fP< BasicJsonType >::operator= (const \fBserializer\fP< BasicJsonType > &)\fC [delete]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

@@ -1,0 +1,128 @@
+.TH "nlohmann::detail::binary_reader< BasicJsonType >" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::binary_reader< BasicJsonType > \- deserialization of CBOR and MessagePack values  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbinary_reader\fP (\fBinput_adapter_t\fP adapter)"
+.br
+.RI "\fIcreate a binary reader \fP"
+.ti -1c
+.RI "BasicJsonType \fBparse_cbor\fP (const bool get_char=true)"
+.br
+.RI "\fIcreate a JSON value from CBOR input \fP"
+.ti -1c
+.RI "BasicJsonType \fBparse_msgpack\fP ()"
+.br
+.RI "\fIcreate a JSON value from MessagePack input \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static constexpr bool \fBlittle_endianess\fP (int num=1) noexcept"
+.br
+.RI "\fIdetermine system byte order \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename BasicJsonType>
+.br
+class nlohmann::detail::binary_reader< BasicJsonType >"
+deserialization of CBOR and MessagePack values 
+.PP
+Definition at line 4455 of file json\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename BasicJsonType > \fBnlohmann::detail::binary_reader\fP< BasicJsonType >::\fBbinary_reader\fP (\fBinput_adapter_t\fP adapter)\fC [inline]\fP, \fC [explicit]\fP"
+
+.PP
+create a binary reader 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIadapter\fP input adapter to read from 
+.RE
+.PP
+
+.PP
+Definition at line 4466 of file json\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename BasicJsonType > static constexpr bool \fBnlohmann::detail::binary_reader\fP< BasicJsonType >::little_endianess (int num = \fC1\fP)\fC [inline]\fP, \fC [static]\fP, \fC [noexcept]\fP"
+
+.PP
+determine system byte order 
+.PP
+\fBReturns:\fP
+.RS 4
+true iff system's byte order is little endian
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+from http://stackoverflow.com/a/1001328/266378 
+.RE
+.PP
+
+.PP
+Definition at line 5303 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType > BasicJsonType \fBnlohmann::detail::binary_reader\fP< BasicJsonType >::parse_cbor (const bool get_char = \fCtrue\fP)\fC [inline]\fP"
+
+.PP
+create a JSON value from CBOR input 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIget_char\fP whether a new character should be retrieved from the input (true, default) or whether the last read character should be considered instead
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+JSON value created from CBOR input
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIparse_error\&.110\fP if input ended unexpectedly 
+.br
+\fIparse_error\&.112\fP if unsupported byte was read 
+.RE
+.PP
+
+.PP
+Definition at line 4483 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType > BasicJsonType \fBnlohmann::detail::binary_reader\fP< BasicJsonType >::parse_msgpack ()\fC [inline]\fP"
+
+.PP
+create a JSON value from MessagePack input 
+.PP
+\fBReturns:\fP
+.RS 4
+JSON value created from MessagePack input
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIparse_error\&.110\fP if input ended unexpectedly 
+.br
+\fIparse_error\&.112\fP if unsupported byte was read 
+.RE
+.PP
+
+.PP
+Definition at line 4893 of file json\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

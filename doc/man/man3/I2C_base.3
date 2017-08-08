@@ -1,0 +1,61 @@
+.TH "I2C_base" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+I2C_base \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <I2C_base\&.hpp>\fP
+.PP
+Inherited by \fBI2CSema\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBreceiveData\fP (uint32_t address, char *buffer, uint32_t bytecnt, uint32_t start_point)=0"
+.br
+.ti -1c
+.RI "virtual void \fBsendData\fP (uint32_t address, char *buffer, uint32_t bytecnt, uint32_t start_point)=0"
+.br
+.ti -1c
+.RI "virtual void \fBgetBoardValue\fP (uint32_t value, uint32_t *buffer)=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBaddr\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Base I2C class\&. Has no functionality in current state but acts as a basis for derived I2C classes 
+.PP
+Definition at line 18 of file I2C_base\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void I2C_base::getBoardValue (uint32_t value, uint32_t * buffer)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBI2CSema\fP\&.
+.SS "virtual void I2C_base::receiveData (uint32_t address, char * buffer, uint32_t bytecnt, uint32_t start_point)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBI2CSema\fP\&.
+.SS "virtual void I2C_base::sendData (uint32_t address, char * buffer, uint32_t bytecnt, uint32_t start_point)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBI2CSema\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "uint32_t I2C_base::addr\fC [protected]\fP"
+
+.PP
+Definition at line 20 of file I2C_base\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

@@ -1,0 +1,155 @@
+.TH "antenna_usb_rewrite_list.Cp2130" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+antenna_usb_rewrite_list.Cp2130 \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "def \fBfind\fP (self)"
+.br
+.ti -1c
+.RI "def \fBgetGPIOChipSelect\fP (self)"
+.br
+.ti -1c
+.RI "def \fBgetSPIDelay\fP (self, channel)"
+.br
+.ti -1c
+.RI "def \fBsetSPIDelay\fP (self, channel, mask_bitmap, inter_byte_delay, post_assert_delay, pre_deassert_delay)"
+.br
+.ti -1c
+.RI "def \fBgetSPIWord\fP (self)"
+.br
+.ti -1c
+.RI "def \fBpinSetHigh\fP (self, chip_number)"
+.br
+.ti -1c
+.RI "def \fBpinResetLow\fP (self, chip_number)"
+.br
+.ti -1c
+.RI "def \fBsetGPIOChipSelect\fP (self, chip_number)"
+.br
+.ti -1c
+.RI "def \fBsetSPIWord\fP (self, channel, channel_word)"
+.br
+.ti -1c
+.RI "def \fBwriteSPI\fP (self, \fBlength\fP, string_data_buffer, endpoint=0x01, command_id='\\x01', reserved1='\\x00\\x00', reserved2='\\x00', timeout=500)"
+.br
+.ti -1c
+.RI "def \fBreadSPI\fP (self, \fBlength\fP, endpoint=0x01, command_id='\\x00', reserved1='\\x00\\x00', reserved2='\\x00', timeout=500)"
+.br
+.ti -1c
+.RI "def \fBwriteReadSPI\fP (self, \fBlength\fP, string_data_buffer, endpoint=0x01, command_id='\\x02', reserved1='\\x00\\x00', reserved2='\\x00', timeout=500)"
+.br
+.ti -1c
+.RI "def \fBreadUSB\fP (self, size, endpoint=0x82, timeout=500)"
+.br
+.ti -1c
+.RI "def \fBconfigureSPIChannel\fP (self, analog_switch_cs)"
+.br
+.ti -1c
+.RI "def \fBreadBCM53134M\fP (self, page, offset, \fBlength\fP)"
+.br
+.ti -1c
+.RI "def \fBwriteBCM53134M\fP (self, page, offset, string_buffer)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdev\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file antenna_usb_rewrite_list\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.__init__ ( self)"
+
+.PP
+Definition at line 11 of file antenna_usb_rewrite_list\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.configureSPIChannel ( self,  analog_switch_cs)"
+
+.PP
+Definition at line 88 of file antenna_usb_rewrite_list\&.py\&.
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.find ( self)"
+
+.PP
+Definition at line 15 of file antenna_usb_rewrite_list\&.py\&.
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.getGPIOChipSelect ( self)"
+
+.PP
+Definition at line 26 of file antenna_usb_rewrite_list\&.py\&.
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.getSPIDelay ( self,  channel)"
+
+.PP
+Definition at line 38 of file antenna_usb_rewrite_list\&.py\&.
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.getSPIWord ( self)"
+
+.PP
+Definition at line 45 of file antenna_usb_rewrite_list\&.py\&.
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.pinResetLow ( self,  chip_number)"
+
+.PP
+Definition at line 52 of file antenna_usb_rewrite_list\&.py\&.
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.pinSetHigh ( self,  chip_number)"
+
+.PP
+Definition at line 48 of file antenna_usb_rewrite_list\&.py\&.
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.readBCM53134M ( self,  page,  offset,  length)"
+
+.PP
+Definition at line 112 of file antenna_usb_rewrite_list\&.py\&.
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.readSPI ( self,  length,  endpoint = \fC0x01\fP,  command_id = \fC'\\x00'\fP,  reserved1 = \fC'\\x00\\x00'\fP,  reserved2 = \fC'\\x00'\fP,  timeout = \fC500\fP)"
+
+.PP
+Definition at line 73 of file antenna_usb_rewrite_list\&.py\&.
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.readUSB ( self,  size,  endpoint = \fC0x82\fP,  timeout = \fC500\fP)"
+
+.PP
+Definition at line 83 of file antenna_usb_rewrite_list\&.py\&.
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.setGPIOChipSelect ( self,  chip_number)"
+
+.PP
+Definition at line 56 of file antenna_usb_rewrite_list\&.py\&.
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.setSPIDelay ( self,  channel,  mask_bitmap,  inter_byte_delay,  post_assert_delay,  pre_deassert_delay)"
+
+.PP
+Definition at line 41 of file antenna_usb_rewrite_list\&.py\&.
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.setSPIWord ( self,  channel,  channel_word)"
+
+.PP
+Definition at line 62 of file antenna_usb_rewrite_list\&.py\&.
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.writeBCM53134M ( self,  page,  offset,  string_buffer)"
+
+.PP
+Definition at line 164 of file antenna_usb_rewrite_list\&.py\&.
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.writeReadSPI ( self,  length,  string_data_buffer,  endpoint = \fC0x01\fP,  command_id = \fC'\\x02'\fP,  reserved1 = \fC'\\x00\\x00'\fP,  reserved2 = \fC'\\x00'\fP,  timeout = \fC500\fP)"
+
+.PP
+Definition at line 78 of file antenna_usb_rewrite_list\&.py\&.
+.SS "def antenna_usb_rewrite_list\&.Cp2130\&.writeSPI ( self,  length,  string_data_buffer,  endpoint = \fC0x01\fP,  command_id = \fC'\\x01'\fP,  reserved1 = \fC'\\x00\\x00'\fP,  reserved2 = \fC'\\x00'\fP,  timeout = \fC500\fP)"
+
+.PP
+Definition at line 68 of file antenna_usb_rewrite_list\&.py\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "antenna_usb_rewrite_list\&.Cp2130\&.dev"
+
+.PP
+Definition at line 12 of file antenna_usb_rewrite_list\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

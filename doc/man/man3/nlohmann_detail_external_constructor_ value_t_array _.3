@@ -1,0 +1,57 @@
+.TH "nlohmann::detail::external_constructor< value_t::array >" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::external_constructor< value_t::array > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename BasicJsonType > static void \fBconstruct\fP (BasicJsonType &j, const typename BasicJsonType::array_t &arr)"
+.br
+.ti -1c
+.RI "template<typename BasicJsonType > static void \fBconstruct\fP (BasicJsonType &j, typename BasicJsonType::array_t &&arr)"
+.br
+.ti -1c
+.RI "template<typename BasicJsonType , typename CompatibleArrayType , enable_if_t< not std::is_same< CompatibleArrayType, typename BasicJsonType::array_t >::value, int >  = 0> static void \fBconstruct\fP (BasicJsonType &j, const CompatibleArrayType &arr)"
+.br
+.ti -1c
+.RI "template<typename BasicJsonType > static void \fBconstruct\fP (BasicJsonType &j, const std::vector< bool > &arr)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<>
+.br
+struct nlohmann::detail::external_constructor< value_t::array >"
+
+.PP
+Definition at line 625 of file json\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename BasicJsonType > static void \fBnlohmann::detail::external_constructor\fP< \fBvalue_t::array\fP >::construct (BasicJsonType & j, const typename BasicJsonType::array_t & arr)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 628 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType > static void \fBnlohmann::detail::external_constructor\fP< \fBvalue_t::array\fP >::construct (BasicJsonType & j, typename BasicJsonType::array_t && arr)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 636 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType , typename CompatibleArrayType , enable_if_t< not std::is_same< CompatibleArrayType, typename BasicJsonType::array_t >::value, int >  = 0> static void \fBnlohmann::detail::external_constructor\fP< \fBvalue_t::array\fP >::construct (BasicJsonType & j, const CompatibleArrayType & arr)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 647 of file json\&.hpp\&.
+.SS "template<typename BasicJsonType > static void \fBnlohmann::detail::external_constructor\fP< \fBvalue_t::array\fP >::construct (BasicJsonType & j, const std::vector< bool > & arr)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Definition at line 657 of file json\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

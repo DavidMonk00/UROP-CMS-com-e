@@ -1,0 +1,150 @@
+.TH "test/test.cpp" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+test/test.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <boost/config/warning_disable\&.hpp>\fP
+.br
+\fC#include <boost/spirit/include/qi\&.hpp>\fP
+.br
+\fC#include <boost/fusion/include/std_pair\&.hpp>\fP
+.br
+\fC#include <boost/spirit/include/support_utree\&.hpp>\fP
+.br
+\fC#include <boost/spirit/include/phoenix_core\&.hpp>\fP
+.br
+\fC#include <boost/spirit/include/phoenix_operator\&.hpp>\fP
+.br
+\fC#include <boost/fusion/include/adapt_struct\&.hpp>\fP
+.br
+\fC#include <boost/assert\&.hpp>\fP
+.br
+\fC#include <boost/typeof/std/complex\&.hpp>\fP
+.br
+\fC#include <boost/units/pow\&.hpp>\fP
+.br
+\fC#include <boost/units/systems/si/energy\&.hpp>\fP
+.br
+\fC#include <boost/units/systems/si/force\&.hpp>\fP
+.br
+\fC#include <boost/units/systems/si/length\&.hpp>\fP
+.br
+\fC#include <boost/units/systems/si/electric_potential\&.hpp>\fP
+.br
+\fC#include <boost/units/systems/si/current\&.hpp>\fP
+.br
+\fC#include <boost/units/systems/si/resistance\&.hpp>\fP
+.br
+\fC#include <boost/units/systems/si/io\&.hpp>\fP
+.br
+\fC#include <boost/variant\&.hpp>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <map>\fP
+.br
+\fC#include <complex>\fP
+.br
+\fC#include <unordered_map>\fP
+.br
+\fC#include <algorithm>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBunits_and_powers< Iterator >\fP"
+.br
+.ti -1c
+.RI "class \fBmultiply\fP"
+.br
+.ti -1c
+.RI "class \fBTest\fP"
+.br
+.ti -1c
+.RI "class \fBToString\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef std::pair< int, int > \fBpair_type\fP"
+.br
+.ti -1c
+.RI "typedef std::vector< \fBpair_type\fP > \fBpairs_type\fP"
+.br
+.ti -1c
+.RI "typedef std::pair< double, \fBpairs_type\fP > \fBphys_quant\fP"
+.br
+.ti -1c
+.RI "typedef make_scaled_unit< si::time, scale< 10, static_rational<\-9 > > >::type \fBnanosecond\fP"
+.br
+.ti -1c
+.RI "typedef boost::variant< double, quantity< length >, quantity< mass >, quantity< si::time > > \fBunits_variant\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename P , typename T > void \fBtest_parser_attr\fP (char const *input, P const &p, T &attr, bool full_match=true)"
+.br
+.ti -1c
+.RI "std::pair< double, int > \fBfoo\fP (std::string input)"
+.br
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef make_scaled_unit<si::time, scale<10, static_rational<\-9> > >::type \fBnanosecond\fP"
+
+.PP
+Definition at line 48 of file test\&.cpp\&.
+.SS "typedef std::pair<int, int> \fBpair_type\fP"
+
+.PP
+Definition at line 45 of file test\&.cpp\&.
+.SS "typedef std::vector<\fBpair_type\fP> \fBpairs_type\fP"
+
+.PP
+Definition at line 46 of file test\&.cpp\&.
+.SS "typedef std::pair<double , \fBpairs_type\fP> \fBphys_quant\fP"
+
+.PP
+Definition at line 47 of file test\&.cpp\&.
+.SS "typedef boost::variant< double, quantity<length>, quantity<mass>, quantity<si::time> > \fBunits_variant\fP"
+
+.PP
+Definition at line 73 of file test\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "std::pair<double,int> foo (std::string input)"
+
+.PP
+Definition at line 87 of file test\&.cpp\&.
+.SS "int main (void)"
+
+.PP
+Definition at line 155 of file test\&.cpp\&.
+.SS "template<typename P , typename T > void test_parser_attr (char const * input, P const & p, T & attr, bool full_match = \fCtrue\fP)"
+
+.PP
+Definition at line 35 of file test\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

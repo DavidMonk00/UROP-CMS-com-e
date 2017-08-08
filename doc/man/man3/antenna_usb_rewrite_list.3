@@ -1,0 +1,107 @@
+.TH "antenna_usb_rewrite_list" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+antenna_usb_rewrite_list \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCp2130\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBgetRange\fP (s)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBusb_to_spi\fP = \fBCp2130\fP()"
+.br
+.ti -1c
+.RI "\fBbook\fP = json\&.load(f_json)"
+.br
+.ti -1c
+.RI "\fBoutput\fP = open('output\&.dat', 'w')"
+.br
+.ti -1c
+.RI "\fBreg\fP = usb_to_spi\&.readBCM53134M(page=int(page['page']), offset=int(address['offset']), \fBlength\fP=int(address['word\-\fBlength\fP']))"
+.br
+.ti -1c
+.RI "\fBVALUE\fP = bin(\fBreg\fP)[2:][::\-1]"
+.br
+.ti -1c
+.RI "list \fBdata\fP = ['Bits','Name', 'Value', 'Default']"
+.br
+.ti -1c
+.RI "\fBindex\fP = \fBgetRange\fP(bit['bit'])"
+.br
+.ti -1c
+.RI "\fBlength\fP = math\&.ceil(float((\fBindex\fP[1]+1\-\fBindex\fP[0]))/4)"
+.br
+.ti -1c
+.RI "\fBstring\fP \fBval\fP = '0x%0{0}X'"
+.br
+.ti -1c
+.RI "string \fBstring\fP = u'\\t%s\\n'"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "def antenna_usb_rewrite_list\&.getRange ( s)"
+
+.PP
+Definition at line 188 of file antenna_usb_rewrite_list\&.py\&.
+.SH "Variable Documentation"
+.PP 
+.SS "antenna_usb_rewrite_list\&.book = json\&.load(f_json)"
+
+.PP
+Definition at line 202 of file antenna_usb_rewrite_list\&.py\&.
+.SS "list antenna_usb_rewrite_list\&.data = ['Bits','Name', 'Value', 'Default']"
+
+.PP
+Definition at line 210 of file antenna_usb_rewrite_list\&.py\&.
+.SS "antenna_usb_rewrite_list\&.index = \fBgetRange\fP(bit['bit'])"
+
+.PP
+Definition at line 213 of file antenna_usb_rewrite_list\&.py\&.
+.SS "antenna_usb_rewrite_list\&.length = math\&.ceil(float((\fBindex\fP[1]+1\-\fBindex\fP[0]))/4)"
+
+.PP
+Definition at line 214 of file antenna_usb_rewrite_list\&.py\&.
+.SS "antenna_usb_rewrite_list\&.output = open('output\&.dat', 'w')"
+
+.PP
+Definition at line 203 of file antenna_usb_rewrite_list\&.py\&.
+.SS "antenna_usb_rewrite_list\&.reg = usb_to_spi\&.readBCM53134M(page=int(page['page']), offset=int(address['offset']), \fBlength\fP=int(address['word\-\fBlength\fP']))"
+
+.PP
+Definition at line 207 of file antenna_usb_rewrite_list\&.py\&.
+.SS "string antenna_usb_rewrite_list\&.string = u'\\t%s\\n'"
+
+.PP
+Definition at line 218 of file antenna_usb_rewrite_list\&.py\&.
+.SS "antenna_usb_rewrite_list\&.usb_to_spi = \fBCp2130\fP()"
+
+.PP
+Definition at line 197 of file antenna_usb_rewrite_list\&.py\&.
+.SS "\fBstring\fP antenna_usb_rewrite_list\&.val = '0x%0{0}X'"
+
+.PP
+Definition at line 215 of file antenna_usb_rewrite_list\&.py\&.
+.SS "antenna_usb_rewrite_list\&.VALUE = bin(\fBreg\fP)[2:][::\-1]"
+
+.PP
+Definition at line 208 of file antenna_usb_rewrite_list\&.py\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

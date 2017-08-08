@@ -1,0 +1,44 @@
+.TH "nlohmann::detail::is_compatible_object_type< BasicJsonType, CompatibleObjectType >" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::is_compatible_object_type< BasicJsonType, CompatibleObjectType > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static auto constexpr \fBvalue\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class BasicJsonType, class CompatibleObjectType>
+.br
+struct nlohmann::detail::is_compatible_object_type< BasicJsonType, CompatibleObjectType >"
+
+.PP
+Definition at line 749 of file json\&.hpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class BasicJsonType , class CompatibleObjectType > auto constexpr \fBnlohmann::detail::is_compatible_object_type\fP< BasicJsonType, CompatibleObjectType >::value\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= is_compatible_object_type_impl <
+                                  conjunction<negation<std::is_same<void, CompatibleObjectType>>,
+                                  has_mapped_type<CompatibleObjectType>,
+                                  has_key_type<CompatibleObjectType>>::value,
+                                  typename BasicJsonType::object_t, CompatibleObjectType >::value
+.fi
+.PP
+Definition at line 751 of file json\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

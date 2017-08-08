@@ -1,0 +1,38 @@
+.TH "pdf-parsing/antenna_usb_rewrite.py" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pdf-parsing/antenna_usb_rewrite.py \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBantenna_usb_rewrite\&.Cp2130\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBantenna_usb_rewrite\fP"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBantenna_usb_rewrite\&.usb_to_spi\fP = Cp2130()"
+.br
+.ti -1c
+.RI "\fBantenna_usb_rewrite\&.book\fP = json\&.load(f_json)"
+.br
+.ti -1c
+.RI "\fBantenna_usb_rewrite\&.reg\fP = usb_to_spi\&.readBCM53134M(page=int(page), offset=int(book[page]['addresses'][address]['offset']), length=int(book[page]['addresses'][address]['word\-length']))"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

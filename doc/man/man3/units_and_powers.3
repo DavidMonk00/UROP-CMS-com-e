@@ -1,0 +1,107 @@
+.TH "units_and_powers< Iterator >" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+units_and_powers< Iterator > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <parser\&.hpp>\fP
+.PP
+Inherits grammar< std::string::iterator, phys_quant()>, and grammar< Iterator, phys_quant()>\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBunits_and_powers\fP ()"
+.br
+.ti -1c
+.RI "\fBunits_and_powers\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "qi::symbols< char, int > \fBunit\fP"
+.br
+.ti -1c
+.RI "qi::rule< Iterator, int()> \fBunit_power\fP"
+.br
+.ti -1c
+.RI "qi::rule< Iterator, \fBpairs_type\fP()> \fBunits\fP"
+.br
+.ti -1c
+.RI "qi::rule< Iterator, \fBphys_quant\fP()> \fBquery\fP"
+.br
+.ti -1c
+.RI "qi::rule< std::string::iterator, int()> \fBunit_power\fP"
+.br
+.ti -1c
+.RI "qi::rule< std::string::iterator, \fBpairs_type\fP()> \fBunits\fP"
+.br
+.ti -1c
+.RI "qi::rule< std::string::iterator, \fBphys_quant\fP()> \fBquery\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename Iterator>
+.br
+struct units_and_powers< Iterator >"
+Template for parser to convert into value and units\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIIterator\fP - input, generally std::string::iterator 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file parser\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename Iterator> \fBunits_and_powers\fP< Iterator >::\fBunits_and_powers\fP ()\fC [inline]\fP"
+
+.PP
+Definition at line 44 of file parser\&.hpp\&.
+.SS "template<typename Iterator> \fBunits_and_powers\fP< Iterator >::\fBunits_and_powers\fP ()\fC [inline]\fP"
+
+.PP
+Definition at line 51 of file test\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename Iterator> qi::rule<Iterator, \fBphys_quant\fP()> \fBunits_and_powers\fP< Iterator >::query"
+
+.PP
+Definition at line 59 of file parser\&.hpp\&.
+.SS "template<typename Iterator> qi::rule<std::string::iterator, \fBphys_quant\fP()> \fBunits_and_powers\fP< Iterator >::query"
+
+.PP
+Definition at line 66 of file test\&.cpp\&.
+.SS "template<typename Iterator> qi::symbols< char, int > \fBunits_and_powers\fP< Iterator >::unit"
+
+.PP
+Definition at line 56 of file parser\&.hpp\&.
+.SS "template<typename Iterator> qi::rule<Iterator, int()> \fBunits_and_powers\fP< Iterator >::unit_power"
+
+.PP
+Definition at line 57 of file parser\&.hpp\&.
+.SS "template<typename Iterator> qi::rule<std::string::iterator, int()> \fBunits_and_powers\fP< Iterator >::unit_power"
+
+.PP
+Definition at line 64 of file test\&.cpp\&.
+.SS "template<typename Iterator> qi::rule<Iterator, \fBpairs_type\fP()> \fBunits_and_powers\fP< Iterator >::units"
+
+.PP
+Definition at line 58 of file parser\&.hpp\&.
+.SS "template<typename Iterator> qi::rule<std::string::iterator, \fBpairs_type\fP()> \fBunits_and_powers\fP< Iterator >::units"
+
+.PP
+Definition at line 65 of file test\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

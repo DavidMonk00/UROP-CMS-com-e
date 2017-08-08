@@ -1,0 +1,94 @@
+.TH "nlohmann::detail::exception" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+nlohmann::detail::exception \- general exception of the \fBbasic_json\fP class  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <json\&.hpp>\fP
+.PP
+Inherits exception\&.
+.PP
+Inherited by \fBnlohmann::detail::invalid_iterator\fP, \fBnlohmann::detail::other_error\fP, \fBnlohmann::detail::out_of_range\fP, \fBnlohmann::detail::parse_error\fP, and \fBnlohmann::detail::type_error\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBwhat\fP () const noexceptoverride"
+.br
+.RI "\fIreturns the explanatory string \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const int \fBid\fP"
+.br
+.RI "\fIthe id of the exception \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBexception\fP (int id_, const char *what_arg)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBstd::string\fP \fBname\fP (const \fBstd::string\fP &ename, int \fBid\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+general exception of the \fBbasic_json\fP class 
+
+Extension of std::exception objects with a member \fIid\fP for exception ids\&.
+.PP
+\fBNote:\fP
+.RS 4
+To have nothrow-copy-constructible exceptions, we internally use std::runtime_error which can cope with arbitrary-length error messages\&. Intermediate strings are built with static functions and then passed to the actual constructor\&.
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+version 3\&.0\&.0 
+.RE
+.PP
+
+.PP
+Definition at line 177 of file json\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "nlohmann::detail::exception::exception (int id_, const char * what_arg)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 190 of file json\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static \fBstd::string\fP nlohmann::detail::exception::name (const \fBstd::string\fP & ename, int id)\fC [inline]\fP, \fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 192 of file json\&.hpp\&.
+.SS "const char* nlohmann::detail::exception::what () const\fC [inline]\fP, \fC [override]\fP, \fC [noexcept]\fP"
+
+.PP
+returns the explanatory string 
+.PP
+Definition at line 181 of file json\&.hpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const int nlohmann::detail::exception::id"
+
+.PP
+the id of the exception 
+.PP
+Definition at line 187 of file json\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.
