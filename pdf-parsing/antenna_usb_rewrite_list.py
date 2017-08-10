@@ -204,7 +204,7 @@ if __name__ == "__main__":
     for page in book:
         output.write("Page %s - %s\n"%(page['page'],page['description']))
         for address in page['registers']:
-            reg = usb_to_spi.readBCM53134M(page=int(page['page']), offset=int(address['offset']), length=int(address['word-length']))
+            reg = usb_to_spi.readBCM53134M(page=int(page['page'],16), offset=int(address['offset']), length=int(address['word-length']))
             VALUE = bin(reg)[2:][::-1]
             output.write("\t%s(%d)\tvalue = 0x%X\n"%(address['name'],address['word-length'],int(VALUE[::-1],2)))
             data = ["Bits","Name", "Value", "Default"]

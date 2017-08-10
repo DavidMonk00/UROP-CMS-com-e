@@ -37,6 +37,7 @@ def generatePageList():
                 description = i[start:]
                 break
         if "-" in number:
+            print getRange(number)
             for i in getRange(number):
                 print i
                 book[i] = {}
@@ -108,17 +109,39 @@ def main():
     pages_str = [line.strip().split(",") for line in open("pages.txt")]
     for div in html_tag.iter("div"):
         page, offset = getPageOffsetNumbers(div)
-        if page not in [i['page'] for i in book]:
-            desc = ""
-            for j in pages_str:
-                if "%02x"%page == j[0]:
-                    desc = j[1]
-            book.append({"registers":[],"page":page, "description":desc})
+        if hex(page) not in [i['page'] for i in book]:
+            if (hex(page)=="0x10"):
+                for i in range(16,20):
+                    desc = ""
+                    for j in pages_str:
+                        if "%02x"%i == j[0]:
+                            desc = j[1]
+                    book.append({"registers":[],"page":hex(i), "description":desc})
+            elif (hex(page)=="0x20"):
+                for i in range(32,36):
+                    desc = ""
+                    for j in pages_str:
+                        if "%02x"%i == j[0]:
+                            desc = j[1]
+                    book.append({"registers":[],"page":hex(i), "description":desc})
+            else:
+                desc = ""
+                for j in pages_str:
+                    if "%02x"%page == j[0]:
+                        desc = j[1]
+                book.append({"registers":[],"page":hex(page), "description":desc})
         book[-1]["registers"].append({"name":getAddressName(div),
                                       "offset":offset,
                                       "description":getDescription(div),
                                       "bits":getBits(div),
                                       "word-length":getWordLength(div)})
+    for i in book:
+        if (i['page'] == "0x10" or i['page'] == "0x11" or i['page'] == "0x12"):
+            index_ = next(index for (index, d) in enumerate(book) if d["page"] == "0x13")
+            i['registers'] = book[index_]['registers']
+        elif (i['page'] == "0x20" or i['page'] == "0x21" or i['page'] == "0x22"):
+            index_ = next(index for (index, d) in enumerate(book) if d["page"] == "0x23")
+            i['registers'] = book[index_]['registers']
     with open('result_list.json', 'w') as fp:
         json.dump(book, fp, sort_keys=True, indent = 4)
     with open('result_list.json') as f:
