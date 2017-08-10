@@ -53,7 +53,9 @@ void Update::saveActive(void) {
    Client* client = new Client();
    client->setDatabase("data");
    client->uploadDocument(board_dict);
-   client->pushDatabase();
+   if(client->checkOnline(config["target"]["url"].get<std::string>())) {
+      client->pushDatabase();
+   }
    delete client;
 }
 
@@ -99,7 +101,9 @@ void Update::saveStatic(void) {
       sendFlag(board_dict, metadata, client);
    }
    client->uploadDocument(board_dict);
-   client->pushDatabase();
+   if(client->checkOnline(config["target"]["url"].get<std::string>())) {
+      client->pushDatabase();
+   }
    delete client;
 }
 

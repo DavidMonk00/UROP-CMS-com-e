@@ -29,7 +29,7 @@ size_t CouchDB::CallbackFunc(void *contents, size_t size, size_t nmemb, std::str
    @return String of output from call.
 */
 bool CouchDB::HTTPGET(std::string url_, std::string* ret) {
-   curl = curl_easy_init();
+   CURL* curl = curl_easy_init();
    CURLcode res;
    if (curl) {
       curl_easy_setopt(curl, CURLOPT_URL, url_.c_str());
@@ -38,9 +38,11 @@ bool CouchDB::HTTPGET(std::string url_, std::string* ret) {
       res = curl_easy_perform(curl);
       if (res != CURLE_OK) {
            fprintf(stderr, "curl_easy_perform() in function HTTPGET failed: %s\n", curl_easy_strerror(res));
+           curl_easy_cleanup(curl);
            return false;
       }
    }
+   curl_easy_cleanup(curl);
    return true;
 }
 
@@ -50,7 +52,7 @@ bool CouchDB::HTTPGET(std::string url_, std::string* ret) {
    @param data - Data to be put into file.
 */
 bool CouchDB::HTTPPUT(std::string url_, std::string data) {
-   curl = curl_easy_init();
+   CURL* curl = curl_easy_init();
    CURLcode res;
    std::string s;
    if (curl) {
@@ -62,9 +64,11 @@ bool CouchDB::HTTPPUT(std::string url_, std::string data) {
       res = curl_easy_perform(curl);
       if (res != CURLE_OK) {
            fprintf(stderr, "curl_easy_perform() in function HTTPPUT failed: %s\n", curl_easy_strerror(res));
+           curl_easy_cleanup(curl);
            return false;
       }
    }
+   curl_easy_cleanup(curl);
    return true;
 }
 
@@ -74,7 +78,7 @@ bool CouchDB::HTTPPUT(std::string url_, std::string data) {
    @param data - Data to be posted into file.
 */
 bool CouchDB::HTTPPOST(std::string url_, std::string data) {
-   curl = curl_easy_init();
+   CURL* curl = curl_easy_init();
    CURLcode res;
    std::string s;
    struct curl_slist *headers=NULL;
@@ -89,9 +93,13 @@ bool CouchDB::HTTPPOST(std::string url_, std::string data) {
       res = curl_easy_perform(curl);
       if (res != CURLE_OK) {
            fprintf(stderr, "curl_easy_perform() in function HTTPPOST failed: %s\n", curl_easy_strerror(res));
+           std::cout << url_ << '\n';
+           std::cout << data << '\n';
+           curl_easy_cleanup(curl);
            return false;
       }
    }
+   curl_easy_cleanup(curl);
    return true;
 }
 
@@ -100,7 +108,7 @@ bool CouchDB::HTTPPOST(std::string url_, std::string data) {
    @param url_ - URL of file to delete.
 */
 bool CouchDB::HTTPDELETE(std::string url_) {
-   curl = curl_easy_init();
+   CURL* curl = curl_easy_init();
    CURLcode res;
    std::string s;
    if (curl) {
@@ -111,9 +119,11 @@ bool CouchDB::HTTPDELETE(std::string url_) {
       res = curl_easy_perform(curl);
       if (res != CURLE_OK) {
            fprintf(stderr, "curl_easy_perform() in function HTTPDELETE failed: %s\n", curl_easy_strerror(res));
+           curl_easy_cleanup(curl);
            return false;
       }
    }
+   curl_easy_cleanup(curl);
    return true;
 }
 
@@ -139,9 +149,7 @@ Client::Client(std::string url_) {
 /**
    @brief Class destructor.
 */
-Client::~Client(void) {
-   curl_easy_cleanup(curl);
-}
+Client::~Client(void) {}
 
 /**
    @brief Get list of databases on server.
@@ -282,9 +290,7 @@ Server::Server(void) {
 /**
    @brief Class destructor.
 */
-Server::~Server(void) {
-   curl_easy_cleanup(curl);
-}
+Server::~Server(void) {}
 
 /**
    @brief Edit config entry for all slaves.

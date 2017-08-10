@@ -14,7 +14,7 @@
 #include "update.hpp"
 
 void sleep5(void) {
-   sleep(5);
+   sleep(2);
 }
 
 void activeLoop(Update* update) {
@@ -42,7 +42,7 @@ void staticLoop(Update* update) {
       std::ostringstream oss;
       oss << std::put_time(&tm, "%M");
       int mins = atoi(oss.str().c_str());
-      if (mins == 32) {
+      if (mins == 0) {
          std::cout << "Running static..." << '\n';
          update->saveStatic();
          sleep(65);
@@ -59,7 +59,7 @@ void purgeLoop(Update* update) {
       std::ostringstream oss;
       oss << std::put_time(&tm, "%M");
       int mins = atoi(oss.str().c_str());
-      if (!(mins % 5)) {
+      if (!(mins % 10)) {
          std::cout << "Purging database..." << '\n';
          update->purgeDatabase();
          sleep(65);

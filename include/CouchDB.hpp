@@ -21,7 +21,6 @@ protected:
    std::string url;
    std::string database;
    json config;
-   CURL* curl;
    static size_t CallbackFunc(void *contents, size_t size, size_t nmemb, std::string* s);
    bool HTTPGET(std::string url_, std::string* ret);
    bool HTTPPUT(std::string url_, std::string data);
