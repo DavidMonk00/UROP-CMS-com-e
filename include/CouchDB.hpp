@@ -57,4 +57,6 @@ public:
    void editConfig(std::string board, std::string bus, std::string device, std::string property, std::string value);
    void pushDatabase(json database);
    void pushChanges(void);
+   json getRecentDocument(void);
+   json getSlaves(void);
 };

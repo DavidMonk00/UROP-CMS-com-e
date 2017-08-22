@@ -1,0 +1,155 @@
+\documentclass[a4paper,11pt,twocolumn]{article}
+\usepackage[a4paper]{geometry}
+\geometry{textwidth=480pt, textheight=674pt}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{url}
+\graphicspath{{images/}}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{listings}
+\usepackage{lstautogobble}
+\usepackage[font={small,it}]{caption}
+\usepackage{tabu}
+
+\begin{document}
+	\setcounter{secnumdepth}{0}
+	\doublespacing
+	\pagenumbering{arabic}
+	\centering
+	\onecolumn
+	
+	\title
+	\maketitle{\huge\bfseries Microprocessor Project}
+	
+	\emph{David Monk -- 00928791}
+	
+	Word count: 2239
+	
+	\twocolumn
+	\onehalfspacing
+	\justify
+	\section{Abstract}
+	This report looks at the development of public-private key encryption on two 8-bit ATMega128 microprocessors. Public key encryption was achieved for a 32-bit key length and private key with a 16-bit key. The algorithm developed allowed, in theory, an arbitrary level of encryption, however practical limitations of the hardware enforced these strengths.
+
+	\section{Introduction}
+	Sending data between two entities without a third being able to eavesdrop has long been at the forefront of development in computing. [Something about Turing etc…].
+	
+	The aim of this project was a proof of concept for secure communication between two microprocessors. The low-level nature of the assembly language used meant that many mathematical functions, such as the modulus, had to be written individually.
+	A very simple, yet secure, procedure for encrypting a message is to combine it with a stream of pseudo-random numbers. A property of the exclusive OR is that performing an XOR operation twice with the same number returns the original:
+	
+	\centering
+	(A XOR B) XOR B = A
+	\justify
+	
+	Thus, performing an exclusive OR between a message and a pseudo-random number stream will produce a seemingly random stream of bits. However performing a further exclusive OR with return original message. In order to decipher the message, either the seed or part of the original message must be known, along with the algorithm for generating the pseudo-random stream. Computationally, bit-wise exclusive OR is very low cost, while producing pseudo-random numbers can also be done very efficiently. For this project, the message wishing to be transmitted was encrypted using the aforementioned technique. The seed, however must be previously transmitted in order to allow encryption to take place. In order to safely share this information, a public key encryption technique was used.
+	
+	The most widespread form encryption in today’s society uses the RSA algorithm\cite{rivest1978method}. This technique relies on the complexity of factorising the product of two large prime numbers (generally in the order of 1024 bits each) into its constituent primes. Integer factorisation is an exponential order problem, thus as the bit-length increases, the time required increases dramatically, a fact upon which the security of the algorithm relies. 
+	
+	\subsection{RSA Algorithm}
+	In order to encrypt a message with RSA, a set of public-private keys must first be generated. The algorithm goes as follows:
+	\begin{enumerate}
+		\item Compute $n$ as the product of two large prime numbers, $p$ and $q$.
+		\item Calculate Euler's totient function\cite{euler2012theoremata}, $\phi\left( n\right)$. For a product of two primes, this is simply $\left(p - 1\right)\left(q - 1\right)$.
+		\item Select a public exponent, $e$ , such that $gcd\left(e,\phi\left(n\right)\right) = 1$. The hexadecimal 0x10001 (65537) is commonly used, due to its primality and low Hamming weight. By being prime, the relative primality to the $\phi\left(n\right)$ is highly likely, while the low weight allows for efficient exponentiation.
+		\item Calculate the modular multiplicative inverse of $e$, i.e. an integer, $d$, such that $d\cdot e \equiv 1 \mod \phi\left(n\right)$
+	\end{enumerate}
+	$n$ and $e$ are then distributed as the public key, while $d$ is kept private. The cypher, $C$, of a message, $M$, is then produced:
+	\begin{equation}
+	C = M^e \mod n
+	\end{equation}
+	Given that $M < n$. In order to decrypt the original message, the cypher is taken to the power $d$ and an identity first shown by Euler and Fermat\cite{hardy1979introduction}, which states that for any $M$ which is relatively prime to $n$, then $M$ taken to the power of the number of integers which are coprime to $n$ will always be one:
+	\begin{equation}
+	 M^{\phi\left(n\right)} \equiv 1 \mod n
+	\end{equation}
+	hence:
+	\begin{equation}
+	C^d = \left(M^e\right)^d = M^{k\cdot \phi\left(n\right) + 1} = M \mod n
+	\end{equation}
+	
+	The computational cost of finding two large primes is high and was thus omitted from the scope of the project. Values for the private and public key were taken from \cite{RSAkey} and loaded onto program memory. Nevertheless, arbitrary-precision, modular exponentiation is non-trivial on a microprocessor.
+	
+	\section{Software Development}
+	\subsection{Public Key Encryption}
+	By far the most challenging aspect of the project was developing the public key encryption. As seen above, one must take the power of an integer of similar bit-length to the modulus to another integer of similar bit-length and then find the modulus. The most na\"ive approach to such a problem would be to simply calculate the power and then take the modulus, however this is extremely inefficient in both time and memory usage. For example, a 32-bit message would result in an answer approximately $10^{11}$ bits long (12.5 GB). Storing such a number within 4 kilobytes of SRAM is impossible, so clearly a different must be implemented. 
+	
+	Modular arithmetic has the following semi-distributive property:
+	\begin{equation}
+		\left(a\cdot b\right) \mod n = \left(a \mod n\right)\cdot\left(b \mod n\right) \mod n
+	\end{equation}
+	
+	which may be used to significantly improve performance for the exponentiation function. The power of function is simply a series of multiplications, thus if the modulus is calculated after each iteration, the bit-length of the answer can be limited, without losing accuracy of the final answer. This method can be further optimised by using the binary representation of the exponent, $e$, for instance, has a decimal value of 65537 which is equal to $2^{16}$ + $2^0$. Hence one can calculate $M^{2^{16}}$ through successive squaring, then multiply by M again in order to achieve required answer. This can be done for any arbitrary integer exponent by storing each power in SRAM, however the more terms needed to write the binary representation require more multiplications in order to reach the answer. The choice of a public exponent with low Hamming weight\cite{knuth2009art} is thus ideal for efficient encryption.
+	
+	The AVR language contains a function for multiplication, however this only operates on numbers of one byte. So that multiple-byte numbers can be operated on, the most fundamental algorithm for multiplication was implemented (see fig.). This involved multiplying each combination of bytes in the two numbers, and placing the result in the correct place by shifting bytes. The algorithm was $\mathcal{O}\left(n^2\right)$. When developing the code, a number of test cases were used, in order to ensure there were no bugs. Errors mainly arose from cases whereby the product of the two bytes was greater than one byte in length. This additional `carry' byte had to be also added to the running summation, at a position one more significant from the product byte. Further complications arose when these additions caused an over flow in a particular byte. In decimal, for example, adding one to 999 requires a carry to propagate through the entire number and thus this functionality similarly had to be ensured in the code.
+	
+	For four-byte integers, such as those used in this project, it would have been relatively simple to load the whole number from SRAM onto multiple registers. This would potentially made the multiplication simpler and required fewer calls to the SRAM, however this approach was not scalable. Modern CPUs only have approximately 8 general purpose register registers, significantly fewer than the ATMega128. This is because the approach in modern computing architecture has been to store all data in memory and only use the registers for the address of the target memory location and single operations. This approach was mimicked in this project, meaning that the key was only limited by the size of the SRAM and not the general purpose registers.
+	
+	Division and, by extension, the modulus function are not simple computationally. The AVR language contains no specific functions for division, and thus similarly one had to be written. As modulus is simply the remainder from a division, one can calculate this by taking successive subtractions of the divisor until a negative number is found. The modulus is then the previous iteration of this sequence. 
+	
+	Again the na\"ive approach would be to iterate using the divisor itself, but if the dividend is significantly larger, then this approach becomes extremely slow. In order to optimise this algorithm, the divisor was shifted left (equivalent to multiplying by 256) so that the most significant byte matched that of the dividend and then the modulus was taken. This is the equivalent of performing a number of subtractions at once. The divisor was then shifted right (dividing by 256) successively until the original divisor is returned and thus the modulus is calculated. Similarly to the multiplication algorithm, problems arose during development when considering the propagation of carry bits. If we reverse the previous example and instead consider 1000 minus one, we see that a carry must again propagate through the number. In pseudo-code, this process was achieved as follows:
+	\begin{lstlisting}[language=C,autogobble=true]
+	a = array of bytes in little
+	endian format;
+	i = index of array;
+	while (true) {
+		i++;
+		a[i]--;
+		if (a[i] != 0xff) {
+			break;
+		}
+	}
+	\end{lstlisting}
+	
+	As the most significant byte must, by definition, be non-zero, there is no need to check if the index is greater than the number of bytes.
+	
+	\subsection{Private Key Encryption}
+	In comparison to the RSA algorithm, developing the private-key code was relatively straightforward. The main challenge was generating a pseudo-random stream of bytes, in order to mask the message. Ideally, such a stream should have a large period and be evenly distributed between the limits. Such a generator which fits these characteristics is the linear feedback shift register (LFSR). 
+	
+	\section{Data Transfer}
+	Communication between the two microprocessors was achieved using the USART (Universal Synchronous/Asynchronous Receiver/Transmitter) interface. As seen in fig (), this required only two connecting wires and a common ground and comprised the only hardware aspect of the project.
+	
+	USART is a serial data transfer protocol used by a wide variety of devices and are particularly common in microcontrollers. For this project, the port was used in asynchronous mode, meaning that a common clock was not required. So that the two ports could read and write data, a common data rate, or baud rate\cite{bellmanual}, had to be agreed upon. This allows the port to know the time step per pulse and thus distinguish data. The standard baud rate is 9600 bits/s, thus for simplicity, this was used for this project. To set this rate in the UBRR register, the following formula\cite{atmega1282006datasheet} was used:
+	\begin{equation}
+		UBRR = \frac{f_{osc}}{16\cdot BAUD} - 1
+	\end{equation}
+	where $f_{osc}$ was the crystal clock rate of 8Mhz. Once initialised, data to be transmitted was stored onto the the buffer, UDR, and then outputted via the TX pin. Similarly received data was read from the RX pin onto the same buffer. The use of the buffer for both sending and transmitting data meant that the two functions could not be done in parallel, however this was not an issue within the scope of this project. The pins of both boards were connected to a breadboard by 8-pin ribbon connectors, as 2-pin ribbons were not available. This allowed for a third board to be connected to the system and effectively `eavesdrop' on the communication between the boards. This board outputted the encrypted data through an LCD display and show that it was, indeed, encrypted.
+	
+	A pre and post-data padding scheme for the transfer was used to ensure that the correct data was read for a given function. A list of these protocols can be seen in table \ref{table:protocols}. Once received, the microprocessor mirrored the last value, i.e. the end padding value as a confirmation of receipt. If the byte is not sent back, then there has been some data corruption within the transfer and the block is resent.
+	
+	\begin{table}
+		\begin{center}
+			\begin{tabular}[h]{|m{2.2cm} |c|}
+				\hline
+				Hexadecimal value & Meaning \\
+				\hline
+				0x06 & Initialisation acknowledgement\\
+				\hline
+				0x01 & Start of seed\\
+				\hline
+				0x03 & End of seed\\
+				\hline
+				0x02 & Start of message\\
+				\hline
+				0x04 & End of message\\
+				\hline
+			\end{tabular}
+		\end{center}
+		\caption{Padding values for data transfer using the USART interface.}
+		\label{table:protocols}
+	\end{table}
+	 
+	\section{Improvements}
+	There were a number of areas in both the hardware and software whereby the project could have been improved. Computationally, the most time-consuming aspect was the modular exponentiation. As seen in \cite{montgomery1985modular}, the technique of Montgomery multiplication is widely used for the operations detailed in this project. Implementing such an algorithm would require significantly greater complexity of the code and thus considerable development time, which was beyond the scope of the project. Furthermore, the linear nature of the LFSR means that it is relatively easy to break the code, given a section of the original text and the corresponding cyphertext. One way to over come this issue is to use multiple LFSRs and then combine the result in a non-linear fashion, such as only accepting the byte if the least significant bit of the other register is set. Such an algorithm is called a shrinking generator\cite{coppersmith1993shrinking}. 
+	
+	In terms of hardware improvements, there is scope within the ATMega128 to improve the clock speed. By increasing the clock rate, more computations can be achieved per second and the whole process would take less time. There is scope for the processor to run at 16MHz, however the crystal used on the boards was only 8MHz. Hence replacing the crystal would yield an immediate doubling in the processing performance.
+		
+	\section{Conclusion}
+	
+	\bibliography{bib}
+	\bibliographystyle{ieeetr}
+	
+\end{document}

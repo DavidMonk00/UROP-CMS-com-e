@@ -1,0 +1,22 @@
+{
+   "_id": "20170731164623",
+   "_rev": "1-e01c009f9606f2fc5de87cc3341f4143",
+   "internal": {
+       "System": {
+           "running-time": "3.60828e+06 s",
+           "voltage33": "3.388 V",
+           "temperature": "301.1 K"
+       },
+       "CPU": {
+           "voltage": "0.689 V",
+           "temperature": "303.1 K"
+       }
+   },
+   "one": {
+       "PCI-Clock": {
+           "clock-frequency": "1.33e+08 Hz",
+           "PLLmode": "0",
+           "outputenable": "12"
+       }
+   }
+}

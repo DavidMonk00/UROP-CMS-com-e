@@ -326,3 +326,14 @@ void Server::pushChanges(void) {
       pushDatabase(database);
    }
 }
+
+json Server::getRecentDocument(void) {
+   std::string ret = HTTPGET("http://127.0.0.1:5984/atca001/_all_docs?limit=4&descending=true");
+   json j = json::parse(ret);
+   ret = HTTPGET("http://127.0.0.1:5984/atca001/"+j["rows"][3]["id"].get<std::string>());
+   return json::parse(ret);
+}
+
+json Server::getSlaves(void) {
+   return slaves;
+}

@@ -6,7 +6,7 @@ TARGET := bin/main
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
-CFLAGS := -g -std=c++14
+CFLAGS := -g -std=c++11
 LIB := -lsemaeapi -L/opt/Sema/lib -L/usr/lib/x86_64-linux-gnu -lcurl -lpthread
 INC := -Iinclude -I/opt/Sema/include
 
