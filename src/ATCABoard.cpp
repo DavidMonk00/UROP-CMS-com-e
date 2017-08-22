@@ -141,8 +141,10 @@ void ATCABoard::setFanOut(uint8_t buses) {
 */
 void ATCABoard::setBus(std::string bus) {
    i2c_bus = bus_map[bus];
-   uint8_t b = 0b1 << atoi(bus.c_str());
-   setFanOut(b);
+   if (bus == "one") {
+      uint8_t b = 0b1 << 1;
+      setFanOut(b);
+   }
 }
 
 /**
