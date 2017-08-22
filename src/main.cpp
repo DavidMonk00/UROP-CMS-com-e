@@ -5,22 +5,12 @@
   @version 1.0
 */
 
-#include <string>
-#include <stdio.h>
-#include <cstdlib>
-#include <iostream>
-#include <thread>
-#include <unistd.h>
-#include "update.hpp"
-
-void sleep5(void) {
-   sleep(2);
-}
+#include "main.hpp"
 
 void activeLoop(Update* update) {
    while (true) {
       std::cout << "Running active..." << '\n';
-      std::thread t_sleep(sleep5);
+      std::thread t_sleep(sleep,2);
       update->saveActive();
       t_sleep.join();
    }
@@ -29,7 +19,7 @@ void activeLoop(Update* update) {
 void configLoop(Update* update) {
    while (true) {
       std::cout << "Running config..." << '\n';
-      std::thread t_sleep(sleep5);
+      std::thread t_sleep(sleep,2);
       update->getConfig();
       t_sleep.join();
    }

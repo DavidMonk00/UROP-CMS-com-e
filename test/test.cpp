@@ -169,7 +169,12 @@ int main() {
    ToString v;
    boost::apply_visitor( v , l );
    std::cout << l << " " << v.mRet << std::endl;
-   std::cout << boost::get<quantity<mass> >(l) << '\n';
+   try {
+      std::cout << boost::get<quantity<length> >(l) << '\n';
+   } catch (boost::exception_detail::clone_impl<boost::exception_detail::error_info_injector<boost::bad_get> > e) {
+      std::cout << e.what() << '\n';
+   }
+
 
    auto lambda = [](auto x, auto y){return x*y;};
 
