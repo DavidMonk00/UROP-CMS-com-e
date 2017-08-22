@@ -13,3 +13,5 @@
 #include <thread>
 #include <unistd.h>
 #include "update.hpp"
+
+#define SLEEP_TIME 2

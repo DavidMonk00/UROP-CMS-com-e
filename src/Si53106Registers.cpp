@@ -37,7 +37,6 @@ units_variant PCIClockPLLModeRegister::read(I2C_base* i2c_ptr, uint32_t address)
       i2c_ptr->receiveData(address, (char*)&buffer, 1, reg);
       uint8_t modes = 0b00000110&buffer;
       units_variant var;
-
       switch (modes) {
          case 0b00000000:
             var = 0.0;

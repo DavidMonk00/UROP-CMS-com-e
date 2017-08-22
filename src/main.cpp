@@ -9,8 +9,7 @@
 
 void activeLoop(Update* update) {
    while (true) {
-      std::cout << "Running active..." << '\n';
-      std::thread t_sleep(sleep,2);
+      std::thread t_sleep(sleep, SLEEP_TIME);
       update->saveActive();
       t_sleep.join();
    }
@@ -18,8 +17,7 @@ void activeLoop(Update* update) {
 
 void configLoop(Update* update) {
    while (true) {
-      std::cout << "Running config..." << '\n';
-      std::thread t_sleep(sleep,2);
+      std::thread t_sleep(sleep, SLEEP_TIME);
       update->getConfig();
       t_sleep.join();
    }
@@ -33,7 +31,6 @@ void staticLoop(Update* update) {
       oss << std::put_time(&tm, "%M");
       int mins = atoi(oss.str().c_str());
       if (mins == 0) {
-         std::cout << "Running static..." << '\n';
          update->saveStatic();
          sleep(65);
       } else {
@@ -50,7 +47,6 @@ void purgeLoop(Update* update) {
       oss << std::put_time(&tm, "%M");
       int mins = atoi(oss.str().c_str());
       if (!(mins % 10)) {
-         std::cout << "Purging database..." << '\n';
          update->purgeDatabase();
          sleep(65);
       } else {
@@ -61,15 +57,10 @@ void purgeLoop(Update* update) {
 
 int main(int argc, char* argv[]) {
    curl_global_init(CURL_GLOBAL_DEFAULT);
-   std::cout << "Creating object..." << '\n';
-   Update* update = new Update();
-   std::cout << "Creating threads..." << '\n';
+   Update* update = new Update(new I2CSema(EAPI_ID_I2C_EXTERNAL));
    std::thread t_active(activeLoop, update);
-   sleep(1);
    std::thread t_config(configLoop, update);
-   sleep(1);
    std::thread t_static(staticLoop, update);
-   sleep(1);
    std::thread t_purge(purgeLoop, update);
    t_active.join();
    t_config.join();

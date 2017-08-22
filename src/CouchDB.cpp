@@ -159,8 +159,7 @@ std::vector<std::string> Client::getDatabases(void) {
    std::vector<std::string> v;
    std::string s;
    HTTPGET(url+"/_all_dbs", &s);
-   auto j = json::parse(s);
-   for (auto& element : j) {
+   for (auto& element : json::parse(s)) {
       v.push_back(element);
    }
    return v;
@@ -180,10 +179,8 @@ void Client::setDatabase(std::string db) {
 */
 void Client::uploadDocument(json data) {
    if (!database.empty()) {
-      std::string doc_id = data["_id"];
-      std::string url_ = url + "/" + database + "/" + doc_id;
-      std::string jsn = data.dump();
-      HTTPPUT(url_,jsn);
+      std::string url_ = url + "/" + database + "/" + data["_id"].get<std::string>();
+      HTTPPUT(url_, data.dump());
    }
 }
 
@@ -193,10 +190,8 @@ void Client::uploadDocument(json data) {
    @param data - JSON table to upload.
 */
 void Client::uploadDocument(std::string url_, json data) {
-   std::string doc_id = data["_id"];
-   std::string url__ = url_ + "/" + doc_id;
-   std::string jsn = data.dump();
-   HTTPPUT(url__,jsn);
+   std::string url__ = url_ + "/" + data["_id"].get<std::string>();
+   HTTPPUT(url__, data.dump());
 }
 
 /**
@@ -206,7 +201,7 @@ void Client::pushDatabase(void) {
    json data = {{"source",database},
                 {"target",config["target"]["url"].get<std::string>() + "/" + config["target"]["dbname"].get<std::string>()},
                 {"filter","filters/replicate_filter"}};
-   HTTPPOST(url+"/_replicate", data.dump());
+   HTTPPOST(url + "/_replicate", data.dump());
 }
 
 /**
@@ -218,7 +213,7 @@ void Client::pushDatabase(json params) {
                 {"target",config["target"]["url"].get<std::string>() + "/" + config["target"]["dbname"].get<std::string>()},
                 {"filter","filters/replicate_filter"}};
    data["query_params"] = params;
-   HTTPPOST(url+"/_replicate", data.dump());
+   HTTPPOST(url + "/_replicate", data.dump());
 }
 
 /**
@@ -241,8 +236,7 @@ std::vector<std::pair<std::string,std::string> > Client::getDocumentIDs(void) {
    std::vector<std::pair<std::string,std::string> > v;
    std::string s;
    HTTPGET(url+"/"+database+"/_design/"+database+"/_view/listAllActive", &s);
-   auto j = json::parse(s);
-   for (auto& element : j["rows"]) {
+   for (auto& element : json::parse(s)["rows"]) {
       std::pair<std::string,std::string> p(element["key"].get<std::string>(), element["value"].get<std::string>());
       v.push_back(p);
    }
@@ -252,7 +246,7 @@ std::vector<std::pair<std::string,std::string> > Client::getDocumentIDs(void) {
 /**
    @brief Check if server is online.
    @param url_ - URL of server to check.
-   @return True if online, throws error if not. TODO make this so that it does not throw error? This is legacy from Python/bash.
+   @return True if online, false if not.
 */
 bool Client::checkOnline(std::string url_) {
    std::string ret;

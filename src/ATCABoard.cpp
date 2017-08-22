@@ -14,46 +14,24 @@
 */
 ATCABoard::ATCABoard(I2C_base* i2c_type) {
    i2c = i2c_type;
-   i2c_set = true;
    downstream_available = false;
    requestBus();
-   bus_map.insert({
-      "one", new I2CBus(std::unordered_map<std::string, I2CDevice*> {
-         {"PCI-Clock", new I2CDevice(PCICLOCK_ADDR, std::unordered_map<std::string, I2CBaseRegister*>{
-            {"vendorID", new GenericI2CRegister(0x06|0x80, "r", [](int value){return value;},
-                                                                 [](units_variant value) {return boost::get<int>(value);})},
-            {"deviceID", new GenericI2CRegister(0x07|0x80, "r", [](int value){return value;},
-                                                                 [](units_variant value) {return boost::get<int>(value);})},
-            {"clock-frequency", new GenericI2CRegister(0x00|0x80, "r", [](int value){quantity<frequency> val = value & 1 ? 100e6*hertz : 133e6*hertz; return val;},
-                                                                       [](units_variant value) {return boost::get<int>(value);})},
-            {"PLLmode", new PCIClockPLLModeRegister(0x00|0x80, "rw")},
-            {"outputenable", new PCIClockOutputEnableRegister(0x01|0x80, "rw")},
-         })}
-      })
-   });
-   bus_map.insert({
-      "internal", new I2CBus(std::unordered_map<std::string, I2CDevice*> {
-         {"CPU", new I2CDevice(0x00, std::unordered_map<std::string, I2CBaseRegister*>{
-            {"temperature", new InternalRegister(EAPI_ID_HWMON_CPU_TEMP, "r", [](int value){double temp = ((double)value)/10; return temp*kelvin;})}
-         })}
-      })
-   });
+   buildBusMap();
 }
 
 /**
-   @brief Class constructor.
-   Full bus/device/register map is defined here. Also requests downstream bus from arbiter.
-   @param i2c_type - Pointer to I2C_base transport object.
+   @brief Class destructor.
+   Gives up downstream bus to arbiter.
 */
-ATCABoard::ATCABoard(std::string i2c_string) {
-   if (i2c_string == "SEMA") {
-      i2c = new I2CSema(EAPI_ID_I2C_EXTERNAL);
-      i2c_set = true;
-      downstream_available = false;
-      requestBus();
-   } else {
-      exit(-1);
+ATCABoard::~ATCABoard(void) {
+   if (downstream_available) {
+      buffer = 0x00;
+      i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
    }
+   delete i2c;
+}
+
+void ATCABoard::buildBusMap(void) {
    bus_map.insert({
       "one", new I2CBus(std::unordered_map<std::string, I2CDevice*> {
          {"PCI-Clock", new I2CDevice(PCICLOCK_ADDR, std::unordered_map<std::string, I2CBaseRegister*>{
@@ -85,18 +63,6 @@ ATCABoard::ATCABoard(std::string i2c_string) {
 }
 
 /**
-   @brief Class destructor.
-   Gives up downstream bus to arbiter.
-*/
-ATCABoard::~ATCABoard(void) {
-   if (downstream_available) {
-      buffer = 0x00;
-      i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
-   }
-   delete i2c;
-}
-
-/**
    @brief Check if downstream bus is available to access.
    @return Boolean value, true if available.
 */
@@ -120,7 +86,7 @@ void ATCABoard::requestBus(void) {
       i2c->sendData(ATCA_ARBITER, (char*)&buffer, 1, 0x01);
       downstream_available = true;
    } else {
-      printf("Bus not available.\n"); //TODO throw exception instead
+      printf("Bus not available.\n"); //TODO throw exception instead?
       downstream_available = false;
       exit(-1);
    }
@@ -153,9 +119,7 @@ void ATCABoard::setBus(std::string bus) {
 */
 void ATCABoard::setDevice(std::string device) {
    i2c_bus->setDevice(device);
-   if (i2c_set) {
-      i2c_bus->setI2CType(i2c);
-   }
+   i2c_bus->setI2CType(i2c);
 }
 
 /**
@@ -166,9 +130,7 @@ void ATCABoard::setDevice(std::string device) {
 void ATCABoard::setDevice(std::string bus, std::string device) {
    setBus(bus);
    i2c_bus->setDevice(device);
-   if (i2c_set) {
-      i2c_bus->setI2CType(i2c);
-   }
+   i2c_bus->setI2CType(i2c);
 }
 
 /**

@@ -119,6 +119,5 @@ std::string Board::read(std::string property) {
 */
 void Board::write(std::string property, std::string value) {
    Parser P;
-   units_variant var = P.getQuantity(value);
-   i2c_bus->write(property, var);
+   i2c_bus->write(property, P.getQuantity(value));
 }

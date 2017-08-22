@@ -10,8 +10,8 @@
 /**
    @brief Class constructor.
 */
-Update::Update(void) {
-   board = new ATCABoard("SEMA");
+Update::Update(I2C_base* i2c) {
+   board = new ATCABoard(i2c);
    std::ifstream config_file("/root/I2C/bin/config.json");
    config_file >> config;
 }
@@ -27,13 +27,8 @@ Update::~Update(void) {
    @brief Save active registers to local cache and then push the database to an external server.
 */
 void Update::saveActive(void) {
-   auto t = std::time(nullptr);
-   auto tm = *std::localtime(&t);
-   std::ostringstream oss;
-   oss << std::put_time(&tm, "%Y%m%d%H%M%S");
-   std::string time_str = oss.str();
    json board_dict;
-   board_dict["_id"] = time_str;
+   board_dict["_id"] = getTime();
    std::ifstream data_file("/root/I2C/bin/active.json");
    json active;
    data_file >> active;
@@ -65,19 +60,12 @@ void Update::saveActive(void) {
 void Update::saveStatic(void) {
    Client* client = new Client();
    client->setDatabase("data");
-   json doc = json::parse(client->getDocument("static"));
    bool flag = false;
-   json metadata;
-   auto t = std::time(nullptr);
-   auto tm = *std::localtime(&t);
-   std::ostringstream oss;
-   oss << std::put_time(&tm, "%Y%m%d%H%M%S");
-   std::string time_str = oss.str();
-   json board_dict;
+   json doc = json::parse(client->getDocument("static"));
+   json metadata, board_dict, active;
    board_dict["_id"] = doc["_id"];
    board_dict["_rev"] = doc["_rev"];
    std::ifstream data_file("/root/I2C/bin/active.json");
-   json active;
    data_file >> active;
    for (auto bus : board->getBuses()) {
       board_dict[bus] = {};
@@ -114,13 +102,8 @@ void Update::saveStatic(void) {
    @param client - CouchDB Client class to send data to server.
 */
 void Update::sendFlag(json data, json metadata, Client* client) {
-   auto t = std::time(nullptr);
-   auto tm = *std::localtime(&t);
-   std::ostringstream oss;
-   oss << std::put_time(&tm, "%Y%m%d%H%M%S");
-   std::string time_str = oss.str();
    json flag_dict = {
-      {"_id",config["target"]["dbname"].get<std::string>() + "-" + time_str},
+      {"_id",config["target"]["dbname"].get<std::string>() + "-" + getTime()},
       {"properties", data},
       {"metadata", metadata}
    };
@@ -134,13 +117,8 @@ void Update::purgeDatabase(void) {
    Client* client = new Client();
    client->setDatabase("data");
    if(client->checkOnline(config["target"]["url"].get<std::string>())) {
-      auto t = std::time(nullptr);
-      auto tm = *std::localtime(&t);
-      std::ostringstream oss;
-      oss << std::put_time(&tm, "%Y%m%d%H%M%S");
-      int time_int = atoi(oss.str().c_str());
-      std::vector<std::pair<std::string,std::string> > IDs = client->getDocumentIDs();
-      for (auto i : IDs) {
+      int time_int = atoi(getTime().c_str());
+      for (auto i : client->getDocumentIDs()) {
          int ID_int = atoi(i.first.c_str());
          if ((time_int - ID_int) > 10000) {
             client->deleteDocument(i.first, i.second);
@@ -185,4 +163,12 @@ void Update::getConfig(void) {
       std::ofstream config_file("/root/I2C/bin/config.json");
       config_file << std::setw(4) << config << std::endl;
    }
+}
+
+std::string Update::getTime(void) {
+   auto t = std::time(nullptr);
+   auto tm = *std::localtime(&t);
+   std::ostringstream oss;
+   oss << std::put_time(&tm, "%Y%m%d%H%M%S");
+   return oss.str();
 }

@@ -14,7 +14,7 @@
   @param write_func - Lambda function to convert units type into uint8_t to be written.
 */
 GenericI2CRegister::GenericI2CRegister(uint32_t r, std::string rw, std::function<units_variant(double)> read_func,
-                                                      std::function<uint8_t(units_variant)> write_func) {
+                                                                   std::function<uint8_t(units_variant)> write_func) {
   reg = r;
   mRead = read_func;
   mWrite = write_func;
@@ -104,4 +104,9 @@ units_variant InternalRegister::read(I2C_base* i2c_ptr, uint32_t address) {
   @param i2c_ptr - Pointer to I2C_base class used for transport.
   @param value - Data to be written. Must be of correct type.
 */
-void InternalRegister::write(I2C_base* i2c_ptr, uint32_t address, units_variant value) {}
+void InternalRegister::write(I2C_base* i2c_ptr, uint32_t address, units_variant value) {
+   if (!b_write) {
+      printf("Register cannot be written to.\n");
+      exit(-1);
+   }
+}

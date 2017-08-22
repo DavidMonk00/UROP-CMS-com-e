@@ -22,8 +22,9 @@ private:
    json config;
    void sendFlag(json data, json metadata, Client* client);
    void writeConfig(void);
+   std::string getTime(void);
 public:
-   Update(void);
+   Update(I2C_base* i2c);
    ~Update(void);
    void saveActive(void);
    void saveStatic(void);
