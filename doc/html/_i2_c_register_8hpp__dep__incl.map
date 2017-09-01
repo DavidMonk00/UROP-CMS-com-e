@@ -1,19 +1,20 @@
 <map id="include/I2CRegister.hpp" name="include/I2CRegister.hpp">
-<area shape="rect" id="node2" href="$_i2_c_device_8hpp.html" title="include/I2CDevice.hpp" alt="" coords="550,80,705,107"/>
-<area shape="rect" id="node16" href="$_d_s3232_registers_8cpp.html" title="Defines functions for the derived classes specific to the DS3232 component. " alt="" coords="729,80,901,107"/>
-<area shape="rect" id="node17" href="$_i2_c_register_8cpp.html" title="Defines functions for the derived I2CBaseRegister classes. " alt="" coords="926,80,1065,107"/>
-<area shape="rect" id="node18" href="$_si53106_registers_8cpp.html" title="Defines functions for the derived classes specific to the Si53106 component. " alt="" coords="1089,80,1261,107"/>
-<area shape="rect" id="node3" href="$_i2_c_bus_8hpp.html" title="Defines the I2CBus class. " alt="" coords="481,155,617,181"/>
-<area shape="rect" id="node15" href="$_i2_c_device_8cpp.html" title="Defines functions for the I2CDevice class. " alt="" coords="641,155,771,181"/>
-<area shape="rect" id="node4" href="$_board_8hpp.html" title="Defines the base Board class. " alt="" coords="413,229,540,256"/>
-<area shape="rect" id="node14" href="$_i2_c_bus_8cpp.html" title="Defines functions for the I2CBus class. " alt="" coords="564,229,677,256"/>
-<area shape="rect" id="node5" href="$_a_t_c_a_board_8hpp.html" title="Defines the derived ATCABoard class. " alt="" coords="194,304,357,331"/>
-<area shape="rect" id="node11" href="$_c_o_m_e_test_board_8hpp.html" title="include/COMETestBoard.hpp" alt="" coords="381,304,573,331"/>
-<area shape="rect" id="node13" href="$_board_8cpp.html" title="Defines functions for the Board base class. " alt="" coords="597,304,700,331"/>
-<area shape="rect" id="node6" href="$lib_i2_c_8hpp.html" title="Header file for Python binding library. " alt="" coords="369,379,496,405"/>
-<area shape="rect" id="node7" href="$update_8hpp.html" title="include/update.hpp" alt="" coords="51,379,182,405"/>
-<area shape="rect" id="node10" href="$_a_t_c_a_board_8cpp.html" title="Defines functions for the ATCABoard class. " alt="" coords="206,379,345,405"/>
-<area shape="rect" id="node8" href="$src_2main_8cpp.html" title="src/main.cpp" alt="" coords="5,453,103,480"/>
-<area shape="rect" id="node9" href="$update_8cpp.html" title="Defines functions for the Update class. " alt="" coords="127,453,235,480"/>
-<area shape="rect" id="node12" href="$_c_o_m_e_test_board_8cpp.html" title="Defines functions for the COMETestBoard derived class. " alt="" coords="520,379,689,405"/>
+<area shape="rect" id="node2" href="$_i2_c_device_8hpp.html" title="include/I2CDevice.hpp" alt="" coords="568,80,723,107"/>
+<area shape="rect" id="node17" href="$_d_s3232_registers_8cpp.html" title="Defines functions for the derived classes specific to the DS3232 component. " alt="" coords="747,80,919,107"/>
+<area shape="rect" id="node18" href="$_i2_c_register_8cpp.html" title="Defines functions for the derived I2CBaseRegister classes. " alt="" coords="944,80,1083,107"/>
+<area shape="rect" id="node19" href="$_si53106_registers_8cpp.html" title="Defines functions for the derived classes specific to the Si53106 component. " alt="" coords="1107,80,1279,107"/>
+<area shape="rect" id="node3" href="$_i2_c_bus_8hpp.html" title="Defines the I2CBus class. " alt="" coords="499,155,635,181"/>
+<area shape="rect" id="node16" href="$_i2_c_device_8cpp.html" title="Defines functions for the I2CDevice class. " alt="" coords="659,155,789,181"/>
+<area shape="rect" id="node4" href="$_board_8hpp.html" title="Defines the base Board class. " alt="" coords="431,229,558,256"/>
+<area shape="rect" id="node15" href="$_i2_c_bus_8cpp.html" title="Defines functions for the I2CBus class. " alt="" coords="582,229,695,256"/>
+<area shape="rect" id="node5" href="$_a_t_c_a_board_8hpp.html" title="Defines the derived ATCABoard class. " alt="" coords="212,304,375,331"/>
+<area shape="rect" id="node12" href="$_c_o_m_e_test_board_8hpp.html" title="include/COMETestBoard.hpp" alt="" coords="399,304,591,331"/>
+<area shape="rect" id="node14" href="$_board_8cpp.html" title="Defines functions for the Board base class. " alt="" coords="615,304,718,331"/>
+<area shape="rect" id="node6" href="$lib_i2_c_8hpp.html" title="Header file for Python binding library. " alt="" coords="387,379,514,405"/>
+<area shape="rect" id="node7" href="$update_8hpp.html" title="include/update.hpp" alt="" coords="69,379,200,405"/>
+<area shape="rect" id="node11" href="$_a_t_c_a_board_8cpp.html" title="Defines functions for the ATCABoard class. " alt="" coords="224,379,363,405"/>
+<area shape="rect" id="node8" href="$main_8hpp.html" title="include/main.hpp" alt="" coords="5,453,125,480"/>
+<area shape="rect" id="node10" href="$update_8cpp.html" title="Defines functions for the Update class. " alt="" coords="150,453,258,480"/>
+<area shape="rect" id="node9" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="17,528,114,555"/>
+<area shape="rect" id="node13" href="$_c_o_m_e_test_board_8cpp.html" title="Defines functions for the COMETestBoard derived class. " alt="" coords="538,379,707,405"/>
 </map>

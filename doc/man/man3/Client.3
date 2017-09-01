@@ -1,4 +1,4 @@
-.TH "Client" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.TH "Client" 3 "Fri Sep 1 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -72,7 +72,7 @@ Inherits \fBCouchDB\fP\&.
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-Definition at line 32 of file CouchDB\&.hpp\&.
+Definition at line 31 of file CouchDB\&.hpp\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "Client::Client (void)"
@@ -80,7 +80,7 @@ Definition at line 32 of file CouchDB\&.hpp\&.
 .PP
 Class constructor\&. 
 .PP
-Definition at line 117 of file CouchDB\&.cpp\&.
+Definition at line 133 of file CouchDB\&.cpp\&.
 .SS "Client::Client (std::string url_)"
 
 .PP
@@ -93,13 +93,13 @@ Class constructor\&.
 .PP
 
 .PP
-Definition at line 127 of file CouchDB\&.cpp\&.
+Definition at line 143 of file CouchDB\&.cpp\&.
 .SS "Client::~Client (void)"
 
 .PP
 Class destructor\&. 
 .PP
-Definition at line 136 of file CouchDB\&.cpp\&.
+Definition at line 152 of file CouchDB\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "bool Client::checkOnline (std::string url_)"
@@ -114,16 +114,16 @@ Check if server is online\&.
 .PP
 \fBReturns:\fP
 .RS 4
-True if online, throws error if not\&. TODO make this so that it does not throw error? This is legacy from Python/bash\&. 
+True if online, false if not\&. 
 .RE
 .PP
 
 .PP
-Definition at line 240 of file CouchDB\&.cpp\&.
+Definition at line 251 of file CouchDB\&.cpp\&.
 .SS "void Client::compactDatabase (void)"
 Compact database to save space on local machine\&. 
 .PP
-Definition at line 259 of file CouchDB\&.cpp\&.
+Definition at line 269 of file CouchDB\&.cpp\&.
 .SS "void Client::deleteDocument (std::string ID, std::string rev)"
 
 .PP
@@ -138,7 +138,7 @@ Delete document from database\&.
 .PP
 
 .PP
-Definition at line 251 of file CouchDB\&.cpp\&.
+Definition at line 261 of file CouchDB\&.cpp\&.
 .SS "std::vector< std::string > Client::getDatabases (void)"
 
 .PP
@@ -151,7 +151,7 @@ Vector of strings of IDs of each database\&.
 .PP
 
 .PP
-Definition at line 144 of file CouchDB\&.cpp\&.
+Definition at line 158 of file CouchDB\&.cpp\&.
 .SS "std::string Client::getDocument (std::string doc)"
 
 .PP
@@ -169,7 +169,7 @@ String representation of JSON output\&.
 .PP
 
 .PP
-Definition at line 214 of file CouchDB\&.cpp\&.
+Definition at line 224 of file CouchDB\&.cpp\&.
 .SS "std::vector< std::pair< std::string, std::string > > Client::getDocumentIDs (void)"
 
 .PP
@@ -182,13 +182,13 @@ Vector of string pairs for ID and revision\&.
 .PP
 
 .PP
-Definition at line 224 of file CouchDB\&.cpp\&.
+Definition at line 235 of file CouchDB\&.cpp\&.
 .SS "void Client::pushDatabase (void)"
 
 .PP
 Replicate database to master server\&. 
 .PP
-Definition at line 190 of file CouchDB\&.cpp\&.
+Definition at line 200 of file CouchDB\&.cpp\&.
 .SS "void Client::pushDatabase (\fBjson\fP params)"
 
 .PP
@@ -201,7 +201,7 @@ Replicate database to master server with specific parameters\&.
 .PP
 
 .PP
-Definition at line 201 of file CouchDB\&.cpp\&.
+Definition at line 211 of file CouchDB\&.cpp\&.
 .SS "void Client::setDatabase (std::string db)"
 
 .PP
@@ -214,7 +214,7 @@ Set ID of database to work with\&.
 .PP
 
 .PP
-Definition at line 158 of file CouchDB\&.cpp\&.
+Definition at line 172 of file CouchDB\&.cpp\&.
 .SS "void Client::uploadDocument (\fBjson\fP data)"
 
 .PP
@@ -227,7 +227,7 @@ Upload document to database\&.
 .PP
 
 .PP
-Definition at line 166 of file CouchDB\&.cpp\&.
+Definition at line 180 of file CouchDB\&.cpp\&.
 .SS "void Client::uploadDocument (std::string url_, \fBjson\fP data)"
 
 .PP
@@ -242,7 +242,7 @@ Upload document to database\&.
 .PP
 
 .PP
-Definition at line 180 of file CouchDB\&.cpp\&.
+Definition at line 192 of file CouchDB\&.cpp\&.
 
 .SH "Author"
 .PP 

@@ -27,8 +27,6 @@ Collaboration diagram for A\+T\+C\+A\+Board\+:\nopagebreak
 \item 
 \hyperlink{class_a_t_c_a_board_a4046dcaa2d61102e91005f2845e06201}{A\+T\+C\+A\+Board} (\hyperlink{class_i2_c__base}{I2\+C\+\_\+base} $\ast$i2c\+\_\+type)
 \begin{DoxyCompactList}\small\item\em Class constructor. Full bus/device/register map is defined here. Also requests downstream bus from arbiter. \end{DoxyCompactList}\item 
-\hyperlink{class_a_t_c_a_board_ac8d07dfe60a49f07a94a09868dc3637b}{A\+T\+C\+A\+Board} (std\+::string i2c\+\_\+string)
-\begin{DoxyCompactList}\small\item\em Class constructor. Full bus/device/register map is defined here. Also requests downstream bus from arbiter. \end{DoxyCompactList}\item 
 \hyperlink{class_a_t_c_a_board_a4f51f5462bd42562a1cdd20eb3a3bfeb}{$\sim$\+A\+T\+C\+A\+Board} (void)
 \begin{DoxyCompactList}\small\item\em Class destructor. Gives up downstream bus to arbiter. \end{DoxyCompactList}\item 
 std\+::unordered\+\_\+map$<$ std\+::string, \hyperlink{class_i2_c_bus}{I2\+C\+Bus} $\ast$ $>$ \hyperlink{class_a_t_c_a_board_a3926d4c4f9e4b98640b9b902b88ecb22}{get\+Map} (void)
@@ -70,26 +68,6 @@ Class constructor. Full bus/device/register map is defined here. Also requests d
 
 Definition at line 15 of file A\+T\+C\+A\+Board.\+cpp.
 
-\index{A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}!A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}}
-\index{A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}!A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}}
-\subsubsection[{\texorpdfstring{A\+T\+C\+A\+Board(std\+::string i2c\+\_\+string)}{ATCABoard(std::string i2c_string)}}]{\setlength{\rightskip}{0pt plus 5cm}A\+T\+C\+A\+Board\+::\+A\+T\+C\+A\+Board (
-\begin{DoxyParamCaption}
-\item[{std\+::string}]{i2c\+\_\+string}
-\end{DoxyParamCaption}
-)}\hypertarget{class_a_t_c_a_board_ac8d07dfe60a49f07a94a09868dc3637b}{}\label{class_a_t_c_a_board_ac8d07dfe60a49f07a94a09868dc3637b}
-
-
-Class constructor. Full bus/device/register map is defined here. Also requests downstream bus from arbiter. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em i2c\+\_\+type} & -\/ Pointer to \hyperlink{class_i2_c__base}{I2\+C\+\_\+base} transport object. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 48 of file A\+T\+C\+A\+Board.\+cpp.
-
 \index{A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}!````~A\+T\+C\+A\+Board@{$\sim$\+A\+T\+C\+A\+Board}}
 \index{````~A\+T\+C\+A\+Board@{$\sim$\+A\+T\+C\+A\+Board}!A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}}
 \subsubsection[{\texorpdfstring{$\sim$\+A\+T\+C\+A\+Board(void)}{~ATCABoard(void)}}]{\setlength{\rightskip}{0pt plus 5cm}A\+T\+C\+A\+Board\+::$\sim$\+A\+T\+C\+A\+Board (
@@ -103,7 +81,7 @@ Class destructor. Gives up downstream bus to arbiter.
 
 
 
-Definition at line 91 of file A\+T\+C\+A\+Board.\+cpp.
+Definition at line 26 of file A\+T\+C\+A\+Board.\+cpp.
 
 
 
@@ -128,7 +106,7 @@ Implements \hyperlink{class_board_a7579517a69f81e2fcbe9e18857a11545}{Board}.
 
 
 
-Definition at line 176 of file A\+T\+C\+A\+Board.\+cpp.
+Definition at line 140 of file A\+T\+C\+A\+Board.\+cpp.
 
 \index{A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}!set\+Bus@{set\+Bus}}
 \index{set\+Bus@{set\+Bus}!A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}}
@@ -148,7 +126,7 @@ Set bus to communicate over.
 \end{DoxyParams}
 
 
-Definition at line 142 of file A\+T\+C\+A\+Board.\+cpp.
+Definition at line 108 of file A\+T\+C\+A\+Board.\+cpp.
 
 \index{A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}!set\+Device@{set\+Device}}
 \index{set\+Device@{set\+Device}!A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}}
@@ -168,7 +146,7 @@ Set device to communicate to.
 \end{DoxyParams}
 
 
-Definition at line 152 of file A\+T\+C\+A\+Board.\+cpp.
+Definition at line 120 of file A\+T\+C\+A\+Board.\+cpp.
 
 \index{A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}!set\+Device@{set\+Device}}
 \index{set\+Device@{set\+Device}!A\+T\+C\+A\+Board@{A\+T\+C\+A\+Board}}
@@ -191,7 +169,7 @@ Set device to communicate to.
 \end{DoxyParams}
 
 
-Definition at line 164 of file A\+T\+C\+A\+Board.\+cpp.
+Definition at line 130 of file A\+T\+C\+A\+Board.\+cpp.
 
 
 

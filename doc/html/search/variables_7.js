@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['name',['name',['../classbook_1_1_bit.html#a37f0afda871e4a61488aee20da6c9a50',1,'book::Bit']]],
-  ['number',['number',['../classbook_1_1_page.html#aa05434b758c1957bbf56d2a8dbcf90c3',1,'book::Page']]]
+  ['primitive_5fiterator',['primitive_iterator',['../structnlohmann_1_1detail_1_1internal__iterator.html#a2b3bb45f968210e42c282017eeeb63a8',1,'nlohmann::detail::internal_iterator']]]
 ];

@@ -1,4 +1,4 @@
-.TH "Board" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.TH "Board" 3 "Fri Sep 1 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -64,22 +64,6 @@ Inherited by \fBATCABoard\fP, and \fBCOMETestBoard\fP\&.
 .RI "void \fBwrite\fP (std::string property, std::string value)"
 .br
 .RI "\fIWrite value to property\&. \fP"
-.ti -1c
-.RI "\fBBoard\fP (int id)"
-.br
-.ti -1c
-.RI "\fB~Board\fP (void)"
-.br
-.ti -1c
-.RI "const int \fBgetID\fP (void) const "
-.br
-.in -1c
-.SS "Public Attributes"
-
-.in +1c
-.ti -1c
-.RI "int \fBID\fP"
-.br
 .in -1c
 .SS "Protected Attributes"
 
@@ -96,17 +80,7 @@ Inherited by \fBATCABoard\fP, and \fBCOMETestBoard\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 34 of file Board\&.hpp\&.
-.SH "Constructor & Destructor Documentation"
-.PP 
-.SS "Board::Board (int id)\fC [inline]\fP"
-
-.PP
-Definition at line 6 of file example\&.cpp\&.
-.SS "Board::~Board (void)\fC [inline]\fP"
-
-.PP
-Definition at line 9 of file example\&.cpp\&.
+Definition at line 89 of file Board\&.hpp\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "std::vector< std::string > Board::getBuses (void)"
@@ -153,10 +127,6 @@ Vector of string IDs for available devices\&.
 
 .PP
 Definition at line 70 of file Board\&.cpp\&.
-.SS "const int Board::getID (void) const\fC [inline]\fP"
-
-.PP
-Definition at line 10 of file example\&.cpp\&.
 .SS "virtual std::unordered_map<std::string, \fBI2CBus\fP*> Board::getMap (void)\fC [pure virtual]\fP"
 
 .PP
@@ -304,19 +274,15 @@ Definition at line 120 of file Board\&.cpp\&.
 .SS "std::unordered_map<std::string, \fBI2CBus\fP*> Board::bus_map\fC [protected]\fP"
 
 .PP
-Definition at line 36 of file Board\&.hpp\&.
+Definition at line 91 of file Board\&.hpp\&.
 .SS "\fBI2C_base\fP* Board::i2c\fC [protected]\fP"
 
 .PP
-Definition at line 38 of file Board\&.hpp\&.
+Definition at line 93 of file Board\&.hpp\&.
 .SS "\fBI2CBus\fP* Board::i2c_bus\fC [protected]\fP"
 
 .PP
-Definition at line 37 of file Board\&.hpp\&.
-.SS "int Board::ID"
-
-.PP
-Definition at line 5 of file example\&.cpp\&.
+Definition at line 92 of file Board\&.hpp\&.
 
 .SH "Author"
 .PP 

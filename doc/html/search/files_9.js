@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['main_2ecpp',['main.cpp',['../src_2main_8cpp.html',1,'']]],
-  ['main_2ecpp',['main.cpp',['../test_2testbuild_2src_2main_8cpp.html',1,'']]],
-  ['main_2epy',['main.py',['../main_8py.html',1,'']]]
+  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]]
 ];

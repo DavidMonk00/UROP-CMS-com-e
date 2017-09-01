@@ -50,18 +50,7 @@ std\+::vector$<$ std\+::string $>$ \hyperlink{class_board_a6ddcad5c21427323e5062
 std\+::string \hyperlink{class_board_a0b500bd590d15f797d1a36ecfeb0f5d4}{read} (std\+::string property)
 \begin{DoxyCompactList}\small\item\em Read value of property. \end{DoxyCompactList}\item 
 void \hyperlink{class_board_ab99bb344ee68485ab89e1ed5b9d79d4e}{write} (std\+::string property, std\+::string value)
-\begin{DoxyCompactList}\small\item\em Write value to property. \end{DoxyCompactList}\item 
-\hyperlink{class_board_af90e83a4779ac782ff5cf22957bfae05}{Board} (int id)
-\item 
-\hyperlink{class_board_a737c0ecdabeccd0460bcbae2f8ac6c44}{$\sim$\+Board} (void)
-\item 
-const int \hyperlink{class_board_ab55397409307355c61edca9cb4c5236c}{get\+ID} (void) const 
-\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-int \hyperlink{class_board_ac537a3646d93996bcf1c0ead77cf4ab5}{ID}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Write value to property. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -76,32 +65,7 @@ std\+::unordered\+\_\+map$<$ std\+::string, \hyperlink{class_i2_c_bus}{I2\+C\+Bu
 \subsection{Detailed Description}
 
 
-Definition at line 34 of file Board.\+hpp.
-
-
-
-\subsection{Constructor \& Destructor Documentation}
-\index{Board@{Board}!Board@{Board}}
-\index{Board@{Board}!Board@{Board}}
-\subsubsection[{\texorpdfstring{Board(int id)}{Board(int id)}}]{\setlength{\rightskip}{0pt plus 5cm}Board\+::\+Board (
-\begin{DoxyParamCaption}
-\item[{int}]{id}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_board_af90e83a4779ac782ff5cf22957bfae05}{}\label{class_board_af90e83a4779ac782ff5cf22957bfae05}
-
-
-Definition at line 6 of file example.\+cpp.
-
-\index{Board@{Board}!````~Board@{$\sim$\+Board}}
-\index{````~Board@{$\sim$\+Board}!Board@{Board}}
-\subsubsection[{\texorpdfstring{$\sim$\+Board(void)}{~Board(void)}}]{\setlength{\rightskip}{0pt plus 5cm}Board\+::$\sim$\+Board (
-\begin{DoxyParamCaption}
-\item[{void}]{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_board_a737c0ecdabeccd0460bcbae2f8ac6c44}{}\label{class_board_a737c0ecdabeccd0460bcbae2f8ac6c44}
-
-
-Definition at line 9 of file example.\+cpp.
+Definition at line 89 of file Board.\+hpp.
 
 
 
@@ -164,17 +128,6 @@ Vector of string I\+Ds for available devices.
 
 
 Definition at line 70 of file Board.\+cpp.
-
-\index{Board@{Board}!get\+ID@{get\+ID}}
-\index{get\+ID@{get\+ID}!Board@{Board}}
-\subsubsection[{\texorpdfstring{get\+I\+D(void) const }{getID(void) const }}]{\setlength{\rightskip}{0pt plus 5cm}const int Board\+::get\+ID (
-\begin{DoxyParamCaption}
-\item[{void}]{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_board_ab55397409307355c61edca9cb4c5236c}{}\label{class_board_ab55397409307355c61edca9cb4c5236c}
-
-
-Definition at line 10 of file example.\+cpp.
 
 \index{Board@{Board}!get\+Map@{get\+Map}}
 \index{get\+Map@{get\+Map}!Board@{Board}}
@@ -391,33 +344,25 @@ Definition at line 120 of file Board.\+cpp.
 \subsubsection[{\texorpdfstring{bus\+\_\+map}{bus_map}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unordered\+\_\+map$<$std\+::string, {\bf I2\+C\+Bus}$\ast$$>$ Board\+::bus\+\_\+map\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_board_ac5fa25970ad12aa7d2c710bbcdd05339}{}\label{class_board_ac5fa25970ad12aa7d2c710bbcdd05339}
 
 
-Definition at line 36 of file Board.\+hpp.
+Definition at line 91 of file Board.\+hpp.
 
 \index{Board@{Board}!i2c@{i2c}}
 \index{i2c@{i2c}!Board@{Board}}
 \subsubsection[{\texorpdfstring{i2c}{i2c}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I2\+C\+\_\+base}$\ast$ Board\+::i2c\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_board_aec7b3a540a138062fc54587e1040d917}{}\label{class_board_aec7b3a540a138062fc54587e1040d917}
 
 
-Definition at line 38 of file Board.\+hpp.
+Definition at line 93 of file Board.\+hpp.
 
 \index{Board@{Board}!i2c\+\_\+bus@{i2c\+\_\+bus}}
 \index{i2c\+\_\+bus@{i2c\+\_\+bus}!Board@{Board}}
 \subsubsection[{\texorpdfstring{i2c\+\_\+bus}{i2c_bus}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I2\+C\+Bus}$\ast$ Board\+::i2c\+\_\+bus\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_board_a4458164bae62e6ba213a08a767242f9f}{}\label{class_board_a4458164bae62e6ba213a08a767242f9f}
 
 
-Definition at line 37 of file Board.\+hpp.
-
-\index{Board@{Board}!ID@{ID}}
-\index{ID@{ID}!Board@{Board}}
-\subsubsection[{\texorpdfstring{ID}{ID}}]{\setlength{\rightskip}{0pt plus 5cm}int Board\+::\+ID}\hypertarget{class_board_ac537a3646d93996bcf1c0ead77cf4ab5}{}\label{class_board_ac537a3646d93996bcf1c0ead77cf4ab5}
-
-
-Definition at line 5 of file example.\+cpp.
+Definition at line 92 of file Board.\+hpp.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 include/\hyperlink{_board_8hpp}{Board.\+hpp}\item 
-test/python/\hyperlink{example_8cpp}{example.\+cpp}\item 
 src/\hyperlink{_board_8cpp}{Board.\+cpp}\end{DoxyCompactItemize}

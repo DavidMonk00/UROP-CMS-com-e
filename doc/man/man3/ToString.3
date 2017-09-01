@@ -1,4 +1,4 @@
-.TH "ToString" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.TH "ToString" 3 "Fri Sep 1 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -9,7 +9,7 @@ ToString \-
 .PP
 \fC#include <Board\&.hpp>\fP
 .PP
-Inherits static_visitor<>, and static_visitor<>\&.
+Inherits static_visitor<>\&.
 .SS "Public Member Functions"
 
 .in +1c
@@ -18,12 +18,6 @@ Inherits static_visitor<>, and static_visitor<>\&.
 .br
 .ti -1c
 .RI "void \fBoperator()\fP (int &operand)"
-.br
-.ti -1c
-.RI "template<typename T > void \fBoperator()\fP (T &operand)"
-.br
-.ti -1c
-.RI "void \fBoperator()\fP (std::string &operand)"
 .br
 .ti -1c
 .RI "template<typename T > void \fBoperator()\fP (T &operand)"
@@ -44,29 +38,21 @@ Definition at line 13 of file Board\&.hpp\&.
 .SS "void ToString::operator() (std::string & operand)\fC [inline]\fP"
 
 .PP
-Definition at line 16 of file Board\&.hpp\&.
+Definition at line 71 of file Board\&.hpp\&.
 .SS "void ToString::operator() (int & operand)\fC [inline]\fP"
 
 .PP
-Definition at line 19 of file Board\&.hpp\&.
+Definition at line 74 of file Board\&.hpp\&.
 .SS "template<typename T > void ToString::operator() (T & operand)\fC [inline]\fP"
 
 .PP
-Definition at line 29 of file Board\&.hpp\&.
-.SS "void ToString::operator() (std::string & operand)\fC [inline]\fP"
-
-.PP
-Definition at line 146 of file test\&.cpp\&.
-.SS "template<typename T > void ToString::operator() (T & operand)\fC [inline]\fP"
-
-.PP
-Definition at line 150 of file test\&.cpp\&.
+Definition at line 84 of file Board\&.hpp\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "std::string ToString::mRet"
 
 .PP
-Definition at line 15 of file Board\&.hpp\&.
+Definition at line 70 of file Board\&.hpp\&.
 
 .SH "Author"
 .PP 

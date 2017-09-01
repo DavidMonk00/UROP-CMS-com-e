@@ -25,13 +25,13 @@ Collaboration diagram for Couch\+DB\+:\nopagebreak
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::string \hyperlink{class_couch_d_b_a461de7a03b4bd193d3aed9091ce3d4f4}{H\+T\+T\+P\+G\+ET} (std\+::string hostname)
+bool \hyperlink{class_couch_d_b_a71bc84918bdd964da859a844ef00fe11}{H\+T\+T\+P\+G\+ET} (std\+::string url\+\_\+, std\+::string $\ast$ret)
 \begin{DoxyCompactList}\small\item\em H\+T\+TP G\+ET function. \end{DoxyCompactList}\item 
-void \hyperlink{class_couch_d_b_ad91ed8572390817ab76f0eb8b775cc1e}{H\+T\+T\+P\+P\+UT} (std\+::string url\+\_\+, std\+::string data)
+bool \hyperlink{class_couch_d_b_a51e32342b653c055a19602a716f2fb7c}{H\+T\+T\+P\+P\+UT} (std\+::string url\+\_\+, std\+::string data)
 \begin{DoxyCompactList}\small\item\em H\+T\+TP P\+UT function. \end{DoxyCompactList}\item 
-void \hyperlink{class_couch_d_b_a1706c29bced912993c3bf969d03362f6}{H\+T\+T\+P\+P\+O\+ST} (std\+::string url\+\_\+, std\+::string data)
+bool \hyperlink{class_couch_d_b_a1aa5d75023ff39b9ebf04b1dbee500f3}{H\+T\+T\+P\+P\+O\+ST} (std\+::string url\+\_\+, std\+::string data)
 \begin{DoxyCompactList}\small\item\em H\+T\+TP P\+O\+ST function. \end{DoxyCompactList}\item 
-void \hyperlink{class_couch_d_b_af1b891b40a933acf4895d026abb48800}{H\+T\+T\+P\+D\+E\+L\+E\+TE} (std\+::string url\+\_\+)
+bool \hyperlink{class_couch_d_b_ab4bb23537894cbc90adfc736fad836a0}{H\+T\+T\+P\+D\+E\+L\+E\+TE} (std\+::string url\+\_\+)
 \begin{DoxyCompactList}\small\item\em H\+T\+TP D\+E\+L\+E\+TE function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -46,8 +46,6 @@ std\+::string \hyperlink{class_couch_d_b_a1282b49d828b838b8007bbb08ba77a69}{url}
 std\+::string \hyperlink{class_couch_d_b_a5951cb721e50d0b8d24c8fea625909ff}{database}
 \item 
 \hyperlink{_couch_d_b_8hpp_ab701e3ac61a85b337ec5c1abaad6742d}{json} \hyperlink{class_couch_d_b_ada3dd3c5112ccf493eafe278ce4a521c}{config}
-\item 
-C\+U\+RL $\ast$ \hyperlink{class_couch_d_b_a85772e6420ce3521793da3427e573706}{curl}
 \end{DoxyCompactItemize}
 
 
@@ -79,11 +77,11 @@ Definition at line 13 of file Couch\+D\+B.\+cpp.
 
 \index{Couch\+DB@{Couch\+DB}!H\+T\+T\+P\+D\+E\+L\+E\+TE@{H\+T\+T\+P\+D\+E\+L\+E\+TE}}
 \index{H\+T\+T\+P\+D\+E\+L\+E\+TE@{H\+T\+T\+P\+D\+E\+L\+E\+TE}!Couch\+DB@{Couch\+DB}}
-\subsubsection[{\texorpdfstring{H\+T\+T\+P\+D\+E\+L\+E\+T\+E(std\+::string url\+\_\+)}{HTTPDELETE(std::string url_)}}]{\setlength{\rightskip}{0pt plus 5cm}void Couch\+D\+B\+::\+H\+T\+T\+P\+D\+E\+L\+E\+TE (
+\subsubsection[{\texorpdfstring{H\+T\+T\+P\+D\+E\+L\+E\+T\+E(std\+::string url\+\_\+)}{HTTPDELETE(std::string url_)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Couch\+D\+B\+::\+H\+T\+T\+P\+D\+E\+L\+E\+TE (
 \begin{DoxyParamCaption}
 \item[{std\+::string}]{url\+\_\+}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_couch_d_b_af1b891b40a933acf4895d026abb48800}{}\label{class_couch_d_b_af1b891b40a933acf4895d026abb48800}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_couch_d_b_ab4bb23537894cbc90adfc736fad836a0}{}\label{class_couch_d_b_ab4bb23537894cbc90adfc736fad836a0}
 
 
 H\+T\+TP D\+E\+L\+E\+TE function. 
@@ -95,15 +93,16 @@ H\+T\+TP D\+E\+L\+E\+TE function.
 \end{DoxyParams}
 
 
-Definition at line 98 of file Couch\+D\+B.\+cpp.
+Definition at line 110 of file Couch\+D\+B.\+cpp.
 
 \index{Couch\+DB@{Couch\+DB}!H\+T\+T\+P\+G\+ET@{H\+T\+T\+P\+G\+ET}}
 \index{H\+T\+T\+P\+G\+ET@{H\+T\+T\+P\+G\+ET}!Couch\+DB@{Couch\+DB}}
-\subsubsection[{\texorpdfstring{H\+T\+T\+P\+G\+E\+T(std\+::string hostname)}{HTTPGET(std::string hostname)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Couch\+D\+B\+::\+H\+T\+T\+P\+G\+ET (
+\subsubsection[{\texorpdfstring{H\+T\+T\+P\+G\+E\+T(std\+::string url\+\_\+, std\+::string $\ast$ret)}{HTTPGET(std::string url_, std::string *ret)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Couch\+D\+B\+::\+H\+T\+T\+P\+G\+ET (
 \begin{DoxyParamCaption}
-\item[{std\+::string}]{url\+\_\+}
+\item[{std\+::string}]{url\+\_\+, }
+\item[{std\+::string $\ast$}]{ret}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_couch_d_b_a461de7a03b4bd193d3aed9091ce3d4f4}{}\label{class_couch_d_b_a461de7a03b4bd193d3aed9091ce3d4f4}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_couch_d_b_a71bc84918bdd964da859a844ef00fe11}{}\label{class_couch_d_b_a71bc84918bdd964da859a844ef00fe11}
 
 
 H\+T\+TP G\+ET function. 
@@ -122,12 +121,12 @@ Definition at line 31 of file Couch\+D\+B.\+cpp.
 
 \index{Couch\+DB@{Couch\+DB}!H\+T\+T\+P\+P\+O\+ST@{H\+T\+T\+P\+P\+O\+ST}}
 \index{H\+T\+T\+P\+P\+O\+ST@{H\+T\+T\+P\+P\+O\+ST}!Couch\+DB@{Couch\+DB}}
-\subsubsection[{\texorpdfstring{H\+T\+T\+P\+P\+O\+S\+T(std\+::string url\+\_\+, std\+::string data)}{HTTPPOST(std::string url_, std::string data)}}]{\setlength{\rightskip}{0pt plus 5cm}void Couch\+D\+B\+::\+H\+T\+T\+P\+P\+O\+ST (
+\subsubsection[{\texorpdfstring{H\+T\+T\+P\+P\+O\+S\+T(std\+::string url\+\_\+, std\+::string data)}{HTTPPOST(std::string url_, std::string data)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Couch\+D\+B\+::\+H\+T\+T\+P\+P\+O\+ST (
 \begin{DoxyParamCaption}
 \item[{std\+::string}]{url\+\_\+, }
 \item[{std\+::string}]{data}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_couch_d_b_a1706c29bced912993c3bf969d03362f6}{}\label{class_couch_d_b_a1706c29bced912993c3bf969d03362f6}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_couch_d_b_a1aa5d75023ff39b9ebf04b1dbee500f3}{}\label{class_couch_d_b_a1aa5d75023ff39b9ebf04b1dbee500f3}
 
 
 H\+T\+TP P\+O\+ST function. 
@@ -141,16 +140,16 @@ H\+T\+TP P\+O\+ST function.
 \end{DoxyParams}
 
 
-Definition at line 74 of file Couch\+D\+B.\+cpp.
+Definition at line 80 of file Couch\+D\+B.\+cpp.
 
 \index{Couch\+DB@{Couch\+DB}!H\+T\+T\+P\+P\+UT@{H\+T\+T\+P\+P\+UT}}
 \index{H\+T\+T\+P\+P\+UT@{H\+T\+T\+P\+P\+UT}!Couch\+DB@{Couch\+DB}}
-\subsubsection[{\texorpdfstring{H\+T\+T\+P\+P\+U\+T(std\+::string url\+\_\+, std\+::string data)}{HTTPPUT(std::string url_, std::string data)}}]{\setlength{\rightskip}{0pt plus 5cm}void Couch\+D\+B\+::\+H\+T\+T\+P\+P\+UT (
+\subsubsection[{\texorpdfstring{H\+T\+T\+P\+P\+U\+T(std\+::string url\+\_\+, std\+::string data)}{HTTPPUT(std::string url_, std::string data)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Couch\+D\+B\+::\+H\+T\+T\+P\+P\+UT (
 \begin{DoxyParamCaption}
 \item[{std\+::string}]{url\+\_\+, }
 \item[{std\+::string}]{data}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_couch_d_b_ad91ed8572390817ab76f0eb8b775cc1e}{}\label{class_couch_d_b_ad91ed8572390817ab76f0eb8b775cc1e}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_couch_d_b_a51e32342b653c055a19602a716f2fb7c}{}\label{class_couch_d_b_a51e32342b653c055a19602a716f2fb7c}
 
 
 H\+T\+TP P\+UT function. 
@@ -164,7 +163,7 @@ H\+T\+TP P\+UT function.
 \end{DoxyParams}
 
 
-Definition at line 52 of file Couch\+D\+B.\+cpp.
+Definition at line 54 of file Couch\+D\+B.\+cpp.
 
 
 
@@ -175,13 +174,6 @@ Definition at line 52 of file Couch\+D\+B.\+cpp.
 
 
 Definition at line 23 of file Couch\+D\+B.\+hpp.
-
-\index{Couch\+DB@{Couch\+DB}!curl@{curl}}
-\index{curl@{curl}!Couch\+DB@{Couch\+DB}}
-\subsubsection[{\texorpdfstring{curl}{curl}}]{\setlength{\rightskip}{0pt plus 5cm}C\+U\+RL$\ast$ Couch\+D\+B\+::curl\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_couch_d_b_a85772e6420ce3521793da3427e573706}{}\label{class_couch_d_b_a85772e6420ce3521793da3427e573706}
-
-
-Definition at line 24 of file Couch\+D\+B.\+hpp.
 
 \index{Couch\+DB@{Couch\+DB}!database@{database}}
 \index{database@{database}!Couch\+DB@{Couch\+DB}}

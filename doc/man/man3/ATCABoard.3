@@ -1,4 +1,4 @@
-.TH "ATCABoard" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.TH "ATCABoard" 3 "Fri Sep 1 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,10 +15,6 @@ Inherits \fBBoard\fP\&.
 .in +1c
 .ti -1c
 .RI "\fBATCABoard\fP (\fBI2C_base\fP *i2c_type)"
-.br
-.RI "\fIClass constructor\&. Full bus/device/register map is defined here\&. Also requests downstream bus from arbiter\&. \fP"
-.ti -1c
-.RI "\fBATCABoard\fP (std::string i2c_string)"
 .br
 .RI "\fIClass constructor\&. Full bus/device/register map is defined here\&. Also requests downstream bus from arbiter\&. \fP"
 .ti -1c
@@ -61,25 +57,12 @@ Class constructor\&. Full bus/device/register map is defined here\&. Also reques
 
 .PP
 Definition at line 15 of file ATCABoard\&.cpp\&.
-.SS "ATCABoard::ATCABoard (std::string i2c_string)"
-
-.PP
-Class constructor\&. Full bus/device/register map is defined here\&. Also requests downstream bus from arbiter\&. 
-.PP
-\fBParameters:\fP
-.RS 4
-\fIi2c_type\fP - Pointer to \fBI2C_base\fP transport object\&. 
-.RE
-.PP
-
-.PP
-Definition at line 48 of file ATCABoard\&.cpp\&.
 .SS "ATCABoard::~ATCABoard (void)"
 
 .PP
 Class destructor\&. Gives up downstream bus to arbiter\&. 
 .PP
-Definition at line 91 of file ATCABoard\&.cpp\&.
+Definition at line 26 of file ATCABoard\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "std::unordered_map< std::string, \fBI2CBus\fP * > ATCABoard::getMap (void)\fC [virtual]\fP"
@@ -96,7 +79,7 @@ Unordered map of string identifiers and \fBI2CBus\fP pointers\&.
 .PP
 Implements \fBBoard\fP\&.
 .PP
-Definition at line 176 of file ATCABoard\&.cpp\&.
+Definition at line 140 of file ATCABoard\&.cpp\&.
 .SS "void ATCABoard::setBus (std::string bus)"
 
 .PP
@@ -109,7 +92,7 @@ Set bus to communicate over\&.
 .PP
 
 .PP
-Definition at line 142 of file ATCABoard\&.cpp\&.
+Definition at line 108 of file ATCABoard\&.cpp\&.
 .SS "void ATCABoard::setDevice (std::string device)"
 
 .PP
@@ -122,7 +105,7 @@ Set device to communicate to\&.
 .PP
 
 .PP
-Definition at line 152 of file ATCABoard\&.cpp\&.
+Definition at line 120 of file ATCABoard\&.cpp\&.
 .SS "void ATCABoard::setDevice (std::string bus, std::string device)"
 
 .PP
@@ -137,7 +120,7 @@ Set device to communicate to\&.
 .PP
 
 .PP
-Definition at line 164 of file ATCABoard\&.cpp\&.
+Definition at line 130 of file ATCABoard\&.cpp\&.
 
 .SH "Author"
 .PP 

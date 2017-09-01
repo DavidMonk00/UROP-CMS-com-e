@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['deletedocument',['deleteDocument',['../class_client.html#a45748961b6b8b534fa04e9a2bb40ed27',1,'Client']]],
-  ['diagnostics',['Diagnostics',['../class_diagnostics.html#a84423ad40c376ce8d8a4f02dc0b7f44c',1,'Diagnostics::Diagnostics(void)'],['../class_diagnostics.html#ab4cf66446bf7d4af44315629de9a910b',1,'Diagnostics::Diagnostics(uint32_t h)']]],
-  ['diff',['diff',['../classnlohmann_1_1basic__json.html#a543bd5f7490de54c875b2c0912dc9a49',1,'nlohmann::basic_json']]],
-  ['ds3232temperaturei2cregister',['DS3232TemperatureI2CRegister',['../class_d_s3232_temperature_i2_c_register.html#a45e6afc23e8218b5b340d89c901441c4',1,'DS3232TemperatureI2CRegister']]],
-  ['dump',['dump',['../classnlohmann_1_1detail_1_1serializer.html#a95460ebd1a535a543e5a0ec52e00f48b',1,'nlohmann::detail::serializer::dump()'],['../classnlohmann_1_1basic__json.html#ae5bfe31e51a06f32c273a3e79a4ea872',1,'nlohmann::basic_json::dump()']]]
+  ['editconfig',['editConfig',['../class_server.html#af8c102697196f181155b760124f47802',1,'Server::editConfig(std::string bus, std::string device, std::string property, std::string value)'],['../class_server.html#adc88ca669caaadbd384ad43fb7d27fdc',1,'Server::editConfig(std::string board, std::string bus, std::string device, std::string property, std::string value)']]],
+  ['emplace',['emplace',['../classnlohmann_1_1basic__json.html#ab515108f8219ac33256a48066bbc7354',1,'nlohmann::basic_json']]],
+  ['emplace_5fback',['emplace_back',['../classnlohmann_1_1basic__json.html#ade45be7a74af7aa2d447e555d48e39ea',1,'nlohmann::basic_json']]],
+  ['empty',['empty',['../classnlohmann_1_1basic__json.html#a1a86d444bfeaa9518d2421aedd74444a',1,'nlohmann::basic_json']]],
+  ['end',['end',['../classnlohmann_1_1detail_1_1iteration__proxy.html#a41303419d073f32fcf1956978410d816',1,'nlohmann::detail::iteration_proxy::end()'],['../classnlohmann_1_1basic__json.html#a13e032a02a7fd8a93fdddc2fcbc4763c',1,'nlohmann::basic_json::end() noexcept'],['../classnlohmann_1_1basic__json.html#a1c15707055088cd5436ae91db72cbe67',1,'nlohmann::basic_json::end() const noexcept']]],
+  ['erase',['erase',['../classnlohmann_1_1basic__json.html#a068a16e76be178e83da6a192916923ed',1,'nlohmann::basic_json::erase(IteratorType pos)'],['../classnlohmann_1_1basic__json.html#a4b3f7eb2d4625d95a51fbbdceb7c5f39',1,'nlohmann::basic_json::erase(IteratorType first, IteratorType last)'],['../classnlohmann_1_1basic__json.html#a2f8484d69c55d8f2a9697a7bec29362a',1,'nlohmann::basic_json::erase(const typename object_t::key_type &amp;key)'],['../classnlohmann_1_1basic__json.html#a88cbcefe9a3f4d294bed0653550a5cb9',1,'nlohmann::basic_json::erase(const size_type idx)']]],
+  ['exception',['exception',['../classnlohmann_1_1detail_1_1exception.html#ae323ad0d53bc724414c2233164e65657',1,'nlohmann::detail::exception']]]
 ];

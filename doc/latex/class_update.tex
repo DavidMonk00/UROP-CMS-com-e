@@ -7,7 +7,7 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_update_a929be37ba13defe954636d08d7e5fc85}{Update} (void)
+\hyperlink{class_update_ae98127672846c7c6830dfeb912d92bbd}{Update} (\hyperlink{class_i2_c__base}{I2\+C\+\_\+base} $\ast$i2c)
 \begin{DoxyCompactList}\small\item\em Class constructor. \end{DoxyCompactList}\item 
 \hyperlink{class_update_a60ebd12d7fa5522051224aafabbcd173}{$\sim$\+Update} (void)
 \begin{DoxyCompactList}\small\item\em Class destructor. \end{DoxyCompactList}\item 
@@ -31,11 +31,11 @@ Definition at line 19 of file update.\+hpp.
 \subsection{Constructor \& Destructor Documentation}
 \index{Update@{Update}!Update@{Update}}
 \index{Update@{Update}!Update@{Update}}
-\subsubsection[{\texorpdfstring{Update(void)}{Update(void)}}]{\setlength{\rightskip}{0pt plus 5cm}Update\+::\+Update (
+\subsubsection[{\texorpdfstring{Update(\+I2\+C\+\_\+base $\ast$i2c)}{Update(I2C_base *i2c)}}]{\setlength{\rightskip}{0pt plus 5cm}Update\+::\+Update (
 \begin{DoxyParamCaption}
-\item[{void}]{}
+\item[{{\bf I2\+C\+\_\+base} $\ast$}]{i2c}
 \end{DoxyParamCaption}
-)}\hypertarget{class_update_a929be37ba13defe954636d08d7e5fc85}{}\label{class_update_a929be37ba13defe954636d08d7e5fc85}
+)}\hypertarget{class_update_ae98127672846c7c6830dfeb912d92bbd}{}\label{class_update_ae98127672846c7c6830dfeb912d92bbd}
 
 
 Class constructor. 
@@ -75,7 +75,7 @@ Check if config files have changed and update registers if true.
 
 
 
-Definition at line 174 of file update.\+cpp.
+Definition at line 156 of file update.\+cpp.
 
 \index{Update@{Update}!purge\+Database@{purge\+Database}}
 \index{purge\+Database@{purge\+Database}!Update@{Update}}
@@ -90,7 +90,7 @@ Purge database of any entries over an hour old.
 
 
 
-Definition at line 129 of file update.\+cpp.
+Definition at line 116 of file update.\+cpp.
 
 \index{Update@{Update}!save\+Active@{save\+Active}}
 \index{save\+Active@{save\+Active}!Update@{Update}}
@@ -120,7 +120,7 @@ Save static registers to local cache and then push the database to an external s
 
 
 
-Definition at line 63 of file update.\+cpp.
+Definition at line 60 of file update.\+cpp.
 
 
 

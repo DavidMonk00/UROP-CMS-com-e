@@ -1611,7 +1611,7 @@ template&lt;template&lt; typename U, typename V, typename...Args &gt; class Obje
 <h4>Default type</h4>
 <p>With the default values for <em>StringType</em> (<code>std::string</code>), the default value for <em>string_t</em> is:</p>
 <div class="fragment"><div class="line">std::string</div></div><!-- fragment --><h4>Encoding</h4>
-<p>Strings are stored in UTF-8 encoding. Therefore, functions like <code>std::string::size()</code> or <code><a class="el" href="namespaceboost_1_1units_1_1test.html#abb80de321402f6f139e1a1b182ea4655">std::string::length()</a></code> return the number of bytes in the string rather than the number of characters or glyphs.</p>
+<p>Strings are stored in UTF-8 encoding. Therefore, functions like <code>std::string::size()</code> or <code>std::string::length()</code> return the number of bytes in the string rather than the number of characters or glyphs.</p>
 <h4>String comparison</h4>
 <p><a href="http://rfc7159.net/rfc7159">RFC 7159</a> states: </p><blockquote class="doxtable">
 <p>Software implementations are typically required to test names of object members for equality. Implementations that transform the textual representation into sequences of Unicode code units and then perform the comparison numerically, code unit by code unit, are interoperable in the sense that implementations will agree in all cases on equality or inequality of two strings. For example, implementations that compare strings with escaped characters unconverted may incorrectly find that <code>"a\\\\b"</code> and <code>"a\\u005Cb"</code> are not equal. </p>
@@ -9505,7 +9505,7 @@ template&lt;template&lt; typename U, typename V, typename...Args &gt; class Obje
 <p>Linear in the length of the input. The parser is a predictive LL(1) parser.</p>
 <dl class="section note"><dt>Note</dt><dd>A UTF-8 byte order mark is silently ignored.</dd></dl>
 <p>{The example below shows how a JSON value is constructed by reading a serialization from a stream.,operator_deserialize}</p>
-<dl class="section see"><dt>See also</dt><dd>parse(std::istream&amp;, const parser_callback_t) for a variant with a <a class="el" href="namespaceparser.html">parser</a> callback function to filter values while parsing</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>parse(std::istream&amp;, const parser_callback_t) for a variant with a parser callback function to filter values while parsing</dd></dl>
 <dl class="section since"><dt>Since</dt><dd>version 1.0.0 </dd></dl>
 
 <p>Definition at line <a class="el" href="json_8hpp_source.html#l12900">12900</a> of file <a class="el" href="json_8hpp_source.html">json.hpp</a>.</p>

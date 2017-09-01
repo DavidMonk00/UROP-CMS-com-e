@@ -6,7 +6,8 @@
 
 
 
-Inheritance diagram for Generic\+I2\+C\+Register\+:\nopagebreak
+Inheritance diagram for Generic\+I2\+C\+Register\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Inheritance diagram for Generic\+I2\+C\+Register\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Generic\+I2\+C\+Register\+:\nopagebreak
+Collaboration diagram for Generic\+I2\+C\+Register\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,19 +28,13 @@ Collaboration diagram for Generic\+I2\+C\+Register\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_generic_i2_c_register_acc3dd8df2df5532b2e30ba20c1ac8735}{Generic\+I2\+C\+Register} (uint32\+\_\+t r, std\+::string rw, std\+::function$<$ \hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant}(double value)$>$ read\+\_\+func, std\+::function$<$ uint8\+\_\+t(\hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant})$>$ write\+\_\+func)
-\item 
+\begin{DoxyCompactList}\small\item\em Class constructor. \end{DoxyCompactList}\item 
 \hyperlink{class_generic_i2_c_register_a17eb3844eb23aabe6fddfcef798e692f}{$\sim$\+Generic\+I2\+C\+Register} (void)
 \begin{DoxyCompactList}\small\item\em Class destructor. \end{DoxyCompactList}\item 
 \hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant} \hyperlink{class_generic_i2_c_register_a86c28b9c5eecacca106132e7718b2646}{read} (\hyperlink{class_i2_c__base}{I2\+C\+\_\+base} $\ast$i2c\+\_\+ptr, uint32\+\_\+t address)
 \begin{DoxyCompactList}\small\item\em Read data from register. \end{DoxyCompactList}\item 
 void \hyperlink{class_generic_i2_c_register_ad6f38b7b54c95e3f8502de01f6122d60}{write} (\hyperlink{class_i2_c__base}{I2\+C\+\_\+base} $\ast$i2c\+\_\+ptr, uint32\+\_\+t address, \hyperlink{units__define_8hpp_a95d46867fa79633565c288a0b4bd5408}{units\+\_\+variant} value)
-\begin{DoxyCompactList}\small\item\em Write data to register. \end{DoxyCompactList}\item 
-\hyperlink{class_generic_i2_c_register_a20946c87287dd4b06f7f873dfeb0df9b}{Generic\+I2\+C\+Register} (std\+::function$<$ void(void $\ast$, uint32\+\_\+t)$>$ read\+\_\+func, std\+::function$<$ void(void $\ast$, uint32\+\_\+t)$>$ write\+\_\+func)
-\item 
-void \hyperlink{class_generic_i2_c_register_a61978f59fd6f303844bdba728b1f6866}{read} (void $\ast$i2c\+\_\+ptr, uint32\+\_\+t addr)
-\item 
-void \hyperlink{class_generic_i2_c_register_a77b68755fe06268a21402f1e3190bd95}{write} (void $\ast$i2c\+\_\+ptr, uint32\+\_\+t addr)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Write data to register. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -60,6 +56,23 @@ Definition at line 33 of file I2\+C\+Register.\+hpp.
 \item[{std\+::function$<$ uint8\+\_\+t({\bf units\+\_\+variant})$>$}]{write\+\_\+func}
 \end{DoxyParamCaption}
 )}\hypertarget{class_generic_i2_c_register_acc3dd8df2df5532b2e30ba20c1ac8735}{}\label{class_generic_i2_c_register_acc3dd8df2df5532b2e30ba20c1ac8735}
+
+
+Class constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & -\/ Address of register within I2C device. \\
+\hline
+{\em read\+\_\+func} & -\/ Lambda function to convert hexadecimal value into correct units type. \\
+\hline
+{\em write\+\_\+func} & -\/ Lambda function to convert units type into uint8\+\_\+t to be written. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 16 of file I2\+C\+Register.\+cpp.
+
 \index{Generic\+I2\+C\+Register@{Generic\+I2\+C\+Register}!````~Generic\+I2\+C\+Register@{$\sim$\+Generic\+I2\+C\+Register}}
 \index{````~Generic\+I2\+C\+Register@{$\sim$\+Generic\+I2\+C\+Register}!Generic\+I2\+C\+Register@{Generic\+I2\+C\+Register}}
 \subsubsection[{\texorpdfstring{$\sim$\+Generic\+I2\+C\+Register(void)}{~GenericI2CRegister(void)}}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+I2\+C\+Register\+::$\sim$\+Generic\+I2\+C\+Register (
@@ -75,37 +88,9 @@ Class destructor.
 
 Definition at line 32 of file I2\+C\+Register.\+cpp.
 
-\index{Generic\+I2\+C\+Register@{Generic\+I2\+C\+Register}!Generic\+I2\+C\+Register@{Generic\+I2\+C\+Register}}
-\index{Generic\+I2\+C\+Register@{Generic\+I2\+C\+Register}!Generic\+I2\+C\+Register@{Generic\+I2\+C\+Register}}
-\subsubsection[{\texorpdfstring{Generic\+I2\+C\+Register(std\+::function$<$ void(void $\ast$, uint32\+\_\+t)$>$ read\+\_\+func, std\+::function$<$ void(void $\ast$, uint32\+\_\+t)$>$ write\+\_\+func)}{GenericI2CRegister(std::function< void(void *, uint32_t)> read_func, std::function< void(void *, uint32_t)> write_func)}}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+I2\+C\+Register\+::\+Generic\+I2\+C\+Register (
-\begin{DoxyParamCaption}
-\item[{std\+::function$<$ void(void $\ast$, uint32\+\_\+t)$>$}]{read\+\_\+func, }
-\item[{std\+::function$<$ void(void $\ast$, uint32\+\_\+t)$>$}]{write\+\_\+func}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_generic_i2_c_register_a20946c87287dd4b06f7f873dfeb0df9b}{}\label{class_generic_i2_c_register_a20946c87287dd4b06f7f873dfeb0df9b}
-
-
-Definition at line 17 of file structure.\+cpp.
-
 
 
 \subsection{Member Function Documentation}
-\index{Generic\+I2\+C\+Register@{Generic\+I2\+C\+Register}!read@{read}}
-\index{read@{read}!Generic\+I2\+C\+Register@{Generic\+I2\+C\+Register}}
-\subsubsection[{\texorpdfstring{read(void $\ast$i2c\+\_\+ptr, uint32\+\_\+t addr)}{read(void *i2c_ptr, uint32_t addr)}}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+I2\+C\+Register\+::read (
-\begin{DoxyParamCaption}
-\item[{void $\ast$}]{i2c\+\_\+ptr, }
-\item[{uint32\+\_\+t}]{addr}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_generic_i2_c_register_a61978f59fd6f303844bdba728b1f6866}{}\label{class_generic_i2_c_register_a61978f59fd6f303844bdba728b1f6866}
-
-
-Implements \hyperlink{class_i2_c_base_register_af1f72d5762a6141699b6af08333c4fda}{I2\+C\+Base\+Register}.
-
-
-
-Definition at line 21 of file structure.\+cpp.
-
 \index{Generic\+I2\+C\+Register@{Generic\+I2\+C\+Register}!read@{read}}
 \index{read@{read}!Generic\+I2\+C\+Register@{Generic\+I2\+C\+Register}}
 \subsubsection[{\texorpdfstring{read(\+I2\+C\+\_\+base $\ast$i2c\+\_\+ptr, uint32\+\_\+t address)}{read(I2C_base *i2c_ptr, uint32_t address)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf units\+\_\+variant} Generic\+I2\+C\+Register\+::read (
@@ -133,22 +118,6 @@ Implements \hyperlink{class_i2_c_base_register_a947d834a745d3036c4cd8a2d5e19cd0d
 
 
 Definition at line 39 of file I2\+C\+Register.\+cpp.
-
-\index{Generic\+I2\+C\+Register@{Generic\+I2\+C\+Register}!write@{write}}
-\index{write@{write}!Generic\+I2\+C\+Register@{Generic\+I2\+C\+Register}}
-\subsubsection[{\texorpdfstring{write(void $\ast$i2c\+\_\+ptr, uint32\+\_\+t addr)}{write(void *i2c_ptr, uint32_t addr)}}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+I2\+C\+Register\+::write (
-\begin{DoxyParamCaption}
-\item[{void $\ast$}]{i2c\+\_\+ptr, }
-\item[{uint32\+\_\+t}]{addr}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_generic_i2_c_register_a77b68755fe06268a21402f1e3190bd95}{}\label{class_generic_i2_c_register_a77b68755fe06268a21402f1e3190bd95}
-
-
-Implements \hyperlink{class_i2_c_base_register_aed4dc86915a116908c4b5d7e8ffbde17}{I2\+C\+Base\+Register}.
-
-
-
-Definition at line 24 of file structure.\+cpp.
 
 \index{Generic\+I2\+C\+Register@{Generic\+I2\+C\+Register}!write@{write}}
 \index{write@{write}!Generic\+I2\+C\+Register@{Generic\+I2\+C\+Register}}
@@ -183,5 +152,4 @@ Definition at line 55 of file I2\+C\+Register.\+cpp.
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 include/\hyperlink{_i2_c_register_8hpp}{I2\+C\+Register.\+hpp}\item 
-test/\hyperlink{structure_8cpp}{structure.\+cpp}\item 
 src/\hyperlink{_i2_c_register_8cpp}{I2\+C\+Register.\+cpp}\end{DoxyCompactItemize}

@@ -1,4 +1,4 @@
-.TH "Update" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.TH "Update" 3 "Fri Sep 1 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,7 +12,7 @@ Update \-
 
 .in +1c
 .ti -1c
-.RI "\fBUpdate\fP (void)"
+.RI "\fBUpdate\fP (\fBI2C_base\fP *i2c)"
 .br
 .RI "\fIClass constructor\&. \fP"
 .ti -1c
@@ -41,7 +41,7 @@ Update \-
 Definition at line 19 of file update\&.hpp\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "Update::Update (void)"
+.SS "Update::Update (\fBI2C_base\fP * i2c)"
 
 .PP
 Class constructor\&. 
@@ -60,13 +60,13 @@ Definition at line 22 of file update\&.cpp\&.
 .PP
 Check if config files have changed and update registers if true\&. 
 .PP
-Definition at line 174 of file update\&.cpp\&.
+Definition at line 156 of file update\&.cpp\&.
 .SS "void Update::purgeDatabase (void)"
 
 .PP
 Purge database of any entries over an hour old\&. 
 .PP
-Definition at line 129 of file update\&.cpp\&.
+Definition at line 116 of file update\&.cpp\&.
 .SS "void Update::saveActive (void)"
 
 .PP
@@ -78,7 +78,7 @@ Definition at line 29 of file update\&.cpp\&.
 .PP
 Save static registers to local cache and then push the database to an external server\&. 
 .PP
-Definition at line 63 of file update\&.cpp\&.
+Definition at line 60 of file update\&.cpp\&.
 
 .SH "Author"
 .PP 

@@ -1,9 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_i2_c_base_register.html" title="I2CBaseRegister" alt="" coords="5,132,128,159"/>
-<area shape="rect" id="node2" href="$class_d_s3232_temperature_i2_c_register.html" title="DS3232TemperatureI2CRegister" alt="" coords="176,5,388,32"/>
-<area shape="rect" id="node3" href="$class_generic_i2_c_register.html" title="GenericI2CRegister" alt="" coords="213,56,351,83"/>
-<area shape="rect" id="node4" href="$class_internal_register.html" title="InternalRegister" alt="" coords="225,107,339,133"/>
-<area shape="rect" id="node5" href="$class_p_c_i_clock_output_enable_register.html" title="PCIClockOutputEnableRegister" alt="" coords="179,157,385,184"/>
-<area shape="rect" id="node6" href="$class_p_c_i_clock_p_l_l_mode_register.html" title="PCIClockPLLModeRegister" alt="" coords="191,208,373,235"/>
-<area shape="rect" id="node7" href="$class_time_i2_c_register.html" title="TimeI2CRegister" alt="" coords="221,259,343,285"/>
+<area shape="rect" id="node2" href="$structnlohmann_1_1detail_1_1conjunction.html" title="nlohmann::detail::conjunction\l\&lt;... \&gt;" alt="" coords="129,5,320,47"/>
+<area shape="rect" id="node3" href="$structnlohmann_1_1detail_1_1is__basic__json_3_01_n_l_o_h_m_a_n_n___b_a_s_i_c___j_s_o_n___t_p_l_01_4.html" title="nlohmann::detail::is\l_basic_json\&lt; NLOHMANN\l_BASIC_JSON_TPL \&gt;" alt="" coords="135,70,315,126"/>
 </map>

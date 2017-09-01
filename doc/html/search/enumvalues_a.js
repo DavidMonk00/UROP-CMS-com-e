@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['object',['object',['../namespacenlohmann_1_1detail.html#a90aa5ef615aa8305e9ea20d8a947980faa8cfde6331bd59eb2ac96f8911c4b666',1,'nlohmann::detail']]],
-  ['object_5fend',['object_end',['../classnlohmann_1_1detail_1_1parser.html#a37ac88c864dda495f72cb62776b0bebeaf63e2a2468a37aa4f394fcc3bcb8249c',1,'nlohmann::detail::parser']]],
-  ['object_5fstart',['object_start',['../classnlohmann_1_1detail_1_1parser.html#a37ac88c864dda495f72cb62776b0bebeae73f17027cb0acbb537f29d0a6944b26',1,'nlohmann::detail::parser']]]
+  ['sema',['SEMA',['../class_i2_c_device.html#a275eefb9eb7dfd1ee0470a8bd0a73086a6a7b9aebb5e9f27970de13799ad47f6e',1,'I2CDevice']]],
+  ['string',['string',['../namespacenlohmann_1_1detail.html#a90aa5ef615aa8305e9ea20d8a947980fab45cffe084dd3d20d928bee85e7b0f21',1,'nlohmann::detail']]]
 ];

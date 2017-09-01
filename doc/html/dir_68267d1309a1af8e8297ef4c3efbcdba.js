@@ -11,7 +11,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "I2CDevice.cpp", "_i2_c_device_8cpp.html", null ],
     [ "I2CRaw.cpp", "_i2_c_raw_8cpp.html", null ],
     [ "I2CRegister.cpp", "_i2_c_register_8cpp.html", null ],
-    [ "main.cpp", "src_2main_8cpp.html", "src_2main_8cpp" ],
+    [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
     [ "Parser.cpp", "_parser_8cpp.html", null ],
     [ "Si53106Registers.cpp", "_si53106_registers_8cpp.html", null ],
     [ "update.cpp", "update_8cpp.html", null ]

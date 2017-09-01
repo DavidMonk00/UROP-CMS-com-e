@@ -1,27 +1,67 @@
-.TH "test/testbuild/src/main.cpp" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.TH "src/main.cpp" 3 "Fri Sep 1 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-test/testbuild/src/main.cpp \- 
+src/main.cpp \- 
 .SH SYNOPSIS
 .br
 .PP
-\fC#include <stdio\&.h>\fP
+\fC#include 'main\&.hpp'\fP
 .br
 
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "int \fBmain\fP (void)"
+.RI "void \fBactiveLoop\fP (\fBUpdate\fP *update)"
+.br
+.ti -1c
+.RI "void \fBconfigLoop\fP (\fBUpdate\fP *update)"
+.br
+.ti -1c
+.RI "void \fBstaticLoop\fP (\fBUpdate\fP *update)"
+.br
+.ti -1c
+.RI "void \fBpurgeLoop\fP (\fBUpdate\fP *update)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "int main (void)"
+.SS "void activeLoop (\fBUpdate\fP * update)"
+\fBmain\&.cpp\fP Purpose: main function file\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+David Monk - Imperial College London 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.0 
+.RE
+.PP
 
 .PP
-Definition at line 3 of file main\&.cpp\&.
+Definition at line 10 of file main\&.cpp\&.
+.SS "void configLoop (\fBUpdate\fP * update)"
+
+.PP
+Definition at line 18 of file main\&.cpp\&.
+.SS "int main (int argc, char * argv[])"
+
+.PP
+Definition at line 58 of file main\&.cpp\&.
+.SS "void purgeLoop (\fBUpdate\fP * update)"
+
+.PP
+Definition at line 42 of file main\&.cpp\&.
+.SS "void staticLoop (\fBUpdate\fP * update)"
+
+.PP
+Definition at line 26 of file main\&.cpp\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for COM-Express I2C Stack from the source code\&.

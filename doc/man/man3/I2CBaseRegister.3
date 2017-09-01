@@ -1,4 +1,4 @@
-.TH "I2CBaseRegister" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.TH "I2CBaseRegister" 3 "Fri Sep 1 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -9,7 +9,7 @@ I2CBaseRegister \-
 .PP
 \fC#include <I2CRegister\&.hpp>\fP
 .PP
-Inherited by \fBDS3232TemperatureI2CRegister\fP, \fBGenericI2CRegister\fP, \fBGenericI2CRegister\fP, \fBInternalRegister\fP, \fBPCIClockOutputEnableRegister\fP, \fBPCIClockPLLModeRegister\fP, and \fBTimeI2CRegister\fP\&.
+Inherited by \fBDS3232TemperatureI2CRegister\fP, \fBGenericI2CRegister\fP, \fBInternalRegister\fP, \fBPCIClockOutputEnableRegister\fP, \fBPCIClockPLLModeRegister\fP, and \fBTimeI2CRegister\fP\&.
 .SS "Public Member Functions"
 
 .in +1c
@@ -18,12 +18,6 @@ Inherited by \fBDS3232TemperatureI2CRegister\fP, \fBGenericI2CRegister\fP, \fBGe
 .br
 .ti -1c
 .RI "virtual void \fBwrite\fP (\fBI2C_base\fP *i2c_ptr, uint32_t address, \fBunits_variant\fP value)=0"
-.br
-.ti -1c
-.RI "virtual void \fBread\fP (void *i2c_ptr, uint32_t addr)=0"
-.br
-.ti -1c
-.RI "virtual void \fBwrite\fP (void *i2c_ptr, uint32_t addr)=0"
 .br
 .in -1c
 .SS "Protected Attributes"
@@ -58,18 +52,10 @@ David Monk
 Definition at line 19 of file I2CRegister\&.hpp\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "virtual void I2CBaseRegister::read (void * i2c_ptr, uint32_t addr)\fC [pure virtual]\fP"
-
-.PP
-Implemented in \fBGenericI2CRegister\fP\&.
 .SS "virtual \fBunits_variant\fP I2CBaseRegister::read (\fBI2C_base\fP * i2c_ptr, uint32_t address)\fC [pure virtual]\fP"
 
 .PP
 Implemented in \fBInternalRegister\fP, \fBPCIClockOutputEnableRegister\fP, \fBPCIClockPLLModeRegister\fP, \fBDS3232TemperatureI2CRegister\fP, \fBTimeI2CRegister\fP, and \fBGenericI2CRegister\fP\&.
-.SS "virtual void I2CBaseRegister::write (void * i2c_ptr, uint32_t addr)\fC [pure virtual]\fP"
-
-.PP
-Implemented in \fBGenericI2CRegister\fP\&.
 .SS "virtual void I2CBaseRegister::write (\fBI2C_base\fP * i2c_ptr, uint32_t address, \fBunits_variant\fP value)\fC [pure virtual]\fP"
 
 .PP

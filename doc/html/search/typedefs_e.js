@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['time',['time',['../namespaceboost_1_1units_1_1test.html#aa6015c1af04d051a648ce2d7bb3a6876',1,'boost::units::test']]],
-  ['time_5fdimension',['time_dimension',['../namespaceboost_1_1units.html#a8fc0b5bca117a7c220c018021ebe821f',1,'boost::units']]],
-  ['type',['type',['../structnlohmann_1_1detail_1_1index__sequence.html#a3c14c4ab277de72b166806193ff4fa10',1,'nlohmann::detail::index_sequence']]],
-  ['type_5ferror',['type_error',['../classnlohmann_1_1basic__json.html#a4010e8e268fefd86da773c10318f2902',1,'nlohmann::basic_json']]]
+  ['uncvref_5ft',['uncvref_t',['../namespacenlohmann_1_1detail.html#a53a082eedad9f4729fcd8fed552a21f7',1,'nlohmann::detail']]],
+  ['units_5fvariant',['units_variant',['../units__define_8hpp.html#a95d46867fa79633565c288a0b4bd5408',1,'units_define.hpp']]]
 ];

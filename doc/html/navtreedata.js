@@ -8,7 +8,6 @@ var NAVTREE =
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
-        [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ]
       ] ]
@@ -23,7 +22,6 @@ var NAVTREE =
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
-        [ "Enumerator", "functions_eval.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -32,7 +30,6 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
@@ -43,10 +40,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_t_c_a_board_8cpp.html",
-"class_to_string.html#a8e940138e92a6dd242ced2c635d383f8",
-"classnlohmann_1_1detail_1_1binary__reader.html#aa147833e4d64ebb6a08e5f6a7b9a2842",
-"functions_func_m.html",
-"structnlohmann_1_1detail_1_1is__compatible__integer__type.html"
+"classnlohmann_1_1basic__json.html#a39f2cd0b58106097e0e67bf185cc519b",
+"classnlohmann_1_1detail_1_1lexer.html#ac013af35a21e9387993b19da5b3e0ae2",
+"structnlohmann_1_1detail_1_1external__constructor_3_01value__t_1_1object_01_4.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

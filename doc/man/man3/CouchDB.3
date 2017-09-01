@@ -1,4 +1,4 @@
-.TH "CouchDB" 3 "Tue Aug 8 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
+.TH "CouchDB" 3 "Fri Sep 1 2017" "Version 1.0" "COM-Express I2C Stack" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,19 +14,19 @@ Inherited by \fBClient\fP, and \fBServer\fP\&.
 
 .in +1c
 .ti -1c
-.RI "std::string \fBHTTPGET\fP (std::string hostname)"
+.RI "bool \fBHTTPGET\fP (std::string url_, std::string *ret)"
 .br
 .RI "\fIHTTP GET function\&. \fP"
 .ti -1c
-.RI "void \fBHTTPPUT\fP (std::string url_, std::string data)"
+.RI "bool \fBHTTPPUT\fP (std::string url_, std::string data)"
 .br
 .RI "\fIHTTP PUT function\&. \fP"
 .ti -1c
-.RI "void \fBHTTPPOST\fP (std::string url_, std::string data)"
+.RI "bool \fBHTTPPOST\fP (std::string url_, std::string data)"
 .br
 .RI "\fIHTTP POST function\&. \fP"
 .ti -1c
-.RI "void \fBHTTPDELETE\fP (std::string url_)"
+.RI "bool \fBHTTPDELETE\fP (std::string url_)"
 .br
 .RI "\fIHTTP DELETE function\&. \fP"
 .in -1c
@@ -50,9 +50,6 @@ Inherited by \fBClient\fP, and \fBServer\fP\&.
 .ti -1c
 .RI "\fBjson\fP \fBconfig\fP"
 .br
-.ti -1c
-.RI "CURL * \fBcurl\fP"
-.br
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -65,7 +62,7 @@ Definition at line 19 of file CouchDB\&.hpp\&.
 Callback function for curl HTTP calls\&. Sends output into string\&. Should not be called outside of CURLOPT_WRITEFUNCTION\&. 
 .PP
 Definition at line 13 of file CouchDB\&.cpp\&.
-.SS "void CouchDB::HTTPDELETE (std::string url_)\fC [protected]\fP"
+.SS "bool CouchDB::HTTPDELETE (std::string url_)\fC [protected]\fP"
 
 .PP
 HTTP DELETE function\&. 
@@ -77,8 +74,8 @@ HTTP DELETE function\&.
 .PP
 
 .PP
-Definition at line 98 of file CouchDB\&.cpp\&.
-.SS "std::string CouchDB::HTTPGET (std::string url_)\fC [protected]\fP"
+Definition at line 110 of file CouchDB\&.cpp\&.
+.SS "bool CouchDB::HTTPGET (std::string url_, std::string * ret)\fC [protected]\fP"
 
 .PP
 HTTP GET function\&. 
@@ -96,7 +93,7 @@ String of output from call\&.
 
 .PP
 Definition at line 31 of file CouchDB\&.cpp\&.
-.SS "void CouchDB::HTTPPOST (std::string url_, std::string data)\fC [protected]\fP"
+.SS "bool CouchDB::HTTPPOST (std::string url_, std::string data)\fC [protected]\fP"
 
 .PP
 HTTP POST function\&. 
@@ -110,8 +107,8 @@ HTTP POST function\&.
 .PP
 
 .PP
-Definition at line 74 of file CouchDB\&.cpp\&.
-.SS "void CouchDB::HTTPPUT (std::string url_, std::string data)\fC [protected]\fP"
+Definition at line 80 of file CouchDB\&.cpp\&.
+.SS "bool CouchDB::HTTPPUT (std::string url_, std::string data)\fC [protected]\fP"
 
 .PP
 HTTP PUT function\&. 
@@ -125,17 +122,13 @@ HTTP PUT function\&.
 .PP
 
 .PP
-Definition at line 52 of file CouchDB\&.cpp\&.
+Definition at line 54 of file CouchDB\&.cpp\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "\fBjson\fP CouchDB::config\fC [protected]\fP"
 
 .PP
 Definition at line 23 of file CouchDB\&.hpp\&.
-.SS "CURL* CouchDB::curl\fC [protected]\fP"
-
-.PP
-Definition at line 24 of file CouchDB\&.hpp\&.
 .SS "std::string CouchDB::database\fC [protected]\fP"
 
 .PP
